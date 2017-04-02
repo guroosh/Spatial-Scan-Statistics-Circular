@@ -1,0 +1,9 @@
+CircleOps:
+
+Main:
+    RunTypeA    All circles of one radius are enumerated by one thread
+
+ScanGeometry:
+    Circle:
+        x,y,r type double;
+        circle() initializes to 0;

@@ -1,0 +1,65 @@
+Converting denver to meters using Haversine_formula(distance between said point and projection on equator)
+
+http://stackoverflow.com/questions/1253499/simple-calculations-for-working-with-lat-lon-km-distance
+
+http://gis.stackexchange.com/questions/142326/calculating-longitude-length-in-miles
+
+http://stackoverflow.com/questions/1094539/how-to-draw-a-decent-looking-circle-in-java
+http://stackoverflow.com/questions/12052235/draw-ellipse-using-center-point-not-upper-left-corner
+In these circle to ellipse is x-r, y-r, 2r, 2r (but it should be y+r) why?
+Possible answer, in JFrame and all they have flipped the y-axis upside down
+
+https://coderanch.com/t/338737/java/draw-points-Java
+change to this code, in visualize, such that setSize() is called as obj.setSize();
+
+
+http://math.stackexchange.com/questions/159269/take-set-of-values-and-change-scale
+this used to scale for visualize but how tyo change radius?? since x and y scaling is different
+
+
+
+
+/*
+        //to print maximum likelihood ration for particular radius
+//        double max_likelihood_for_a_particular_radius = 0;
+//        Circle circle_with_max_likelihood_for_a_particular_radius = new Circle();
+//        while (controller.term(curr_circle) != 3) {
+//            // TODO: 21-03-2017 printing one loop less, why?
+//            // TODO: 21-03-2017 ANS: because 0.1 is stored as 0.1000000000001 sometimes
+//            while (controller.term(curr_circle) != -1) {
+//                while (controller.term(curr_circle) == 0) {
+//                    count_naive_circles++;
+//                    naive_counter++;
+////                System.out.print(naive_counter + " : " + curr_circle.toString());
+//                    ArrayList<Events> points = controller.scan(curr_circle);
+//                    double likelihood_ratio = controller.likelihoodRatio(curr_circle, points);
+//                    if (likelihood_ratio > likelihood_threshold) {            //(likelihood_ratio > 2000) {
+//                        if (likelihood_ratio > max_likelihood_for_a_particular_radius) {
+//                            max_likelihood_for_a_particular_radius = likelihood_ratio;
+//                            //Starting for visualization
+//                            Circle temp_circle = new Circle();
+//                            temp_circle.setRadius(curr_circle.getRadius());
+//                            temp_circle.setX_coord(curr_circle.getX_coord());
+//                            temp_circle.setY_coord(curr_circle.getY_coord());
+//                            circle_with_max_likelihood_for_a_particular_radius = temp_circle;
+//                            //Ending for visualization
+//                        }
+//                    }
+//                    curr_circle = controller.grow_x(shift_radius, curr_circle);           // TODO: 21-03-2017 change grow_x to shift_x (just the name)
+//                }
+//                curr_circle = controller.shift(curr_circle, -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
+//            }
+//
+//            likelihoods.add(max_likelihood_for_a_particular_radius);
+//
+//            //Starting visualize
+//            circles.add(circle_with_max_likelihood_for_a_particular_radius);
+//            //Ending visualize
+//
+//            System.out.println("DONE for radius: " + curr_radius);
+//            curr_radius = controller.increase_radius(curr_radius, growth_radius);
+//            curr_circle = new Circle(minLon, minLat, curr_radius);
+//            max_likelihood_for_a_particular_radius = 0;
+//            circle_with_max_likelihood_for_a_particular_radius = new Circle();
+//        }
+*/
