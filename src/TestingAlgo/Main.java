@@ -61,12 +61,12 @@ public class Main {
 //        System.out.println("Entering object serializing: ");
 //        serialize(gridFile);
 
-        System.out.println("Entering circle scanning: ");
-        System.out.println("Starting Naive run");
-        naiveTester(gridFile);
-        afterNaive(events);
+//        System.out.println("Entering circle scanning: ");
+//        System.out.println("Starting Naive run");
+//        naiveTester(gridFile);
+//        afterNaive(events);
 
-//        runMovingCircleTester(gridFile, events);
+        runMovingCircleTester(gridFile, events);
     }
 
     private static void runMovingCircleTester(GridFile gridFile, ArrayList<Events> events)

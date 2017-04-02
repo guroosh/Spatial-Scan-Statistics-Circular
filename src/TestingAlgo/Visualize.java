@@ -44,7 +44,7 @@ class DrawFrame extends JFrame {
 //        System.out.println(width + " " + height);
 //        pack();
 //        setSize((int) width, (int) height);
-        setSize(720, 720);
+        setSize(1900, 1060);
         // add panel to frame
         add(new JPanel(), BorderLayout.NORTH);
         add(new JScrollPane(), BorderLayout.CENTER);
@@ -67,8 +67,8 @@ class DrawComponent extends JComponent {
     double max_y = -1000000;
     double leftX = 0;
     double topY = 0;
-    double width = 1300;
-    double height = 700;
+    double width = 1960;
+    double height = 1060;
     //    double width = 1900;
 //    double height = 1040;
     double scale = 5;
