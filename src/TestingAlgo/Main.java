@@ -7,9 +7,16 @@ import Dataset.Bucket;
 import Dataset.Events;
 import Dataset.GridCell;
 import Dataset.GridFile;
+import edu.rice.hj.api.SuspendableException;
 
 import java.io.*;
 import java.util.*;
+
+import static edu.rice.hj.Module0.finish;
+import static edu.rice.hj.Module0.launchHabaneroApp;
+import static edu.rice.hj.Module1.async;
+import static edu.rice.hj.Module1.forasync;
+import static edu.rice.hj.Module2.isolated;
 
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
@@ -27,7 +34,7 @@ public class Main {
     public static String splitAxis = "horizontal";
     public static ArrayList<Circle> core_circles = new ArrayList<>();
 
-    public static void main(String args[]) throws IOException {
+    public static void main(String args[]) throws IOException, SuspendableException {
         Scanner in = new Scanner(System.in);
         String fileName = "d.csv";//in.nextLine();
         bucket_size = 100;
@@ -61,16 +68,36 @@ public class Main {
 //        System.out.println("Entering object serializing: ");
 //        serialize(gridFile);
 
-        System.out.println("Entering circle scanning: ");
-        System.out.println("Starting Naive run");
-        naiveTester(gridFile);
-        afterNaive(events);
-
+//        runNaiveTester(gridFile, events);
+        runNaiveTesterHJ(gridFile, events);
 //        runMovingCircleTester(gridFile, events);
     }
 
-    private static void runMovingCircleTester(GridFile gridFile, ArrayList<Events> events)
-    {
+    private static void runNaiveTester(GridFile gridFile, ArrayList<Events> events) {
+        System.out.println("Entering circle scanning: ");
+        System.out.println("Starting Naive run");
+        long startTime = System.currentTimeMillis();
+        naiveTester(gridFile);
+        long endTime = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println("Total time for naive with 1 thread: " + totalTime);
+        afterNaive(events);
+    }
+
+    private static void runNaiveTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
+        System.out.println("Entering circle scanning: ");
+        System.out.println("Starting Naive run");
+        long startTime = System.currentTimeMillis();
+        launchHabaneroApp(() -> {
+            naiveTesterHJ(gridFile);
+        });
+        long endTime = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println("Total time for naive with HJ: " + totalTime);
+        afterNaive(events);
+    }
+
+    private static void runMovingCircleTester(GridFile gridFile, ArrayList<Events> events) {
         System.out.println("Starting Moving Circle run");
 //
         int runtime = 100;
@@ -181,6 +208,73 @@ public class Main {
         }
     }
 
+    private static void naiveTesterHJ(GridFile gridFile) throws SuspendableException {
+        final double likelihood_threshold = 0;
+        final double[] curr_radius = {0.001};
+        final double initial_radius = curr_radius[0];
+        final double term_radius = 0.01;
+        final double shift_radius = 0.001;
+        final double growth_radius = 0.001;
+        int number_of_radius = 10;       //By formula: number  <=  ((t-c)/g) + 1
+
+        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
+        final Circle[] curr_circle = new Circle[1];
+        CircleOps controller = new CircleOps(initial_radius, term_radius, area, gridFile);
+//        System.out.println(curr_circle.toString());
+
+        final long[] count_naive_circles = {0};
+        ArrayList<Circle> top_likelihood_circles = new ArrayList<>();
+
+        finish(() -> {
+//            for (int i = 0; i < number_of_radius; i++) {
+                forasync(0, number_of_radius-1, (i) -> {
+                    int finalI = i;
+//                    async(() -> {
+                        final double[] curr_local_radius = new double[1];
+                        final Circle[] curr_local_circle = new Circle[1];
+                        isolated(() -> {
+                            curr_radius[0] = controller.increase_radius(curr_radius[0], growth_radius);
+                            curr_local_radius[0] = curr_radius[0] - initial_radius;
+                            curr_circle[0] = new Circle(minLon, minLat, curr_local_radius[0]);
+                            curr_local_circle[0] = curr_circle[0];
+                        });
+//                    System.out.println(curr_local_radius[0]);
+//                    System.out.println(curr_local_circle[0].toString());
+//                    System.out.println();
+                        while (controller.term(curr_local_circle[0]) != -1) {
+                            while (controller.term(curr_local_circle[0]) == 0) {
+                                isolated(() -> {
+                                    count_naive_circles[0]++;
+                                });
+//                            System.out.print(finalI);
+//                            System.out.print(naive_counter + " : " + curr_circle.toString());
+                                ArrayList<Events> points = controller.scanCircle(curr_local_circle[0]);
+                                double likelihood_ratio = controller.likelihoodRatio(curr_local_circle[0], points);
+                                if (likelihood_ratio > likelihood_threshold) {            //(likelihood_ratio > 2000) {
+                                    //Starting for visualization
+                                    Circle temp_circle = new Circle(curr_local_circle[0].getX_coord(), curr_local_circle[0].getY_coord(), curr_local_circle[0].getRadius());
+                                    temp_circle.lhr = likelihood_ratio;
+                                    //Ending for visualization
+                                    isolated(() -> {
+                                        top_likelihood_circles.add(temp_circle);
+                                    });
+                                }
+                                curr_local_circle[0] = controller.grow_x(shift_radius, curr_local_circle[0]);           // TODO: 21-03-2017 change grow_x to shift_x (just the name)
+                            }
+                            curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
+                        }
+                        System.out.println("DONE for radius: " + curr_local_radius[0]);
+//                    });
+                });
+//            }
+        });
+        System.out.println("SIZE A: " + top_likelihood_circles.size() + " " + count_naive_circles[0]);
+        Collections.sort(top_likelihood_circles, Circle.sortByLHR());
+        System.out.println("SIZE B");
+        naiveWithoutIntersectingCircles(top_likelihood_circles, count_naive_circles[0]);
+    }
+
+
     private static void naiveTester(GridFile gridFile) {
         // TODO: 21-03-2017 what if we do a circle area to a threshold ratio kind of thing
         //TEST case 1:      (Slow case)
@@ -270,7 +364,9 @@ public class Main {
             //ending code segment
         }
 
+        System.out.println("SIZE A: " + top_likelihood_circles.size() + " " + count_naive_circles);
         Collections.sort(top_likelihood_circles, Circle.sortByLHR());
+        System.out.println("SIZE B");
         naiveWithoutIntersectingCircles(top_likelihood_circles, count_naive_circles);
     }
 
@@ -279,7 +375,7 @@ public class Main {
         int j = 0;
         int intersecting_flg = 0;
 //        Circle prev_cl = new Circle();
-        int top_number_circles = 1002;
+        int top_number_circles = 1000;
         for (int i = 0; j < top_number_circles; i++) {
             if (i >= top_likelihood_circles.size()) {
                 break;
