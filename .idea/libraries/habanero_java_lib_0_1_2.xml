@@ -6,5 +6,6 @@
     <JAVADOC />
     <SOURCES />
     <jarDirectory url="jar://G:/BTP/external_jars/habanero-java-lib-0.1.2.jar!/" recursive="false" />
+
   </library>
 </component>

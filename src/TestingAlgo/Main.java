@@ -86,7 +86,7 @@ public class Main {
 
     private static void runNaiveTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
         System.out.println("Entering circle scanning: ");
-        System.out.println("Starting Naive run");
+        System.out.println("Starting Naive run with HABANERO");
         long startTime = System.currentTimeMillis();
         launchHabaneroApp(() -> {
             naiveTesterHJ(gridFile);
