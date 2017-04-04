@@ -1,16 +1,14 @@
 package TestingAlgo;
 
 import Algorithm_Ops.Circle;
-import Algorithm_Ops.ScanGeometry;
 import Dataset.Events;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.Random;
-
-import javax.swing.*;
 
 /**
  * @author Cay Horstmann
@@ -38,7 +36,9 @@ class DrawFrameNaive extends JFrame {
     public DrawFrameNaive() {
         setTitle("Title");
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        setSize(720, 720);
+        double width = screenSize.getWidth();
+        double height = screenSize.getHeight();
+        setSize((int) width, (int) height);
         add(new JPanel(), BorderLayout.NORTH);
         add(new JScrollPane(), BorderLayout.CENTER);
         DrawComponentNaive component = new DrawComponentNaive();
@@ -56,8 +56,12 @@ class DrawComponentNaive extends JComponent {
     double max_y = -1000000;
     double leftX = 0;
     double topY = 0;
-    double width = 1300;
-    double height = 680;
+//    double width = 1300;
+//    double height = 680;
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    double width = screenSize.getWidth();
+    double height = screenSize.getHeight();
+
 
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
