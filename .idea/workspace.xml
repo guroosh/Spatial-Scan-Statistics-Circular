@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f889fb64-4216-4aa7-afe3-5d0a9244e20e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawComponent.class" afterPath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawComponent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawFrame.class" afterPath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/Main.class" afterPath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/habanero_java_lib_0_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/habanero_java_lib_0_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/btp_merged.iml" afterPath="$PROJECT_DIR$/btp_merged.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/Main.java" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/Visualize.java" afterPath="$PROJECT_DIR$/src/TestingAlgo/Visualize.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/VisualizeNaive.java" afterPath="$PROJECT_DIR$/src/TestingAlgo/VisualizeNaive.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,55 +24,37 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="88" column="63" lean-forward="false" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
+            <state relative-caret-position="172">
+              <caret line="409" column="27" lean-forward="false" selection-start-line="409" selection-start-column="27" selection-end-line="409" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Main#0" expanded="false" />
-                <element signature="e#3956#3958#0" expanded="false" />
-                <element signature="e#6142#6186#0" expanded="false" />
-                <element signature="e#9909#9972#0" expanded="false" />
-                <element signature="e#10398#10453#0" expanded="false" />
-                <element signature="e#10860#10889#0" expanded="false" />
-                <element signature="e#12454#12536#0" expanded="false" />
-                <element signature="e#12773#12787#0" expanded="false" />
-                <element signature="e#13912#13920#0" expanded="false" />
-                <element signature="e#14356#14404#0" expanded="false" />
-                <element signature="e#15030#15059#0" expanded="false" />
-                <element signature="e#15452#15503#0" expanded="false" />
-                <element signature="e#16235#16291#0" expanded="false" />
-                <element signature="e#17962#18080#0" expanded="false" />
-                <element signature="e#18893#18990#0" expanded="false" />
+                <element signature="method#main#0;class#Main#0" expanded="false" />
+                <element signature="e#1254#1304#0" expanded="false" />
+                <element signature="e#1912#1948#0" expanded="false" />
+                <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
+                <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
+                <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
+                <element signature="e#3915#3917#0" expanded="false" />
+                <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
+                <element signature="e#6101#6145#0" expanded="false" />
+                <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
+                <element signature="e#9798#9861#0" expanded="false" />
+                <element signature="e#10247#10302#0" expanded="false" />
+                <element signature="e#10685#10714#0" expanded="false" />
+                <element signature="e#17678#17796#0" expanded="false" />
+                <element signature="e#18609#18706#0" expanded="false" />
                 <element signature="method#serialize#0;class#Main#0" expanded="false" />
                 <element signature="method#checkData#0;class#Main#0" expanded="false" />
-                <element signature="e#21332#21372#0" expanded="false" />
+                <element signature="e#21224#21264#0" expanded="false" />
+                <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
                 <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
                 <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-                <element signature="e#23578#23611#0" expanded="false" />
-                <element signature="e#24204#24237#0" expanded="false" />
-                <element signature="e#24720#24785#0" expanded="false" />
-                <element signature="e#25404#25462#0" expanded="false" />
+                <element signature="e#23470#23503#0" expanded="false" />
+                <element signature="e#24096#24129#0" expanded="false" />
+                <element signature="e#24612#24677#0" expanded="false" />
+                <element signature="e#25296#25354#0" expanded="false" />
+                <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="habanero_java_lib_0_1_2.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/libraries/habanero_java_lib_0_1_2.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="misc.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -87,10 +64,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="8959">
               <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-              <folding>
-                <element signature="e#19934#19935#0" expanded="true" />
-                <element signature="e#19972#19973#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,8 +82,18 @@
       <file leaf-file-name="Visualize.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Visualize.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2686">
+            <state relative-caret-position="1713">
               <caret line="168" column="32" lean-forward="false" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VisualizeNaive.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TestingAlgo/VisualizeNaive.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -120,6 +104,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>g2.draw</find>
+      <find>intersectingOn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,6 +122,7 @@
         <option value="$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java" />
         <option value="$PROJECT_DIR$/.idea/misc.xml" />
         <option value="$PROJECT_DIR$/.idea/libraries/habanero_java_lib_0_1_2.xml" />
+        <option value="$PROJECT_DIR$/src/TestingAlgo/VisualizeNaive.java" />
         <option value="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
       </list>
     </option>
@@ -162,6 +148,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -194,15 +183,66 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestingAlgo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VisualizeNaive.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestingAlgo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -461,7 +501,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.62776023" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.63722396" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -503,10 +543,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.62776023" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.63722396" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -528,34 +568,96 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="e#1254#1304#0" expanded="false" />
+            <element signature="e#1912#1948#0" expanded="false" />
+            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
+            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
+            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
+            <element signature="e#3915#3917#0" expanded="false" />
+            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
+            <element signature="e#6101#6145#0" expanded="false" />
+            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
+            <element signature="e#9798#9861#0" expanded="false" />
+            <element signature="e#10247#10302#0" expanded="false" />
+            <element signature="e#10685#10714#0" expanded="false" />
+            <element signature="e#17678#17796#0" expanded="false" />
+            <element signature="e#18609#18706#0" expanded="false" />
+            <element signature="method#serialize#0;class#Main#0" expanded="false" />
+            <element signature="method#checkData#0;class#Main#0" expanded="false" />
+            <element signature="e#21224#21264#0" expanded="false" />
+            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
+            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
+            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
+            <element signature="e#23470#23503#0" expanded="false" />
+            <element signature="e#24096#24129#0" expanded="false" />
+            <element signature="e#24612#24677#0" expanded="false" />
+            <element signature="e#25296#25354#0" expanded="false" />
+            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9027">
+          <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/Circle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="47" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Visualize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2856">
+          <caret line="168" column="32" lean-forward="false" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3893">
           <caret line="229" column="46" lean-forward="false" selection-start-line="229" selection-start-column="46" selection-end-line="229" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="e#3956#3958#0" expanded="false" />
-            <element signature="e#6142#6186#0" expanded="false" />
-            <element signature="e#9909#9972#0" expanded="false" />
-            <element signature="e#10398#10453#0" expanded="false" />
-            <element signature="e#10860#10889#0" expanded="false" />
-            <element signature="e#12454#12536#0" expanded="false" />
-            <element signature="e#12773#12787#0" expanded="false" />
-            <element signature="e#13912#13920#0" expanded="false" />
-            <element signature="e#14356#14404#0" expanded="false" />
-            <element signature="e#15030#15059#0" expanded="false" />
-            <element signature="e#15452#15503#0" expanded="false" />
-            <element signature="e#16235#16291#0" expanded="false" />
-            <element signature="e#17962#18080#0" expanded="false" />
-            <element signature="e#18893#18990#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="e#1254#1304#0" expanded="false" />
+            <element signature="e#1912#1948#0" expanded="false" />
+            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
+            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
+            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
+            <element signature="e#3915#3917#0" expanded="false" />
+            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
+            <element signature="e#6101#6145#0" expanded="false" />
+            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
+            <element signature="e#9798#9861#0" expanded="false" />
+            <element signature="e#10247#10302#0" expanded="false" />
+            <element signature="e#10685#10714#0" expanded="false" />
+            <element signature="e#17678#17796#0" expanded="false" />
+            <element signature="e#18609#18706#0" expanded="false" />
             <element signature="method#serialize#0;class#Main#0" expanded="false" />
             <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#21332#21372#0" expanded="false" />
+            <element signature="e#21224#21264#0" expanded="false" />
+            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
             <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
             <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#23578#23611#0" expanded="false" />
-            <element signature="e#24204#24237#0" expanded="false" />
-            <element signature="e#24720#24785#0" expanded="false" />
-            <element signature="e#25404#25462#0" expanded="false" />
+            <element signature="e#23470#23503#0" expanded="false" />
+            <element signature="e#24096#24129#0" expanded="false" />
+            <element signature="e#24612#24677#0" expanded="false" />
+            <element signature="e#25296#25354#0" expanded="false" />
+            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -564,7 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -572,10 +673,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9027">
           <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-          <folding>
-            <element signature="e#19934#19935#0" expanded="true" />
-            <element signature="e#19972#19973#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -600,31 +698,33 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="e#3956#3958#0" expanded="false" />
-            <element signature="e#6142#6186#0" expanded="false" />
-            <element signature="e#9909#9972#0" expanded="false" />
-            <element signature="e#10398#10453#0" expanded="false" />
-            <element signature="e#10860#10889#0" expanded="false" />
-            <element signature="e#12454#12536#0" expanded="false" />
-            <element signature="e#12773#12787#0" expanded="false" />
-            <element signature="e#13912#13920#0" expanded="false" />
-            <element signature="e#14356#14404#0" expanded="false" />
-            <element signature="e#15030#15059#0" expanded="false" />
-            <element signature="e#15452#15503#0" expanded="false" />
-            <element signature="e#16235#16291#0" expanded="false" />
-            <element signature="e#17962#18080#0" expanded="false" />
-            <element signature="e#18893#18990#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="e#1254#1304#0" expanded="false" />
+            <element signature="e#1912#1948#0" expanded="false" />
+            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
+            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
+            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
+            <element signature="e#3915#3917#0" expanded="false" />
+            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
+            <element signature="e#6101#6145#0" expanded="false" />
+            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
+            <element signature="e#9798#9861#0" expanded="false" />
+            <element signature="e#10247#10302#0" expanded="false" />
+            <element signature="e#10685#10714#0" expanded="false" />
+            <element signature="e#17678#17796#0" expanded="false" />
+            <element signature="e#18609#18706#0" expanded="false" />
             <element signature="method#serialize#0;class#Main#0" expanded="false" />
             <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#21332#21372#0" expanded="false" />
+            <element signature="e#21224#21264#0" expanded="false" />
+            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
             <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
             <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#23578#23611#0" expanded="false" />
-            <element signature="e#24204#24237#0" expanded="false" />
-            <element signature="e#24720#24785#0" expanded="false" />
-            <element signature="e#25404#25462#0" expanded="false" />
+            <element signature="e#23470#23503#0" expanded="false" />
+            <element signature="e#24096#24129#0" expanded="false" />
+            <element signature="e#24612#24677#0" expanded="false" />
+            <element signature="e#25296#25354#0" expanded="false" />
+            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -633,10 +733,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9010">
           <caret line="530" column="18" lean-forward="false" selection-start-line="530" selection-start-column="18" selection-end-line="530" selection-end-column="18" />
-          <folding>
-            <element signature="e#19934#19935#0" expanded="true" />
-            <element signature="e#19972#19973#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -661,31 +758,33 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="e#3956#3958#0" expanded="false" />
-            <element signature="e#6142#6186#0" expanded="false" />
-            <element signature="e#9909#9972#0" expanded="false" />
-            <element signature="e#10398#10453#0" expanded="false" />
-            <element signature="e#10860#10889#0" expanded="false" />
-            <element signature="e#12454#12536#0" expanded="false" />
-            <element signature="e#12773#12787#0" expanded="false" />
-            <element signature="e#13912#13920#0" expanded="false" />
-            <element signature="e#14356#14404#0" expanded="false" />
-            <element signature="e#15030#15059#0" expanded="false" />
-            <element signature="e#15452#15503#0" expanded="false" />
-            <element signature="e#16235#16291#0" expanded="false" />
-            <element signature="e#17962#18080#0" expanded="false" />
-            <element signature="e#18893#18990#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="e#1254#1304#0" expanded="false" />
+            <element signature="e#1912#1948#0" expanded="false" />
+            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
+            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
+            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
+            <element signature="e#3915#3917#0" expanded="false" />
+            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
+            <element signature="e#6101#6145#0" expanded="false" />
+            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
+            <element signature="e#9798#9861#0" expanded="false" />
+            <element signature="e#10247#10302#0" expanded="false" />
+            <element signature="e#10685#10714#0" expanded="false" />
+            <element signature="e#17678#17796#0" expanded="false" />
+            <element signature="e#18609#18706#0" expanded="false" />
             <element signature="method#serialize#0;class#Main#0" expanded="false" />
             <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#21332#21372#0" expanded="false" />
+            <element signature="e#21224#21264#0" expanded="false" />
+            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
             <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
             <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#23578#23611#0" expanded="false" />
-            <element signature="e#24204#24237#0" expanded="false" />
-            <element signature="e#24720#24785#0" expanded="false" />
-            <element signature="e#25404#25462#0" expanded="false" />
+            <element signature="e#23470#23503#0" expanded="false" />
+            <element signature="e#24096#24129#0" expanded="false" />
+            <element signature="e#24612#24677#0" expanded="false" />
+            <element signature="e#25296#25354#0" expanded="false" />
+            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -703,31 +802,33 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="e#3956#3958#0" expanded="false" />
-            <element signature="e#6142#6186#0" expanded="false" />
-            <element signature="e#9909#9972#0" expanded="false" />
-            <element signature="e#10398#10453#0" expanded="false" />
-            <element signature="e#10860#10889#0" expanded="false" />
-            <element signature="e#12454#12536#0" expanded="false" />
-            <element signature="e#12773#12787#0" expanded="false" />
-            <element signature="e#13912#13920#0" expanded="false" />
-            <element signature="e#14356#14404#0" expanded="false" />
-            <element signature="e#15030#15059#0" expanded="false" />
-            <element signature="e#15452#15503#0" expanded="false" />
-            <element signature="e#16235#16291#0" expanded="false" />
-            <element signature="e#17962#18080#0" expanded="false" />
-            <element signature="e#18893#18990#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="e#1254#1304#0" expanded="false" />
+            <element signature="e#1912#1948#0" expanded="false" />
+            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
+            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
+            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
+            <element signature="e#3915#3917#0" expanded="false" />
+            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
+            <element signature="e#6101#6145#0" expanded="false" />
+            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
+            <element signature="e#9798#9861#0" expanded="false" />
+            <element signature="e#10247#10302#0" expanded="false" />
+            <element signature="e#10685#10714#0" expanded="false" />
+            <element signature="e#17678#17796#0" expanded="false" />
+            <element signature="e#18609#18706#0" expanded="false" />
             <element signature="method#serialize#0;class#Main#0" expanded="false" />
             <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#21332#21372#0" expanded="false" />
+            <element signature="e#21224#21264#0" expanded="false" />
+            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
             <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
             <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#23578#23611#0" expanded="false" />
-            <element signature="e#24204#24237#0" expanded="false" />
-            <element signature="e#24720#24785#0" expanded="false" />
-            <element signature="e#25404#25462#0" expanded="false" />
+            <element signature="e#23470#23503#0" expanded="false" />
+            <element signature="e#24096#24129#0" expanded="false" />
+            <element signature="e#24612#24677#0" expanded="false" />
+            <element signature="e#25296#25354#0" expanded="false" />
+            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -744,14 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1241">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="353" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Visualize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2686">
-          <caret line="168" column="32" lean-forward="false" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -782,10 +875,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8959">
           <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-          <folding>
-            <element signature="e#19934#19935#0" expanded="true" />
-            <element signature="e#19972#19973#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -793,7 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -801,40 +890,68 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Visualize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1713">
+          <caret line="168" column="32" lean-forward="false" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/awt/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="906" column="16" lean-forward="false" selection-start-line="906" selection-start-column="16" selection-end-line="906" selection-end-column="16" />
+          <folding>
+            <element signature="e#31436#31437#0" expanded="true" />
+            <element signature="e#31480#31481#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestingAlgo/VisualizeNaive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="88" column="63" lean-forward="false" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
+        <state relative-caret-position="172">
+          <caret line="409" column="27" lean-forward="false" selection-start-line="409" selection-start-column="27" selection-end-line="409" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="e#3956#3958#0" expanded="false" />
-            <element signature="e#6142#6186#0" expanded="false" />
-            <element signature="e#9909#9972#0" expanded="false" />
-            <element signature="e#10398#10453#0" expanded="false" />
-            <element signature="e#10860#10889#0" expanded="false" />
-            <element signature="e#12454#12536#0" expanded="false" />
-            <element signature="e#12773#12787#0" expanded="false" />
-            <element signature="e#13912#13920#0" expanded="false" />
-            <element signature="e#14356#14404#0" expanded="false" />
-            <element signature="e#15030#15059#0" expanded="false" />
-            <element signature="e#15452#15503#0" expanded="false" />
-            <element signature="e#16235#16291#0" expanded="false" />
-            <element signature="e#17962#18080#0" expanded="false" />
-            <element signature="e#18893#18990#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="e#1254#1304#0" expanded="false" />
+            <element signature="e#1912#1948#0" expanded="false" />
+            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
+            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
+            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
+            <element signature="e#3915#3917#0" expanded="false" />
+            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
+            <element signature="e#6101#6145#0" expanded="false" />
+            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
+            <element signature="e#9798#9861#0" expanded="false" />
+            <element signature="e#10247#10302#0" expanded="false" />
+            <element signature="e#10685#10714#0" expanded="false" />
+            <element signature="e#17678#17796#0" expanded="false" />
+            <element signature="e#18609#18706#0" expanded="false" />
             <element signature="method#serialize#0;class#Main#0" expanded="false" />
             <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#21332#21372#0" expanded="false" />
+            <element signature="e#21224#21264#0" expanded="false" />
+            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
             <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
             <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#23578#23611#0" expanded="false" />
-            <element signature="e#24204#24237#0" expanded="false" />
-            <element signature="e#24720#24785#0" expanded="false" />
-            <element signature="e#25404#25462#0" expanded="false" />
+            <element signature="e#23470#23503#0" expanded="false" />
+            <element signature="e#24096#24129#0" expanded="false" />
+            <element signature="e#24612#24677#0" expanded="false" />
+            <element signature="e#25296#25354#0" expanded="false" />
+            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
