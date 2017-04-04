@@ -67,9 +67,53 @@ public class Main {
 //        System.out.println("Entering object serializing: ");
 //        serialize(gridFile);
 
+        System.out.println();
 //        runNaiveTester(gridFile, events);
-        runNaiveTesterHJ(gridFile, events);
+//        runNaiveTesterHJ(gridFile, events);
+        runMovingCircleTesterHJ(gridFile, events);
 //        runMovingCircleTester(gridFile, events);
+    }
+
+    private static void runMovingCircleTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
+        int runtime = 100;
+        Visualize vis = new Visualize();
+        long start=System.currentTimeMillis();
+        finish(() -> {
+            forasync(0, runtime, (i) -> {
+                movingCircleTester(gridFile);
+
+            });
+        });
+        long end=System.currentTimeMillis();
+        Circle c1 = new Circle(minLon, minLat, 0.0001);
+        Circle c2 = new Circle(minLon, maxLat, 0.0001);
+        Circle c3 = new Circle(maxLon, maxLat, 0.0001);
+        Circle c4 = new Circle(maxLon, minLat, 0.0001);
+
+        core_circles.add(c1);
+        core_circles.add(c2);
+        core_circles.add(c3);
+        core_circles.add(c4);
+        vis.drawCircles(events, core_circles);
+        System.out.println("Complete");
+        Collections.sort(core_circles, Circle.sortByLHR());
+        Circle a = new Circle(core_circles.get(0));
+        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
+        CircleOps controller = new CircleOps(1, 2, area, gridFile);
+        int count = 1;
+        for (Circle c : core_circles) {
+
+            if (!controller.equals(a, c)) {
+                count++;
+                a = new Circle(c);
+            }
+
+            System.out.println(c.toString() + " LHR: " + c.lhr);
+
+        }
+        System.out.println("Amount of circles found : " + core_circles.size() + " " + count);
+        System.out.println("Time for Habanero implementation :"+(end-start));
+
     }
 
     private static void runNaiveTester(GridFile gridFile, ArrayList<Events> events) {
@@ -98,22 +142,20 @@ public class Main {
 
     private static void runMovingCircleTester(GridFile gridFile, ArrayList<Events> events) {
         System.out.println("Starting Moving Circle run");
-//
         int runtime = 100;
-//
-//
+
         Visualize vis = new Visualize();
+        long start=System.currentTimeMillis();
         for (int i = 0; i < runtime; i++) {
             movingCircleTester(gridFile);
-            if (i % 10 == 0) {
-                System.out.println("i : " + i);
-            }
+
         }
+        long end=System.currentTimeMillis();
         Circle c1 = new Circle(minLon, minLat, 0.0001);
         Circle c2 = new Circle(minLon, maxLat, 0.0001);
         Circle c3 = new Circle(maxLon, maxLat, 0.0001);
         Circle c4 = new Circle(maxLon, minLat, 0.0001);
-//
+
         core_circles.add(c1);
         core_circles.add(c2);
         core_circles.add(c3);
@@ -136,6 +178,7 @@ public class Main {
 
         }
         System.out.println("Amount of circles found : " + core_circles.size() + " " + count);
+        System.out.println("Time for naive moving circle implementation:"+(end-start));
     }
 
     private static void movingCircleTester(GridFile gridFile) {
@@ -194,7 +237,7 @@ public class Main {
                     moving_counter++;
                 }
                 while (circlecounter <= 1) {
-                    System.out.println("Circles done for  :" + moving_counter);
+//                    System.out.println("Circles done for  :" + moving_counter);
                     if (fin_circle != null) {
                         controller.removePoints(controller.scanCircle(fin_circle));
                         core_circles.add(fin_circle);
