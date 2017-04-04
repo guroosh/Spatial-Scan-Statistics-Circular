@@ -67,6 +67,7 @@ public class Main {
 //        System.out.println("Entering object serializing: ");
 //        serialize(gridFile);
 
+        System.out.println();
 //        runNaiveTester(gridFile, events);
 //        runNaiveTesterHJ(gridFile, events);
         runMovingCircleTesterHJ(gridFile, events);
@@ -268,45 +269,45 @@ public class Main {
 
         finish(() -> {
 //            for (int i = 0; i < number_of_radius; i++) {
-                forasync(0, number_of_radius-1, (i) -> {
-                    int finalI = i;
+            forasync(0, number_of_radius - 1, (i) -> {
+                int finalI = i;
 //                    async(() -> {
-                        final double[] curr_local_radius = new double[1];
-                        final Circle[] curr_local_circle = new Circle[1];
-                        isolated(() -> {
-                            curr_radius[0] = controller.increase_radius(curr_radius[0], growth_radius);
-                            curr_local_radius[0] = curr_radius[0] - initial_radius;
-                            curr_circle[0] = new Circle(minLon, minLat, curr_local_radius[0]);
-                            curr_local_circle[0] = curr_circle[0];
-                        });
+                final double[] curr_local_radius = new double[1];
+                final Circle[] curr_local_circle = new Circle[1];
+                isolated(() -> {
+                    curr_radius[0] = controller.increase_radius(curr_radius[0], growth_radius);
+                    curr_local_radius[0] = curr_radius[0] - initial_radius;
+                    curr_circle[0] = new Circle(minLon, minLat, curr_local_radius[0]);
+                    curr_local_circle[0] = curr_circle[0];
+                });
 //                    System.out.println(curr_local_radius[0]);
 //                    System.out.println(curr_local_circle[0].toString());
 //                    System.out.println();
-                        while (controller.term(curr_local_circle[0]) != -1) {
-                            while (controller.term(curr_local_circle[0]) == 0) {
-                                isolated(() -> {
-                                    count_naive_circles[0]++;
-                                });
+                while (controller.term(curr_local_circle[0]) != -1) {
+                    while (controller.term(curr_local_circle[0]) == 0) {
+                        isolated(() -> {
+                            count_naive_circles[0]++;
+                        });
 //                            System.out.print(finalI);
 //                            System.out.print(naive_counter + " : " + curr_circle.toString());
-                                ArrayList<Events> points = controller.scanCircle(curr_local_circle[0]);
-                                double likelihood_ratio = controller.likelihoodRatio(curr_local_circle[0], points);
-                                if (likelihood_ratio > likelihood_threshold) {            //(likelihood_ratio > 2000) {
-                                    //Starting for visualization
-                                    Circle temp_circle = new Circle(curr_local_circle[0].getX_coord(), curr_local_circle[0].getY_coord(), curr_local_circle[0].getRadius());
-                                    temp_circle.lhr = likelihood_ratio;
-                                    //Ending for visualization
-                                    isolated(() -> {
-                                        top_likelihood_circles.add(temp_circle);
-                                    });
-                                }
-                                curr_local_circle[0] = controller.grow_x(shift_radius, curr_local_circle[0]);           // TODO: 21-03-2017 change grow_x to shift_x (just the name)
-                            }
-                            curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
+                        ArrayList<Events> points = controller.scanCircle(curr_local_circle[0]);
+                        double likelihood_ratio = controller.likelihoodRatio(curr_local_circle[0], points);
+                        if (likelihood_ratio > likelihood_threshold) {            //(likelihood_ratio > 2000) {
+                            //Starting for visualization
+                            Circle temp_circle = new Circle(curr_local_circle[0].getX_coord(), curr_local_circle[0].getY_coord(), curr_local_circle[0].getRadius());
+                            temp_circle.lhr = likelihood_ratio;
+                            //Ending for visualization
+                            isolated(() -> {
+                                top_likelihood_circles.add(temp_circle);
+                            });
                         }
-                        System.out.println("DONE for radius: " + curr_local_radius[0]);
+                        curr_local_circle[0] = controller.grow_x(shift_radius, curr_local_circle[0]);           // TODO: 21-03-2017 change grow_x to shift_x (just the name)
+                    }
+                    curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
+                }
+                System.out.println("DONE for radius: " + curr_local_radius[0]);
 //                    });
-                });
+            });
 //            }
         });
         System.out.println("SIZE A: " + top_likelihood_circles.size() + " " + count_naive_circles[0]);
@@ -314,7 +315,6 @@ public class Main {
         System.out.println("SIZE B");
         naiveWithoutIntersectingCircles(top_likelihood_circles, count_naive_circles[0]);
     }
-
 
     private static void naiveTester(GridFile gridFile) {
         // TODO: 21-03-2017 what if we do a circle area to a threshold ratio kind of thing
@@ -450,22 +450,21 @@ public class Main {
         System.out.println("Total circles: " + count_naive_circles);
     }
 
-    private static boolean intersectingOnlyOne(Circle c2, Circle c1) {
+    private static boolean intersectingOnlyOne(Circle c1, Circle c2) {
         double x1 = c1.getX_coord(), x2 = c2.getX_coord(), y1 = c1.getY_coord(), y2 = c2.getY_coord();
         double dist = Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
         //if intersecting once return true, except if more than 50% of smaller circle is in larger circle
         //to remove exception divide larger radius by 2 in the first 2 ifs when comparing with distances
         if (c1.getRadius() > c2.getRadius() && dist < c1.getRadius() / 2) {
-
-            return false;
+            return true;           //returns if c1 overlapps c2
         }
         if (c1.getRadius() < c2.getRadius() && dist < c2.getRadius() / 2) {
-            return false;
+            return true;           //returns if c2 overlapps c1
         }
         if (dist > (c1.getRadius() + c2.getRadius())) {
-            return false;
+            return false;           //returns if c1 and c2 are seperate
         }
-        return true;
+        return true;                //returns if c1 and c2 are intersecting
     }
 
     private static void serialize(GridFile gridFile) {

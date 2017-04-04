@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f889fb64-4216-4aa7-afe3-5d0a9244e20e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawComponentNaive.class" afterPath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawComponentNaive.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawFrameNaive.class" afterPath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawFrameNaive.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/Main.class" afterPath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/VisualizeNaive.class" afterPath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/VisualizeNaive.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/Main.java" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/VisualizeNaive.java" afterPath="$PROJECT_DIR$/src/TestingAlgo/VisualizeNaive.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,54 +27,13 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="72" column="25" lean-forward="false" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+            <state relative-caret-position="479">
+              <caret line="69" column="27" lean-forward="false" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Main#0" expanded="false" />
-                <element signature="e#7784#7828#0" expanded="false" />
-                <element signature="e#11553#11616#0" expanded="false" />
-                <element signature="e#12042#12097#0" expanded="false" />
-                <element signature="e#12504#12533#0" expanded="false" />
-                <element signature="e#14098#14180#0" expanded="false" />
-                <element signature="e#14417#14431#0" expanded="false" />
-                <element signature="e#15556#15564#0" expanded="false" />
-                <element signature="e#16000#16048#0" expanded="false" />
-                <element signature="e#16674#16703#0" expanded="false" />
-                <element signature="e#17096#17147#0" expanded="false" />
-                <element signature="e#17879#17935#0" expanded="false" />
-                <element signature="e#19606#19724#0" expanded="false" />
-                <element signature="e#20537#20634#0" expanded="false" />
-                <element signature="method#serialize#0;class#Main#0" expanded="false" />
-                <element signature="method#checkData#0;class#Main#0" expanded="false" />
-                <element signature="e#22976#23016#0" expanded="false" />
-                <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-                <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-                <element signature="e#25222#25255#0" expanded="false" />
-                <element signature="e#25848#25881#0" expanded="false" />
-                <element signature="e#26364#26429#0" expanded="false" />
-                <element signature="e#27048#27106#0" expanded="false" />
+                <element signature="e#1254#1304#0" expanded="false" />
+                <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="habanero_java_lib_0_1_2.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/libraries/habanero_java_lib_0_1_2.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="misc.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -79,10 +43,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="8959">
               <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-              <folding>
-                <element signature="e#19934#19935#0" expanded="true" />
-                <element signature="e#19972#19973#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,13 +68,17 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="VisualizeNaive.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TestingAlgo/VisualizeNaive.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="850">
+              <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>g2.draw</find>
-      <find>package TestingAlgo;  import Algorithm_Ops.Circle; import Algorithm_Ops.CircleOps; import Algorithm_Ops.ScanGeometry; import Dataset.Bucket; import Dataset.Events; import Dataset.GridCell; import Dataset.GridFile; import edu.rice.hj.api.SuspendableException;  import java.io.*; import java.util.*;  import static edu.rice.hj.Module0.finish; import static edu.rice.hj.Module0.launchHabaneroApp; import static edu.rice.hj.Module1.async; import static edu.rice.hj.Module1.forasync; import static edu.rice.hj.Module2.isolated;  /**  * Created by Guroosh Chaudhary on 05-02-2017.  */ public class Main {     public static int naive_counter = 1;     public static int counter1 = 0;     public static double minLat = 360;     public static double minLon = 360;     public static double maxLat = -360;     public static double maxLon = -360;     public static double error_adjuster = 0.0000001;     public static int bucket_number = 0;     public static int bucket_size;     public static String splitAxis = &quot;horizontal&quot;;     public static ArrayList&lt;Circle&gt; core_circles = new ArrayList&lt;&gt;();      public static void main(String args[]) throws IOException, SuspendableException {         Scanner in = new Scanner(System.in);         String fileName = &quot;d.csv&quot;;//in.nextLine();         bucket_size = 100;  //        System.out.println(&quot;Enter file name: &quot;); //        while (true) { //            System.out.println(&quot;Enter the bucket size: &quot;); //            bucket_size = in.nextInt(); //            if (bucket_size &lt; 1) { //                System.out.println(&quot;Bucket number should be a natural number&quot;); //            } //            break; //        }          //data creation start         ArrayList&lt;Events&gt; events = readDataFile(fileName);          GridFile gridFile = new GridFile();         GridCell gridCell = new GridCell(gridFile, minLat, maxLat, minLon, maxLon);         gridCell = gridCell.getGridCell(gridFile);         gridFile.make(events, gridCell); //        printScaledData(gridFile);         //data creation end //        System.out.println(&quot;Total points with geo-encoding: &quot; + events.size()); //        System.out.println(&quot;Points without geo-encoding (lost data): &quot; + counter1); //        System.out.println(&quot;Longitude: from &quot; + minLon + &quot; to &quot; + maxLon); //        System.out.println(&quot;Latitude: from &quot; + minLat + &quot; to &quot; + maxLat); //        System.out.println(&quot;Entering checking procedure:&quot;); //        checkData(gridFile); //        System.out.println(); //        System.out.println(&quot;Entering object serializing: &quot;); //        serialize(gridFile);  //        runNaiveTester(gridFile, events); //        runNaiveTesterHJ(gridFile, events);         runMovingCircleTesterHJ(gridFile, events); //        runMovingCircleTester(gridFile, events);     }      private static void runMovingCircleTesterHJ(GridFile gridFile, ArrayList&lt;Events&gt; events) throws SuspendableException {         int runtime = 100;             Visualize vis = new Visualize();             finish(()-&gt;{             forasync (0,runtime,(i)-&gt;{                 movingCircleTester(gridFile);                              });             });             Circle c1 = new Circle(minLon, minLat, 0.0001);             Circle c2 = new Circle(minLon, maxLat, 0.0001);             Circle c3 = new Circle(maxLon, maxLat, 0.0001);             Circle c4 = new Circle(maxLon, minLat, 0.0001);              core_circles.add(c1);             core_circles.add(c2);             core_circles.add(c3);             core_circles.add(c4);             vis.drawCircles(events, core_circles);             System.out.println(&quot;Complete&quot;);             Collections.sort(core_circles, Circle.sortByLHR());             Circle a = new Circle(core_circles.get(0));             ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);             CircleOps controller = new CircleOps(1, 2, area, gridFile);             int count = 1;             for (Circle c : core_circles) {                  if (!controller.equals(a, c)) {                     count++;                     a = new Circle(c);                 }                  System.out.println(c.toString() + &quot; LHR: &quot; + c.lhr);              }             System.out.println(&quot;Amount of circles found : &quot; + core_circles.size() + &quot; &quot; + count);              }      private static void runNaiveTester(GridFile gridFile, ArrayList&lt;Events&gt; events) {         System.out.println(&quot;Entering circle scanning: &quot;);         System.out.println(&quot;Starting Naive run&quot;);         long startTime = System.currentTimeMillis();         naiveTester(gridFile);         long endTime = System.currentTimeMillis();         long totalTime = endTime - startTime;         System.out.println(&quot;Total time for naive with 1 thread: &quot; + totalTime);         afterNaive(events);     }      private static void runNaiveTesterHJ(GridFile gridFile, ArrayList&lt;Events&gt; events) throws SuspendableException {         System.out.println(&quot;Entering circle scanning: &quot;);         System.out.println(&quot;Starting Naive run with HABANERO&quot;);         long startTime = System.currentTimeMillis();         launchHabaneroApp(() -&gt; {             naiveTesterHJ(gridFile);         });         long endTime = System.currentTimeMillis();         long totalTime = endTime - startTime;         System.out.println(&quot;Total time for naive with HJ: &quot; + totalTime);         afterNaive(events);     }      private static void runMovingCircleTester(GridFile gridFile, ArrayList&lt;Events&gt; events) {         System.out.println(&quot;Starting Moving Circle run&quot;);         int runtime = 100;          Visualize vis = new Visualize();         for (int i = 0; i &lt; runtime; i++) {             movingCircleTester(gridFile);             if (i % 10 == 0) {                 System.out.println(&quot;i : &quot; + i);             }         }         Circle c1 = new Circle(minLon, minLat, 0.0001);         Circle c2 = new Circle(minLon, maxLat, 0.0001);         Circle c3 = new Circle(maxLon, maxLat, 0.0001);         Circle c4 = new Circle(maxLon, minLat, 0.0001);          core_circles.add(c1);         core_circles.add(c2);         core_circles.add(c3);         core_circles.add(c4);         vis.drawCircles(events, core_circles);         System.out.println(&quot;Complete&quot;);         Collections.sort(core_circles, Circle.sortByLHR());         Circle a = new Circle(core_circles.get(0));         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);         CircleOps controller = new CircleOps(1, 2, area, gridFile);         int count = 1;         for (Circle c : core_circles) {              if (!controller.equals(a, c)) {                 count++;                 a = new Circle(c);             }              System.out.println(c.toString() + &quot; LHR: &quot; + c.lhr);          }         System.out.println(&quot;Amount of circles found : &quot; + core_circles.size() + &quot; &quot; + count);     }      private static void movingCircleTester(GridFile gridFile) {         int moving_counter = 1;         int circlecounter = 100;         double curr_radius = 0.001;//1;          double term_radius = 0.2, growth = 0.005;          ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);           int count_limit = 1;         while (count_limit-- &gt; 0) {             Circle curr_circle = new Circle(&quot;Random&quot;, curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case) //            Circle curr_circle = new Circle(-81.2234, 39.7345, 0.001);   //-81.3773, 39.6293, .01)             Circle next_circle;             Circle temp_circle = new Circle();             temp_circle.setRadius(curr_circle.getRadius());             temp_circle.setX_coord(curr_circle.getX_coord());             temp_circle.setY_coord(curr_circle.getY_coord()); //            core_circles.add(temp_circle); //            System.out.println(&quot;Starting circle: &quot; + curr_circle.toString());              CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);              double maxlikeli = 1;             Circle fin_circle = null;             while (controller.term(curr_circle) != 3) {                 temp_circle = new Circle(curr_circle);                  next_circle = controller.checkanglepoints(curr_circle);                  ArrayList&lt;Events&gt; points = controller.scanCircle(curr_circle);                 ArrayList&lt;Events&gt; points1 = controller.scanCircle(next_circle);                  double curr_likeli = controller.likelihoodRatio(curr_circle, points);                 double next_likeli = controller.likelihoodRatio(next_circle, points1);                  if (curr_likeli &lt; next_likeli) {                     if (next_likeli &gt; maxlikeli) {                         maxlikeli = next_likeli;                         fin_circle = new Circle(next_circle);                     } //                    core_circles.add(temp_circle);                     curr_circle = new Circle(next_circle); //                    System.out.println(moving_counter + &quot;\t\t\tShifted circle: &quot; + curr_circle.toString() + &quot;\n\n&quot;);                     moving_counter++;                 } else {                     if (curr_likeli &gt; maxlikeli) {                         maxlikeli = curr_likeli;                         fin_circle = new Circle(curr_circle);                      }                     curr_circle = controller.grow_radius(growth, curr_circle);                     moving_counter++;                 }                 while (circlecounter &lt;= 1) {                     System.out.println(&quot;Circles done for  :&quot; + moving_counter);                     if (fin_circle != null) {                         controller.removePoints(controller.scanCircle(fin_circle));                         core_circles.add(fin_circle);                         fin_circle.lhr = maxlikeli;                     }                     return;                 }                 circlecounter--;             }         }     }      private static void naiveTesterHJ(GridFile gridFile) throws SuspendableException {         final double likelihood_threshold = 0;         final double[] curr_radius = {0.001};         final double initial_radius = curr_radius[0];         final double term_radius = 0.01;         final double shift_radius = 0.001;         final double growth_radius = 0.001;         int number_of_radius = 10;       //By formula: number  &lt;=  ((t-c)/g) + 1          ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);         final Circle[] curr_circle = new Circle[1];         CircleOps controller = new CircleOps(initial_radius, term_radius, area, gridFile); //        System.out.println(curr_circle.toString());          final long[] count_naive_circles = {0};         ArrayList&lt;Circle&gt; top_likelihood_circles = new ArrayList&lt;&gt;();          finish(() -&gt; { //            for (int i = 0; i &lt; number_of_radius; i++) {                 forasync(0, number_of_radius-1, (i) -&gt; {                     int finalI = i; //                    async(() -&gt; {                         final double[] curr_local_radius = new double[1];                         final Circle[] curr_local_circle = new Circle[1];                         isolated(() -&gt; {                             curr_radius[0] = controller.increase_radius(curr_radius[0], growth_radius);                             curr_local_radius[0] = curr_radius[0] - initial_radius;                             curr_circle[0] = new Circle(minLon, minLat, curr_local_radius[0]);                             curr_local_circle[0] = curr_circle[0];                         }); //                    System.out.println(curr_local_radius[0]); //                    System.out.println(curr_local_circle[0].toString()); //                    System.out.println();                         while (controller.term(curr_local_circle[0]) != -1) {                             while (controller.term(curr_local_circle[0]) == 0) {                                 isolated(() -&gt; {                                     count_naive_circles[0]++;                                 }); //                            System.out.print(finalI); //                            System.out.print(naive_counter + &quot; : &quot; + curr_circle.toString());                                 ArrayList&lt;Events&gt; points = controller.scanCircle(curr_local_circle[0]);                                 double likelihood_ratio = controller.likelihoodRatio(curr_local_circle[0], points);                                 if (likelihood_ratio &gt; likelihood_threshold) {            //(likelihood_ratio &gt; 2000) {                                     //Starting for visualization                                     Circle temp_circle = new Circle(curr_local_circle[0].getX_coord(), curr_local_circle[0].getY_coord(), curr_local_circle[0].getRadius());                                     temp_circle.lhr = likelihood_ratio;                                     //Ending for visualization                                     isolated(() -&gt; {                                         top_likelihood_circles.add(temp_circle);                                     });                                 }                                 curr_local_circle[0] = controller.grow_x(shift_radius, curr_local_circle[0]);           // TODO: 21-03-2017 change grow_x to shift_x (just the name)                             }                             curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else                         }                         System.out.println(&quot;DONE for radius: &quot; + curr_local_radius[0]); //                    });                 }); //            }         });         System.out.println(&quot;SIZE A: &quot; + top_likelihood_circles.size() + &quot; &quot; + count_naive_circles[0]);         Collections.sort(top_likelihood_circles, Circle.sortByLHR());         System.out.println(&quot;SIZE B&quot;);         naiveWithoutIntersectingCircles(top_likelihood_circles, count_naive_circles[0]);     }       private static void naiveTester(GridFile gridFile) {         // TODO: 21-03-2017 what if we do a circle area to a threshold ratio kind of thing         //TEST case 1:      (Slow case)         double likelihood_threshold = 0;         double curr_radius = 0.001;         double term_radius = 0.01;         double shift_radius = 0.001;         double growth_radius = 0.001;          //TEST case 2: //        double likelihood_threshold = 9000; //        double curr_radius = 0.005; //        double term_radius = 0.05; //        double shift_radius = 0.005; //        double growth_radius = .005;          //TEST case 3:  (Good case) //        double likelihood_threshold = 8000; //        double curr_radius = 0.005; //        double term_radius = 0.03; //        double shift_radius = 0.005; //        double growth_radius = .005;          //TEST case 4:      (NaN why? because no circles) //        double likelihood_threshold = 10000; //        double curr_radius = 0.005; //        double term_radius = 0.03; //        double shift_radius = 0.005; //        double growth_radius = .005;          //TEST case 5:          Very small circles, AWESOME visualisation //        double likelihood_threshold = 100; //        double curr_radius = 0.001; //        double term_radius = 0.01; //        double shift_radius = 0.001; //        double growth_radius = .001;          ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);         Circle curr_circle = new Circle(minLon, minLat, curr_radius);         //atomic //        CircleOps controller = new CircleOps(curr_radius,term_radius); //        curr_radius = curr_radius + growth;         CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile); //        System.out.println(curr_circle.toString());          long count_naive_circles = 0;         ArrayList&lt;Circle&gt; top_likelihood_circles = new ArrayList&lt;&gt;();          while (controller.term(curr_circle) != 3) {             // TODO: 21-03-2017 printing one loop less, why?             // TODO: 21-03-2017 ANS: because 0.1 is stored as 0.1000000000001 sometimes             while (controller.term(curr_circle) != -1) {                 while (controller.term(curr_circle) == 0) {                     count_naive_circles++;                     naive_counter++; //                System.out.print(naive_counter + &quot; : &quot; + curr_circle.toString());                     ArrayList&lt;Events&gt; points = controller.scanCircle(curr_circle);                     double likelihood_ratio = controller.likelihoodRatio(curr_circle, points);                     if (likelihood_ratio &gt; likelihood_threshold) {            //(likelihood_ratio &gt; 2000) {                         //Starting for visualization                         Circle temp_circle = new Circle();                         temp_circle.setRadius(curr_circle.getRadius());                         temp_circle.setX_coord(curr_circle.getX_coord());                         temp_circle.setY_coord(curr_circle.getY_coord());                         temp_circle.lhr = likelihood_ratio; //                        circles.add(temp_circle);                         //Ending for visualization                         top_likelihood_circles.add(temp_circle);                     }                     curr_circle = controller.grow_x(shift_radius, curr_circle);           // TODO: 21-03-2017 change grow_x to shift_x (just the name)                 }                 curr_circle = controller.shift(curr_circle, -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else             }             System.out.println(&quot;DONE for radius: &quot; + curr_radius);             curr_radius = controller.increase_radius(curr_radius, growth_radius);             curr_circle = new Circle(minLon, minLat, curr_radius);              // Code segment for showing top n circles of each radius //            Collections.sort(top_likelihood_circles, Circle.sortByLHR()); //            for (int i = 0; i &lt; 10; i++) { ////                System.out.println(c.lhr + &quot; ,   circle: &quot; + c.toString()); //                Circle c = top_likelihood_circles.get(i); //                controller.removePoints(controller.scanCircle(c)); //                core_circles.add(c); //            } //            top_likelihood_circles = new ArrayList&lt;&gt;();             //ending code segment         }          System.out.println(&quot;SIZE A: &quot; + top_likelihood_circles.size() + &quot; &quot; + count_naive_circles);         Collections.sort(top_likelihood_circles, Circle.sortByLHR());         System.out.println(&quot;SIZE B&quot;);         naiveWithoutIntersectingCircles(top_likelihood_circles, count_naive_circles);     }       private static void naiveWithoutIntersectingCircles(ArrayList&lt;Circle&gt; top_likelihood_circles, long count_naive_circles) {         int j = 0;         int intersecting_flg = 0; //        Circle prev_cl = new Circle();         int top_number_circles = 1000;         for (int i = 0; j &lt; top_number_circles; i++) {             if (i &gt;= top_likelihood_circles.size()) {                 break;             }             Circle cl = top_likelihood_circles.get(i);             if (i == 0) {                 System.out.println(cl.lhr + &quot; ,   circle: &quot; + cl.toString());                 core_circles.add(cl);                 j++;             }             for (Circle core_circle : core_circles) {                 if (intersectingOnlyOne(core_circle, cl)) {                     intersecting_flg++;                 }             }             if (intersecting_flg != 0) {                 // TODO: 25-03-2017 implement this if for including circles having good LHRatio and intersecting multiple core circles //                if (intersecting_flg != 1) { //                    System.out.println(cl.lhr + &quot; ,   circle: &quot; + cl.toString()); //                    core_circles.add(cl); //                    j++; //                }                 intersecting_flg = 0;             } else {                 System.out.println(cl.lhr + &quot; ,   circle: &quot; + cl.toString());                 core_circles.add(cl);                 j++;             } //            prev_cl = cl;         }         System.out.println(&quot;Total circles: &quot; + count_naive_circles);     }      private static boolean intersectingOnlyOne(Circle c2, Circle c1) {         double x1 = c1.getX_coord(), x2 = c2.getX_coord(), y1 = c1.getY_coord(), y2 = c2.getY_coord();         double dist = Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));         //if intersecting once return true, except if more than 50% of smaller circle is in larger circle         //to remove exception divide larger radius by 2 in the first 2 ifs when comparing with distances         if (c1.getRadius() &gt; c2.getRadius() &amp;&amp; dist &lt; c1.getRadius() / 2) {              return false;         }         if (c1.getRadius() &lt; c2.getRadius() &amp;&amp; dist &lt; c2.getRadius() / 2) {             return false;         }         if (dist &gt; (c1.getRadius() + c2.getRadius())) {             return false;         }         return true;     }      private static void serialize(GridFile gridFile) {          FileOutputStream fout = null;         ObjectOutputStream oos = null;          try {             fout = new FileOutputStream(&quot;gridFile.ser&quot;);             oos = new ObjectOutputStream(fout); //            oos.writeObject(gridFile);             oos.close();             fout.close();         } catch (Exception ex) {             ex.printStackTrace();         } finally {             if (fout != null) {                 try {                     fout.close();                 } catch (IOException e) {                     e.printStackTrace();                 }             }             if (oos != null) {                 try {                     oos.close();                 } catch (IOException e) {                     e.printStackTrace();                 }             }         }     }      private static void checkData(GridFile gridFile) {         //checking all values         int counter = 0;         System.out.println(&quot;Number of grids: &quot; + gridFile.gridCellObject.size());         System.out.println(&quot;Number of mappings:&quot; + gridFile.mapper.size());         System.out.println(&quot;Number of lat:&quot; + gridFile.latScale.size());         System.out.println(&quot;Number of lon:&quot; + gridFile.lonScale.size());         HashSet&lt;Bucket&gt; bucketSet = new HashSet&lt;&gt;();         HashSet&lt;Events&gt; eventSet = new HashSet&lt;&gt;();         for (HashMap.Entry&lt;String, GridCell&gt; gcO : gridFile.gridCellObject.entrySet()) {             Bucket b = gridFile.mapper.get(gcO.getValue());             for (Events e : b.eventsInBucket) {                 eventSet.add(e);             }             bucketSet.add(b);         }         for (Bucket b : bucketSet) {             counter += b.eventsInBucket.size();         }         System.out.println(&quot;Total points (check 1): &quot; + counter);         System.out.println(&quot;Total points (check 2): &quot; + eventSet.size()); //        Events subject = new Events(); //        int s_counter=0, loop_counter=0; //        for(Events e : test1) //        { //            loop_counter++; //            if(!eventSet.contains(e)) //            { //                s_counter++; //                subject = e; //                break; //            } //        } //        if(s_counter!=1) //        { //            System.out.println(&quot;Multiple subjects: WARNING!!!&quot;); //        } //        else //            System.out.println(loop_counter+&quot;SUBJECT: &quot;+subject.lat+&quot; &quot;+subject.lon); //        System.out.println();     }      private static void afterNaive(ArrayList&lt;Events&gt; events) {         VisualizeNaive vis = new VisualizeNaive();         Circle c1 = new Circle(minLon, minLat, 0.0001);         Circle c2 = new Circle(minLon, maxLat, 0.0001);         Circle c3 = new Circle(maxLon, maxLat, 0.0001);         Circle c4 = new Circle(maxLon, minLat, 0.0001);         core_circles.add(c1);         core_circles.add(c2);         core_circles.add(c3);         core_circles.add(c4);         vis.drawCircles(events, core_circles);     }      private static void printScaledData(GridFile gridFile) {         double lat, lon;         double minLat = 360;         double minLon = 360;         double maxLat = -360;         double maxLon = -360;         for (HashMap.Entry&lt;GridCell, Bucket&gt; entry : gridFile.mapper.entrySet()) {             Bucket b = entry.getValue();             for (Events e : b.eventsInBucket) {                 System.out.println(e.toString());                 lat = e.getLat();                 lon = e.getLon() * (111.320 / 110.574) * Math.cos(e.getLat());                 e.setLat(lat);                 e.setLon(lon);                 System.out.println(e.toString());                 // TODO: 03-03-2017 fix this                 if (lon &gt; maxLon) {                     maxLon = lon;                 } else if (lon &lt; minLon) {                     minLon = lon;                 }                 if (lat &gt; maxLat) {                     maxLat = lat;                 } else if (lat &lt; minLat) {                     minLat = lat;                 }             }         }     }      private static ArrayList&lt;Events&gt; readDataFile(String fileName) throws IOException { //        int latInCSV = 19;//13; //        int lonInCSV = 20;//12;         double lat, lon;         int latInCSV = 13;         int lonInCSV = 12;         String line;         String lines[];         ArrayList&lt;Events&gt; events = new ArrayList&lt;&gt;();         InputStream is = new FileInputStream(fileName);         InputStreamReader isr = new InputStreamReader(is);         BufferedReader br = new BufferedReader(isr);         boolean isHeader = true; //        int stopper = 0;          while ((line = br.readLine()) != null) {             if (isHeader) {                 isHeader = false;                 continue;             } //            if(stopper==100000) //            { //                break; //            } //            stopper++;             line = modifyLine(line);             lines = line.split(&quot;,&quot;);             try {                 double longitude, latitude;                 longitude = Double.parseDouble(lines[lonInCSV]);                 latitude = Double.parseDouble(lines[latInCSV]);                 Events position = new Events();                 position.setLat(latitude);                 position.setLon(longitude); //                System.out.print(position.toString()+&quot;      &quot;);                  //starting conversion from degrees to length                 lat = position.getLat();                 lon = position.getLon() * (111.320 / 110.574) * Math.cos(Math.toRadians(position.getLat()));                 if (lon &gt; maxLon) {                     maxLon = lon;                 } else if (lon &lt; minLon) {                     minLon = lon;                 }                 if (lat &gt; maxLat) {                     maxLat = lat;                 } else if (lat &lt; minLat) {                     minLat = lat;                 }                 position.setLat(lat);                 position.setLon(lon); //                System.out.println(position.toString());                 //ending conversion from degrees to length                  events.add(position);             } catch (ArrayIndexOutOfBoundsException e) {                 counter1++;             }         }         return events;     }      private static String modifyLine(String line) {         int counter = 0;         StringBuilder newString = new StringBuilder(line);         for (int i = 0; i &lt; line.length(); i++) {             char ch = line.charAt(i);             if (ch == '&quot;') {                 if (counter == 0)                     counter++;                 else                     counter--;             }             if (ch == ',') {                 if (counter == 1) {                     newString.setCharAt(i, '-');                 }             }         }          String ans = newString.toString(); //        ans = ans.replace(&quot;-&quot;,&quot;\&quot;\&quot;&quot;);         return ans;     }  }</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -126,11 +91,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/TestingAlgo/Visualize.java" />
-        <option value="$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/habanero_java_lib_0_1_2.xml" />
         <option value="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -194,7 +156,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestingAlgo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VisualizeNaive.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestingAlgo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -211,25 +213,16 @@
               <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/habanero-java-lib-0.1.2.jar!/" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RunManager" selected="Application.Unnamed">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -317,136 +310,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -461,15 +324,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="passParentEnv" value="true" />
-      <setting name="launchBrowser" value="true" />
-      <setting name="launchBrowserUrl" value="" />
-      <setting name="depsClasspath" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -514,15 +368,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -548,21 +393,12 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -593,41 +429,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
-      <method />
-    </configuration>
     <configuration default="false" name="Unnamed" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="TestingAlgo.Main" />
@@ -653,25 +454,16 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f889fb64-4216-4aa7-afe3-5d0a9244e20e" name="Default" comment="" />
-      <created>1491239627892</created>
+      <created>1491305544162</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1491239627892</updated>
-      <workItem from="1491257950167" duration="2505000" />
-      <workItem from="1491305075157" duration="220000" />
+      <updated>1491305544162</updated>
+      <workItem from="1491305549925" duration="10000" />
     </task>
-    <task id="LOCAL-00001" summary="Commit with working Habanero java">
-      <created>1491259738104</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1491259738104</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2725000" />
+    <option name="totallyTimeSpent" value="10000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -685,20 +477,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46617335" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.63722396" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24895833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47003156" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -724,12 +516,12 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47003156" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.62776023" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.63722396" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -743,11 +535,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commit with working Habanero java" />
-    <MESSAGE value="commiting before pull&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="commiting before pull&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -765,58 +552,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="e#7784#7828#0" expanded="false" />
-            <element signature="e#11553#11616#0" expanded="false" />
-            <element signature="e#12042#12097#0" expanded="false" />
-            <element signature="e#12504#12533#0" expanded="false" />
-            <element signature="e#14098#14180#0" expanded="false" />
-            <element signature="e#14417#14431#0" expanded="false" />
-            <element signature="e#15556#15564#0" expanded="false" />
-            <element signature="e#16000#16048#0" expanded="false" />
-            <element signature="e#16674#16703#0" expanded="false" />
-            <element signature="e#17096#17147#0" expanded="false" />
-            <element signature="e#17879#17935#0" expanded="false" />
-            <element signature="e#19606#19724#0" expanded="false" />
-            <element signature="e#20537#20634#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#22976#23016#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#25222#25255#0" expanded="false" />
-            <element signature="e#25848#25881#0" expanded="false" />
-            <element signature="e#26364#26429#0" expanded="false" />
-            <element signature="e#27048#27106#0" expanded="false" />
+            <element signature="e#1254#1304#0" expanded="false" />
+            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/habanero_java_lib_0_1_2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9027">
+        <state relative-caret-position="8959">
           <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-          <folding>
-            <element signature="e#19934#19935#0" expanded="true" />
-            <element signature="e#19972#19973#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -836,69 +583,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestingAlgo/VisualizeNaive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="e#7784#7828#0" expanded="false" />
-            <element signature="e#11553#11616#0" expanded="false" />
-            <element signature="e#12042#12097#0" expanded="false" />
-            <element signature="e#12504#12533#0" expanded="false" />
-            <element signature="e#14098#14180#0" expanded="false" />
-            <element signature="e#14417#14431#0" expanded="false" />
-            <element signature="e#15556#15564#0" expanded="false" />
-            <element signature="e#16000#16048#0" expanded="false" />
-            <element signature="e#16674#16703#0" expanded="false" />
-            <element signature="e#17096#17147#0" expanded="false" />
-            <element signature="e#17879#17935#0" expanded="false" />
-            <element signature="e#19606#19724#0" expanded="false" />
-            <element signature="e#20537#20634#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#22976#23016#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#25222#25255#0" expanded="false" />
-            <element signature="e#25848#25881#0" expanded="false" />
-            <element signature="e#26364#26429#0" expanded="false" />
-            <element signature="e#27048#27106#0" expanded="false" />
+            <element signature="e#1254#1304#0" expanded="false" />
+            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/habanero_java_lib_0_1_2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8976">
+        <state relative-caret-position="9027">
           <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-          <folding>
-            <element signature="e#19934#19935#0" expanded="true" />
-            <element signature="e#19972#19973#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/Circle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="459">
           <caret line="27" column="47" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="47" />
           <folding />
         </state>
@@ -906,7 +621,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Visualize.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2686">
+        <state relative-caret-position="2856">
           <caret line="168" column="32" lean-forward="false" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
           <folding />
         </state>
@@ -917,30 +632,9 @@
         <state relative-caret-position="3893">
           <caret line="229" column="46" lean-forward="false" selection-start-line="229" selection-start-column="46" selection-end-line="229" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="e#7784#7828#0" expanded="false" />
-            <element signature="e#11553#11616#0" expanded="false" />
-            <element signature="e#12042#12097#0" expanded="false" />
-            <element signature="e#12504#12533#0" expanded="false" />
-            <element signature="e#14098#14180#0" expanded="false" />
-            <element signature="e#14417#14431#0" expanded="false" />
-            <element signature="e#15556#15564#0" expanded="false" />
-            <element signature="e#16000#16048#0" expanded="false" />
-            <element signature="e#16674#16703#0" expanded="false" />
-            <element signature="e#17096#17147#0" expanded="false" />
-            <element signature="e#17879#17935#0" expanded="false" />
-            <element signature="e#19606#19724#0" expanded="false" />
-            <element signature="e#20537#20634#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#22976#23016#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#25222#25255#0" expanded="false" />
-            <element signature="e#25848#25881#0" expanded="false" />
-            <element signature="e#26364#26429#0" expanded="false" />
-            <element signature="e#27048#27106#0" expanded="false" />
+            <element signature="e#1254#1304#0" expanded="false" />
+            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -957,10 +651,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9027">
           <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-          <folding>
-            <element signature="e#19934#19935#0" expanded="true" />
-            <element signature="e#19972#19973#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -985,30 +676,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="e#7784#7828#0" expanded="false" />
-            <element signature="e#11553#11616#0" expanded="false" />
-            <element signature="e#12042#12097#0" expanded="false" />
-            <element signature="e#12504#12533#0" expanded="false" />
-            <element signature="e#14098#14180#0" expanded="false" />
-            <element signature="e#14417#14431#0" expanded="false" />
-            <element signature="e#15556#15564#0" expanded="false" />
-            <element signature="e#16000#16048#0" expanded="false" />
-            <element signature="e#16674#16703#0" expanded="false" />
-            <element signature="e#17096#17147#0" expanded="false" />
-            <element signature="e#17879#17935#0" expanded="false" />
-            <element signature="e#19606#19724#0" expanded="false" />
-            <element signature="e#20537#20634#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#22976#23016#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#25222#25255#0" expanded="false" />
-            <element signature="e#25848#25881#0" expanded="false" />
-            <element signature="e#26364#26429#0" expanded="false" />
-            <element signature="e#27048#27106#0" expanded="false" />
+            <element signature="e#1254#1304#0" expanded="false" />
+            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1017,10 +687,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9010">
           <caret line="530" column="18" lean-forward="false" selection-start-line="530" selection-start-column="18" selection-end-line="530" selection-end-column="18" />
-          <folding>
-            <element signature="e#19934#19935#0" expanded="true" />
-            <element signature="e#19972#19973#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,30 +712,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="e#7784#7828#0" expanded="false" />
-            <element signature="e#11553#11616#0" expanded="false" />
-            <element signature="e#12042#12097#0" expanded="false" />
-            <element signature="e#12504#12533#0" expanded="false" />
-            <element signature="e#14098#14180#0" expanded="false" />
-            <element signature="e#14417#14431#0" expanded="false" />
-            <element signature="e#15556#15564#0" expanded="false" />
-            <element signature="e#16000#16048#0" expanded="false" />
-            <element signature="e#16674#16703#0" expanded="false" />
-            <element signature="e#17096#17147#0" expanded="false" />
-            <element signature="e#17879#17935#0" expanded="false" />
-            <element signature="e#19606#19724#0" expanded="false" />
-            <element signature="e#20537#20634#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#22976#23016#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#25222#25255#0" expanded="false" />
-            <element signature="e#25848#25881#0" expanded="false" />
-            <element signature="e#26364#26429#0" expanded="false" />
-            <element signature="e#27048#27106#0" expanded="false" />
+            <element signature="e#1254#1304#0" expanded="false" />
+            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1086,30 +732,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="e#7784#7828#0" expanded="false" />
-            <element signature="e#11553#11616#0" expanded="false" />
-            <element signature="e#12042#12097#0" expanded="false" />
-            <element signature="e#12504#12533#0" expanded="false" />
-            <element signature="e#14098#14180#0" expanded="false" />
-            <element signature="e#14417#14431#0" expanded="false" />
-            <element signature="e#15556#15564#0" expanded="false" />
-            <element signature="e#16000#16048#0" expanded="false" />
-            <element signature="e#16674#16703#0" expanded="false" />
-            <element signature="e#17096#17147#0" expanded="false" />
-            <element signature="e#17879#17935#0" expanded="false" />
-            <element signature="e#19606#19724#0" expanded="false" />
-            <element signature="e#20537#20634#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#22976#23016#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#25222#25255#0" expanded="false" />
-            <element signature="e#25848#25881#0" expanded="false" />
-            <element signature="e#26364#26429#0" expanded="false" />
-            <element signature="e#27048#27106#0" expanded="false" />
+            <element signature="e#1254#1304#0" expanded="false" />
+            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1118,22 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2856">
           <caret line="168" column="32" lean-forward="true" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1241">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="353" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Visualize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2686">
-          <caret line="168" column="32" lean-forward="false" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1152,10 +761,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8959">
           <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-          <folding>
-            <element signature="e#19934#19935#0" expanded="true" />
-            <element signature="e#19972#19973#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,130 +777,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Visualize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2686">
+          <caret line="168" column="32" lean-forward="false" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/awt/Window.java" />
+    <entry file="file://$PROJECT_DIR$/src/TestingAlgo/VisualizeNaive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="72" column="25" lean-forward="false" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+        <state relative-caret-position="479">
+          <caret line="69" column="27" lean-forward="false" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="e#7784#7828#0" expanded="false" />
-            <element signature="e#11553#11616#0" expanded="false" />
-            <element signature="e#12042#12097#0" expanded="false" />
-            <element signature="e#12504#12533#0" expanded="false" />
-            <element signature="e#14098#14180#0" expanded="false" />
-            <element signature="e#14417#14431#0" expanded="false" />
-            <element signature="e#15556#15564#0" expanded="false" />
-            <element signature="e#16000#16048#0" expanded="false" />
-            <element signature="e#16674#16703#0" expanded="false" />
-            <element signature="e#17096#17147#0" expanded="false" />
-            <element signature="e#17879#17935#0" expanded="false" />
-            <element signature="e#19606#19724#0" expanded="false" />
-            <element signature="e#20537#20634#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#22976#23016#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#25222#25255#0" expanded="false" />
-            <element signature="e#25848#25881#0" expanded="false" />
-            <element signature="e#26364#26429#0" expanded="false" />
-            <element signature="e#27048#27106#0" expanded="false" />
+            <element signature="e#1254#1304#0" expanded="false" />
+            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>habanero-java-lib-0.1.2</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>btp_merged</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>habanero-java-lib-0.1.2</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="114" column="20038" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="114" selection-end-column="20038" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
