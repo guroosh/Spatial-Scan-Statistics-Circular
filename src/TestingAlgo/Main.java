@@ -11,11 +11,16 @@ import edu.rice.hj.api.SuspendableException;
 
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.RecursiveAction;
+import java.util.concurrent.locks.ReentrantLock;
+
 
 import static edu.rice.hj.Module0.finish;
 import static edu.rice.hj.Module0.launchHabaneroApp;
 import static edu.rice.hj.Module1.forasync;
 import static edu.rice.hj.Module2.isolated;
+import static java.util.concurrent.ForkJoinTask.invokeAll;
 
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
@@ -30,6 +35,7 @@ public class Main {
     public static double error_adjuster = 0.0000001;
     public static int bucket_number = 0;
     public static int bucket_size;
+    public static int arr[] = new int[100];
     public static String splitAxis = "horizontal";
     public static ArrayList<Circle> core_circles = new ArrayList<>();
 
@@ -67,26 +73,68 @@ public class Main {
 //        System.out.println("Entering object serializing: ");
 //        serialize(gridFile);
 
-        System.out.println();
+        System.out.println("Starting run");
 //        runNaiveTester(gridFile, events);
-        runMovingCircleTester(gridFile, events);
-        runMovingCircleTesterHJ(gridFile, events);
+//        runMovingCircleTester(gridFile, events);
+//        runMovingCircleTesterHJ(gridFile, events);
 //            runNaiveTesterHJ(gridFile, events);
+        runMovingCircleTesterJvFP(gridFile, events);
         System.out.println("Complete");
 
+    }
+
+    private static void runMovingCircleTesterJvFP(GridFile gridFile, ArrayList<Events> events) {
+        int runtime = 100;
+        Visualize vis = new Visualize();
+        long start = System.currentTimeMillis();
+        int threshold = runtime / Runtime.getRuntime().availableProcessors();
+        movingCirclejprunner rootTask = new movingCirclejprunner(0,runtime,gridFile, threshold);
+        ForkJoinPool pool = new ForkJoinPool();
+        pool.invoke(rootTask);
+
+
+        long end = System.currentTimeMillis();
+        Circle c1 = new Circle(minLon, minLat, 0.0001);
+        Circle c2 = new Circle(minLon, maxLat, 0.0001);
+        Circle c3 = new Circle(maxLon, maxLat, 0.0001);
+        Circle c4 = new Circle(maxLon, minLat, 0.0001);
+
+        core_circles.add(c1);
+        core_circles.add(c2);
+        core_circles.add(c3);
+        core_circles.add(c4);
+        vis.drawCircles(events, core_circles);
+        System.out.println("Complete");
+        Collections.sort(core_circles, Circle.sortByLHR());
+        Circle a = new Circle(core_circles.get(0));
+        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
+        CircleOps controller = new CircleOps(1, 2, area, gridFile);
+        int count = 1;
+//        for (Circle c : core_circles) {
+//
+//            if (!controller.equals(a, c)) {
+//                count++;
+//                a = new Circle(c);
+//            }
+//
+//            System.out.println(c.toString() + " LHR: " + c.lhr);
+//
+//        }
+        System.out.println("Amount of circles found : " + core_circles.size() + " " + count);
+        System.out.println("Time for Java fork join pool implementation :" + (end - start));
     }
 
     private static void runMovingCircleTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
         int runtime = 100;
         Visualize vis = new Visualize();
-        long start=System.currentTimeMillis();
+        long start = System.currentTimeMillis();
         finish(() -> {
             forasync(0, runtime, (i) -> {
                 movingCircleTester1(gridFile);
 
             });
         });
-        long end=System.currentTimeMillis();
+        long end = System.currentTimeMillis();
         Circle c1 = new Circle(minLon, minLat, 0.0001);
         Circle c2 = new Circle(minLon, maxLat, 0.0001);
         Circle c3 = new Circle(maxLon, maxLat, 0.0001);
@@ -114,7 +162,7 @@ public class Main {
 
         }
         System.out.println("Amount of circles found : " + core_circles.size() + " " + count);
-        System.out.println("Time for Habanero implementation :"+(end-start));
+        System.out.println("Time for Habanero implementation :" + (end - start));
 
     }
 
@@ -147,12 +195,12 @@ public class Main {
         int runtime = 100;
 
         Visualize vis = new Visualize();
-        long start=System.currentTimeMillis();
+        long start = System.currentTimeMillis();
         for (int i = 0; i < runtime; i++) {
             movingCircleTester(gridFile);
 
         }
-        long end=System.currentTimeMillis();
+        long end = System.currentTimeMillis();
         Circle c1 = new Circle(minLon, minLat, 0.0001);
         Circle c2 = new Circle(minLon, maxLat, 0.0001);
         Circle c3 = new Circle(maxLon, maxLat, 0.0001);
@@ -180,8 +228,9 @@ public class Main {
 
         }
         System.out.println("Amount of circles found : " + core_circles.size() + " " + count);
-        System.out.println("Time for naive moving circle implementation:"+(end-start));
+        System.out.println("Time for naive moving circle implementation:" + (end - start));
     }
+
     private static void movingCircleTester1(GridFile gridFile) {
         int moving_counter = 1;
         int circlecounter = 100;
@@ -238,10 +287,84 @@ public class Main {
 
                     if (fin_circle != null) {
                         Circle finalFin_circle = fin_circle;
-                        isolated(()->{
+                        isolated(() -> {
                             controller.removePoints(controller.scanCircle(finalFin_circle));
                             core_circles.add(finalFin_circle);
                         });
+                        fin_circle.lhr = maxlikeli;
+                    }
+                    return;
+                }
+                circlecounter--;
+            }
+        }
+    }
+private static void movingCircleTesterjvhp(GridFile gridFile) {
+        int moving_counter = 1;
+        int circlecounter = 100;
+        double curr_radius = 0.001;//1;
+
+        double term_radius = 0.2, growth = 0.005;
+
+        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
+
+
+        int count_limit = 1;
+        while (count_limit-- > 0) {
+            Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
+//            Circle curr_circle = new Circle(-81.2234, 39.7345, 0.001);   //-81.3773, 39.6293, .01)
+            Circle next_circle;
+            Circle temp_circle = new Circle();
+            temp_circle.setRadius(curr_circle.getRadius());
+            temp_circle.setX_coord(curr_circle.getX_coord());
+            temp_circle.setY_coord(curr_circle.getY_coord());
+            CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);
+
+            double maxlikeli = 1;
+            Circle fin_circle = null;
+            while (controller.term(curr_circle) != 3) {
+
+
+                next_circle = controller.checkanglepoints(curr_circle);
+
+                ArrayList<Events> points = controller.scanCircle(curr_circle);
+                ArrayList<Events> points1 = controller.scanCircle(next_circle);
+
+                double curr_likeli = controller.likelihoodRatio(curr_circle, points);
+                double next_likeli = controller.likelihoodRatio(next_circle, points1);
+
+                if (curr_likeli < next_likeli) {
+                    if (next_likeli > maxlikeli) {
+                        maxlikeli = next_likeli;
+                        fin_circle = new Circle(next_circle);
+                    }
+//                    core_circles.add(temp_circle);
+                    curr_circle = new Circle(next_circle);
+//                    System.out.println(moving_counter + "\t\t\tShifted circle: " + curr_circle.toString() + "\n\n");
+                    moving_counter++;
+                } else {
+                    if (curr_likeli > maxlikeli) {
+                        maxlikeli = curr_likeli;
+                        fin_circle = new Circle(curr_circle);
+
+                    }
+                    curr_circle = controller.grow_radius(growth, curr_circle);
+                    moving_counter++;
+                }
+                while (circlecounter <= 1) {
+
+                    if (fin_circle != null) {
+                        Circle finalFin_circle = fin_circle;
+                        final ReentrantLock rl = new ReentrantLock();
+                        rl.lock();
+                        try {
+                            controller.removePoints(controller.scanCircle(finalFin_circle));
+                            core_circles.add(finalFin_circle);
+                        }
+                        finally
+                        {
+                            rl.unlock();
+                        }
                         fin_circle.lhr = maxlikeli;
                     }
                     return;
@@ -737,4 +860,52 @@ public class Main {
         return ans;
     }
 
-}
+    private static class movingCirclejprunner extends RecursiveAction {
+        private GridFile gridFile;
+        private int runtime;
+        private int start;
+        private int end;
+
+        public movingCirclejprunner(int start,int end,GridFile gridFile, int runtime) {
+            this.gridFile = gridFile;
+            this.runtime = runtime;
+            this.start=start;
+            this.end=end;
+        }
+        public void run1(int runtime){
+            for (int i = 0; i < runtime; i++) {
+              movingCircleTesterjvhp(gridFile);
+            }
+        }
+
+        @Override
+        protected void compute() {
+            System.out.println("Start : "+start+" End : "+end+" Runtime : "+runtime);
+            if (end-start<=runtime){
+                run1(runtime);
+                return;
+            }
+            int mid=start+(end-start)/2;
+            invokeAll(
+                    new movingCirclejprunner(start,mid ,gridFile, runtime),
+                    new movingCirclejprunner(mid, end,gridFile, runtime)
+
+            );
+
+            }
+//            for (int i = 0; i < runtime; i++) {
+//                movingCircleTester(gridFile);
+//            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
