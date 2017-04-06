@@ -8,6 +8,7 @@ import Dataset.Events;
 import Dataset.GridCell;
 import Dataset.GridFile;
 import edu.rice.hj.api.SuspendableException;
+import jdk.nashorn.internal.runtime.Context;
 
 import java.io.*;
 import java.util.*;
@@ -15,12 +16,10 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.locks.ReentrantLock;
 
-
 import static edu.rice.hj.Module0.finish;
 import static edu.rice.hj.Module0.launchHabaneroApp;
 import static edu.rice.hj.Module1.forasync;
 import static edu.rice.hj.Module2.isolated;
-import static java.util.concurrent.ForkJoinTask.invokeAll;
 
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
@@ -38,6 +37,9 @@ public class Main {
     public static int arr[] = new int[100];
     public static String splitAxis = "horizontal";
     public static ArrayList<Circle> core_circles = new ArrayList<>();
+    public static Long count_naive_circles_for_fork_join = 0L;
+//    public static ArrayList<Circle> top_likelihood_circles_for_fork_join = new ArrayList<>();
+    public static final List<Circle> top_likelihood_circles_for_fork_join = Collections.synchronizedList(new ArrayList<Circle>());
 
     public static void main(String args[]) throws IOException, SuspendableException {
         Scanner in = new Scanner(System.in);
@@ -75,12 +77,36 @@ public class Main {
 
         System.out.println("Starting run");
 //        runNaiveTester(gridFile, events);
+//        runNaiveTesterHJ(gridFile, events);
+        runNaiveTesterJvFP(gridFile, events);
+        // TODO: 4/6/2017 remove Collections sort and naive without function amd move it after naive
 //        runMovingCircleTester(gridFile, events);
 //        runMovingCircleTesterHJ(gridFile, events);
-//            runNaiveTesterHJ(gridFile, events);
-        runMovingCircleTesterJvFP(gridFile, events);
+//        runMovingCircleTesterJvFP(gridFile, events);
         System.out.println("Complete");
 
+    }
+
+    private static void runNaiveTesterJvFP(GridFile gridFile, ArrayList<Events> events) {
+        System.out.println("Entering circle scanning: ");
+        System.out.println("Starting Naive run with Fork Join");
+        long startTime = System.currentTimeMillis();
+        int runtime = 10;
+        int threshold = runtime / Runtime.getRuntime().availableProcessors();
+
+        naivejprunner rootTask = new naivejprunner(0, runtime, gridFile, threshold);
+        ForkJoinPool pool = new ForkJoinPool();
+        pool.invoke(rootTask);
+
+        System.out.println("SIZE A: " + top_likelihood_circles_for_fork_join.size() + " " + count_naive_circles_for_fork_join);
+        Collections.sort(top_likelihood_circles_for_fork_join, Circle.sortByLHR());
+        System.out.println("SIZE B");
+        naiveWithoutIntersectingCircles(top_likelihood_circles_for_fork_join, count_naive_circles_for_fork_join);
+
+        long endTime = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println("Total time for naive with HJ: " + totalTime);
+        afterNaive(events);
     }
 
     private static void runMovingCircleTesterJvFP(GridFile gridFile, ArrayList<Events> events) {
@@ -88,7 +114,7 @@ public class Main {
         Visualize vis = new Visualize();
         long start = System.currentTimeMillis();
         int threshold = runtime / Runtime.getRuntime().availableProcessors();
-        movingCirclejprunner rootTask = new movingCirclejprunner(0,runtime,gridFile, threshold);
+        movingCirclejprunner rootTask = new movingCirclejprunner(0, runtime, gridFile, threshold);
         ForkJoinPool pool = new ForkJoinPool();
         pool.invoke(rootTask);
 
@@ -110,16 +136,16 @@ public class Main {
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         CircleOps controller = new CircleOps(1, 2, area, gridFile);
         int count = 1;
-//        for (Circle c : core_circles) {
-//
-//            if (!controller.equals(a, c)) {
-//                count++;
-//                a = new Circle(c);
-//            }
-//
-//            System.out.println(c.toString() + " LHR: " + c.lhr);
-//
-//        }
+        for (Circle c : core_circles) {
+
+            if (!controller.equals(a, c)) {
+                count++;
+                a = new Circle(c);
+            }
+
+            System.out.println(c.toString() + " LHR: " + c.lhr);
+
+        }
         System.out.println("Amount of circles found : " + core_circles.size() + " " + count);
         System.out.println("Time for Java fork join pool implementation :" + (end - start));
     }
@@ -299,7 +325,8 @@ public class Main {
             }
         }
     }
-private static void movingCircleTesterjvhp(GridFile gridFile) {
+
+    private static void movingCircleTesterjvhp(GridFile gridFile) {
         int moving_counter = 1;
         int circlecounter = 100;
         double curr_radius = 0.001;//1;
@@ -360,9 +387,7 @@ private static void movingCircleTesterjvhp(GridFile gridFile) {
                         try {
                             controller.removePoints(controller.scanCircle(finalFin_circle));
                             core_circles.add(finalFin_circle);
-                        }
-                        finally
-                        {
+                        } finally {
                             rl.unlock();
                         }
                         fin_circle.lhr = maxlikeli;
@@ -462,16 +487,11 @@ private static void movingCircleTesterjvhp(GridFile gridFile) {
         finish(() -> {
 //            for (int i = 0; i < number_of_radius; i++) {
             forasync(0, number_of_radius - 1, (i) -> {
-                int finalI = i;
 //                    async(() -> {
-                final double[] curr_local_radius = new double[1];
-                final Circle[] curr_local_circle = new Circle[1];
-                isolated(() -> {
-                    curr_radius[0] = controller.increase_radius(curr_radius[0], growth_radius);
-                    curr_local_radius[0] = curr_radius[0] - initial_radius;
-                    curr_circle[0] = new Circle(minLon, minLat, curr_local_radius[0]);
-                    curr_local_circle[0] = curr_circle[0];
-                });
+
+                final double[] curr_local_radius = {initial_radius + (growth_radius * i)};
+                final Circle[] curr_local_circle = {new Circle(minLon, minLat, curr_local_radius[0])};
+
 //                    System.out.println(curr_local_radius[0]);
 //                    System.out.println(curr_local_circle[0].toString());
 //                    System.out.println();
@@ -506,6 +526,70 @@ private static void movingCircleTesterjvhp(GridFile gridFile) {
         Collections.sort(top_likelihood_circles, Circle.sortByLHR());
         System.out.println("SIZE B");
         naiveWithoutIntersectingCircles(top_likelihood_circles, count_naive_circles[0]);
+    }
+
+    private static void naiveTesterJVfp(GridFile gridFile, int start, int end) {
+        final double likelihood_threshold = 0;
+        final double[] curr_radius = {0.001};
+        final double initial_radius = curr_radius[0];
+        final double term_radius = 0.01;
+        final double shift_radius = 0.001;
+        final double growth_radius = 0.001;
+
+
+        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
+        CircleOps controller = new CircleOps(initial_radius, term_radius, area, gridFile);
+//        System.out.println(curr_circle.toString());
+
+
+
+
+        for (int i = start; i < end; i++) {
+
+
+            final double[] curr_local_radius = {initial_radius + (growth_radius * i)};
+            final Circle[] curr_local_circle = {new Circle(minLon, minLat, curr_local_radius[0])};
+
+            while (controller.term(curr_local_circle[0]) != -1) {
+                while (controller.term(curr_local_circle[0]) == 0) {
+//                    final ReentrantLock rl = new ReentrantLock();
+//                    rl.lock();
+//                    try {
+//                        count_naive_circles_for_fork_join++;
+//                    } finally {
+//                        rl.unlock();
+//                    }
+
+                    synchronized(Main.class) {
+                        count_naive_circles_for_fork_join++;
+                    }
+//                            System.out.print(finalI);
+//                            System.out.print(naive_counter + " : " + curr_circle.toString());
+                    ArrayList<Events> points = controller.scanCircle(curr_local_circle[0]);
+                    double likelihood_ratio = controller.likelihoodRatio(curr_local_circle[0], points);
+                    if (likelihood_ratio > likelihood_threshold) {            //(likelihood_ratio > 2000) {
+                        //Starting for visualization
+                        Circle temp_circle = new Circle(curr_local_circle[0].getX_coord(), curr_local_circle[0].getY_coord(), curr_local_circle[0].getRadius());
+                        temp_circle.lhr = likelihood_ratio;
+                        //Ending for visualization
+//                        final ReentrantLock r2 = new ReentrantLock();
+//                        r2.lock();
+//                        try {
+//
+//                            top_likelihood_circles_for_fork_join.add(temp_circle);
+//                        } finally {
+//                            r2.unlock();
+//                        }
+                        synchronized (top_likelihood_circles_for_fork_join) {
+                            top_likelihood_circles_for_fork_join.add(temp_circle);
+                        }
+                    }
+                    curr_local_circle[0] = controller.grow_x(shift_radius, curr_local_circle[0]);           // TODO: 21-03-2017 change grow_x to shift_x (just the name)
+                }
+                curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
+            }
+            System.out.println("DONE for radius: " + curr_local_radius[0]);
+        }
     }
 
     private static void naiveTester(GridFile gridFile) {
@@ -604,7 +688,7 @@ private static void movingCircleTesterjvhp(GridFile gridFile) {
     }
 
 
-    private static void naiveWithoutIntersectingCircles(ArrayList<Circle> top_likelihood_circles, long count_naive_circles) {
+    private static void naiveWithoutIntersectingCircles(List<Circle> top_likelihood_circles, long count_naive_circles) {
         int j = 0;
         int intersecting_flg = 0;
 //        Circle prev_cl = new Circle();
@@ -860,44 +944,82 @@ private static void movingCircleTesterjvhp(GridFile gridFile) {
         return ans;
     }
 
+    public Main getContext() {
+        return this;
+    }
+
     private static class movingCirclejprunner extends RecursiveAction {
         private GridFile gridFile;
         private int runtime;
         private int start;
         private int end;
 
-        public movingCirclejprunner(int start,int end,GridFile gridFile, int runtime) {
+        public movingCirclejprunner(int start, int end, GridFile gridFile, int runtime) {
             this.gridFile = gridFile;
             this.runtime = runtime;
-            this.start=start;
-            this.end=end;
+            this.start = start;
+            this.end = end;
         }
-        public void run1(int runtime){
+
+        public void run1(int runtime) {
             for (int i = 0; i < runtime; i++) {
-              movingCircleTesterjvhp(gridFile);
+                movingCircleTesterjvhp(gridFile);
             }
         }
 
         @Override
         protected void compute() {
-            System.out.println("Start : "+start+" End : "+end+" Runtime : "+runtime);
-            if (end-start<=runtime){
+//            System.out.println("Start : "+start+" End : "+end+" Runtime : "+runtime);
+            if (end - start <= runtime) {
                 run1(runtime);
                 return;
             }
-            int mid=start+(end-start)/2;
+            int mid = start + (end - start) / 2;
             invokeAll(
-                    new movingCirclejprunner(start,mid ,gridFile, runtime),
-                    new movingCirclejprunner(mid, end,gridFile, runtime)
+                    new movingCirclejprunner(start, mid, gridFile, runtime),
+                    new movingCirclejprunner(mid, end, gridFile, runtime)
 
             );
 
-            }
-//            for (int i = 0; i < runtime; i++) {
-//                movingCircleTester(gridFile);
-//            }
         }
+
     }
+
+    private static class naivejprunner extends RecursiveAction {
+        private GridFile gridFile;
+        private int runtime;
+        private int start;
+        private int end;
+
+        public naivejprunner(int start, int end, GridFile gridFile, int runtime) {
+            this.gridFile = gridFile;
+            this.runtime = runtime;
+            this.start = start;
+            this.end = end;
+        }
+
+        public void run1(int start, int end, int runtime) {
+            naiveTesterJVfp(gridFile, start, end);
+        }
+
+        @Override
+        protected void compute() {
+//            System.out.println("Start : "+start+" End : "+end+" Runtime : "+runtime);
+            if (end - start <= runtime) {
+                run1(start, end, runtime);
+                return;
+            }
+            int mid = start + (end - start) / 2;
+            invokeAll(
+                    new naivejprunner(start, mid, gridFile, runtime),
+                    new naivejprunner(mid, end, gridFile, runtime)
+
+            );
+
+        }
+
+    }
+}
 
 
 
