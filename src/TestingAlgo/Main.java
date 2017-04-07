@@ -38,7 +38,7 @@ public class Main {
     public static String splitAxis = "horizontal";
     public static ArrayList<Circle> core_circles = new ArrayList<>();
     public static Long count_naive_circles_for_fork_join = 0L;
-//    public static ArrayList<Circle> top_likelihood_circles_for_fork_join = new ArrayList<>();
+    //    public static ArrayList<Circle> top_likelihood_circles_for_fork_join = new ArrayList<>();
     public static final List<Circle> top_likelihood_circles_for_fork_join = Collections.synchronizedList(new ArrayList<Circle>());
 
     public static void main(String args[]) throws IOException, SuspendableException {
@@ -78,11 +78,11 @@ public class Main {
         System.out.println("Starting run");
 //        runNaiveTester(gridFile, events);
 //        runNaiveTesterHJ(gridFile, events);
-        runNaiveTesterJvFP(gridFile, events);
+//        runNaiveTesterJvFP(gridFile, events);
         // TODO: 4/6/2017 remove Collections sort and naive without function amd move it after naive
 //        runMovingCircleTester(gridFile, events);
 //        runMovingCircleTesterHJ(gridFile, events);
-//        runMovingCircleTesterJvFP(gridFile, events);
+        runMovingCircleTesterJvFP(gridFile, events);
         System.out.println("Complete");
 
     }
@@ -314,7 +314,8 @@ public class Main {
                     if (fin_circle != null) {
                         Circle finalFin_circle = fin_circle;
                         isolated(() -> {
-                            controller.removePoints(controller.scanCircle(finalFin_circle));
+                        controller.removePoints(controller.scanCircle(finalFin_circle));
+
                             core_circles.add(finalFin_circle);
                         });
                         fin_circle.lhr = maxlikeli;
@@ -390,6 +391,11 @@ public class Main {
                         } finally {
                             rl.unlock();
                         }
+
+
+//                        synchronized (core_circles) {
+//                            core_circles.add(finalFin_circle);
+//                        }
                         fin_circle.lhr = maxlikeli;
                     }
                     return;
@@ -542,8 +548,6 @@ public class Main {
 //        System.out.println(curr_circle.toString());
 
 
-
-
         for (int i = start; i < end; i++) {
 
 
@@ -560,7 +564,7 @@ public class Main {
 //                        rl.unlock();
 //                    }
 
-                    synchronized(Main.class) {
+                    synchronized (Main.class) {
                         count_naive_circles_for_fork_join++;
                     }
 //                            System.out.print(finalI);
