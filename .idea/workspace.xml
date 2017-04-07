@@ -2,14 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f889fb64-4216-4aa7-afe3-5d0a9244e20e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/btp_merged/Algorithm_Ops/Circle.class" afterPath="$PROJECT_DIR$/out/production/btp_merged/Algorithm_Ops/Circle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawComponent.class" afterPath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawComponent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawComponentNaive.class" afterPath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawComponentNaive.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/Main.class" afterPath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/Visualize.class" afterPath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/Visualize.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/VisualizeNaive.class" afterPath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/VisualizeNaive.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/btp_merged/habanero-java-lib-0.1.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/btp_merged/jomp1.0b.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Algorithm_Ops/Circle.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Algorithm_Ops/Range.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Algorithm_Ops/ScanGeometry.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dataset/Bucket.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dataset/Events.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dataset/GridCell.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dataset/GridFile.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dataset/Replace.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dataset/SortedLinkedList.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JOMP/movingCircleJOMP$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JOMP/movingCircleJOMP$__omp_Class0.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JOMP/movingCircleJOMP.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JOMP/naiveJOMP$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JOMP/naiveJOMP$__omp_Class0.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JOMP/naiveJOMP.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TestingAlgo/DrawComponent.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TestingAlgo/DrawComponentNaive.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TestingAlgo/DrawFrame.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TestingAlgo/DrawFrameNaive.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main$movingCirclejprunner.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main$naivejprunner.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TestingAlgo/Visualize.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TestingAlgo/VisualizeNaive.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/habanero-java-lib-0.1.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jomp1.0b.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/Main.jomp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/btp_merged/d.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readme" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JOMP/movingCircleJOMP.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JOMP/movingCircleJOMP.jomp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JOMP/naiveJOMP.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JOMP/naiveJOMP.jomp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main.jomp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/d.csv" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/Algorithm_Ops/Circle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/Algorithm_Ops/CircleOps.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/Algorithm_Ops/Range.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/Algorithm_Ops/ScanGeometry.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/Dataset/Bucket.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/Dataset/DataSet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/Dataset/Events.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/Dataset/GridCell.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/Dataset/GridFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/Dataset/Replace.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/Dataset/SortedLinkedList.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawComponent.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawComponentNaive.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/DrawFrameNaive.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/Visualize.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/btp_merged/TestingAlgo/VisualizeNaive.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/btp_merged.iml" afterPath="$PROJECT_DIR$/btp_merged.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java" afterPath="$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/Main.java" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,70 +79,47 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="598" column="55" lean-forward="false" selection-start-line="598" selection-start-column="55" selection-end-line="598" selection-end-column="55" />
+            <state relative-caret-position="240">
+              <caret line="721" column="66" lean-forward="false" selection-start-line="721" selection-start-column="66" selection-end-line="721" selection-end-column="66" />
               <folding>
-                <element signature="docComment;class#Main#0" expanded="false" />
-                <element signature="method#main#0;class#Main#0" expanded="false" />
-                <element signature="e#1773#1823#0" expanded="false" />
-                <element signature="e#2431#2467#0" expanded="false" />
-                <element signature="e#3081#3124#0" expanded="false" />
-                <element signature="method#runNaiveTesterJvFP#0;class#Main#0" expanded="false" />
-                <element signature="method#runMovingCircleTesterJvFP#0;class#Main#0" expanded="false" />
-                <element signature="method#runMovingCircleTesterHJ#0;class#Main#0" expanded="false" />
-                <element signature="e#6549#6672#0" expanded="false" />
-                <element signature="e#6590#6660#0" expanded="false" />
-                <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
-                <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
-                <element signature="e#8662#8716#0" expanded="false" />
-                <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
-                <element signature="method#movingCircleTester1#0;class#Main#0" expanded="false" />
-                <element signature="e#13042#13228#0" expanded="false" />
-                <element signature="method#movingCircleTesterjvhp#0;class#Main#0" expanded="false" />
-                <element signature="e#16343#16398#0" expanded="false" />
-                <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
-                <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
-                <element signature="e#20321#22672#0" expanded="false" />
-                <element signature="e#20434#22644#0" expanded="false" />
-                <element signature="e#20675#20738#0" expanded="false" />
-                <element signature="e#21034#21121#0" expanded="false" />
-                <element signature="e#21124#21179#0" expanded="false" />
-                <element signature="e#21562#21591#0" expanded="false" />
-                <element signature="e#21970#22080#0" expanded="false" />
-                <element signature="method#naiveTesterJVfp#0;class#Main#0" expanded="false" />
-                <element signature="e#23933#24000#0" expanded="false" />
-                <element signature="e#24354#24409#0" expanded="false" />
-                <element signature="e#24780#24809#0" expanded="false" />
-                <element signature="e#25108#25134#0" expanded="false" />
-                <element signature="e#26240#26322#0" expanded="false" />
-                <element signature="e#26559#26573#0" expanded="false" />
-                <element signature="e#27698#27706#0" expanded="false" />
-                <element signature="e#28142#28190#0" expanded="false" />
-                <element signature="e#28816#28845#0" expanded="false" />
-                <element signature="e#29238#29289#0" expanded="false" />
-                <element signature="e#30021#30077#0" expanded="false" />
-                <element signature="method#naiveWithoutIntersectingCircles#0;class#Main#0" expanded="false" />
-                <element signature="e#31743#31861#0" expanded="false" />
-                <element signature="method#intersectingOnlyOne#0;class#Main#0" expanded="false" />
-                <element signature="e#32674#32771#0" expanded="false" />
-                <element signature="method#serialize#0;class#Main#0" expanded="false" />
-                <element signature="method#checkData#0;class#Main#0" expanded="false" />
-                <element signature="e#35289#35329#0" expanded="false" />
-                <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
-                <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-                <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-                <element signature="e#37535#37568#0" expanded="false" />
-                <element signature="e#38161#38194#0" expanded="false" />
-                <element signature="e#38677#38742#0" expanded="false" />
-                <element signature="e#39361#39419#0" expanded="false" />
-                <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
-                <element signature="class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-                <element signature="method#movingCirclejprunner#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-                <element signature="method#run1#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-                <element signature="method#compute#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-                <element signature="class#naivejprunner#0;class#Main#0" expanded="false" />
-                <element signature="method#naivejprunner#0;class#naivejprunner#0;class#Main#0" expanded="false" />
-                <element signature="method#compute#0;class#naivejprunner#0;class#Main#0" expanded="false" />
+                <marker date="1491595844189" expanded="false" signature="28089:30007" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="28188:28339" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="28614:28696" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="28942:29306" ph="//..." />
+                <marker date="1491595844189" expanded="true" signature="30064:34699" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="30074:30196" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="30393:31374" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="31532:31659" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="31976:32112" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="32650:32732" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="33072:33174" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="33855:34388" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="34821:36240" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="35577:35917" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="36311:37230" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="36508:36710" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="37285:38083" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="38138:39710" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="39123:39704" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="39773:40222" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="40283:41279" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="41367:43489" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="41369:41436" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="41995:42110" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="42511:42638" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="43195:43312" ph="//..." />
+                <marker date="1491595844189" expanded="false" signature="43541:44141" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="44171:44182" ph=" { " />
+                <marker date="1491595844189" expanded="false" signature="44194:44200" ph=" }" />
+                <marker date="1491595844189" expanded="false" signature="44272:45297" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="44479:44624" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="44664:44787" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="44840:45290" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="45362:46337" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="45562:45707" ph="{...}" />
+                <marker date="1491595844189" expanded="false" signature="45766:45781" ph=" { " />
+                <marker date="1491595844189" expanded="false" signature="45819:45829" ph=" }" />
+                <marker date="1491595844189" expanded="false" signature="45882:46330" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -102,8 +129,23 @@
         <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="10540">
-              <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-              <folding />
+              <caret line="542" column="23" lean-forward="false" selection-start-line="542" selection-start-column="23" selection-end-line="542" selection-end-column="23" />
+              <folding>
+                <marker date="1491595753821" expanded="true" signature="7372:9083" ph="{...}" />
+                <marker date="1491595753821" expanded="true" signature="9140:10820" ph="{...}" />
+                <marker date="1491595753821" expanded="true" signature="10870:11010" ph="{...}" />
+                <marker date="1491595753821" expanded="true" signature="11082:11790" ph="{...}" />
+                <marker date="1491595753821" expanded="true" signature="11863:12550" ph="{...}" />
+                <marker date="1491595753821" expanded="true" signature="12607:12687" ph="{...}" />
+                <marker date="1491595753821" expanded="true" signature="12768:14940" ph="{...}" />
+                <marker date="1491595753821" expanded="true" signature="14618:14763" ph="//..." />
+                <marker date="1491595753821" expanded="true" signature="15072:16501" ph="{...}" />
+                <marker date="1491595753821" expanded="true" signature="16558:19645" ph="{...}" />
+                <marker date="1491595753821" expanded="true" signature="16938:17201" ph="//..." />
+                <marker date="1491595753821" expanded="true" signature="18926:19162" ph="//..." />
+                <marker date="1491595753821" expanded="true" signature="19470:19615" ph="//..." />
+                <marker date="1491595753821" expanded="true" signature="19735:20314" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -222,6 +264,20 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="TestingAlgo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -248,10 +304,6 @@
               <option name="myItemId" value="TestingAlgo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Visualize.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -270,19 +322,9 @@
               <option name="myItemId" value="TestingAlgo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="btp_merged" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="btp_merged" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="Visualize.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -748,7 +790,7 @@
       <workItem from="1491333028501" duration="8545000" />
       <workItem from="1491422319934" duration="2742000" />
       <workItem from="1491510439168" duration="2223000" />
-      <workItem from="1491595619189" duration="88000" />
+      <workItem from="1491595619189" duration="234000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://bitbucket.org/guroosh/btp_merged&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/production/btp_merged/TestingAlgo/Main.class&#10;">
       <created>1491305601275</created>
@@ -764,11 +806,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491335195183</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Committing before merge">
+      <created>1491595739368</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1491595739368</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14636000" />
+    <option name="totallyTimeSpent" value="14782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1922" height="1092" extended-state="6" />
@@ -782,7 +831,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5052192" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -845,7 +894,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'master' of https://bitbucket.org/guroosh/btp_merged&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/production/btp_merged/TestingAlgo/Main.class&#10;" />
     <MESSAGE value="Fixed isolation in moving circle&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed isolation in moving circle&#10;" />
+    <MESSAGE value="Committing before merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Committing before merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -889,67 +939,44 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="e#1773#1823#0" expanded="false" />
-            <element signature="e#2431#2467#0" expanded="false" />
-            <element signature="e#3081#3124#0" expanded="false" />
-            <element signature="method#runNaiveTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#6549#6672#0" expanded="false" />
-            <element signature="e#6590#6660#0" expanded="false" />
-            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
-            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#8662#8716#0" expanded="false" />
-            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCircleTester1#0;class#Main#0" expanded="false" />
-            <element signature="e#13042#13228#0" expanded="false" />
-            <element signature="method#movingCircleTesterjvhp#0;class#Main#0" expanded="false" />
-            <element signature="e#16343#16398#0" expanded="false" />
-            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#20321#22672#0" expanded="false" />
-            <element signature="e#20434#22644#0" expanded="false" />
-            <element signature="e#20675#20738#0" expanded="false" />
-            <element signature="e#21034#21121#0" expanded="false" />
-            <element signature="e#21124#21179#0" expanded="false" />
-            <element signature="e#21562#21591#0" expanded="false" />
-            <element signature="e#21970#22080#0" expanded="false" />
-            <element signature="method#naiveTesterJVfp#0;class#Main#0" expanded="false" />
-            <element signature="e#23933#24000#0" expanded="false" />
-            <element signature="e#24354#24409#0" expanded="false" />
-            <element signature="e#24780#24809#0" expanded="false" />
-            <element signature="e#25108#25134#0" expanded="false" />
-            <element signature="e#26240#26322#0" expanded="false" />
-            <element signature="e#26559#26573#0" expanded="false" />
-            <element signature="e#27698#27706#0" expanded="false" />
-            <element signature="e#28142#28190#0" expanded="false" />
-            <element signature="e#28816#28845#0" expanded="false" />
-            <element signature="e#29238#29289#0" expanded="false" />
-            <element signature="e#30021#30077#0" expanded="false" />
-            <element signature="method#naiveWithoutIntersectingCircles#0;class#Main#0" expanded="false" />
-            <element signature="e#31743#31861#0" expanded="false" />
-            <element signature="method#intersectingOnlyOne#0;class#Main#0" expanded="false" />
-            <element signature="e#32674#32771#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#35289#35329#0" expanded="false" />
-            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#37535#37568#0" expanded="false" />
-            <element signature="e#38161#38194#0" expanded="false" />
-            <element signature="e#38677#38742#0" expanded="false" />
-            <element signature="e#39361#39419#0" expanded="false" />
-            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
-            <element signature="class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCirclejprunner#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#run1#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#naivejprunner#0;class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#naivejprunner#0;class#Main#0" expanded="false" />
+            <marker date="1491595844189" expanded="false" signature="28089:30007" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="28188:28339" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28614:28696" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28942:29306" ph="//..." />
+            <marker date="1491595844189" expanded="true" signature="30064:34699" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="30074:30196" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="30393:31374" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31532:31659" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31976:32112" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="32650:32732" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33072:33174" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33855:34388" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="34821:36240" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="35577:35917" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="36311:37230" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="36508:36710" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="37285:38083" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="38138:39710" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="39123:39704" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="39773:40222" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="40283:41279" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41367:43489" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41369:41436" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="41995:42110" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="42511:42638" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43195:43312" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43541:44141" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44171:44182" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="44194:44200" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="44272:45297" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44479:44624" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44664:44787" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44840:45290" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45362:46337" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45562:45707" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45766:45781" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="45819:45829" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="45882:46330" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -958,7 +985,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9027">
           <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-          <folding />
+          <folding>
+            <marker date="1491595753821" expanded="true" signature="7372:9083" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="9140:10820" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="10870:11010" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11082:11790" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11863:12550" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12607:12687" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12768:14940" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="14618:14763" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="15072:16501" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16558:19645" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16938:17201" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="18926:19162" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19470:19615" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19735:20314" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -993,67 +1035,44 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="e#1773#1823#0" expanded="false" />
-            <element signature="e#2431#2467#0" expanded="false" />
-            <element signature="e#3081#3124#0" expanded="false" />
-            <element signature="method#runNaiveTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#6549#6672#0" expanded="false" />
-            <element signature="e#6590#6660#0" expanded="false" />
-            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
-            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#8662#8716#0" expanded="false" />
-            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCircleTester1#0;class#Main#0" expanded="false" />
-            <element signature="e#13042#13228#0" expanded="false" />
-            <element signature="method#movingCircleTesterjvhp#0;class#Main#0" expanded="false" />
-            <element signature="e#16343#16398#0" expanded="false" />
-            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#20321#22672#0" expanded="false" />
-            <element signature="e#20434#22644#0" expanded="false" />
-            <element signature="e#20675#20738#0" expanded="false" />
-            <element signature="e#21034#21121#0" expanded="false" />
-            <element signature="e#21124#21179#0" expanded="false" />
-            <element signature="e#21562#21591#0" expanded="false" />
-            <element signature="e#21970#22080#0" expanded="false" />
-            <element signature="method#naiveTesterJVfp#0;class#Main#0" expanded="false" />
-            <element signature="e#23933#24000#0" expanded="false" />
-            <element signature="e#24354#24409#0" expanded="false" />
-            <element signature="e#24780#24809#0" expanded="false" />
-            <element signature="e#25108#25134#0" expanded="false" />
-            <element signature="e#26240#26322#0" expanded="false" />
-            <element signature="e#26559#26573#0" expanded="false" />
-            <element signature="e#27698#27706#0" expanded="false" />
-            <element signature="e#28142#28190#0" expanded="false" />
-            <element signature="e#28816#28845#0" expanded="false" />
-            <element signature="e#29238#29289#0" expanded="false" />
-            <element signature="e#30021#30077#0" expanded="false" />
-            <element signature="method#naiveWithoutIntersectingCircles#0;class#Main#0" expanded="false" />
-            <element signature="e#31743#31861#0" expanded="false" />
-            <element signature="method#intersectingOnlyOne#0;class#Main#0" expanded="false" />
-            <element signature="e#32674#32771#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#35289#35329#0" expanded="false" />
-            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#37535#37568#0" expanded="false" />
-            <element signature="e#38161#38194#0" expanded="false" />
-            <element signature="e#38677#38742#0" expanded="false" />
-            <element signature="e#39361#39419#0" expanded="false" />
-            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
-            <element signature="class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCirclejprunner#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#run1#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#naivejprunner#0;class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#naivejprunner#0;class#Main#0" expanded="false" />
+            <marker date="1491595844189" expanded="false" signature="28089:30007" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="28188:28339" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28614:28696" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28942:29306" ph="//..." />
+            <marker date="1491595844189" expanded="true" signature="30064:34699" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="30074:30196" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="30393:31374" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31532:31659" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31976:32112" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="32650:32732" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33072:33174" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33855:34388" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="34821:36240" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="35577:35917" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="36311:37230" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="36508:36710" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="37285:38083" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="38138:39710" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="39123:39704" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="39773:40222" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="40283:41279" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41367:43489" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41369:41436" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="41995:42110" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="42511:42638" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43195:43312" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43541:44141" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44171:44182" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="44194:44200" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="44272:45297" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44479:44624" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44664:44787" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44840:45290" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45362:46337" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45562:45707" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45766:45781" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="45819:45829" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="45882:46330" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1062,7 +1081,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9027">
           <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-          <folding />
+          <folding>
+            <marker date="1491595753821" expanded="true" signature="7372:9083" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="9140:10820" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="10870:11010" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11082:11790" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11863:12550" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12607:12687" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12768:14940" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="14618:14763" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="15072:16501" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16558:19645" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16938:17201" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="18926:19162" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19470:19615" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19735:20314" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1097,67 +1131,44 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="e#1773#1823#0" expanded="false" />
-            <element signature="e#2431#2467#0" expanded="false" />
-            <element signature="e#3081#3124#0" expanded="false" />
-            <element signature="method#runNaiveTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#6549#6672#0" expanded="false" />
-            <element signature="e#6590#6660#0" expanded="false" />
-            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
-            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#8662#8716#0" expanded="false" />
-            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCircleTester1#0;class#Main#0" expanded="false" />
-            <element signature="e#13042#13228#0" expanded="false" />
-            <element signature="method#movingCircleTesterjvhp#0;class#Main#0" expanded="false" />
-            <element signature="e#16343#16398#0" expanded="false" />
-            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#20321#22672#0" expanded="false" />
-            <element signature="e#20434#22644#0" expanded="false" />
-            <element signature="e#20675#20738#0" expanded="false" />
-            <element signature="e#21034#21121#0" expanded="false" />
-            <element signature="e#21124#21179#0" expanded="false" />
-            <element signature="e#21562#21591#0" expanded="false" />
-            <element signature="e#21970#22080#0" expanded="false" />
-            <element signature="method#naiveTesterJVfp#0;class#Main#0" expanded="false" />
-            <element signature="e#23933#24000#0" expanded="false" />
-            <element signature="e#24354#24409#0" expanded="false" />
-            <element signature="e#24780#24809#0" expanded="false" />
-            <element signature="e#25108#25134#0" expanded="false" />
-            <element signature="e#26240#26322#0" expanded="false" />
-            <element signature="e#26559#26573#0" expanded="false" />
-            <element signature="e#27698#27706#0" expanded="false" />
-            <element signature="e#28142#28190#0" expanded="false" />
-            <element signature="e#28816#28845#0" expanded="false" />
-            <element signature="e#29238#29289#0" expanded="false" />
-            <element signature="e#30021#30077#0" expanded="false" />
-            <element signature="method#naiveWithoutIntersectingCircles#0;class#Main#0" expanded="false" />
-            <element signature="e#31743#31861#0" expanded="false" />
-            <element signature="method#intersectingOnlyOne#0;class#Main#0" expanded="false" />
-            <element signature="e#32674#32771#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#35289#35329#0" expanded="false" />
-            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#37535#37568#0" expanded="false" />
-            <element signature="e#38161#38194#0" expanded="false" />
-            <element signature="e#38677#38742#0" expanded="false" />
-            <element signature="e#39361#39419#0" expanded="false" />
-            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
-            <element signature="class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCirclejprunner#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#run1#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#naivejprunner#0;class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#naivejprunner#0;class#Main#0" expanded="false" />
+            <marker date="1491595844189" expanded="false" signature="28089:30007" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="28188:28339" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28614:28696" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28942:29306" ph="//..." />
+            <marker date="1491595844189" expanded="true" signature="30064:34699" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="30074:30196" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="30393:31374" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31532:31659" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31976:32112" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="32650:32732" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33072:33174" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33855:34388" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="34821:36240" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="35577:35917" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="36311:37230" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="36508:36710" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="37285:38083" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="38138:39710" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="39123:39704" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="39773:40222" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="40283:41279" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41367:43489" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41369:41436" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="41995:42110" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="42511:42638" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43195:43312" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43541:44141" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44171:44182" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="44194:44200" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="44272:45297" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44479:44624" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44664:44787" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44840:45290" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45362:46337" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45562:45707" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45766:45781" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="45819:45829" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="45882:46330" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1166,7 +1177,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9027">
           <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-          <folding />
+          <folding>
+            <marker date="1491595753821" expanded="true" signature="7372:9083" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="9140:10820" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="10870:11010" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11082:11790" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11863:12550" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12607:12687" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12768:14940" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="14618:14763" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="15072:16501" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16558:19645" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16938:17201" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="18926:19162" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19470:19615" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19735:20314" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1201,67 +1227,44 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="e#1773#1823#0" expanded="false" />
-            <element signature="e#2431#2467#0" expanded="false" />
-            <element signature="e#3081#3124#0" expanded="false" />
-            <element signature="method#runNaiveTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#6549#6672#0" expanded="false" />
-            <element signature="e#6590#6660#0" expanded="false" />
-            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
-            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#8662#8716#0" expanded="false" />
-            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCircleTester1#0;class#Main#0" expanded="false" />
-            <element signature="e#13042#13228#0" expanded="false" />
-            <element signature="method#movingCircleTesterjvhp#0;class#Main#0" expanded="false" />
-            <element signature="e#16343#16398#0" expanded="false" />
-            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#20321#22672#0" expanded="false" />
-            <element signature="e#20434#22644#0" expanded="false" />
-            <element signature="e#20675#20738#0" expanded="false" />
-            <element signature="e#21034#21121#0" expanded="false" />
-            <element signature="e#21124#21179#0" expanded="false" />
-            <element signature="e#21562#21591#0" expanded="false" />
-            <element signature="e#21970#22080#0" expanded="false" />
-            <element signature="method#naiveTesterJVfp#0;class#Main#0" expanded="false" />
-            <element signature="e#23933#24000#0" expanded="false" />
-            <element signature="e#24354#24409#0" expanded="false" />
-            <element signature="e#24780#24809#0" expanded="false" />
-            <element signature="e#25108#25134#0" expanded="false" />
-            <element signature="e#26240#26322#0" expanded="false" />
-            <element signature="e#26559#26573#0" expanded="false" />
-            <element signature="e#27698#27706#0" expanded="false" />
-            <element signature="e#28142#28190#0" expanded="false" />
-            <element signature="e#28816#28845#0" expanded="false" />
-            <element signature="e#29238#29289#0" expanded="false" />
-            <element signature="e#30021#30077#0" expanded="false" />
-            <element signature="method#naiveWithoutIntersectingCircles#0;class#Main#0" expanded="false" />
-            <element signature="e#31743#31861#0" expanded="false" />
-            <element signature="method#intersectingOnlyOne#0;class#Main#0" expanded="false" />
-            <element signature="e#32674#32771#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#35289#35329#0" expanded="false" />
-            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#37535#37568#0" expanded="false" />
-            <element signature="e#38161#38194#0" expanded="false" />
-            <element signature="e#38677#38742#0" expanded="false" />
-            <element signature="e#39361#39419#0" expanded="false" />
-            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
-            <element signature="class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCirclejprunner#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#run1#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#naivejprunner#0;class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#naivejprunner#0;class#Main#0" expanded="false" />
+            <marker date="1491595844189" expanded="false" signature="28089:30007" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="28188:28339" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28614:28696" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28942:29306" ph="//..." />
+            <marker date="1491595844189" expanded="true" signature="30064:34699" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="30074:30196" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="30393:31374" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31532:31659" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31976:32112" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="32650:32732" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33072:33174" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33855:34388" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="34821:36240" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="35577:35917" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="36311:37230" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="36508:36710" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="37285:38083" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="38138:39710" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="39123:39704" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="39773:40222" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="40283:41279" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41367:43489" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41369:41436" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="41995:42110" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="42511:42638" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43195:43312" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43541:44141" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44171:44182" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="44194:44200" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="44272:45297" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44479:44624" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44664:44787" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44840:45290" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45362:46337" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45562:45707" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45766:45781" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="45819:45829" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="45882:46330" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1270,7 +1273,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8959">
           <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-          <folding />
+          <folding>
+            <marker date="1491595753821" expanded="true" signature="7372:9083" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="9140:10820" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="10870:11010" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11082:11790" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11863:12550" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12607:12687" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12768:14940" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="14618:14763" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="15072:16501" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16558:19645" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16938:17201" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="18926:19162" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19470:19615" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19735:20314" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1305,67 +1323,44 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="e#1773#1823#0" expanded="false" />
-            <element signature="e#2431#2467#0" expanded="false" />
-            <element signature="e#3081#3124#0" expanded="false" />
-            <element signature="method#runNaiveTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#6549#6672#0" expanded="false" />
-            <element signature="e#6590#6660#0" expanded="false" />
-            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
-            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#8662#8716#0" expanded="false" />
-            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCircleTester1#0;class#Main#0" expanded="false" />
-            <element signature="e#13042#13228#0" expanded="false" />
-            <element signature="method#movingCircleTesterjvhp#0;class#Main#0" expanded="false" />
-            <element signature="e#16343#16398#0" expanded="false" />
-            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#20321#22672#0" expanded="false" />
-            <element signature="e#20434#22644#0" expanded="false" />
-            <element signature="e#20675#20738#0" expanded="false" />
-            <element signature="e#21034#21121#0" expanded="false" />
-            <element signature="e#21124#21179#0" expanded="false" />
-            <element signature="e#21562#21591#0" expanded="false" />
-            <element signature="e#21970#22080#0" expanded="false" />
-            <element signature="method#naiveTesterJVfp#0;class#Main#0" expanded="false" />
-            <element signature="e#23933#24000#0" expanded="false" />
-            <element signature="e#24354#24409#0" expanded="false" />
-            <element signature="e#24780#24809#0" expanded="false" />
-            <element signature="e#25108#25134#0" expanded="false" />
-            <element signature="e#26240#26322#0" expanded="false" />
-            <element signature="e#26559#26573#0" expanded="false" />
-            <element signature="e#27698#27706#0" expanded="false" />
-            <element signature="e#28142#28190#0" expanded="false" />
-            <element signature="e#28816#28845#0" expanded="false" />
-            <element signature="e#29238#29289#0" expanded="false" />
-            <element signature="e#30021#30077#0" expanded="false" />
-            <element signature="method#naiveWithoutIntersectingCircles#0;class#Main#0" expanded="false" />
-            <element signature="e#31743#31861#0" expanded="false" />
-            <element signature="method#intersectingOnlyOne#0;class#Main#0" expanded="false" />
-            <element signature="e#32674#32771#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#35289#35329#0" expanded="false" />
-            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#37535#37568#0" expanded="false" />
-            <element signature="e#38161#38194#0" expanded="false" />
-            <element signature="e#38677#38742#0" expanded="false" />
-            <element signature="e#39361#39419#0" expanded="false" />
-            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
-            <element signature="class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCirclejprunner#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#run1#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#naivejprunner#0;class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#naivejprunner#0;class#Main#0" expanded="false" />
+            <marker date="1491595844189" expanded="false" signature="28089:30007" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="28188:28339" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28614:28696" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28942:29306" ph="//..." />
+            <marker date="1491595844189" expanded="true" signature="30064:34699" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="30074:30196" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="30393:31374" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31532:31659" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31976:32112" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="32650:32732" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33072:33174" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33855:34388" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="34821:36240" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="35577:35917" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="36311:37230" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="36508:36710" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="37285:38083" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="38138:39710" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="39123:39704" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="39773:40222" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="40283:41279" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41367:43489" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41369:41436" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="41995:42110" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="42511:42638" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43195:43312" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43541:44141" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44171:44182" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="44194:44200" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="44272:45297" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44479:44624" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44664:44787" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44840:45290" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45362:46337" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45562:45707" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45766:45781" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="45819:45829" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="45882:46330" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1374,7 +1369,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9027">
           <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-          <folding />
+          <folding>
+            <marker date="1491595753821" expanded="true" signature="7372:9083" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="9140:10820" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="10870:11010" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11082:11790" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11863:12550" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12607:12687" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12768:14940" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="14618:14763" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="15072:16501" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16558:19645" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16938:17201" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="18926:19162" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19470:19615" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19735:20314" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1401,67 +1411,44 @@
         <state relative-caret-position="3893">
           <caret line="229" column="46" lean-forward="false" selection-start-line="229" selection-start-column="46" selection-end-line="229" selection-end-column="46" />
           <folding>
-            <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="e#1773#1823#0" expanded="false" />
-            <element signature="e#2431#2467#0" expanded="false" />
-            <element signature="e#3081#3124#0" expanded="false" />
-            <element signature="method#runNaiveTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#6549#6672#0" expanded="false" />
-            <element signature="e#6590#6660#0" expanded="false" />
-            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
-            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#8662#8716#0" expanded="false" />
-            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCircleTester1#0;class#Main#0" expanded="false" />
-            <element signature="e#13042#13228#0" expanded="false" />
-            <element signature="method#movingCircleTesterjvhp#0;class#Main#0" expanded="false" />
-            <element signature="e#16343#16398#0" expanded="false" />
-            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#20321#22672#0" expanded="false" />
-            <element signature="e#20434#22644#0" expanded="false" />
-            <element signature="e#20675#20738#0" expanded="false" />
-            <element signature="e#21034#21121#0" expanded="false" />
-            <element signature="e#21124#21179#0" expanded="false" />
-            <element signature="e#21562#21591#0" expanded="false" />
-            <element signature="e#21970#22080#0" expanded="false" />
-            <element signature="method#naiveTesterJVfp#0;class#Main#0" expanded="false" />
-            <element signature="e#23933#24000#0" expanded="false" />
-            <element signature="e#24354#24409#0" expanded="false" />
-            <element signature="e#24780#24809#0" expanded="false" />
-            <element signature="e#25108#25134#0" expanded="false" />
-            <element signature="e#26240#26322#0" expanded="false" />
-            <element signature="e#26559#26573#0" expanded="false" />
-            <element signature="e#27698#27706#0" expanded="false" />
-            <element signature="e#28142#28190#0" expanded="false" />
-            <element signature="e#28816#28845#0" expanded="false" />
-            <element signature="e#29238#29289#0" expanded="false" />
-            <element signature="e#30021#30077#0" expanded="false" />
-            <element signature="method#naiveWithoutIntersectingCircles#0;class#Main#0" expanded="false" />
-            <element signature="e#31743#31861#0" expanded="false" />
-            <element signature="method#intersectingOnlyOne#0;class#Main#0" expanded="false" />
-            <element signature="e#32674#32771#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#35289#35329#0" expanded="false" />
-            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#37535#37568#0" expanded="false" />
-            <element signature="e#38161#38194#0" expanded="false" />
-            <element signature="e#38677#38742#0" expanded="false" />
-            <element signature="e#39361#39419#0" expanded="false" />
-            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
-            <element signature="class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCirclejprunner#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#run1#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#naivejprunner#0;class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#naivejprunner#0;class#Main#0" expanded="false" />
+            <marker date="1491595844189" expanded="false" signature="28089:30007" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="28188:28339" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28614:28696" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28942:29306" ph="//..." />
+            <marker date="1491595844189" expanded="true" signature="30064:34699" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="30074:30196" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="30393:31374" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31532:31659" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31976:32112" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="32650:32732" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33072:33174" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33855:34388" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="34821:36240" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="35577:35917" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="36311:37230" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="36508:36710" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="37285:38083" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="38138:39710" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="39123:39704" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="39773:40222" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="40283:41279" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41367:43489" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41369:41436" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="41995:42110" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="42511:42638" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43195:43312" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43541:44141" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44171:44182" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="44194:44200" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="44272:45297" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44479:44624" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44664:44787" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44840:45290" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45362:46337" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45562:45707" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45766:45781" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="45819:45829" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="45882:46330" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1477,7 +1464,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9027">
           <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-          <folding />
+          <folding>
+            <marker date="1491595753821" expanded="true" signature="7372:9083" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="9140:10820" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="10870:11010" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11082:11790" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11863:12550" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12607:12687" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12768:14940" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="14618:14763" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="15072:16501" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16558:19645" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16938:17201" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="18926:19162" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19470:19615" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19735:20314" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1504,67 +1506,44 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="e#1773#1823#0" expanded="false" />
-            <element signature="e#2431#2467#0" expanded="false" />
-            <element signature="e#3081#3124#0" expanded="false" />
-            <element signature="method#runNaiveTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#6549#6672#0" expanded="false" />
-            <element signature="e#6590#6660#0" expanded="false" />
-            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
-            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#8662#8716#0" expanded="false" />
-            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCircleTester1#0;class#Main#0" expanded="false" />
-            <element signature="e#13042#13228#0" expanded="false" />
-            <element signature="method#movingCircleTesterjvhp#0;class#Main#0" expanded="false" />
-            <element signature="e#16343#16398#0" expanded="false" />
-            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#20321#22672#0" expanded="false" />
-            <element signature="e#20434#22644#0" expanded="false" />
-            <element signature="e#20675#20738#0" expanded="false" />
-            <element signature="e#21034#21121#0" expanded="false" />
-            <element signature="e#21124#21179#0" expanded="false" />
-            <element signature="e#21562#21591#0" expanded="false" />
-            <element signature="e#21970#22080#0" expanded="false" />
-            <element signature="method#naiveTesterJVfp#0;class#Main#0" expanded="false" />
-            <element signature="e#23933#24000#0" expanded="false" />
-            <element signature="e#24354#24409#0" expanded="false" />
-            <element signature="e#24780#24809#0" expanded="false" />
-            <element signature="e#25108#25134#0" expanded="false" />
-            <element signature="e#26240#26322#0" expanded="false" />
-            <element signature="e#26559#26573#0" expanded="false" />
-            <element signature="e#27698#27706#0" expanded="false" />
-            <element signature="e#28142#28190#0" expanded="false" />
-            <element signature="e#28816#28845#0" expanded="false" />
-            <element signature="e#29238#29289#0" expanded="false" />
-            <element signature="e#30021#30077#0" expanded="false" />
-            <element signature="method#naiveWithoutIntersectingCircles#0;class#Main#0" expanded="false" />
-            <element signature="e#31743#31861#0" expanded="false" />
-            <element signature="method#intersectingOnlyOne#0;class#Main#0" expanded="false" />
-            <element signature="e#32674#32771#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#35289#35329#0" expanded="false" />
-            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#37535#37568#0" expanded="false" />
-            <element signature="e#38161#38194#0" expanded="false" />
-            <element signature="e#38677#38742#0" expanded="false" />
-            <element signature="e#39361#39419#0" expanded="false" />
-            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
-            <element signature="class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCirclejprunner#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#run1#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#naivejprunner#0;class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#naivejprunner#0;class#Main#0" expanded="false" />
+            <marker date="1491595844189" expanded="false" signature="28089:30007" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="28188:28339" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28614:28696" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28942:29306" ph="//..." />
+            <marker date="1491595844189" expanded="true" signature="30064:34699" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="30074:30196" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="30393:31374" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31532:31659" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31976:32112" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="32650:32732" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33072:33174" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33855:34388" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="34821:36240" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="35577:35917" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="36311:37230" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="36508:36710" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="37285:38083" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="38138:39710" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="39123:39704" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="39773:40222" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="40283:41279" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41367:43489" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41369:41436" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="41995:42110" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="42511:42638" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43195:43312" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43541:44141" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44171:44182" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="44194:44200" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="44272:45297" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44479:44624" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44664:44787" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44840:45290" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45362:46337" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45562:45707" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45766:45781" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="45819:45829" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="45882:46330" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1573,7 +1552,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9010">
           <caret line="530" column="18" lean-forward="false" selection-start-line="530" selection-start-column="18" selection-end-line="530" selection-end-column="18" />
-          <folding />
+          <folding>
+            <marker date="1491595753821" expanded="true" signature="7372:9083" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="9140:10820" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="10870:11010" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11082:11790" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11863:12550" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12607:12687" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12768:14940" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="14618:14763" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="15072:16501" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16558:19645" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16938:17201" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="18926:19162" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19470:19615" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19735:20314" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1600,67 +1594,44 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="e#1773#1823#0" expanded="false" />
-            <element signature="e#2431#2467#0" expanded="false" />
-            <element signature="e#3081#3124#0" expanded="false" />
-            <element signature="method#runNaiveTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#6549#6672#0" expanded="false" />
-            <element signature="e#6590#6660#0" expanded="false" />
-            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
-            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#8662#8716#0" expanded="false" />
-            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCircleTester1#0;class#Main#0" expanded="false" />
-            <element signature="e#13042#13228#0" expanded="false" />
-            <element signature="method#movingCircleTesterjvhp#0;class#Main#0" expanded="false" />
-            <element signature="e#16343#16398#0" expanded="false" />
-            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#20321#22672#0" expanded="false" />
-            <element signature="e#20434#22644#0" expanded="false" />
-            <element signature="e#20675#20738#0" expanded="false" />
-            <element signature="e#21034#21121#0" expanded="false" />
-            <element signature="e#21124#21179#0" expanded="false" />
-            <element signature="e#21562#21591#0" expanded="false" />
-            <element signature="e#21970#22080#0" expanded="false" />
-            <element signature="method#naiveTesterJVfp#0;class#Main#0" expanded="false" />
-            <element signature="e#23933#24000#0" expanded="false" />
-            <element signature="e#24354#24409#0" expanded="false" />
-            <element signature="e#24780#24809#0" expanded="false" />
-            <element signature="e#25108#25134#0" expanded="false" />
-            <element signature="e#26240#26322#0" expanded="false" />
-            <element signature="e#26559#26573#0" expanded="false" />
-            <element signature="e#27698#27706#0" expanded="false" />
-            <element signature="e#28142#28190#0" expanded="false" />
-            <element signature="e#28816#28845#0" expanded="false" />
-            <element signature="e#29238#29289#0" expanded="false" />
-            <element signature="e#30021#30077#0" expanded="false" />
-            <element signature="method#naiveWithoutIntersectingCircles#0;class#Main#0" expanded="false" />
-            <element signature="e#31743#31861#0" expanded="false" />
-            <element signature="method#intersectingOnlyOne#0;class#Main#0" expanded="false" />
-            <element signature="e#32674#32771#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#35289#35329#0" expanded="false" />
-            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#37535#37568#0" expanded="false" />
-            <element signature="e#38161#38194#0" expanded="false" />
-            <element signature="e#38677#38742#0" expanded="false" />
-            <element signature="e#39361#39419#0" expanded="false" />
-            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
-            <element signature="class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCirclejprunner#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#run1#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#naivejprunner#0;class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#naivejprunner#0;class#Main#0" expanded="false" />
+            <marker date="1491595844189" expanded="false" signature="28089:30007" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="28188:28339" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28614:28696" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28942:29306" ph="//..." />
+            <marker date="1491595844189" expanded="true" signature="30064:34699" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="30074:30196" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="30393:31374" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31532:31659" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31976:32112" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="32650:32732" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33072:33174" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33855:34388" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="34821:36240" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="35577:35917" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="36311:37230" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="36508:36710" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="37285:38083" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="38138:39710" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="39123:39704" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="39773:40222" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="40283:41279" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41367:43489" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41369:41436" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="41995:42110" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="42511:42638" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43195:43312" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43541:44141" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44171:44182" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="44194:44200" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="44272:45297" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44479:44624" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44664:44787" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44840:45290" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45362:46337" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45562:45707" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45766:45781" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="45819:45829" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="45882:46330" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1680,67 +1651,44 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="e#1773#1823#0" expanded="false" />
-            <element signature="e#2431#2467#0" expanded="false" />
-            <element signature="e#3081#3124#0" expanded="false" />
-            <element signature="method#runNaiveTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#6549#6672#0" expanded="false" />
-            <element signature="e#6590#6660#0" expanded="false" />
-            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
-            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#8662#8716#0" expanded="false" />
-            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCircleTester1#0;class#Main#0" expanded="false" />
-            <element signature="e#13042#13228#0" expanded="false" />
-            <element signature="method#movingCircleTesterjvhp#0;class#Main#0" expanded="false" />
-            <element signature="e#16343#16398#0" expanded="false" />
-            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#20321#22672#0" expanded="false" />
-            <element signature="e#20434#22644#0" expanded="false" />
-            <element signature="e#20675#20738#0" expanded="false" />
-            <element signature="e#21034#21121#0" expanded="false" />
-            <element signature="e#21124#21179#0" expanded="false" />
-            <element signature="e#21562#21591#0" expanded="false" />
-            <element signature="e#21970#22080#0" expanded="false" />
-            <element signature="method#naiveTesterJVfp#0;class#Main#0" expanded="false" />
-            <element signature="e#23933#24000#0" expanded="false" />
-            <element signature="e#24354#24409#0" expanded="false" />
-            <element signature="e#24780#24809#0" expanded="false" />
-            <element signature="e#25108#25134#0" expanded="false" />
-            <element signature="e#26240#26322#0" expanded="false" />
-            <element signature="e#26559#26573#0" expanded="false" />
-            <element signature="e#27698#27706#0" expanded="false" />
-            <element signature="e#28142#28190#0" expanded="false" />
-            <element signature="e#28816#28845#0" expanded="false" />
-            <element signature="e#29238#29289#0" expanded="false" />
-            <element signature="e#30021#30077#0" expanded="false" />
-            <element signature="method#naiveWithoutIntersectingCircles#0;class#Main#0" expanded="false" />
-            <element signature="e#31743#31861#0" expanded="false" />
-            <element signature="method#intersectingOnlyOne#0;class#Main#0" expanded="false" />
-            <element signature="e#32674#32771#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#35289#35329#0" expanded="false" />
-            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#37535#37568#0" expanded="false" />
-            <element signature="e#38161#38194#0" expanded="false" />
-            <element signature="e#38677#38742#0" expanded="false" />
-            <element signature="e#39361#39419#0" expanded="false" />
-            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
-            <element signature="class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCirclejprunner#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#run1#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#naivejprunner#0;class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#naivejprunner#0;class#Main#0" expanded="false" />
+            <marker date="1491595844189" expanded="false" signature="28089:30007" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="28188:28339" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28614:28696" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28942:29306" ph="//..." />
+            <marker date="1491595844189" expanded="true" signature="30064:34699" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="30074:30196" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="30393:31374" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31532:31659" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31976:32112" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="32650:32732" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33072:33174" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33855:34388" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="34821:36240" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="35577:35917" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="36311:37230" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="36508:36710" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="37285:38083" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="38138:39710" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="39123:39704" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="39773:40222" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="40283:41279" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41367:43489" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41369:41436" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="41995:42110" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="42511:42638" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43195:43312" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43541:44141" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44171:44182" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="44194:44200" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="44272:45297" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44479:44624" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44664:44787" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44840:45290" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45362:46337" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45562:45707" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45766:45781" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="45819:45829" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="45882:46330" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1768,8 +1716,23 @@
     <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10540">
-          <caret line="531" column="23" lean-forward="false" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
-          <folding />
+          <caret line="542" column="23" lean-forward="false" selection-start-line="542" selection-start-column="23" selection-end-line="542" selection-end-column="23" />
+          <folding>
+            <marker date="1491595753821" expanded="true" signature="7372:9083" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="9140:10820" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="10870:11010" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11082:11790" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="11863:12550" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12607:12687" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="12768:14940" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="14618:14763" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="15072:16501" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16558:19645" ph="{...}" />
+            <marker date="1491595753821" expanded="true" signature="16938:17201" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="18926:19162" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19470:19615" ph="//..." />
+            <marker date="1491595753821" expanded="true" signature="19735:20314" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1809,70 +1772,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="598" column="55" lean-forward="false" selection-start-line="598" selection-start-column="55" selection-end-line="598" selection-end-column="55" />
+        <state relative-caret-position="240">
+          <caret line="721" column="66" lean-forward="false" selection-start-line="721" selection-start-column="66" selection-end-line="721" selection-end-column="66" />
           <folding>
-            <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="e#1773#1823#0" expanded="false" />
-            <element signature="e#2431#2467#0" expanded="false" />
-            <element signature="e#3081#3124#0" expanded="false" />
-            <element signature="method#runNaiveTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterJvFP#0;class#Main#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#6549#6672#0" expanded="false" />
-            <element signature="e#6590#6660#0" expanded="false" />
-            <element signature="method#runNaiveTester#0;class#Main#0" expanded="false" />
-            <element signature="method#runNaiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#8662#8716#0" expanded="false" />
-            <element signature="method#runMovingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCircleTester1#0;class#Main#0" expanded="false" />
-            <element signature="e#13042#13228#0" expanded="false" />
-            <element signature="method#movingCircleTesterjvhp#0;class#Main#0" expanded="false" />
-            <element signature="e#16343#16398#0" expanded="false" />
-            <element signature="method#movingCircleTester#0;class#Main#0" expanded="false" />
-            <element signature="method#naiveTesterHJ#0;class#Main#0" expanded="false" />
-            <element signature="e#20321#22672#0" expanded="false" />
-            <element signature="e#20434#22644#0" expanded="false" />
-            <element signature="e#20675#20738#0" expanded="false" />
-            <element signature="e#21034#21121#0" expanded="false" />
-            <element signature="e#21124#21179#0" expanded="false" />
-            <element signature="e#21562#21591#0" expanded="false" />
-            <element signature="e#21970#22080#0" expanded="false" />
-            <element signature="method#naiveTesterJVfp#0;class#Main#0" expanded="false" />
-            <element signature="e#23933#24000#0" expanded="false" />
-            <element signature="e#24354#24409#0" expanded="false" />
-            <element signature="e#24780#24809#0" expanded="false" />
-            <element signature="e#25108#25134#0" expanded="false" />
-            <element signature="e#26240#26322#0" expanded="false" />
-            <element signature="e#26559#26573#0" expanded="false" />
-            <element signature="e#27698#27706#0" expanded="false" />
-            <element signature="e#28142#28190#0" expanded="false" />
-            <element signature="e#28816#28845#0" expanded="false" />
-            <element signature="e#29238#29289#0" expanded="false" />
-            <element signature="e#30021#30077#0" expanded="false" />
-            <element signature="method#naiveWithoutIntersectingCircles#0;class#Main#0" expanded="false" />
-            <element signature="e#31743#31861#0" expanded="false" />
-            <element signature="method#intersectingOnlyOne#0;class#Main#0" expanded="false" />
-            <element signature="e#32674#32771#0" expanded="false" />
-            <element signature="method#serialize#0;class#Main#0" expanded="false" />
-            <element signature="method#checkData#0;class#Main#0" expanded="false" />
-            <element signature="e#35289#35329#0" expanded="false" />
-            <element signature="method#afterNaive#0;class#Main#0" expanded="false" />
-            <element signature="method#printScaledData#0;class#Main#0" expanded="false" />
-            <element signature="method#readDataFile#0;class#Main#0" expanded="false" />
-            <element signature="e#37535#37568#0" expanded="false" />
-            <element signature="e#38161#38194#0" expanded="false" />
-            <element signature="e#38677#38742#0" expanded="false" />
-            <element signature="e#39361#39419#0" expanded="false" />
-            <element signature="method#modifyLine#0;class#Main#0" expanded="false" />
-            <element signature="class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#movingCirclejprunner#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#run1#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#movingCirclejprunner#0;class#Main#0" expanded="false" />
-            <element signature="class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#naivejprunner#0;class#naivejprunner#0;class#Main#0" expanded="false" />
-            <element signature="method#compute#0;class#naivejprunner#0;class#Main#0" expanded="false" />
+            <marker date="1491595844189" expanded="false" signature="28089:30007" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="28188:28339" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28614:28696" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="28942:29306" ph="//..." />
+            <marker date="1491595844189" expanded="true" signature="30064:34699" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="30074:30196" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="30393:31374" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31532:31659" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="31976:32112" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="32650:32732" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33072:33174" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="33855:34388" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="34821:36240" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="35577:35917" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="36311:37230" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="36508:36710" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="37285:38083" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="38138:39710" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="39123:39704" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="39773:40222" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="40283:41279" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41367:43489" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="41369:41436" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="41995:42110" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="42511:42638" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43195:43312" ph="//..." />
+            <marker date="1491595844189" expanded="false" signature="43541:44141" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44171:44182" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="44194:44200" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="44272:45297" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44479:44624" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44664:44787" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="44840:45290" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45362:46337" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45562:45707" ph="{...}" />
+            <marker date="1491595844189" expanded="false" signature="45766:45781" ph=" { " />
+            <marker date="1491595844189" expanded="false" signature="45819:45829" ph=" }" />
+            <marker date="1491595844189" expanded="false" signature="45882:46330" ph="{...}" />
           </folding>
         </state>
       </provider>

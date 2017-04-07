@@ -8,6 +8,8 @@ import Dataset.Events;
 import Dataset.GridCell;
 import Dataset.GridFile;
 import edu.rice.hj.api.SuspendableException;
+import jdk.nashorn.internal.runtime.Context;
+
 
 import java.io.*;
 import java.util.*;
@@ -15,10 +17,12 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static edu.rice.hj.Module0.finish;
-import static edu.rice.hj.Module0.launchHabaneroApp;
-import static edu.rice.hj.Module1.forasync;
-import static edu.rice.hj.Module2.isolated;
+//import static edu.rice.hj.Module0.finish;
+//import static edu.rice.hj.Module0.launchHabaneroApp;
+//import static edu.rice.hj.Module1.forasync;
+//import static edu.rice.hj.Module2.isolated;
+
+import jomp.runtime.*;
 
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
@@ -37,10 +41,10 @@ public class Main {
     public static String splitAxis = "horizontal";
     public static ArrayList<Circle> core_circles = new ArrayList<>();
     public static Long count_naive_circles_for_fork_join = 0L;
-    //    public static ArrayList<Circle> top_likelihood_circles_for_fork_join = new ArrayList<>();
+//    public static ArrayList<Circle> top_likelihood_circles_for_fork_join = new ArrayList<>();
     public static final List<Circle> top_likelihood_circles_for_fork_join = Collections.synchronizedList(new ArrayList<Circle>());
 
-    public static void main(String args[]) throws Exception {
+    public static void main(String args[]) throws IOException, SuspendableException {
         Scanner in = new Scanner(System.in);
         String fileName = "d.csv";//in.nextLine();
         bucket_size = 100;
@@ -77,94 +81,13 @@ public class Main {
         System.out.println("Starting run");
 //        runNaiveTester(gridFile, events);
 //        runNaiveTesterHJ(gridFile, events);
-//        runNaiveTesterJvFP(gridFile, events);
-//        runNaiveTesterJOMP(gridFile, events);
+        runNaiveTesterJvFP(gridFile, events);
         // TODO: 4/6/2017 remove Collections sort and naive without function amd move it after naive
 //        runMovingCircleTester(gridFile, events);
 //        runMovingCircleTesterHJ(gridFile, events);
 //        runMovingCircleTesterJvFP(gridFile, events);
-        runMovingCircleTesterJOMP(gridFile, events);
         System.out.println("Complete");
 
-    }
-
-    private static void runMovingCircleTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
-        int runtime = 100;
-        Visualize vis = new Visualize();
-        long start = System.currentTimeMillis();
-        JOMP.movingCircleJOMP movingCircleJOMP = new JOMP.movingCircleJOMP();
-        Circle[] core_circles_array = movingCircleJOMP.movingCircleTesterJOMP(runtime, gridFile, minLon, minLat, maxLon, maxLat);
-        long end = System.currentTimeMillis();
-
-        for(int i=0;i<runtime;i++)
-        {
-            if (core_circles_array[i] == null) {
-                continue;
-            }
-            System.out.println(core_circles_array[i].toString());
-        }
-        for (int i = 0; i < runtime; i++) {
-            Circle temp_circle = core_circles_array[i];
-            if (temp_circle == null) {
-                continue;
-            }
-            core_circles.add(temp_circle);
-        }
-        Circle c1 = new Circle(minLon, minLat, 0.0001);
-        Circle c2 = new Circle(minLon, maxLat, 0.0001);
-        Circle c3 = new Circle(maxLon, maxLat, 0.0001);
-        Circle c4 = new Circle(maxLon, minLat, 0.0001);
-
-        core_circles.add(c1);
-        core_circles.add(c2);
-        core_circles.add(c3);
-        core_circles.add(c4);
-        vis.drawCircles(events, core_circles);
-        System.out.println("Complete");
-        Collections.sort(core_circles, Circle.sortByLHR());
-        Circle a = new Circle(core_circles.get(0));
-        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
-        CircleOps controller = new CircleOps(1, 2, area, gridFile);
-        int count = 1;
-        for (Circle c : core_circles) {
-
-            if (!controller.equals(a, c)) {
-                count++;
-                a = new Circle(c);
-            }
-
-            System.out.println(c.toString() + " LHR: " + c.lhr);
-
-        }
-        System.out.println("Amount of circles found : " + core_circles.size() + " " + count);
-        System.out.println("Time for JOMP implementation :" + (end - start));
-    }
-
-    private static void runNaiveTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
-        System.out.println("Entering circle scanning: ");
-        System.out.println("Starting Naive run with JOMP");
-        long startTime = System.currentTimeMillis();
-        naiveTesterJOMP(gridFile);
-        long endTime = System.currentTimeMillis();
-        long totalTime = endTime - startTime;
-        System.out.println("Total time for naive with JOMP: " + totalTime);
-        afterNaive(events);
-    }
-
-    private static void naiveTesterJOMP(GridFile gridFile) throws Exception {
-        JOMP.naiveJOMP naiveJOMP = new JOMP.naiveJOMP();
-        naiveJOMP.naiveTesterJOMP(gridFile, minLon, minLat, maxLon, maxLat);
-        Circle top_likelihood_circles_a[] = naiveJOMP.circles;
-        int circles_added = naiveJOMP.added_circles;
-        long count_naive_circles = naiveJOMP.circle_count;
-        ArrayList<Circle> top_likelihood_circles = new ArrayList<>();
-        for (int i = 0; i < circles_added; i++) {
-            top_likelihood_circles.add(top_likelihood_circles_a[i]);
-        }
-        System.out.println("SIZE A: " + top_likelihood_circles.size() + " " + count_naive_circles);
-        Collections.sort(top_likelihood_circles, Circle.sortByLHR());
-        System.out.println("SIZE B");
-        naiveWithoutIntersectingCircles(top_likelihood_circles, count_naive_circles);
     }
 
     private static void runNaiveTesterJvFP(GridFile gridFile, ArrayList<Events> events) {
@@ -394,8 +317,7 @@ public class Main {
                     if (fin_circle != null) {
                         Circle finalFin_circle = fin_circle;
                         isolated(() -> {
-                        controller.removePoints(controller.scanCircle(finalFin_circle));
-
+                            controller.removePoints(controller.scanCircle(finalFin_circle));
                             core_circles.add(finalFin_circle);
                         });
                         fin_circle.lhr = maxlikeli;
@@ -471,11 +393,6 @@ public class Main {
                         } finally {
                             rl.unlock();
                         }
-
-
-//                        synchronized (core_circles) {
-//                            core_circles.add(finalFin_circle);
-//                        }
                         fin_circle.lhr = maxlikeli;
                     }
                     return;
@@ -562,10 +479,6 @@ public class Main {
         final double growth_radius = 0.001;
         int number_of_radius = 10;       //By formula: number  <=  ((t-c)/g) + 1
 
-        int lat_circles = (int) ((maxLat - minLat) / shift_radius) + 1;
-        int lon_circles = (int) ((maxLon - minLon) / shift_radius) + 1;
-        int assumed_number_of_circles = lat_circles * lon_circles * number_of_radius;
-
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         final Circle[] curr_circle = new Circle[1];
         CircleOps controller = new CircleOps(initial_radius, term_radius, area, gridFile);
@@ -615,7 +528,6 @@ public class Main {
         System.out.println("SIZE A: " + top_likelihood_circles.size() + " " + count_naive_circles[0]);
         Collections.sort(top_likelihood_circles, Circle.sortByLHR());
         System.out.println("SIZE B");
-        System.out.println(lat_circles + " " + lon_circles + " " + assumed_number_of_circles + "asss");
         naiveWithoutIntersectingCircles(top_likelihood_circles, count_naive_circles[0]);
     }
 
@@ -631,6 +543,8 @@ public class Main {
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         CircleOps controller = new CircleOps(initial_radius, term_radius, area, gridFile);
 //        System.out.println(curr_circle.toString());
+
+
 
 
         for (int i = start; i < end; i++) {
@@ -649,7 +563,7 @@ public class Main {
 //                        rl.unlock();
 //                    }
 
-                    synchronized (Main.class) {
+                    synchronized(Main.class) {
                         count_naive_circles_for_fork_join++;
                     }
 //                            System.out.print(finalI);
