@@ -1,0 +1,103 @@
+package JOMP;
+
+import Algorithm_Ops.Circle;
+import Algorithm_Ops.CircleOps;
+import Algorithm_Ops.ScanGeometry;
+import Dataset.Events;
+import Dataset.GridFile;
+
+
+
+/**
+ * Created by guroosh on 8/4/17.
+ */
+public class movingCircleJOMP {
+    int added_circles = 0;
+    public Circle[] movingCircleTesterJOMP(int runtime, GridFile gridFile, double minLon, double minLat, double maxLon, double maxLat) throws Exception {
+        Circle[] core_circles = new Circle[runtime];
+        int i;
+        //omp parallel shared(i)
+        {
+            //omp for
+            for (i = 0; i < runtime; i++) {
+                movingCircleTester3(core_circles, gridFile, minLon, minLat, maxLon, maxLat);
+
+            }
+        }
+        //omp barrier
+        return core_circles;
+    }
+
+    private void movingCircleTester3(Circle[] core_circles, GridFile gridFile, double minLon, double minLat, double maxLon, double maxLat) throws Exception {
+        int moving_counter = 1;
+        int circlecounter = 100;
+        double curr_radius = 0.001;//1;
+
+        double term_radius = 0.2, growth = 0.005;
+
+        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
+
+
+        int count_limit = 1;
+        while (count_limit-- > 0) {
+            Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
+//            Circle curr_circle = new Circle(-81.2234, 39.7345, 0.001);   //-81.3773, 39.6293, .01)
+            Circle next_circle;
+            Circle temp_circle = new Circle();
+            temp_circle.setRadius(curr_circle.getRadius());
+            temp_circle.setX_coord(curr_circle.getX_coord());
+            temp_circle.setY_coord(curr_circle.getY_coord());
+            CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);
+
+            double maxlikeli = 1;
+            Circle fin_circle = null;
+            while (controller.term(curr_circle) != 3) {
+
+
+                next_circle = controller.checkanglepoints(curr_circle);
+
+                Events[] points = controller.scanCircle(curr_circle).toArray(new Events[0]);
+                Events[] points1 = controller.scanCircle(next_circle).toArray(new Events[0]);
+
+                double curr_likeli = controller.likelihoodRatio(curr_circle, points);
+                double next_likeli = controller.likelihoodRatio(next_circle, points1);
+
+                if (curr_likeli < next_likeli) {
+                    if (next_likeli > maxlikeli) {
+                        maxlikeli = next_likeli;
+                        fin_circle = new Circle(next_circle);
+                    }
+//                    core_circles.add(temp_circle);
+                    curr_circle = new Circle(next_circle);
+//                    System.out.println(moving_counter + "\t\t\tShifted circle: " + curr_circle.toString() + "\n\n");
+                    moving_counter++;
+                } else {
+                    if (curr_likeli > maxlikeli) {
+                        maxlikeli = curr_likeli;
+                        fin_circle = new Circle(curr_circle);
+
+                    }
+                    curr_circle = controller.grow_radius(growth, curr_circle);
+                    moving_counter++;
+                }
+                while (circlecounter <= 1) {
+
+                    if (fin_circle != null) {
+                        Circle finalFin_circle = fin_circle;
+                        //omp critical three
+                        {
+                            controller.removePoints(controller.scanCircle(finalFin_circle));
+                            core_circles[added_circles] = finalFin_circle;
+                            added_circles++;
+                            System.out.println(added_circles);
+                        }
+                        fin_circle.lhr = maxlikeli;
+                    }
+                    return;
+                }
+                circlecounter--;
+            }
+        }
+
+    }
+}

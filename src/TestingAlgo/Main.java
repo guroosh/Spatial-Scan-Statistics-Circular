@@ -78,13 +78,66 @@ public class Main {
 //        runNaiveTester(gridFile, events);
 //        runNaiveTesterHJ(gridFile, events);
 //        runNaiveTesterJvFP(gridFile, events);
-        runNaiveTesterJOMP(gridFile, events);
+//        runNaiveTesterJOMP(gridFile, events);
         // TODO: 4/6/2017 remove Collections sort and naive without function amd move it after naive
 //        runMovingCircleTester(gridFile, events);
 //        runMovingCircleTesterHJ(gridFile, events);
 //        runMovingCircleTesterJvFP(gridFile, events);
+        runMovingCircleTesterJOMP(gridFile, events);
         System.out.println("Complete");
 
+    }
+
+    private static void runMovingCircleTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
+        int runtime = 100;
+        Visualize vis = new Visualize();
+        long start = System.currentTimeMillis();
+        JOMP.movingCircleJOMP movingCircleJOMP = new JOMP.movingCircleJOMP();
+        Circle[] core_circles_array = movingCircleJOMP.movingCircleTesterJOMP(runtime, gridFile, minLon, minLat, maxLon, maxLat);
+        long end = System.currentTimeMillis();
+
+        for(int i=0;i<runtime;i++)
+        {
+            if (core_circles_array[i] == null) {
+                continue;
+            }
+            System.out.println(core_circles_array[i].toString());
+        }
+        for (int i = 0; i < runtime; i++) {
+            Circle temp_circle = core_circles_array[i];
+            if (temp_circle == null) {
+                continue;
+            }
+            core_circles.add(temp_circle);
+        }
+        Circle c1 = new Circle(minLon, minLat, 0.0001);
+        Circle c2 = new Circle(minLon, maxLat, 0.0001);
+        Circle c3 = new Circle(maxLon, maxLat, 0.0001);
+        Circle c4 = new Circle(maxLon, minLat, 0.0001);
+
+        core_circles.add(c1);
+        core_circles.add(c2);
+        core_circles.add(c3);
+        core_circles.add(c4);
+        vis.drawCircles(events, core_circles);
+        System.out.println("Complete");
+        Collections.sort(core_circles, Circle.sortByLHR());
+        Circle a = new Circle(core_circles.get(0));
+        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
+        CircleOps controller = new CircleOps(1, 2, area, gridFile);
+        int count = 1;
+        for (Circle c : core_circles) {
+
+            if (!controller.equals(a, c)) {
+                count++;
+                a = new Circle(c);
+            }
+
+            System.out.println(c.toString() + " LHR: " + c.lhr);
+
+        }
+        System.out.println("Amount of circles found : " + core_circles.size() + " " + count);
+        System.out.println("Time for JOMP implementation :" + (end - start));
     }
 
     private static void runNaiveTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
