@@ -4,6 +4,7 @@ import Dataset.*;
 import TestingAlgo.Main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by LakshayD on 2/8/2017.
@@ -90,6 +91,9 @@ public class CircleOps {
         return circle;
     }
 
+    public double likelihoodRatio(Circle circle, Events[] points) {
+        return this.likelihoodRatio(circle, new ArrayList<>(Arrays.asList(points)));
+    }
     public double likelihoodRatio(Circle circle, ArrayList<Events> points) {
         double circle_area = Math.PI * circle.getRadius() * circle.getRadius() * 1000;
         double total_area = (this.area.end_X - this.area.start_X) * (this.area.end_Y - this.area.start_Y) * 1000;
@@ -193,6 +197,13 @@ public class CircleOps {
     //For now returns center of quad where points are found
 
 
+    public Circle[] getArrayWithXtraSpace(Circle[] circles, int size)
+    {
+        ArrayList<Circle> list = new ArrayList<>(Arrays.asList(circles));
+        Circle dummy = new Circle();
+        list.add(dummy);
+        return list.toArray(new Circle[0]);
+    }
     public Circle checkquadpoints(Circle curr_circle) {
         ArrayList<Events> points = scanCircle(curr_circle);
         int quadreg = 0, posi_lat = 0, posi_lon = 0;
