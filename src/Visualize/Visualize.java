@@ -1,26 +1,27 @@
-package TestingAlgo;
+package Visualize;
 
 import Algorithm_Ops.Circle;
 import Dataset.Events;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.*;
+
 /**
  * @author Cay Horstmann
  * @version 1.32 2007-04-14
  */
-public class VisualizeNaive {
+public class Visualize {
     public static ArrayList<Events> points;
     public static ArrayList<Circle> circles;
 
     public void drawCircles(ArrayList<Events> events, ArrayList<Circle> circles1) {
         EventQueue.invokeLater(() -> {
-            DrawFrameNaive frame = new DrawFrameNaive();
+            DrawFrame frame = new DrawFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
             points = events;
@@ -32,44 +33,56 @@ public class VisualizeNaive {
 /**
  * A frame that contains a panel with drawings
  */
-class DrawFrameNaive extends JFrame {
-    public DrawFrameNaive() {
+class DrawFrame extends JFrame {
+    public DrawFrame() {
         setTitle("Title");
+
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSize.getWidth();
         double height = screenSize.getHeight();
+//        System.out.println(width + " " + height);
+//        pack();
+//        setSize((int) width, (int) height);
         setSize((int) width, (int) height);
+        // add panel to frame
         add(new JPanel(), BorderLayout.NORTH);
         add(new JScrollPane(), BorderLayout.CENTER);
-        DrawComponentNaive component = new DrawComponentNaive();
+        DrawComponent component = new DrawComponent();
         add(component);
     }
+
+//    public static final int DEFAULT_WIDTH = 5000;
+//
+//    public static final int DEFAULT_HEIGHT = 5000;
 }
 
 /**
  * A component that displays rectangles and ellipses.
  */
-class DrawComponentNaive extends JComponent {
+class DrawComponent extends JComponent {
     double min_x = 1000000;
     double min_y = 1000000;
     double max_x = -1000000;
     double max_y = -1000000;
     double leftX = 0;
     double topY = 0;
-//    double width = 1300;
-//    double height = 680;
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     double width = screenSize.getWidth();
     double height = screenSize.getHeight();
-
+    //    double width = 1900;
+//    double height = 1040;
+    double scale = 5;
 
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
+
+//        g2.translate(width/2, height/2);
+//        g2.scale(scale, scale);
+//        g2.translate(-width/2, -height/2);
+
         ArrayList<Events> new_points = new ArrayList<>();
-        g2.setColor(Color.BLACK);
         drawRectangle(g2);
         drawPoints(g2, new_points);
-        g2.setColor(Color.GREEN);
         drawCircles(g2);
     }
 
@@ -82,14 +95,16 @@ class DrawComponentNaive extends JComponent {
         double average_x = 0;
         double average_y = 0;
 
-        int total = VisualizeNaive.circles.size();
+        int total = Visualize.circles.size();
         total -= 4;
-        System.out.println("Total circles drawn: " + total);
 
-        for (Circle circle : VisualizeNaive.circles) {
+
+        for (Circle circle : Visualize.circles) {
             double x = circle.getX_coord();
             double y = circle.getY_coord();
             double r = circle.getRadius();
+//            System.out.println(r + " " + x + " " + y);
+//            System.out.print(circle.toString());
             average_x += x;
             average_y += y;
             if (x - r < min_x)
@@ -100,14 +115,24 @@ class DrawComponentNaive extends JComponent {
                 min_y = y - r;
             if (y + r > max_y)
                 max_y = y + r;
+//            g2.fill();(circle);
         }
         average_x /= total;
         average_y /= total;
-        System.out.println("Average: " + average_x + ", " + average_y);
-        System.out.println("Range: " + min_x + " to " + max_x + " and " + min_y + " to " + max_y);
-        int i = 0;
-        for (Circle circle : VisualizeNaive.circles) {
-            i++;
+
+
+        boolean first = true;
+        String color = "G";         //pattern is Y GBK GBK GBK...
+        double prev_x = 0, prev_y = 0;
+        /*
+        * Start circle-red
+        * growth is magenta
+        * shift is green
+        * shift2 is blue
+        * shift3 is yellow
+        * points are black
+        * */
+        for (Circle circle : Visualize.circles) {
             double x = circle.getX_coord();
             double y = circle.getY_coord();
             double r = circle.getRadius();
@@ -120,15 +145,46 @@ class DrawComponentNaive extends JComponent {
             scaled_circle.setY_coord(height * (y - min_y) / (max_y - min_y));
 
             Ellipse2D.Double scaled_ellipse = new Ellipse2D.Double(scaled_circle.getX_coord() - radius_horizontal, scaled_circle.getY_coord() - radius_vertical, 2 * radius_horizontal, 2 * radius_vertical);
+            if (first) {
+                g2.setColor(Color.black);
+                first = false;
+                g2.draw(scaled_ellipse);
+                g2.setColor(Color.magenta);
+                prev_x = x;
+                prev_y = y;
+                continue;
+            }
+            if (prev_x != x || prev_y != y) {
+                if (color.equals("G")) {
+                    g2.setColor(Color.GREEN);
+                    color = "B";
+
+                } else if (color.equals("B")) {
+                    g2.setColor(Color.BLUE);
+                    color = "Y";
+
+                } else if (color.equals("Y")) {
+                    g2.setColor(Color.YELLOW);
+                    color = "G";
+
+                }
+                g2.draw(scaled_ellipse);
+                g2.setColor(Color.magenta);
+                prev_x = x;
+                prev_y = y;
+                continue;
+            }
+            prev_x = x;
+            prev_y = y;
             g2.draw(scaled_ellipse);
         }
     }
 
     private void drawPoints(Graphics2D g2, ArrayList<Events> new_points) {
+        System.out.println();
         double lat, lon;
-        for (Events e : VisualizeNaive.points) {
-            if (e.marked)
-                continue;
+        for (Events e : Visualize.points) {
+
             Events event = new Events();
             lat = e.getLat();
             lon = e.getLon();
@@ -138,8 +194,9 @@ class DrawComponentNaive extends JComponent {
                 new_points.add(event);
             }
         }
-        Ellipse2D.Double ellipse = new Ellipse2D.Double();
-        int point_size;
+        Ellipse2D.Double ellipse;
+        g2.setColor(Color.black);
+        int point_size = 3;
 
         for (int i = 0; i < new_points.size(); i++) {
             Events e = new_points.get(i);
@@ -154,6 +211,7 @@ class DrawComponentNaive extends JComponent {
             }
             Random r = new Random();
             int sign = r.nextInt(4);
+            ellipse = null;
             if (sign == 0) {
                 ellipse = new Ellipse2D.Double(e.getLon() - (point_size / 2) + alp, e.getLat() - (point_size / 2) + alp2, point_size, point_size);
             }

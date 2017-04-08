@@ -1,8 +1,10 @@
 package Dataset;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.*;
 import TestingAlgo.Main;
+
+import static TestingAlgo.Main.*;
 
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
@@ -252,6 +254,97 @@ public class GridFile implements Serializable {
         this.lonScale.add(gridCell.minLon);
         this.lonScale.add(gridCell.maxLon);
     }
+    private static void checkData(GridFile gridFile) {
+        int counter = 0;
+        System.out.println("Number of grids: " + gridFile.gridCellObject.size());
+        System.out.println("Number of mappings:" + gridFile.mapper.size());
+        System.out.println("Number of lat:" + gridFile.latScale.size());
+        System.out.println("Number of lon:" + gridFile.lonScale.size());
+        HashSet<Bucket> bucketSet = new HashSet<>();
+        HashSet<Events> eventSet = new HashSet<>();
+        for (HashMap.Entry<String, GridCell> gcO : gridFile.gridCellObject.entrySet()) {
+            Bucket b = gridFile.mapper.get(gcO.getValue());
+            eventSet.addAll(b.eventsInBucket);
+            bucketSet.add(b);
+        }
+        for (Bucket b : bucketSet) {
+            counter += b.eventsInBucket.size();
+        }
+        System.out.println("Total points (check 1): " + counter);
+        System.out.println("Total points (check 2): " + eventSet.size());
+    }
+    public static ArrayList<Events> readDataFile(String fileName) throws IOException {
+//        int latInCSV = 19;
+//        int lonInCSV = 20;
+        double lat, lon;
+        int latInCSV = 13;
+        int lonInCSV = 12;
+        String line;
+        String lines[];
+        ArrayList<Events> events = new ArrayList<>();
+        InputStream is = new FileInputStream(fileName);
+        InputStreamReader isr = new InputStreamReader(is);
+        BufferedReader br = new BufferedReader(isr);
+        boolean isHeader = true;
+        int counter1 = 0;
+        while ((line = br.readLine()) != null) {
+            if (isHeader) {
+                isHeader = false;
+                continue;
+            }
+            line = modifyLine(line);
+            lines = line.split(",");
+            try {
+                double longitude, latitude;
+                longitude = Double.parseDouble(lines[lonInCSV]);
+                latitude = Double.parseDouble(lines[latInCSV]);
+                Events position = new Events();
+                position.setLat(latitude);
+                position.setLon(longitude);
+                lat = position.getLat();
+                lon = position.getLon() * (111.320 / 110.574) * Math.cos(Math.toRadians(position.getLat()));
+                if (lon > maxLon) {
+                    maxLon = lon;
+                } else if (lon < minLon) {
+                    minLon = lon;
+                }
+                if (lat > maxLat) {
+                    maxLat = lat;
+                } else if (lat < minLat) {
+                    minLat = lat;
+                }
+                position.setLat(lat);
+                position.setLon(lon);
+                events.add(position);
+            } catch (ArrayIndexOutOfBoundsException e) {
+                counter1++;                     //to check amount of corrupted data: if lat lon is empty after geo locating
+            }
+        }
+        return events;
+    }
+    private static String modifyLine(String line) {
+        int counter = 0;
+        StringBuilder newString = new StringBuilder(line);
+        for (int i = 0; i < line.length(); i++) {
+            char ch = line.charAt(i);
+            if (ch == '"') {
+                if (counter == 0)
+                    counter++;
+                else
+                    counter--;
+            }
+            if (ch == ',') {
+                if (counter == 1) {
+                    newString.setCharAt(i, '-');
+                }
+            }
+        }
+        String ans = newString.toString();
+//        ans = ans.replace("-","\"\"");            //important: if data also contains a dash
+        return ans;
+    }
+
+
 }
 
 class Replace {

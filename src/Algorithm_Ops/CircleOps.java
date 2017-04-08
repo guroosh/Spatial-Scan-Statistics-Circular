@@ -5,6 +5,8 @@ import TestingAlgo.Main;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * Created by LakshayD on 2/8/2017.
@@ -318,6 +320,33 @@ public class CircleOps {
 
         return new_circle;
 
+    }
+
+    public static void resetPointsVisibility(GridFile gridFile)
+    {
+        HashSet<Bucket> bucketSet = new HashSet<>();
+        HashSet<Events> eventSet = new HashSet<>();
+        for (HashMap.Entry<String, GridCell> gcO : gridFile.gridCellObject.entrySet()) {
+            Bucket b = gridFile.mapper.get(gcO.getValue());
+            eventSet.addAll(b.eventsInBucket);
+            bucketSet.add(b);
+        }
+        for(Events events: eventSet)
+        {
+            events.marked = false;
+        }
+    }
+
+    public static boolean checkintersection(Circle c1, Circle c2) {
+        double x1 = c1.getX_coord(), x2 = c2.getX_coord(), y1 = c1.getY_coord(), y2 = c2.getY_coord();
+        double dist = Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+        if (c1.getRadius() > c2.getRadius() && dist < c1.getRadius() / 2) {
+            return true;           //returns if c1 overlaps c2
+        }
+        if (c1.getRadius() < c2.getRadius() && dist < c2.getRadius() / 2) {
+            return true;           //returns if c2 overlaps c1
+        }
+        return !(dist > (c1.getRadius() + c2.getRadius()));
     }
 
     public boolean equals(Circle c1, Circle c2) {

@@ -60,15 +60,8 @@ public class Circle {
 
     @Override
     public String toString() {
-        return "X: " + String.format("%.4f", this.x_coord) + " Y: " + String.format("%.4f", this.y_coord) + " r: " + this.radius;
+        return "X: " + String.format("%.4f", this.x_coord) + " Y: " + String.format("%.4f", this.y_coord) + " r: " + this.radius + " LR: " + this.lhr;
     }
-
-//    public boolean equals (Circle obj) {
-//        if (this.getX_coord() == obj.getX_coord() && this.getY_coord() == obj.getY_coord() && this.getRadius() == obj.getRadius())
-//            return true;
-//        else
-//            return false;
-//    }
 
     public double getX_coord() {
         return x_coord;

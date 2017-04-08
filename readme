@@ -1,9 +1,16 @@
-java -cp .:jomp1.0b.jar jomp.compiler.Jomp JOMP/naiveJOMP
-javac -cp .:jomp1.0b.jar:habanero-java-lib-0.1.2.jar TestingAlgo/Main.java
-java -cp .:jomp1.0b.jar:habanero-java-lib-0.1.2.jar -Djomp.threads=4 TestingAlgo/Main
+run ./script.sh
 
 
+TODO:
 
-java -cp .:jomp1.0b.jar jomp.compiler.Jomp JOMP/movingCircleJOMP
-javac -cp .:jomp1.0b.jar:habanero-java-lib-0.1.2.jar TestingAlgo/Main.java
-java -cp .:jomp1.0b.jar:habanero-java-lib-0.1.2.jar -Djomp.threads=4 TestingAlgo/Main
+Lower and Upper bound in Moving circle.
+
+Monte Carlo simulation
+
+Multiple datasets
+
+Make functions for: 
+	finding overlapping area of 2 circles
+	computing p-value 
+	Inverse jacards index
+	
