@@ -39,6 +39,7 @@ public class movingCircleJOMP {
 
 
         int count_limit = 1;
+        OUTER:
         while (count_limit-- > 0) {
             Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
 //            Circle curr_circle = new Circle(-81.2234, 39.7345, 0.001);   //-81.3773, 39.6293, .01)
@@ -80,20 +81,25 @@ public class movingCircleJOMP {
                     curr_circle = controller.grow_radius(growth, curr_circle);
                     moving_counter++;
                 }
+
                 while (circlecounter <= 1) {
 
-                    if (fin_circle != null) {
-                        Circle finalFin_circle = fin_circle;
-                        //omp critical three
-                        {
-                            controller.removePoints(controller.scanCircle(finalFin_circle));
-                            core_circles[added_circles] = finalFin_circle;
-                            added_circles++;
-                        }
-                        fin_circle.lhr = maxlikeli;
-                    }
-                    return;
-                }
+                                    if (fin_circle != null) {
+                                        if(fin_circle.getRadius()>.01)
+                                            continue OUTER;
+                 Circle finalFin_circle = fin_circle;
+                                        //omp critical three
+                                        {
+                                            controller.removePoints(controller.scanCircle(finalFin_circle));
+                                            core_circles[added_circles] = finalFin_circle;
+                                            added_circles++;
+                                        }
+                                        fin_circle.lhr = maxlikeli;
+
+                                    }
+                                    return;
+                                }
+
                 circlecounter--;
             }
         }

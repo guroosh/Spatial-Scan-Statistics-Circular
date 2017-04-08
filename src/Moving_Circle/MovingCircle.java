@@ -99,6 +99,7 @@ public class MovingCircle {
 
 
         int count_limit = 1;
+        OUTER:
         while (count_limit-- > 0) {
             Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
 //            Circle curr_circle = new Circle(-81.2234, 39.7345, 0.001);   //-81.3773, 39.6293, .01)
@@ -139,12 +140,15 @@ public class MovingCircle {
                 while (circlecounter <= 1) {
 
                     if (fin_circle != null) {
+                        if(fin_circle.getRadius()>.01)
+                            continue OUTER;
                         Circle finalFin_circle = fin_circle;
                         isolated(() -> {
                             controller.removePoints(controller.scanCircle(finalFin_circle));
                             core_circles.add(finalFin_circle);
                         });
                         fin_circle.lhr = maxlikeli;
+
                     }
                     return;
                 }
@@ -164,6 +168,7 @@ public class MovingCircle {
 
 
         int count_limit = 1;
+        OUTER:
         while (count_limit-- > 0) {
             Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
 //            Circle curr_circle = new Circle(-81.2234, 39.7345, 0.001);   //-81.3773, 39.6293, .01)
@@ -207,6 +212,9 @@ public class MovingCircle {
                 while (circlecounter <= 1) {
 
                     if (fin_circle != null) {
+                        if(fin_circle.getRadius()>.01)
+                            continue OUTER;
+
                         Circle finalFin_circle = fin_circle;
                         final ReentrantLock rl = new ReentrantLock();
                         rl.lock();
@@ -217,9 +225,11 @@ public class MovingCircle {
                             rl.unlock();
                         }
                         fin_circle.lhr = maxlikeli;
+
                     }
                     return;
                 }
+
                 circlecounter--;
             }
         }
@@ -236,6 +246,7 @@ public class MovingCircle {
 
 
         int count_limit = 1;
+        OUTER:
         while (count_limit-- > 0) {
             Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
 //            Circle curr_circle = new Circle(-81.2234, 39.7345, 0.001);   //-81.3773, 39.6293, .01)
@@ -284,12 +295,10 @@ public class MovingCircle {
 
                     if (fin_circle != null) {
                         if(fin_circle.getRadius()>.01)
-                            continue;
-//                            fin_circle.setRadius(.001);
+                            continue OUTER;
 
-                        ArrayList<Events> pointx = controller.scanCircle(fin_circle);
-                        fin_circle.lhr = controller.likelihoodRatio(fin_circle,pointx);
-//                        fin_circle.lhr = maxlikeli;
+
+                        fin_circle.lhr = maxlikeli;
                         core_circles.add(fin_circle);
                         controller.removePoints(controller.scanCircle(fin_circle));
 
