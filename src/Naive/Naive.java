@@ -39,7 +39,7 @@ public class Naive {
     public static final List<Circle> top_likelihood_circles_for_FJP = Collections.synchronizedList(new ArrayList<Circle>());
 
     public static void runNaiveTester(GridFile gridFile, ArrayList<Events> events) {
-        System.out.println("Starting Naive run");
+        System.out.println("\nStarting Naive run");
         long startTime = System.currentTimeMillis();
         naiveTester(gridFile);
         long endTime = System.currentTimeMillis();
@@ -246,7 +246,7 @@ public class Naive {
                 j++;
             }
         }
-        System.out.println();
+
     }
 
     private static void afterNaive(ArrayList<Events> events) {
@@ -257,8 +257,7 @@ public class Naive {
         core_circles.add(c1);
         core_circles.add(c2);
         core_circles.add(c3);
-        core_circles.add(c4);
-        System.out.println();
+        core_circles.add(c4);System.out.println();
         VisualizeNaive vis = new VisualizeNaive();
 //        vis.drawCircles(events, core_circles);
         int number=5;
@@ -269,8 +268,9 @@ public class Naive {
     private static void drawtop(int number) {
         for(int i=0;i<number;i++)
         {
-            System.out.println(core_circles.get(i).toString());
+            System.out.println("\t"+core_circles.get(i).toString());
         }
+        System.out.println();
     }
 
     private static class NaiveRunnerFJP extends RecursiveAction {
