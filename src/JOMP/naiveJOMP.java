@@ -202,7 +202,7 @@ private class __omp_Class0 extends jomp.runtime.BusyTask {
                     }
                     curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
                 }
-                System.out.println("DONE for radius: " + curr_local_radius[0]);
+
             }
                    // OMP USER CODE ENDS
                    if (i == (__omp_WholeData2.stop-1)) amLast = true;

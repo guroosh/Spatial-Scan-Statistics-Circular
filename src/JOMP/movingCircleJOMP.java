@@ -120,7 +120,6 @@ public class movingCircleJOMP {
                             controller.removePoints(controller.scanCircle(finalFin_circle));
                             core_circles[added_circles] = finalFin_circle;
                             added_circles++;
-                            System.out.println(added_circles);
                         }
                          // OMP USER CODE ENDS
                          }
