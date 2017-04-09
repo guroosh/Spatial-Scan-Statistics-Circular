@@ -23,6 +23,7 @@ import static edu.rice.hj.Module2.isolated;
  * Created by guroosh on 8/4/17.
  */
 public class MovingCircle {
+    static int runtime = 100;
     public static void runMovingCircleTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
         System.out.println("Starting Moving Circle run with JOMP");
         int runtime = 100;
@@ -75,8 +76,10 @@ public class MovingCircle {
 
     public static void runMovingCircleTester(GridFile gridFile, ArrayList<Events> events) {
         System.out.println("Starting Moving Circle run with single thread");
-        int runtime = 100;
+
+
         long start = System.currentTimeMillis();
+
         for (int i = 0; i < runtime; i++) {
             movingCircleTester(gridFile);
         }
@@ -96,14 +99,13 @@ public class MovingCircle {
 
 
         int count_limit = 1;
+        OUTER:
         while (count_limit-- > 0) {
             Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
 //            Circle curr_circle = new Circle(-81.2234, 39.7345, 0.001);   //-81.3773, 39.6293, .01)
             Circle next_circle;
-            Circle temp_circle = new Circle();
-            temp_circle.setRadius(curr_circle.getRadius());
-            temp_circle.setX_coord(curr_circle.getX_coord());
-            temp_circle.setY_coord(curr_circle.getY_coord());
+            Circle temp_circle = new Circle(curr_circle);
+
             CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);
 
             double maxlikeli = 1;
@@ -124,9 +126,7 @@ public class MovingCircle {
                         maxlikeli = next_likeli;
                         fin_circle = new Circle(next_circle);
                     }
-//                    core_circles.add(temp_circle);
                     curr_circle = new Circle(next_circle);
-//                    System.out.println(moving_counter + "\t\t\tShifted circle: " + curr_circle.toString() + "\n\n");
                     moving_counter++;
                 } else {
                     if (curr_likeli > maxlikeli) {
@@ -140,12 +140,15 @@ public class MovingCircle {
                 while (circlecounter <= 1) {
 
                     if (fin_circle != null) {
+                        if(fin_circle.getRadius()>.01)
+                            continue OUTER;
                         Circle finalFin_circle = fin_circle;
                         isolated(() -> {
                             controller.removePoints(controller.scanCircle(finalFin_circle));
                             core_circles.add(finalFin_circle);
                         });
                         fin_circle.lhr = maxlikeli;
+
                     }
                     return;
                 }
@@ -165,6 +168,7 @@ public class MovingCircle {
 
 
         int count_limit = 1;
+        OUTER:
         while (count_limit-- > 0) {
             Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
 //            Circle curr_circle = new Circle(-81.2234, 39.7345, 0.001);   //-81.3773, 39.6293, .01)
@@ -187,7 +191,6 @@ public class MovingCircle {
 
                 double curr_likeli = controller.likelihoodRatio(curr_circle, points);
                 double next_likeli = controller.likelihoodRatio(next_circle, points1);
-
                 if (curr_likeli < next_likeli) {
                     if (next_likeli > maxlikeli) {
                         maxlikeli = next_likeli;
@@ -209,6 +212,9 @@ public class MovingCircle {
                 while (circlecounter <= 1) {
 
                     if (fin_circle != null) {
+                        if(fin_circle.getRadius()>.01)
+                            continue OUTER;
+
                         Circle finalFin_circle = fin_circle;
                         final ReentrantLock rl = new ReentrantLock();
                         rl.lock();
@@ -219,9 +225,11 @@ public class MovingCircle {
                             rl.unlock();
                         }
                         fin_circle.lhr = maxlikeli;
+
                     }
                     return;
                 }
+
                 circlecounter--;
             }
         }
@@ -238,16 +246,20 @@ public class MovingCircle {
 
 
         int count_limit = 1;
+        OUTER:
         while (count_limit-- > 0) {
             Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
 //            Circle curr_circle = new Circle(-81.2234, 39.7345, 0.001);   //-81.3773, 39.6293, .01)
-            Circle next_circle;
-            Circle temp_circle = new Circle();
-            temp_circle.setRadius(curr_circle.getRadius());
-            temp_circle.setX_coord(curr_circle.getX_coord());
-            temp_circle.setY_coord(curr_circle.getY_coord());
-            CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);
 
+            Circle next_circle;
+            Circle temp_circle = new Circle(curr_circle);
+            temp_circle.setRadius(term_radius);
+            CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);
+//            if (controller.scanCircle(temp_circle).size()<100)
+//            {
+//                runtime++;
+//                continue;
+//            }
             double maxlikeli = 1;
             Circle fin_circle = null;
             while (controller.term(curr_circle) != 3) {
@@ -282,11 +294,14 @@ public class MovingCircle {
                 while (circlecounter <= 1) {
 
                     if (fin_circle != null) {
+                        if(fin_circle.getRadius()>.01)
+                            continue OUTER;
 
-                        controller.removePoints(controller.scanCircle(fin_circle));
-                        core_circles.add(fin_circle);
 
                         fin_circle.lhr = maxlikeli;
+                        core_circles.add(fin_circle);
+                        controller.removePoints(controller.scanCircle(fin_circle));
+
                     }
                     return;
                 }
@@ -296,7 +311,7 @@ public class MovingCircle {
     }
 
     private static void aftermovingcircal(GridFile gridFile, ArrayList<Events> events) {
-//        visualizedata(events,core_circles);
+        visualizedata(events,core_circles);
         Collections.sort(core_circles, Circle.sortByLHR());
         Circle a = new Circle(core_circles.get(0));
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
@@ -309,22 +324,24 @@ public class MovingCircle {
                 a = new Circle(c);
             }
 
-//            System.out.println(c.toString());
 
         }
-        int number=5;
+        int number=0;
         drawtop(number);
-        System.out.println("Amount of circles found : " + core_circles.size() + " " + count+"\n");
+        System.out.println("\tAmount of circles found : " + core_circles.size() + " Unique : " + count+"\n");
 
         core_circles = new ArrayList<>();
         CircleOps.resetPointsVisibility(gridFile);
     }
 
     private static void drawtop(int number) {
+        if(number==0)
+            number=core_circles.size();
         for(int i=0;i<number;i++)
         {
-            System.out.println(core_circles.get(i).toString());
+            System.out.println("\t"+core_circles.get(i).toString());
         }
+
     }
 
     private static void visualizedata(ArrayList<Events> events, ArrayList<Circle> core_circles1) {

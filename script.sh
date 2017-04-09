@@ -1,6 +1,0 @@
-#!/bin/bash
-cd src
-java -cp .:jomp1.0b.jar jomp.compiler.Jomp JOMP/naiveJOMP
-java -cp .:jomp1.0b.jar jomp.compiler.Jomp JOMP/movingCircleJOMP
-javac -cp .:jomp1.0b.jar:habanero-java-lib-0.1.2.jar TestingAlgo/Main.java
-java -cp .:jomp1.0b.jar:habanero-java-lib-0.1.2.jar -Djomp.threads=4 TestingAlgo/Main

@@ -10,7 +10,16 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/habanero-java-lib-0.1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/habanero-java-lib-0.1.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/jomp1.0b.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
