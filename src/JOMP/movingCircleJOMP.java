@@ -61,7 +61,7 @@ public class movingCircleJOMP {
         int circlecounter = 100;
         double curr_radius = 0.001;//1;
 
-        double term_radius = 0.2, growth = 0.005;
+        double term_radius = 0.2, growth = 0.001;
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
 

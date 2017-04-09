@@ -35,6 +35,7 @@ public class Circle {
         this.x_coord = c2.getX_coord();
         this.y_coord = c2.getY_coord();
         this.radius = c2.getRadius();
+        this.lhr = c2.lhr;
     }
 
 

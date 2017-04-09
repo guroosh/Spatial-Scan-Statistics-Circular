@@ -23,11 +23,12 @@ public class Main {
     public static int bucket_number = 0;
     public static int bucket_size;
     public static String splitAxis = "horizontal";
-    public static ArrayList<Circle> core_circles=new ArrayList<>() ;
+    public static ArrayList<Circle> core_circles = new ArrayList<>() ;
 
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
-        String fileName = "d.csv";  //in.nextLine();
+//        String fileName = "d.csv";  //in.nextLine();
+        String fileName = "dWeapon_unlawful_discharge_of.csv";
         bucket_size = 100;
 //        System.out.println("Enter file name: ");
 //        while (true) {
@@ -50,15 +51,15 @@ public class Main {
 
         System.out.println("\n\nStarting run with dataset "+fileName+"\n");
 
-//        runNaiveTester(gridFile, events);
+        runNaiveTester(gridFile, events);
 //        runNaiveTesterHJ(gridFile, events);
 //        runNaiveTesterFJP(gridFile, events);
 //        runNaiveTesterJOMP(gridFile, events);
 
-//        runMovingCircleTester(gridFile, events);
+        runMovingCircleTester(gridFile, events);
 //        runMovingCircleTesterHJ(gridFile, events);
 //        runMovingCircleTesterJvFP(gridFile, events);
-        runMovingCircleTesterJOMP(gridFile, events);
+//        runMovingCircleTesterJOMP(gridFile, events);
         System.out.println("Complete");
     }
 }

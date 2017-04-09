@@ -96,6 +96,7 @@ public class CircleOps {
     public double likelihoodRatio(Circle circle, Events[] points) {
         return this.likelihoodRatio(circle, new ArrayList<>(Arrays.asList(points)));
     }
+
     public double likelihoodRatio(Circle circle, ArrayList<Events> points) {
         double circle_area = Math.PI * circle.getRadius() * circle.getRadius() * 1000;
         double total_area = (this.area.end_X - this.area.start_X) * (this.area.end_Y - this.area.start_Y) * 1000;
@@ -199,13 +200,6 @@ public class CircleOps {
     //For now returns center of quad where points are found
 
 
-    public Circle[] getArrayWithXtraSpace(Circle[] circles, int size)
-    {
-        ArrayList<Circle> list = new ArrayList<>(Arrays.asList(circles));
-        Circle dummy = new Circle();
-        list.add(dummy);
-        return list.toArray(new Circle[0]);
-    }
     public Circle checkquadpoints(Circle curr_circle) {
         ArrayList<Events> points = scanCircle(curr_circle);
         int quadreg = 0, posi_lat = 0, posi_lon = 0;
@@ -260,9 +254,36 @@ public class CircleOps {
         return new_circle;
     }
 
+    public double checkOverlapping(Circle c1, Circle c2) {
+
+        double R1 = c1.getRadius();
+        double R2 = c2.getRadius();
+        double x1 = c1.getX_coord(), x2 = c2.getX_coord(), y1 = c1.getY_coord(), y2 = c2.getY_coord();
+        double dist = Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+        double areaCircle1 = Math.PI * R1 * R1;
+        double areaCircle2 = Math.PI * R2 * R2;
+        if (dist == 0) {
+            if (R1 > R2) {
+                return 2 * (areaCircle2 / (areaCircle2 + areaCircle1));
+            } else if (R2 >= R1) {
+                return 2 * (areaCircle1 / (areaCircle2 + areaCircle1));
+            }
+        }
+        if (dist >= R1 + R2 - Main.error_adjuster) {
+            return 0;
+        }
+        double area1 = R1 * R1 * Math.acos(((dist * dist) + (R1 * R1) - (R2 * R2)) / (2 * dist * R1));
+        double area2 = R2 * R2 * Math.acos(((dist * dist) + (R2 * R2) - (R1 * R1)) / (2 * dist * R2));
+        double area3 = (Math.sqrt((-dist + R1 + R2) * (dist + R1 - R2) * (dist - R1 + R2) * (dist + R1 + R2))) / 2;
+        double num = area1 + area2 - area3;
+        double den = areaCircle1 + areaCircle2;
+        return (num / den) * 2;
+    }
+
     public Circle checkanglepoints(Circle curr_circle) {
 //        ArrayList<Events> points = difference(curr_circle, growth);
         ArrayList<Events> points = scanCircle(curr_circle);
+        // TODO: 9/4/17 remove scanCircle from checkAnglePoints, instead store points only once 
 
         ArrayList<Events> quadpoints = new ArrayList<>();
         int quadreg = 0;
@@ -317,14 +338,13 @@ public class CircleOps {
         new_circle.setX_coord(x1);
         new_circle.setY_coord(y1);
 
-        new_circle.setRadius(start_radius);
+        new_circle.setRadius(curr_circle.getRadius()/4);
 
         return new_circle;
 
     }
 
-    public static void resetPointsVisibility(GridFile gridFile)
-    {
+    public static void resetPointsVisibility(GridFile gridFile) {
         HashSet<Bucket> bucketSet = new HashSet<>();
         HashSet<Events> eventSet = new HashSet<>();
         for (HashMap.Entry<String, GridCell> gcO : gridFile.gridCellObject.entrySet()) {
@@ -332,13 +352,13 @@ public class CircleOps {
             eventSet.addAll(b.eventsInBucket);
             bucketSet.add(b);
         }
-        for(Events events: eventSet)
-        {
+        for (Events events : eventSet) {
             events.marked = false;
         }
     }
 
     public static boolean checkintersection(Circle c1, Circle c2) {
+        //circles just touching are considered as not intersecting
         double x1 = c1.getX_coord(), x2 = c2.getX_coord(), y1 = c1.getY_coord(), y2 = c2.getY_coord();
         double dist = Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
         if (c1.getRadius() > c2.getRadius() && dist < c1.getRadius() / 2) {
@@ -347,7 +367,10 @@ public class CircleOps {
         if (c1.getRadius() < c2.getRadius() && dist < c2.getRadius() / 2) {
             return true;           //returns if c2 overlaps c1
         }
-        return !(dist > (c1.getRadius() + c2.getRadius()));
+        if (dist > (c1.getRadius() + c2.getRadius())) {
+            return false;           //return if c1 and c2 are separate
+        }
+        return true;                //returns if intersecting circles
     }
 
     public boolean equals(Circle c1, Circle c2) {

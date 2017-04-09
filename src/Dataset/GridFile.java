@@ -302,7 +302,7 @@ public class GridFile implements Serializable {
                 position.setLat(latitude);
                 position.setLon(longitude);
                 lat = position.getLat();
-                lon = position.getLon() * (111.320 / 110.574) * Math.cos(Math.toRadians(position.getLat()));
+                lon = position.getLon();// * (111.320 / 110.574) * Math.cos(Math.toRadians(position.getLat()));
                 if (lon > maxLon) {
                     maxLon = lon;
                 } else if (lon < minLon) {
