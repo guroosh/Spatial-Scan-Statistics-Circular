@@ -6,7 +6,6 @@ import Algorithm_Ops.ScanGeometry;
 import Dataset.Events;
 import Dataset.GridFile;
 import TestingAlgo.Main;
-
 import Visualize.VisualizeNaive;
 import edu.rice.hj.api.SuspendableException;
 
@@ -44,11 +43,11 @@ public class Naive {
         naiveTester(gridFile);
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        System.out.println("Total time for naive with single thread: " +((double)totalTime/(double)1000)+"s");
+        System.out.println("Total time for naive with single thread: " + ((double) totalTime / (double) 1000) + "s");
 
         Collections.sort(top_likelihood_circles_for_single_thread, Circle.sortByLHR());
         naiveWithoutIntersectingCircles(top_likelihood_circles_for_single_thread, count_naive_circles_for_single_thread);
-        afterNaive(events);
+        afterNaive(events, gridFile);
     }
 
     public static void runNaiveTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
@@ -59,11 +58,11 @@ public class Naive {
         });
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        System.out.println("Total time for naive with HABANERO: " + ((double)totalTime/(double)1000)+"s");
+        System.out.println("Total time for naive with HABANERO: " + ((double) totalTime / (double) 1000) + "s");
 
         Collections.sort(top_likelihood_circles_for_HJ, Circle.sortByLHR());
         naiveWithoutIntersectingCircles(top_likelihood_circles_for_HJ, count_naive_circles_for_HJ);
-        afterNaive(events);
+        afterNaive(events, gridFile);
     }
 
     public static void runNaiveTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
@@ -72,11 +71,11 @@ public class Naive {
         naiveTesterJOMP(gridFile);
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        System.out.println("Total time for naive with JOMP: " + ((double)totalTime/(double)1000)+"s");
+        System.out.println("Total time for naive with JOMP: " + ((double) totalTime / (double) 1000) + "s");
 
         Collections.sort(top_likelihood_circles_for_JOMP, Circle.sortByLHR());
         naiveWithoutIntersectingCircles(top_likelihood_circles_for_JOMP, count_naive_circles_for_FJP);
-        afterNaive(events);
+        afterNaive(events, gridFile);
     }
 
     public static void runNaiveTesterFJP(GridFile gridFile, ArrayList<Events> events) {
@@ -89,11 +88,11 @@ public class Naive {
         pool.invoke(rootTask);
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        System.out.println("Total time for naive with Fork Join Pool: " + ((double)totalTime/(double)1000)+"s");
+        System.out.println("Total time for naive with Fork Join Pool: " + ((double) totalTime / (double) 1000) + "s");
 
         Collections.sort(top_likelihood_circles_for_FJP, Circle.sortByLHR());
         naiveWithoutIntersectingCircles(top_likelihood_circles_for_FJP, count_naive_circles_for_FJP);
-        afterNaive(events);
+        afterNaive(events, gridFile);
     }
 
     private static void naiveTesterJOMP(GridFile gridFile) throws Exception {
@@ -181,7 +180,6 @@ public class Naive {
     }
 
     private static void naiveTester(GridFile gridFile) {
-        // TODO: 21-03-2017 what if we do a circle area to a threshold ratio kind of thing
         double likelihood_threshold = 0;
         double curr_radius = 0.001;
         double term_radius = 0.01;
@@ -192,9 +190,10 @@ public class Naive {
         Circle curr_circle = new Circle(minLon, minLat, curr_radius);
         CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);
 
+
         while (controller.term(curr_circle) != 3) {
-            // TODO: 21-03-2017 printing one loop less, why?
-            // TODO: 21-03-2017 ANS: because 0.1 is stored as 0.1000000000001 sometimes, used error adjuster
+            //printing one loop less, before
+            //ANS: because 0.1 is stored as 0.1000000000001 sometimes, used error adjuster, done
             while (controller.term(curr_circle) != -1) {
                 while (controller.term(curr_circle) == 0) {
                     count_naive_circles_for_single_thread++;
@@ -202,10 +201,7 @@ public class Naive {
                     double likelihood_ratio = controller.likelihoodRatio(curr_circle, points);
                     if (likelihood_ratio > likelihood_threshold) {
 
-                        Circle temp_circle = new Circle();
-                        temp_circle.setRadius(curr_circle.getRadius());
-                        temp_circle.setX_coord(curr_circle.getX_coord());
-                        temp_circle.setY_coord(curr_circle.getY_coord());
+                        Circle temp_circle = new Circle(curr_circle);
                         temp_circle.lhr = likelihood_ratio;
                         top_likelihood_circles_for_single_thread.add(temp_circle);
                     }
@@ -249,7 +245,7 @@ public class Naive {
 
     }
 
-    private static void afterNaive(ArrayList<Events> events) {
+    private static void afterNaive(ArrayList<Events> events, GridFile gridFile) {
         Circle c1 = new Circle(minLon, minLat, 0.0001);
         Circle c2 = new Circle(minLon, maxLat, 0.0001);
         Circle c3 = new Circle(maxLon, maxLat, 0.0001);
@@ -257,18 +253,23 @@ public class Naive {
         core_circles.add(c1);
         core_circles.add(c2);
         core_circles.add(c3);
-        core_circles.add(c4);System.out.println();
+        core_circles.add(c4);
+        System.out.println();
         VisualizeNaive vis = new VisualizeNaive();
-//        vis.drawCircles(events, core_circles);
-        int number=5;
-       drawtop(number);
+        vis.drawCircles(events, core_circles);
+        int number = 10;
+        drawtop(number, gridFile);
         core_circles = new ArrayList<>();
     }
 
-    private static void drawtop(int number) {
-        for(int i=0;i<number;i++)
-        {
-            System.out.println("\t"+core_circles.get(i).toString());
+    private static void drawtop(int number, GridFile gridFile) {
+        if (number == 0)
+            number = core_circles.size();
+
+        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
+        CircleOps controller = new CircleOps(0, 0, area, gridFile);
+        for (int i = 0; i < number; i++) {
+            System.out.println("\t" + core_circles.get(i).toString() + " no. of points: " + controller.scanCircle(core_circles.get(i)).size());
         }
         System.out.println();
     }
@@ -300,11 +301,7 @@ public class Naive {
             invokeAll(
                     new NaiveRunnerFJP(start, mid, gridFile, runtime),
                     new NaiveRunnerFJP(mid, end, gridFile, runtime)
-
             );
-
         }
-
     }
-
 }
