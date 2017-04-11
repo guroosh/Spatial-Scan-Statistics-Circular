@@ -180,7 +180,6 @@ public class Naive {
     }
 
     private static void naiveTester(GridFile gridFile) {
-        // TODO: 21-03-2017 what if we do a circle area to a threshold ratio kind of thing
         double likelihood_threshold = 0;
         double curr_radius = 0.001;
         double term_radius = 0.01;
@@ -193,8 +192,8 @@ public class Naive {
 
 
         while (controller.term(curr_circle) != 3) {
-            // TODO: 21-03-2017 printing one loop less, why?
-            // TODO: 21-03-2017 ANS: because 0.1 is stored as 0.1000000000001 sometimes, used error adjuster
+            //printing one loop less, before
+            //ANS: because 0.1 is stored as 0.1000000000001 sometimes, used error adjuster, done
             while (controller.term(curr_circle) != -1) {
                 while (controller.term(curr_circle) == 0) {
                     count_naive_circles_for_single_thread++;

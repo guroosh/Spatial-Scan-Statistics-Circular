@@ -198,9 +198,9 @@ private class __omp_Class0 extends jomp.runtime.BusyTask {
                              // OMP CRITICAL BLOCK ENDS
 
                         }
-                        curr_local_circle[0] = controller.grow_x(shift_radius, curr_local_circle[0]);           // TODO: 21-03-2017 change grow_x to shift_x (just the name)
+                        curr_local_circle[0] = controller.grow_x(shift_radius, curr_local_circle[0]);
                     }
-                    curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
+                    curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);
                 }
 
             }

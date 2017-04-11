@@ -1,1 +1,4 @@
-see all todos and write them here
+DONE-->see all todos and write them here
+in Circle Ops: remove scanCircle from checkAnglePoints, instead store points only once guroosh
+in Circle Ops: complete implementation of points found in checkQuad points
+in Naive: change controller function names to shift in x and shift in y
