@@ -280,19 +280,16 @@ public class CircleOps {
         return (num / den) * 2;
     }
 
-    public Circle checkanglepoints(Circle curr_circle) {
-//        ArrayList<Events> points = difference(curr_circle, growth);
-        ArrayList<Events> points = scanCircle(curr_circle);
-        // TODO: 9/4/17 remove scanCircle from checkAnglePoints, instead store points only once 
+    public Circle checkanglepoints(Circle curr_circle, ArrayList<Events> curr_points) {
 
         ArrayList<Events> quadpoints = new ArrayList<>();
         int quadreg = 0;
         Circle new_circle = new Circle();
         double x = curr_circle.getX_coord(), y = curr_circle.getY_coord();
-        quadreg = getquad(points, x, y);
+        quadreg = getquad(curr_points, x, y);
 
         if (quadreg == 1) {
-            for (Events e : points
+            for (Events e : curr_points
                     ) {
                 if (e.getLat() > y && e.getLon() > x) {
                     quadpoints.add(e);
@@ -301,7 +298,7 @@ public class CircleOps {
             }
         }
         if (quadreg == 2) {
-            for (Events e : points
+            for (Events e : curr_points
                     ) {
                 if (e.getLat() > y && e.getLon() < x) {
                     quadpoints.add(e);
@@ -310,7 +307,7 @@ public class CircleOps {
             }
         }
         if (quadreg == 3) {
-            for (Events e : points
+            for (Events e : curr_points
                     ) {
                 if (e.getLat() < y && e.getLon() < x) {
                     quadpoints.add(e);
@@ -319,7 +316,7 @@ public class CircleOps {
             }
         }
         if (quadreg == 4) {
-            for (Events e : points
+            for (Events e : curr_points
                     ) {
                 if (e.getLat() < y && e.getLon() > x) {
                     quadpoints.add(e);
@@ -338,7 +335,7 @@ public class CircleOps {
         new_circle.setX_coord(x1);
         new_circle.setY_coord(y1);
 
-        new_circle.setRadius(curr_circle.getRadius()/4);
+        new_circle.setRadius(start_radius);
 
         return new_circle;
 

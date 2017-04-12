@@ -20,3 +20,12 @@ in Circle Ops: complete implementation of points found in checkQuad points
 in Naive: change controller function names to shift in x and shift in y
 
 
+remove scanCircle from one more place: from moving circles when removing all points after adding final circle
+
+
+Runtime of a moving circle with proper visualization
+
+FUTURE SUGGESTIONS:
+
+read spread of the data to get the growht_drtate
+

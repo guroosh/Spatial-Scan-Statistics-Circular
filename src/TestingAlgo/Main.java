@@ -52,13 +52,13 @@ public class Main {
         System.out.println("\n\nStarting run with dataset "+fileName+"\n");
 
         runNaiveTester(gridFile, events);
-//        runNaiveTesterHJ(gridFile, events);
-//        runNaiveTesterFJP(gridFile, events);
+        runNaiveTesterHJ(gridFile, events);
+        runNaiveTesterFJP(gridFile, events);
 //        runNaiveTesterJOMP(gridFile, events);
 
         runMovingCircleTester(gridFile, events);
-//        runMovingCircleTesterHJ(gridFile, events);
-//        runMovingCircleTesterJvFP(gridFile, events);
+        runMovingCircleTesterHJ(gridFile, events);
+        runMovingCircleTesterJvFP(gridFile, events);
 //        runMovingCircleTesterJOMP(gridFile, events);
         System.out.println("Complete");
     }

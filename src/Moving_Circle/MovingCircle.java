@@ -64,14 +64,12 @@ public class MovingCircle {
         long start = System.currentTimeMillis();
         finish(() -> {
             forasync(0, runtime, (i) -> {
-                movingCircleTester1(gridFile);
-
+                movingCircleTesterHJ(gridFile);
             });
         });
         long end = System.currentTimeMillis();
         System.out.println("Time :" + ((double) (end - start)) / 1000 + "s");
         aftermovingcircal(gridFile, events);
-
     }
 
     public static void runMovingCircleTester(GridFile gridFile, ArrayList<Events> events) {
@@ -88,191 +86,42 @@ public class MovingCircle {
         aftermovingcircal(gridFile, events);
     }
 
-    private static void movingCircleTester1(GridFile gridFile) {
-        int moving_counter = 1;
-        int circlecounter = 100;
-        double curr_radius = 0.001;//1;
-
-        double term_radius = 0.2, growth = 0.001;
-
-        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
-
-
-        int count_limit = 1;
-        OUTER:
-        while (count_limit-- > 0) {
-            Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
-//            Circle curr_circle = new Circle(-81.2234, 39.7345, 0.001);   //-81.3773, 39.6293, .01)
-            Circle next_circle;
-            Circle temp_circle = new Circle(curr_circle);
-
-            CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);
-
-            double maxlikeli = 1;
-            Circle fin_circle = null;
-            while (controller.term(curr_circle) != 3) {
-
-
-                next_circle = controller.checkanglepoints(curr_circle);
-
-                ArrayList<Events> points = controller.scanCircle(curr_circle);
-                ArrayList<Events> points1 = controller.scanCircle(next_circle);
-
-                double curr_likeli = controller.likelihoodRatio(curr_circle, points);
-                double next_likeli = controller.likelihoodRatio(next_circle, points1);
-
-                if (curr_likeli < next_likeli) {
-                    if (next_likeli > maxlikeli) {
-                        maxlikeli = next_likeli;
-                        fin_circle = new Circle(next_circle);
-                    }
-                    curr_circle = new Circle(next_circle);
-                    moving_counter++;
-                } else {
-                    if (curr_likeli > maxlikeli) {
-                        maxlikeli = curr_likeli;
-                        fin_circle = new Circle(curr_circle);
-
-                    }
-                    curr_circle = controller.grow_radius(growth, curr_circle);
-                    moving_counter++;
-                }
-                while (circlecounter <= 1) {
-
-                    if (fin_circle != null) {
-                        if (fin_circle.getRadius() > .01)
-                            continue OUTER;
-                        Circle finalFin_circle = fin_circle;
-                        isolated(() -> {
-                            controller.removePoints(controller.scanCircle(finalFin_circle));
-                            core_circles.add(finalFin_circle);
-                        });
-                        fin_circle.lhr = maxlikeli;
-
-                    }
-                    return;
-                }
-                circlecounter--;
-            }
-        }
-    }
-
-    private static void movingCircleTesterjvhp(GridFile gridFile) {
-        int moving_counter = 1;
-        int circlecounter = 100;
-        double curr_radius = 0.001;//1;
-
-        double term_radius = 0.2, growth = 0.001;
-
-        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
-
-
-        int count_limit = 1;
-        OUTER:
-        while (count_limit-- > 0) {
-            Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
-//            Circle curr_circle = new Circle(-81.2234, 39.7345, 0.001);   //-81.3773, 39.6293, .01)
-            Circle next_circle;
-            Circle temp_circle = new Circle();
-            temp_circle.setRadius(curr_circle.getRadius());
-            temp_circle.setX_coord(curr_circle.getX_coord());
-            temp_circle.setY_coord(curr_circle.getY_coord());
-            CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);
-
-            double maxlikeli = 1;
-            Circle fin_circle = null;
-            while (controller.term(curr_circle) != 3) {
-
-
-                next_circle = controller.checkanglepoints(curr_circle);
-
-                ArrayList<Events> points = controller.scanCircle(curr_circle);
-                ArrayList<Events> points1 = controller.scanCircle(next_circle);
-
-                double curr_likeli = controller.likelihoodRatio(curr_circle, points);
-                double next_likeli = controller.likelihoodRatio(next_circle, points1);
-                if (curr_likeli < next_likeli) {
-                    if (next_likeli > maxlikeli) {
-                        maxlikeli = next_likeli;
-                        fin_circle = new Circle(next_circle);
-                    }
-//                    core_circles.add(temp_circle);
-                    curr_circle = new Circle(next_circle);
-//                    System.out.println(moving_counter + "\t\t\tShifted circle: " + curr_circle.toString() + "\n\n");
-                    moving_counter++;
-                } else {
-                    if (curr_likeli > maxlikeli) {
-                        maxlikeli = curr_likeli;
-                        fin_circle = new Circle(curr_circle);
-
-                    }
-                    curr_circle = controller.grow_radius(growth, curr_circle);
-                    moving_counter++;
-                }
-                while (circlecounter <= 1) {
-
-                    if (fin_circle != null) {
-                        if (fin_circle.getRadius() > .01)
-                            continue OUTER;
-
-                        Circle finalFin_circle = fin_circle;
-                        final ReentrantLock rl = new ReentrantLock();
-                        rl.lock();
-                        try {
-                            controller.removePoints(controller.scanCircle(finalFin_circle));
-                            core_circles.add(finalFin_circle);
-                        } finally {
-                            rl.unlock();
-                        }
-                        fin_circle.lhr = maxlikeli;
-
-                    }
-                    return;
-                }
-
-                circlecounter--;
-            }
-        }
-    }
-
-    private static void movingCircleTester(GridFile gridFile) {
+    private static void movingCircleTesterHJ(GridFile gridFile) {
         int circlecounter = 100;
         double curr_radius = 0.001;
-        double term_radius = 0.1;
-        double growth = 0.001;
+        double term_radius = 0.2;
+        double growth = 0.003;
         double upper_limit = 0.01;
-        double lower_limit = curr_radius;
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
-        Circle curr_circle = new Circle("Random", curr_radius, area);
+
+        Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
+//            Circle curr_circle = new Circle(-81.2234, 39.7345, 0.001);   //-81.3773, 39.6293, .01)
         Circle next_circle;
-        Circle temp_circle;
+        Circle temp_circle = new Circle(curr_circle);
+
         CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);
+
         double maxlikeli = -1;
         Circle fin_circle = null;
+        ArrayList<Events> points = controller.scanCircle(curr_circle);
         while (controller.term(curr_circle) != 3) {
-            next_circle = controller.checkanglepoints(curr_circle);
-            ArrayList<Events> points = controller.scanCircle(curr_circle);
+
+
+            next_circle = controller.checkanglepoints(curr_circle, points);
+
             ArrayList<Events> points1 = controller.scanCircle(next_circle);
+
             double curr_likeli = controller.likelihoodRatio(curr_circle, points);
             double next_likeli = controller.likelihoodRatio(next_circle, points1);
             if (curr_likeli < next_likeli) {
                 if (next_likeli > maxlikeli) {
-                    if (next_circle.getRadius() >= lower_limit) {
-                        maxlikeli = next_likeli;
-                        fin_circle = new Circle(next_circle);
-                    } else {
-                        Circle enlarged_circle = new Circle(next_circle.getX_coord(), next_circle.getY_coord(), lower_limit);
-                        if (curr_likeli < controller.likelihoodRatio(enlarged_circle, controller.scanCircle(enlarged_circle))) {
-                            if (controller.likelihoodRatio(enlarged_circle, controller.scanCircle(enlarged_circle)) > maxlikeli) {
-                                maxlikeli = controller.likelihoodRatio(enlarged_circle, controller.scanCircle(enlarged_circle));
-                                fin_circle = new Circle(enlarged_circle);
-                            }
-                        }
-                    }
+                    maxlikeli = next_likeli;
+                    fin_circle = new Circle(next_circle);
                 }
-                temp_circle = new Circle(curr_circle);
+//                temp_circle = new Circle(curr_circle);
 //                core_circles.add(temp_circle);
                 curr_circle = new Circle(next_circle);
+                points = points1;
             } else {
                 if (curr_likeli > maxlikeli) {
                     if (curr_circle.getRadius() <= upper_limit) {
@@ -281,7 +130,129 @@ public class MovingCircle {
                     }
                 }
                 curr_circle = controller.grow_radius(growth, curr_circle);
+                points = controller.scanCircle(curr_circle);
+//                temp_circle = new Circle(curr_circle);
+//                core_circles.add(temp_circle);
+            }
+            if (circlecounter == 1) {
+
+                if (fin_circle != null) {
+                    Circle finalFin_circle = fin_circle;
+                    finalFin_circle.lhr = maxlikeli;
+                    isolated(() -> {
+                        controller.removePoints(controller.scanCircle(finalFin_circle));
+                        core_circles.add(finalFin_circle);
+                    });
+                }
+                return;
+            }
+            circlecounter--;
+        }
+    }
+
+    private static void movingCircleTesterjvhp(GridFile gridFile) {
+        double curr_radius = 0.001;
+        double term_radius = 0.2;
+        double growth = 0.003;
+        double upper_limit = 0.01;
+        int circlecounter = 100;
+
+        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
+        Circle curr_circle = new Circle("Random", curr_radius, area);
+        Circle next_circle;
+        Circle temp_circle;         //used to add in core circles, if using visualize
+        ArrayList<Events> points = new ArrayList<>();
+        ArrayList<Events> next_points = new ArrayList<>();
+        CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);
+        double maxlikeli = -1;
+        Circle fin_circle = null;
+        points = controller.scanCircle(curr_circle);
+
+        while (controller.term(curr_circle) != 3) {
+            next_circle = controller.checkanglepoints(curr_circle, points);
+            ArrayList<Events> points1 = controller.scanCircle(next_circle);
+            double curr_likeli = controller.likelihoodRatio(curr_circle, points);
+            double next_likeli = controller.likelihoodRatio(next_circle, points1);
+            if (curr_likeli < next_likeli) {
+                if (next_likeli > maxlikeli) {
+                    maxlikeli = next_likeli;
+                    fin_circle = new Circle(next_circle);
+                }
                 temp_circle = new Circle(curr_circle);
+//                core_circles.add(temp_circle);
+                curr_circle = new Circle(next_circle);
+                points = points1;
+            } else {
+                if (curr_likeli > maxlikeli) {
+                    if (curr_circle.getRadius() <= upper_limit) {
+                        maxlikeli = curr_likeli;
+                        fin_circle = new Circle(curr_circle);
+                    }
+                }
+                curr_circle = controller.grow_radius(growth, curr_circle);
+                points = controller.scanCircle(curr_circle);
+//                temp_circle = new Circle(curr_circle);
+//                core_circles.add(temp_circle);
+            }
+            if (circlecounter == 1) {
+
+                if (fin_circle != null) {
+                    Circle finalFin_circle = fin_circle;
+                    final ReentrantLock rl = new ReentrantLock();
+                    rl.lock();
+                    try {
+                        controller.removePoints(controller.scanCircle(finalFin_circle));
+                        core_circles.add(finalFin_circle);
+                    } finally {
+                        rl.unlock();
+                    }
+                    fin_circle.lhr = maxlikeli;
+                }
+                return;
+            }
+            circlecounter--;
+        }
+    }
+
+    private static void movingCircleTester(GridFile gridFile) {
+        int circlecounter = 100;
+        double curr_radius = 0.001;
+        double term_radius = 0.2;
+        double growth = 0.003;
+        double upper_limit = 0.01;
+        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
+        Circle curr_circle = new Circle("Random", curr_radius, area);
+        Circle next_circle;
+        Circle temp_circle;         //used to add in core circles, if using visualize
+
+        CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);
+        double maxlikeli = -1;
+        Circle fin_circle = null;
+        ArrayList<Events> points = controller.scanCircle(curr_circle);
+        while (controller.term(curr_circle) != 3) {
+            next_circle = controller.checkanglepoints(curr_circle, points);
+            ArrayList<Events> points1 = controller.scanCircle(next_circle);
+            double curr_likeli = controller.likelihoodRatio(curr_circle, points);
+            double next_likeli = controller.likelihoodRatio(next_circle, points1);
+            if (curr_likeli < next_likeli) {
+                if (next_likeli > maxlikeli) {
+                    maxlikeli = next_likeli;
+                    fin_circle = new Circle(next_circle);
+                }
+                temp_circle = new Circle(curr_circle);
+//                core_circles.add(temp_circle);
+                curr_circle = new Circle(next_circle);
+                points = points1;
+            } else {
+                if (curr_likeli > maxlikeli) {
+                    if (curr_circle.getRadius() <= upper_limit) {
+                        maxlikeli = curr_likeli;
+                        fin_circle = new Circle(curr_circle);
+                    }
+                }
+                curr_circle = controller.grow_radius(growth, curr_circle);
+                points = controller.scanCircle(curr_circle);
+//                temp_circle = new Circle(curr_circle);
 //                core_circles.add(temp_circle);
             }
             if (circlecounter == 1) {
