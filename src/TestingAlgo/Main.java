@@ -4,7 +4,6 @@ import Algorithm_Ops.Circle;
 import Dataset.Events;
 import Dataset.GridCell;
 import Dataset.GridFile;
-import Experiments.ListCheck;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,8 +11,6 @@ import java.util.Scanner;
 import static Dataset.GridFile.readDataFile;
 import static Moving_Circle.MovingCircle.runMovingCircleTester;
 import static Naive.Naive.runNaiveTester;
-import static Naive.Naive.runNaiveTesterFJP;
-import static Naive.Naive.runNaiveTesterHJ;
 
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
