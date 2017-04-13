@@ -217,7 +217,7 @@ public class Naive {
     private static void naiveWithoutIntersectingCircles(List<Circle> top_likelihood_circles, long count_naive_circles) {
         int j = 0;
         int intersecting_flg = 0;
-        int top_number_circles = 1000;
+        int top_number_circles = 100;
         for (int i = 0; j < top_number_circles; i++) {
             if (i >= top_likelihood_circles.size()) {
                 break;

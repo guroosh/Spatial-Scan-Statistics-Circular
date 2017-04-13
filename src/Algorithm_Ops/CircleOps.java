@@ -309,9 +309,7 @@ public class CircleOps {
         new_circle.setX_coord(x1);
         new_circle.setY_coord(y1);
 
-//        new_circle.setRadius(curr_circle.getRadius()/4);
         new_circle.setRadius(start_radius);
-
 
         return new_circle;
 

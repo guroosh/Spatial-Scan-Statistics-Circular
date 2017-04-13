@@ -49,8 +49,7 @@ public class MovingCircle {
         System.out.println("Starting Moving Circle run with Java-Fork join pool");
         int runtime = 100;
         long start = System.currentTimeMillis();
-//        int threshold = runtime / Runtime.getRuntime().availableProcessors();
-        int threshold=100;
+        int threshold = runtime / Runtime.getRuntime().availableProcessors();
         MovingCircleRunnerFJP rootTask = new MovingCircleRunnerFJP(0, runtime, gridFile, threshold);
         ForkJoinPool pool = new ForkJoinPool();
         pool.invoke(rootTask);
@@ -227,7 +226,6 @@ public class MovingCircle {
         Circle next_circle;
         Circle temp_circle;         //used to add in core circles, if using visualize
 
-
         CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);
         double maxlikeli = -1;
         Circle fin_circle = null;
@@ -237,7 +235,6 @@ public class MovingCircle {
             ArrayList<Events> points1 = controller.scanCircle(next_circle);
             double curr_likeli = controller.likelihoodRatio(curr_circle, points);
             double next_likeli = controller.likelihoodRatio(next_circle, points1);
-
             if (curr_likeli < next_likeli) {
                 if (next_likeli > maxlikeli) {
                     maxlikeli = next_likeli;
