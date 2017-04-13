@@ -5,6 +5,7 @@ import Algorithm_Ops.CircleOps;
 import Algorithm_Ops.ScanGeometry;
 import Dataset.Events;
 import Dataset.GridFile;
+import TestingAlgo.Main;
 import Visualize.Visualize;
 import edu.rice.hj.api.SuspendableException;
 
@@ -283,7 +284,7 @@ public class MovingCircle {
         int number = 10;
         drawtop(number);
         System.out.println("\tAmount of circles found : " + core_circles.size() + " Unique : " + count + "\n");
-
+        Main.list2.addAll(core_circles);
         core_circles = new ArrayList<>();
         CircleOps.resetPointsVisibility(gridFile);
     }

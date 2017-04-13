@@ -44,7 +44,6 @@ public class Naive {
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
         System.out.println("Total time for naive with single thread: " + ((double) totalTime / (double) 1000) + "s");
-
         Collections.sort(top_likelihood_circles_for_single_thread, Circle.sortByLHR());
         naiveWithoutIntersectingCircles(top_likelihood_circles_for_single_thread, count_naive_circles_for_single_thread);
         afterNaive(events, gridFile);
@@ -259,6 +258,7 @@ public class Naive {
         vis.drawCircles(events, core_circles);
         int number = 10;
         drawtop(number, gridFile);
+        Main.list1.addAll(core_circles);
         core_circles = new ArrayList<>();
     }
 
