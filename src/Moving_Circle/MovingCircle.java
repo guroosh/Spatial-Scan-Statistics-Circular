@@ -48,7 +48,8 @@ public class MovingCircle {
         System.out.println("Starting Moving Circle run with Java-Fork join pool");
         int runtime = 100;
         long start = System.currentTimeMillis();
-        int threshold = runtime / Runtime.getRuntime().availableProcessors();
+//        int threshold = runtime / Runtime.getRuntime().availableProcessors();
+        int threshold=100;
         MovingCircleRunnerFJP rootTask = new MovingCircleRunnerFJP(0, runtime, gridFile, threshold);
         ForkJoinPool pool = new ForkJoinPool();
         pool.invoke(rootTask);
@@ -238,14 +239,14 @@ public class MovingCircle {
     private static void movingCircleTester(GridFile gridFile) {
         int circlecounter = 100;
         double curr_radius = 0.001;
-        double term_radius = 0.1;
-        double growth = 0.001;
+        double term_radius = 0.2;
+        double growth = 0.003;
         double upper_limit = 0.01;
         double lower_limit = curr_radius;
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         Circle curr_circle = new Circle("Random", curr_radius, area);
         Circle next_circle;
-        Circle temp_circle;
+
         CircleOps controller = new CircleOps(curr_radius, term_radius, area, gridFile);
         double maxlikeli = -1;
         Circle fin_circle = null;
@@ -255,6 +256,7 @@ public class MovingCircle {
             ArrayList<Events> points1 = controller.scanCircle(next_circle);
             double curr_likeli = controller.likelihoodRatio(curr_circle, points);
             double next_likeli = controller.likelihoodRatio(next_circle, points1);
+
             if (curr_likeli < next_likeli) {
                 if (next_likeli > maxlikeli) {
                     if (next_circle.getRadius() >= lower_limit) {
@@ -270,7 +272,6 @@ public class MovingCircle {
                         }
                     }
                 }
-                temp_circle = new Circle(curr_circle);
 //                core_circles.add(temp_circle);
                 curr_circle = new Circle(next_circle);
             } else {
@@ -281,8 +282,6 @@ public class MovingCircle {
                     }
                 }
                 curr_circle = controller.grow_radius(growth, curr_circle);
-                temp_circle = new Circle(curr_circle);
-//                core_circles.add(temp_circle);
             }
             if (circlecounter == 1) {
                 if (fin_circle != null) {
