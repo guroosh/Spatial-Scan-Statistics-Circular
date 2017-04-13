@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f889fb64-4216-4aa7-afe3-5d0a9244e20e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dataset/GridFile.class" afterPath="$PROJECT_DIR$/src/Dataset/GridFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Naive/Naive.class" afterPath="$PROJECT_DIR$/src/Naive/Naive.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.class" afterPath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/Main.class" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dataset/GridFile.java" afterPath="$PROJECT_DIR$/src/Dataset/GridFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Naive/Naive.java" afterPath="$PROJECT_DIR$/src/Naive/Naive.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Experiments/ListCheck.java" afterPath="$PROJECT_DIR$/src/Experiments/ListCheck.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java" afterPath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/Main.java" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,21 +30,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="readme" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/readme">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="109" lean-forward="false" selection-start-line="22" selection-start-column="109" selection-end-line="22" selection-end-column="109" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="75" column="56" lean-forward="false" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
+            <state relative-caret-position="50">
+              <caret line="38" column="34" lean-forward="false" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,31 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GridFile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dataset/GridFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="281" column="20" lean-forward="true" selection-start-line="281" selection-start-column="20" selection-end-line="281" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Circle.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/Circle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MovingCircle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="287" column="41" lean-forward="false" selection-start-line="287" selection-start-column="41" selection-end-line="287" selection-end-column="41" />
+            <state relative-caret-position="240">
+              <caret line="224" column="21" lean-forward="true" selection-start-line="224" selection-start-column="21" selection-end-line="224" selection-end-column="21" />
               <folding>
                 <element signature="docComment;class#MovingCircle#0" expanded="false" />
                 <element signature="method#runMovingCircleTesterJOMP#0;class#MovingCircle#0" expanded="false" />
@@ -89,8 +60,7 @@
                 <element signature="e#5809#5986#0" expanded="false" />
                 <element signature="method#movingCircleTesterjvhp#0;class#MovingCircle#0" expanded="false" />
                 <element signature="e#8107#8163#0" expanded="false" />
-                <element signature="method#movingCircleTester#0;class#MovingCircle#0" expanded="false" />
-                <element signature="e#10793#10849#0" expanded="false" />
+                <element signature="e#10792#10848#0" expanded="false" />
                 <element signature="method#drawtop#0;class#MovingCircle#0" expanded="false" />
                 <element signature="class#MovingCircleRunnerFJP#0;class#MovingCircle#0" expanded="false" />
                 <element signature="method#MovingCircleRunnerFJP#0;class#MovingCircleRunnerFJP#0;class#MovingCircle#0" expanded="false" />
@@ -101,46 +71,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CircleOps.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java">
+      <file leaf-file-name="GridFile.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Dataset/GridFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="339" column="9" lean-forward="false" selection-start-line="339" selection-start-column="9" selection-end-line="339" selection-end-column="9" />
-              <folding>
-                <element signature="docComment;class#CircleOps#0" expanded="false" />
-                <element signature="method#CircleOps#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#init#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#grow_radius#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#grow_x#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#grow_y#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#term#0;class#CircleOps#0" expanded="false" />
-                <element signature="e#1692#1735#0" expanded="false" />
-                <element signature="method#grow_xy#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#shift#0;class#CircleOps#0" expanded="false" />
-                <element signature="e#2148#2188#0" expanded="false" />
-                <element signature="method#likelihoodRatio#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#likelihoodRatio#1;class#CircleOps#0" expanded="false" />
-                <element signature="e#3164#3224#0" expanded="false" />
-                <element signature="e#3472#3536#0" expanded="false" />
-                <element signature="e#4363#4423#0" expanded="false" />
-                <element signature="e#4936#5027#0" expanded="false" />
-                <element signature="method#checkquadpoints#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#checkanglepoints#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#resetPointsVisibility#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#equals#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#getquad#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#difference#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#removePoints#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#getDifferencePoint#0;class#CircleOps#0" expanded="false" />
-                <element signature="e#15709#15781#0" expanded="false" />
-                <element signature="method#getDifferencePointPart#0;class#CircleOps#0" expanded="false" />
-                <element signature="method#scanCircle#0;class#CircleOps#0" expanded="false" />
-                <element signature="e#18029#18144#0" expanded="false" />
-                <element signature="e#20017#20093#0" expanded="false" />
-                <element signature="e#20561#20633#0" expanded="false" />
-                <element signature="method#search#0;class#CircleOps#0" expanded="false" />
-                <element signature="class#Range#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="419">
+              <caret line="281" column="20" lean-forward="true" selection-start-line="281" selection-start-column="20" selection-end-line="281" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -148,31 +84,10 @@
       <file leaf-file-name="ListCheck.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Experiments/ListCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="60" column="5" lean-forward="false" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+            <state relative-caret-position="410">
+              <caret line="58" column="35" lean-forward="false" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Naive.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Naive/Naive.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="219" column="36" lean-forward="false" selection-start-line="219" selection-start-column="36" selection-end-line="219" selection-end-column="36" />
-              <folding>
-                <element signature="docComment;class#Naive#0" expanded="false" />
-                <element signature="e#2359#2413#0" expanded="false" />
-                <element signature="e#5624#7280#0" expanded="false" />
-                <element signature="e#5678#7268#0" expanded="false" />
-                <element signature="e#6057#6148#0" expanded="false" />
-                <element signature="e#6692#6809#0" expanded="false" />
-                <element signature="method#naiveTesterJVfp#0;class#Naive#0" expanded="false" />
-                <element signature="class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
-                <element signature="method#NaiveRunnerFJP#0;class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
-                <element signature="method#compute#0;class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -215,12 +130,12 @@
         <option value="$PROJECT_DIR$/src/dWeapon_unlawful_discharge_of.csv" />
         <option value="$PROJECT_DIR$/readme" />
         <option value="$PROJECT_DIR$/src/JOMP/movingCircleJOMP.jomp" />
-        <option value="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java" />
         <option value="$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java" />
-        <option value="$PROJECT_DIR$/src/Experiments/ListCheck.java" />
         <option value="$PROJECT_DIR$/src/Naive/Naive.java" />
-        <option value="$PROJECT_DIR$/src/Dataset/GridFile.java" />
+        <option value="$PROJECT_DIR$/src/Experiments/ListCheck.java" />
+        <option value="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java" />
         <option value="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
+        <option value="$PROJECT_DIR$/src/Dataset/GridFile.java" />
       </list>
     </option>
   </component>
@@ -231,10 +146,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
+    <option name="x" value="-1" />
     <option name="y" value="-11" />
-    <option name="width" value="1303" />
-    <option name="height" value="780" />
+    <option name="width" value="1922" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -251,7 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -348,6 +262,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
@@ -598,6 +513,7 @@
       <workItem from="1491595619189" duration="1515000" />
       <workItem from="1491615795810" duration="489000" />
       <workItem from="1491642357867" duration="13117000" />
+      <workItem from="1492076168033" duration="3756000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://bitbucket.org/guroosh/btp_merged&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/production/btp_merged/TestingAlgo/Main.class&#10;">
       <created>1491305601275</created>
@@ -690,11 +606,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492079133047</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="modified code">
+      <created>1492079492872</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1492079492872</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29669000" />
+    <option name="totallyTimeSpent" value="33425000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -706,7 +629,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <frame x="-1" y="-11" width="1922" height="1092" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -717,12 +640,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6687307" sideWeight="0.50278884" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.504644" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.55572754" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36743215" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27171314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2716115" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -733,7 +657,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -778,6 +701,24 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.sh" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -795,7 +736,8 @@
     <MESSAGE value="added dataset2 weapons" />
     <MESSAGE value="done moving except JOMP, removed scanCircles from many places" />
     <MESSAGE value="done jaccards index, fixed IoU for circle comparison" />
-    <option name="LAST_COMMIT_MESSAGE" value="done jaccards index, fixed IoU for circle comparison" />
+    <MESSAGE value="modified code" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1141,14 +1083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="109" lean-forward="false" selection-start-line="22" selection-start-column="109" selection-end-line="22" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JOMP/movingCircleJOMP.jomp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -1158,7 +1092,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/Circle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="440">
           <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
           <folding />
         </state>
@@ -1166,7 +1100,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
+        <state relative-caret-position="980">
           <caret line="339" column="9" lean-forward="false" selection-start-line="339" selection-start-column="9" selection-end-line="339" selection-end-column="9" />
           <folding>
             <element signature="docComment;class#CircleOps#0" expanded="false" />
@@ -1206,44 +1140,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="287" column="41" lean-forward="false" selection-start-line="287" selection-start-column="41" selection-end-line="287" selection-end-column="41" />
-          <folding>
-            <element signature="docComment;class#MovingCircle#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterJOMP#0;class#MovingCircle#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterJvFP#0;class#MovingCircle#0" expanded="false" />
-            <element signature="method#runMovingCircleTesterHJ#0;class#MovingCircle#0" expanded="false" />
-            <element signature="e#2583#2706#0" expanded="false" />
-            <element signature="e#2624#2694#0" expanded="false" />
-            <element signature="method#movingCircleTesterHJ#0;class#MovingCircle#0" expanded="false" />
-            <element signature="e#4853#4909#0" expanded="false" />
-            <element signature="e#5469#5525#0" expanded="false" />
-            <element signature="e#5809#5986#0" expanded="false" />
-            <element signature="method#movingCircleTesterjvhp#0;class#MovingCircle#0" expanded="false" />
-            <element signature="e#8107#8163#0" expanded="false" />
-            <element signature="method#movingCircleTester#0;class#MovingCircle#0" expanded="false" />
-            <element signature="e#10793#10849#0" expanded="false" />
-            <element signature="method#drawtop#0;class#MovingCircle#0" expanded="false" />
-            <element signature="class#MovingCircleRunnerFJP#0;class#MovingCircle#0" expanded="false" />
-            <element signature="method#MovingCircleRunnerFJP#0;class#MovingCircleRunnerFJP#0;class#MovingCircle#0" expanded="false" />
-            <element signature="method#run1#0;class#MovingCircleRunnerFJP#0;class#MovingCircle#0" expanded="false" />
-            <element signature="method#compute#0;class#MovingCircleRunnerFJP#0;class#MovingCircle#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Experiments/ListCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="60" column="5" lean-forward="false" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Naive/Naive.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -1263,21 +1159,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dataset/GridFile.java">
+    <entry file="file://$PROJECT_DIR$/readme">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="281" column="20" lean-forward="true" selection-start-line="281" selection-start-column="20" selection-end-line="281" selection-end-column="20" />
+        <state relative-caret-position="396">
+          <caret line="22" column="109" lean-forward="false" selection-start-line="22" selection-start-column="109" selection-end-line="22" selection-end-column="109" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Experiments/ListCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="58" column="35" lean-forward="false" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="224" column="21" lean-forward="true" selection-start-line="224" selection-start-column="21" selection-end-line="224" selection-end-column="21" />
+          <folding>
+            <element signature="docComment;class#MovingCircle#0" expanded="false" />
+            <element signature="method#runMovingCircleTesterJOMP#0;class#MovingCircle#0" expanded="false" />
+            <element signature="method#runMovingCircleTesterJvFP#0;class#MovingCircle#0" expanded="false" />
+            <element signature="method#runMovingCircleTesterHJ#0;class#MovingCircle#0" expanded="false" />
+            <element signature="e#2583#2706#0" expanded="false" />
+            <element signature="e#2624#2694#0" expanded="false" />
+            <element signature="method#movingCircleTesterHJ#0;class#MovingCircle#0" expanded="false" />
+            <element signature="e#4853#4909#0" expanded="false" />
+            <element signature="e#5469#5525#0" expanded="false" />
+            <element signature="e#5809#5986#0" expanded="false" />
+            <element signature="method#movingCircleTesterjvhp#0;class#MovingCircle#0" expanded="false" />
+            <element signature="e#8107#8163#0" expanded="false" />
+            <element signature="e#10792#10848#0" expanded="false" />
+            <element signature="method#drawtop#0;class#MovingCircle#0" expanded="false" />
+            <element signature="class#MovingCircleRunnerFJP#0;class#MovingCircle#0" expanded="false" />
+            <element signature="method#MovingCircleRunnerFJP#0;class#MovingCircleRunnerFJP#0;class#MovingCircle#0" expanded="false" />
+            <element signature="method#run1#0;class#MovingCircleRunnerFJP#0;class#MovingCircle#0" expanded="false" />
+            <element signature="method#compute#0;class#MovingCircleRunnerFJP#0;class#MovingCircle#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="75" column="56" lean-forward="false" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
+        <state relative-caret-position="50">
+          <caret line="38" column="34" lean-forward="false" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dataset/GridFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="281" column="20" lean-forward="true" selection-start-line="281" selection-start-column="20" selection-end-line="281" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
