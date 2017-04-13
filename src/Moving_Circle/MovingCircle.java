@@ -24,7 +24,7 @@ import static edu.rice.hj.Module2.isolated;
  * Created by guroosh on 8/4/17.
  */
 public class MovingCircle {
-    static int runtime = 100;
+    static int runtime = 150;
 
     public static void runMovingCircleTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
         System.out.println("Starting Moving Circle run with JOMP");
@@ -216,10 +216,10 @@ public class MovingCircle {
     }
 
     private static void movingCircleTester(GridFile gridFile) {
-        int circlecounter = 100;
+        int circlecounter = 50;
         double curr_radius = 0.001;
         double term_radius = 0.2;
-        double growth = 0.003;
+        double growth = 0.005;
         double upper_limit = 0.01;
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         Circle curr_circle = new Circle("Random", curr_radius, area);

@@ -55,7 +55,8 @@ public class ListCheck {
         int intersection, union;
         intersection = count;
         union = size1 + size2 - count;
-        System.out.print("I: " + intersection + ", U: " + union);
+//        System.out.print("I: " + intersection + ", U: " + union);
+        System.out.print("Matched: "+intersection+" Calc Percentage: "+((double)intersection/(double)size1)*100+"%\t");
         ans = (intersection * 1.0) / union;
         return ans;
     }

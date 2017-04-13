@@ -274,11 +274,11 @@ public class GridFile implements Serializable {
         System.out.println("Total points (check 2): " + eventSet.size());
     }
     public static ArrayList<Events> readDataFile(String fileName) throws IOException {
-//        int latInCSV = 21;
-//        int lonInCSV = 22;
+        int latInCSV = 21;
+        int lonInCSV = 22;
         double lat, lon;
-        int latInCSV = 13;
-        int lonInCSV = 12;
+//        int latInCSV = 13;
+//        int lonInCSV = 12;
         String line;
         String lines[];
         ArrayList<Events> events = new ArrayList<>();

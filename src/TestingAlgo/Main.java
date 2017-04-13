@@ -35,8 +35,8 @@ public class Main {
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
 //        String fileName = "d.csv";  //in.nextLine();
-        String fileName = "dWeapon_unlawful_discharge_of.csv";
-//        String fileName = "ny_robbery.csv";
+//        String fileName = "dWeapon_unlawful_discharge_of.csv";
+        String fileName = "ny_robbery.csv";
         bucket_size = 100;
 //        System.out.println("Enter file name: ");
 //        while (true) {
@@ -70,10 +70,13 @@ public class Main {
 //        runMovingCircleTesterJOMP(gridFile, events);
         System.out.println("Complete");
         double jaccardI;
-        for (int i = 10; i <= 100; i = i + 10) {
+        double threshold=.3;
+        System.out.println("Jacard index Similarity threshold: "+threshold);
+        for (int i =5 ; i <= 15; i = i + 5) {
             try {
-                jaccardI = new ListCheck().jaccardIndex(list1.subList(0, i), list2.subList(0, i), 0.3);
-                System.out.println(", JI: " + jaccardI);
+                jaccardI = new ListCheck().jaccardIndex(list1.subList(0, i), list2.subList(0, i), threshold);
+                System.out.println("For top: "+i+" JI: " + jaccardI*100+"%");
+//                System.out.println("Our calc " + jaccardI+"%");
             }
             catch (IndexOutOfBoundsException e)
             {
