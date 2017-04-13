@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f889fb64-4216-4aa7-afe3-5d0a9244e20e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dataset/GridFile.class" afterPath="$PROJECT_DIR$/src/Dataset/GridFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.class" afterPath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/Main.class" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main.class" />
+    <list default="true" id="f889fb64-4216-4aa7-afe3-5d0a9244e20e" name="Default" comment="updated code">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dataset/GridFile.java" afterPath="$PROJECT_DIR$/src/Dataset/GridFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Experiments/ListCheck.java" afterPath="$PROJECT_DIR$/src/Experiments/ListCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java" afterPath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/Main.java" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -513,7 +506,7 @@
       <workItem from="1491595619189" duration="1515000" />
       <workItem from="1491615795810" duration="489000" />
       <workItem from="1491642357867" duration="13117000" />
-      <workItem from="1492076168033" duration="3756000" />
+      <workItem from="1492076168033" duration="4388000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://bitbucket.org/guroosh/btp_merged&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/production/btp_merged/TestingAlgo/Main.class&#10;">
       <created>1491305601275</created>
@@ -613,11 +606,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492079492872</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="updated code">
+      <created>1492079936192</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1492079936192</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33425000" />
+    <option name="totallyTimeSpent" value="34057000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -737,7 +737,8 @@
     <MESSAGE value="done moving except JOMP, removed scanCircles from many places" />
     <MESSAGE value="done jaccards index, fixed IoU for circle comparison" />
     <MESSAGE value="modified code" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified code" />
+    <MESSAGE value="updated code" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
