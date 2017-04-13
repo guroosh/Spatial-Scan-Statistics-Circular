@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f889fb64-4216-4aa7-afe3-5d0a9244e20e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Experiments/ListCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.class" afterPath="$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Algorithm_Ops/Range.class" afterPath="$PROJECT_DIR$/src/Algorithm_Ops/Range.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle$MovingCircleRunnerFJP.class" afterPath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle$MovingCircleRunnerFJP.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.class" afterPath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dataset/GridFile.class" afterPath="$PROJECT_DIR$/src/Dataset/GridFile.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Naive/Naive.class" afterPath="$PROJECT_DIR$/src/Naive/Naive.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/Main.class" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java" afterPath="$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java" afterPath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dataset/GridFile.java" afterPath="$PROJECT_DIR$/src/Dataset/GridFile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Naive/Naive.java" afterPath="$PROJECT_DIR$/src/Naive/Naive.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/Main.java" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
     </list>
@@ -47,8 +42,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="72" column="84" lean-forward="true" selection-start-line="72" selection-start-column="84" selection-end-line="72" selection-end-column="84" />
+            <state relative-caret-position="67">
+              <caret line="75" column="56" lean-forward="false" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,10 +51,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="GridFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dataset/GridFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="281" column="20" lean-forward="true" selection-start-line="281" selection-start-column="20" selection-end-line="281" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Circle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/Circle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
+            <state relative-caret-position="396">
               <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
               <folding />
             </state>
@@ -69,8 +74,8 @@
       <file leaf-file-name="MovingCircle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="287" column="41" lean-forward="true" selection-start-line="287" selection-start-column="41" selection-end-line="287" selection-end-column="41" />
+            <state relative-caret-position="918">
+              <caret line="287" column="41" lean-forward="false" selection-start-line="287" selection-start-column="41" selection-end-line="287" selection-end-column="41" />
               <folding>
                 <element signature="docComment;class#MovingCircle#0" expanded="false" />
                 <element signature="method#runMovingCircleTesterJOMP#0;class#MovingCircle#0" expanded="false" />
@@ -99,8 +104,8 @@
       <file leaf-file-name="CircleOps.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="339" column="9" lean-forward="true" selection-start-line="339" selection-start-column="9" selection-end-line="339" selection-end-column="9" />
+            <state relative-caret-position="882">
+              <caret line="339" column="9" lean-forward="false" selection-start-line="339" selection-start-column="9" selection-end-line="339" selection-end-column="9" />
               <folding>
                 <element signature="docComment;class#CircleOps#0" expanded="false" />
                 <element signature="method#CircleOps#0;class#CircleOps#0" expanded="false" />
@@ -143,8 +148,8 @@
       <file leaf-file-name="ListCheck.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Experiments/ListCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+            <state relative-caret-position="1026">
+              <caret line="60" column="5" lean-forward="false" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -155,8 +160,8 @@
       <file leaf-file-name="Naive.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Naive/Naive.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3222">
-              <caret line="260" column="40" lean-forward="false" selection-start-line="260" selection-start-column="40" selection-end-line="260" selection-end-column="40" />
+            <state relative-caret-position="142">
+              <caret line="219" column="36" lean-forward="false" selection-start-line="219" selection-start-column="36" selection-end-line="219" selection-end-column="36" />
               <folding>
                 <element signature="docComment;class#Naive#0" expanded="false" />
                 <element signature="e#2359#2413#0" expanded="false" />
@@ -203,7 +208,6 @@
       <list>
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/script.sh" />
-        <option value="$PROJECT_DIR$/src/Dataset/GridFile.java" />
         <option value="$PROJECT_DIR$/src/Algorithm_Ops/Circle.java" />
         <option value="$PROJECT_DIR$/src/JOMP/naiveJOMP.java" />
         <option value="$PROJECT_DIR$/src/JOMP/naiveJOMP.jomp" />
@@ -212,9 +216,10 @@
         <option value="$PROJECT_DIR$/readme" />
         <option value="$PROJECT_DIR$/src/JOMP/movingCircleJOMP.jomp" />
         <option value="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java" />
-        <option value="$PROJECT_DIR$/src/Naive/Naive.java" />
         <option value="$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java" />
         <option value="$PROJECT_DIR$/src/Experiments/ListCheck.java" />
+        <option value="$PROJECT_DIR$/src/Naive/Naive.java" />
+        <option value="$PROJECT_DIR$/src/Dataset/GridFile.java" />
         <option value="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
       </list>
     </option>
@@ -297,44 +302,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Moving_Circle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="btp_merged" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="btp_merged" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JOMP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="btp_merged" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="btp_merged" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Experiments" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dataset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dataset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GridFile.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -674,7 +683,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491991067788</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="done jaccards index, fixed IoU for circle comparison">
+      <created>1492079133047</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1492079133047</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -691,7 +707,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -704,7 +719,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.504644" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39009288" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.55572754" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27171314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -750,7 +765,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.504644" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39009288" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7136223" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27171314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -779,7 +794,8 @@
     <MESSAGE value="written all todos in readme" />
     <MESSAGE value="added dataset2 weapons" />
     <MESSAGE value="done moving except JOMP, removed scanCircles from many places" />
-    <option name="LAST_COMMIT_MESSAGE" value="done moving except JOMP, removed scanCircles from many places" />
+    <MESSAGE value="done jaccards index, fixed IoU for circle comparison" />
+    <option name="LAST_COMMIT_MESSAGE" value="done jaccards index, fixed IoU for circle comparison" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1095,14 +1111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dataset/GridFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="304" column="42" lean-forward="false" selection-start-line="304" selection-start-column="42" selection-end-line="304" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JOMP/naiveJOMP.jomp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
@@ -1148,28 +1156,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Naive/Naive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3222">
-          <caret line="260" column="40" lean-forward="false" selection-start-line="260" selection-start-column="40" selection-end-line="260" selection-end-column="40" />
-          <folding>
-            <element signature="docComment;class#Naive#0" expanded="false" />
-            <element signature="e#2359#2413#0" expanded="false" />
-            <element signature="e#5624#7280#0" expanded="false" />
-            <element signature="e#5678#7268#0" expanded="false" />
-            <element signature="e#6057#6148#0" expanded="false" />
-            <element signature="e#6692#6809#0" expanded="false" />
-            <element signature="method#naiveTesterJVfp#0;class#Naive#0" expanded="false" />
-            <element signature="class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
-            <element signature="method#NaiveRunnerFJP#0;class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
-            <element signature="method#compute#0;class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/Circle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
+        <state relative-caret-position="396">
           <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
           <folding />
         </state>
@@ -1177,8 +1166,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="339" column="9" lean-forward="true" selection-start-line="339" selection-start-column="9" selection-end-line="339" selection-end-column="9" />
+        <state relative-caret-position="882">
+          <caret line="339" column="9" lean-forward="false" selection-start-line="339" selection-start-column="9" selection-end-line="339" selection-end-column="9" />
           <folding>
             <element signature="docComment;class#CircleOps#0" expanded="false" />
             <element signature="method#CircleOps#0;class#CircleOps#0" expanded="false" />
@@ -1219,8 +1208,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="287" column="41" lean-forward="true" selection-start-line="287" selection-start-column="41" selection-end-line="287" selection-end-column="41" />
+        <state relative-caret-position="918">
+          <caret line="287" column="41" lean-forward="false" selection-start-line="287" selection-start-column="41" selection-end-line="287" selection-end-column="41" />
           <folding>
             <element signature="docComment;class#MovingCircle#0" expanded="false" />
             <element signature="method#runMovingCircleTesterJOMP#0;class#MovingCircle#0" expanded="false" />
@@ -1247,18 +1236,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Experiments/ListCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+        <state relative-caret-position="1026">
+          <caret line="60" column="5" lean-forward="false" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Naive/Naive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="219" column="36" lean-forward="false" selection-start-line="219" selection-start-column="36" selection-end-line="219" selection-end-column="36" />
+          <folding>
+            <element signature="docComment;class#Naive#0" expanded="false" />
+            <element signature="e#2359#2413#0" expanded="false" />
+            <element signature="e#5624#7280#0" expanded="false" />
+            <element signature="e#5678#7268#0" expanded="false" />
+            <element signature="e#6057#6148#0" expanded="false" />
+            <element signature="e#6692#6809#0" expanded="false" />
+            <element signature="method#naiveTesterJVfp#0;class#Naive#0" expanded="false" />
+            <element signature="class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
+            <element signature="method#NaiveRunnerFJP#0;class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
+            <element signature="method#compute#0;class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dataset/GridFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="281" column="20" lean-forward="true" selection-start-line="281" selection-start-column="20" selection-end-line="281" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="72" column="84" lean-forward="true" selection-start-line="72" selection-start-column="84" selection-end-line="72" selection-end-column="84" />
+        <state relative-caret-position="67">
+          <caret line="75" column="56" lean-forward="false" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

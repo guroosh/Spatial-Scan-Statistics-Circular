@@ -12,8 +12,6 @@ import java.util.Scanner;
 import static Dataset.GridFile.readDataFile;
 import static Moving_Circle.MovingCircle.runMovingCircleTester;
 import static Naive.Naive.runNaiveTester;
-import static Naive.Naive.runNaiveTesterFJP;
-import static Naive.Naive.runNaiveTesterHJ;
 
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
@@ -38,6 +36,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
 //        String fileName = "d.csv";  //in.nextLine();
         String fileName = "dWeapon_unlawful_discharge_of.csv";
+//        String fileName = "ny_robbery.csv";
         bucket_size = 100;
 //        System.out.println("Enter file name: ");
 //        while (true) {
@@ -71,10 +70,15 @@ public class Main {
 //        runMovingCircleTesterJOMP(gridFile, events);
         System.out.println("Complete");
         double jaccardI;
-        for(int i=0;i<100;i=i+10)
-        {
-            jaccardI = new ListCheck().jaccardIndex(list1.subList(0, i), list2.subList(0, i), 0.3);
-            System.out.println(", JI: " + jaccardI);
+        for (int i = 10; i <= 100; i = i + 10) {
+            try {
+                jaccardI = new ListCheck().jaccardIndex(list1.subList(0, i), list2.subList(0, i), 0.3);
+                System.out.println(", JI: " + jaccardI);
+            }
+            catch (IndexOutOfBoundsException e)
+            {
+                //do nothing;
+            }
         }
     }
 }
