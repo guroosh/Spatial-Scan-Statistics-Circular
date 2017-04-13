@@ -219,8 +219,8 @@ public class MovingCircle {
         int circlecounter = 50;
         double curr_radius = 0.001;
         double term_radius = 0.2;
-        double growth = 0.005;
-        double upper_limit = 0.01;
+        double growth = 0.003;
+        double upper_limit = 0.02;
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         Circle curr_circle = new Circle("Random", curr_radius, area);
         Circle next_circle;

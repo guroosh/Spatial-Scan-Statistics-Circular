@@ -35,8 +35,8 @@ public class Main {
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
 //        String fileName = "d.csv";  //in.nextLine();
-//        String fileName = "dWeapon_unlawful_discharge_of.csv";
-        String fileName = "ny_robbery.csv";
+        String fileName = "dWeapon_unlawful_discharge_of.csv";
+//        String fileName = "ny_robbery.csv";
         bucket_size = 100;
 //        System.out.println("Enter file name: ");
 //        while (true) {
