@@ -2,7 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f889fb64-4216-4aa7-afe3-5d0a9244e20e" name="Default" comment="updated code">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Algorithm_Ops/Circle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Algorithm_Ops/Range.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Algorithm_Ops/ScanGeometry.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Dataset/Bucket.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Dataset/Events.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Dataset/GridCell.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Dataset/GridFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Dataset/Replace.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Dataset/SortedLinkedList.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Experiments/ListCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JOMP/naiveJOMP$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JOMP/naiveJOMP$__omp_Class0.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JOMP/naiveJOMP.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle$MovingCircleRunnerFJP.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Naive/Naive$NaiveRunnerFJP.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Naive/Naive.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/TestingAlgo/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Visualize/DrawComponent.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Visualize/DrawComponentNaive.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Visualize/DrawFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Visualize/DrawFrameNaive.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Visualize/Visualize.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Visualize/VisualizeNaive.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run.sh" afterPath="$PROJECT_DIR$/run.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Naive/Naive.java" afterPath="$PROJECT_DIR$/src/Naive/Naive.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/Main.java" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,10 +54,31 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="38" column="34" lean-forward="false" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+            <state relative-caret-position="424">
+              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Naive.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Naive/Naive.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-757">
+              <caret line="209" column="13" lean-forward="false" selection-start-line="209" selection-start-column="13" selection-end-line="209" selection-end-column="13" />
+              <folding>
+                <element signature="docComment;class#Naive#0" expanded="false" />
+                <element signature="e#2359#2413#0" expanded="false" />
+                <element signature="e#5624#7280#0" expanded="false" />
+                <element signature="e#5678#7268#0" expanded="false" />
+                <element signature="e#6057#6148#0" expanded="false" />
+                <element signature="e#6692#6809#0" expanded="false" />
+                <element signature="method#naiveTesterJVfp#0;class#Naive#0" expanded="false" />
+                <element signature="class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
+                <element signature="method#NaiveRunnerFJP#0;class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
+                <element signature="method#compute#0;class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -41,6 +90,7 @@
             <state relative-caret-position="702">
               <caret line="224" column="21" lean-forward="false" selection-start-line="224" selection-start-column="21" selection-end-line="224" selection-end-column="21" />
               <folding>
+                <element signature="imports" expanded="false" />
                 <element signature="docComment;class#MovingCircle#0" expanded="false" />
                 <element signature="method#runMovingCircleTesterJOMP#0;class#MovingCircle#0" expanded="false" />
                 <element signature="method#runMovingCircleTesterJvFP#0;class#MovingCircle#0" expanded="false" />
@@ -67,17 +117,19 @@
       <file leaf-file-name="GridFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dataset/GridFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-734">
+            <state relative-caret-position="4986">
               <caret line="281" column="20" lean-forward="false" selection-start-line="281" selection-start-column="20" selection-end-line="281" selection-end-column="20" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListCheck.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ListCheck.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Experiments/ListCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="652">
+            <state relative-caret-position="377">
               <caret line="58" column="35" lean-forward="false" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -124,11 +176,11 @@
         <option value="$PROJECT_DIR$/readme" />
         <option value="$PROJECT_DIR$/src/JOMP/movingCircleJOMP.jomp" />
         <option value="$PROJECT_DIR$/src/Algorithm_Ops/CircleOps.java" />
-        <option value="$PROJECT_DIR$/src/Naive/Naive.java" />
         <option value="$PROJECT_DIR$/src/Experiments/ListCheck.java" />
         <option value="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java" />
-        <option value="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
         <option value="$PROJECT_DIR$/src/Dataset/GridFile.java" />
+        <option value="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
+        <option value="$PROJECT_DIR$/src/Naive/Naive.java" />
       </list>
     </option>
   </component>
@@ -139,10 +191,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1303" />
-    <option name="height" value="780" />
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1301" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -210,48 +262,44 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Naive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JOMP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="btp_merged" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Experiments" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="btp_merged" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="btp_merged" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dataset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="btp_merged" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="btp_merged" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dataset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GridFile.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -629,8 +677,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -641,12 +688,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6687307" sideWeight="0.50278884" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.504644" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32662538" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32561728" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36743215" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38235295" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27649403" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2804781" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -663,6 +710,38 @@
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6687307" sideWeight="0.50278884" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47003156" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.504644" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32561728" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38349515" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28099173" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1109,30 +1188,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Naive/Naive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="219" column="36" lean-forward="false" selection-start-line="219" selection-start-column="36" selection-end-line="219" selection-end-column="36" />
-          <folding>
-            <element signature="docComment;class#Naive#0" expanded="false" />
-            <element signature="e#2359#2413#0" expanded="false" />
-            <element signature="e#5624#7280#0" expanded="false" />
-            <element signature="e#5678#7268#0" expanded="false" />
-            <element signature="e#6057#6148#0" expanded="false" />
-            <element signature="e#6692#6809#0" expanded="false" />
-            <element signature="method#naiveTesterJVfp#0;class#Naive#0" expanded="false" />
-            <element signature="class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
-            <element signature="method#NaiveRunnerFJP#0;class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
-            <element signature="method#compute#0;class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readme">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="22" column="109" lean-forward="false" selection-start-line="22" selection-start-column="109" selection-end-line="22" selection-end-column="109" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1141,6 +1200,7 @@
         <state relative-caret-position="702">
           <caret line="224" column="21" lean-forward="false" selection-start-line="224" selection-start-column="21" selection-end-line="224" selection-end-column="21" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="docComment;class#MovingCircle#0" expanded="false" />
             <element signature="method#runMovingCircleTesterJOMP#0;class#MovingCircle#0" expanded="false" />
             <element signature="method#runMovingCircleTesterJvFP#0;class#MovingCircle#0" expanded="false" />
@@ -1163,30 +1223,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Dataset/GridFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="38" column="34" lean-forward="false" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        <state relative-caret-position="4986">
+          <caret line="281" column="20" lean-forward="false" selection-start-line="281" selection-start-column="20" selection-end-line="281" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Experiments/ListCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="58" column="35" lean-forward="false" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dataset/GridFile.java">
+    <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-734">
-          <caret line="281" column="20" lean-forward="false" selection-start-line="281" selection-start-column="20" selection-end-line="281" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="424">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Experiments/ListCheck.java">
+    <entry file="file://$PROJECT_DIR$/src/Naive/Naive.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="58" column="35" lean-forward="false" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
+        <state relative-caret-position="-757">
+          <caret line="209" column="13" lean-forward="false" selection-start-line="209" selection-start-column="13" selection-end-line="209" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Naive#0" expanded="false" />
+            <element signature="e#2359#2413#0" expanded="false" />
+            <element signature="e#5624#7280#0" expanded="false" />
+            <element signature="e#5678#7268#0" expanded="false" />
+            <element signature="e#6057#6148#0" expanded="false" />
+            <element signature="e#6692#6809#0" expanded="false" />
+            <element signature="method#naiveTesterJVfp#0;class#Naive#0" expanded="false" />
+            <element signature="class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
+            <element signature="method#NaiveRunnerFJP#0;class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
+            <element signature="method#compute#0;class#NaiveRunnerFJP#0;class#Naive#0" expanded="false" />
           </folding>
         </state>
       </provider>

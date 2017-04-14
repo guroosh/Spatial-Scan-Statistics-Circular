@@ -70,16 +70,14 @@ public class Main {
 //        runMovingCircleTesterJOMP(gridFile, events);
         System.out.println("Complete");
         double jaccardI;
-        double threshold=.3;
-        System.out.println("Jacard index Similarity threshold: "+threshold);
-        for (int i =5 ; i <= 15; i = i + 5) {
+        double threshold = .3;
+        System.out.println("Jacard index Similarity threshold: " + threshold);
+        for (int i = 5; i <= 15; i = i + 5) {
             try {
                 jaccardI = new ListCheck().jaccardIndex(list1.subList(0, i), list2.subList(0, i), threshold);
-                System.out.println("For top: "+i+" JI: " + jaccardI*100+"%");
+                System.out.println("For top: " + i + " JI: " + jaccardI * 100 + "%");
 //                System.out.println("Our calc " + jaccardI+"%");
-            }
-            catch (IndexOutOfBoundsException e)
-            {
+            } catch (IndexOutOfBoundsException e) {
                 //do nothing;
             }
         }
