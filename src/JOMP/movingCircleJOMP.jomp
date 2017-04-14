@@ -23,7 +23,6 @@ public class movingCircleJOMP {
             //omp for
             for (i = 0; i < runtime; i++) {
                 movingCircleTester3(core_circles, gridFile, minLon, minLat, maxLon, maxLat);
-
             }
         }
         //omp barrier

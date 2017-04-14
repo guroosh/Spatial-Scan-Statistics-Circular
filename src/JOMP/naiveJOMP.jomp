@@ -69,7 +69,7 @@ public class naiveJOMP {
                     }
                     curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);
                 }
-                System.out.println("Radius: " + curr_local_radius[0]);
+//                System.out.println("Radius: " + curr_local_radius[0]);
             }
         }
         //omp barrier

@@ -81,7 +81,7 @@ public class Naive {
     public static void runNaiveTesterFJP(GridFile gridFile, ArrayList<Events> events) {
         System.out.println("Starting Naive run with Fork Join Pool");
         long startTime = System.currentTimeMillis();
-        int runtime = 10;
+        int runtime = Values.number_of_radius_naive;
         int threshold = runtime / Runtime.getRuntime().availableProcessors();
         NaiveRunnerFJP rootTask = new NaiveRunnerFJP(0, runtime, gridFile, threshold);
         ForkJoinPool pool = new ForkJoinPool();
@@ -107,21 +107,21 @@ public class Naive {
     }
 
     private static void naiveTesterHJ(GridFile gridFile) throws SuspendableException {
-//        final double likelihood_threshold = Values.lh_threshold;
-//        final double[] curr_radius = {Values.lower_limit};
-//        final double initial_radius = curr_radius[0];
-//        final double term_radius = Values.upper_limit;
-//        final double shift_radius = curr_radius[0];
-//        final double growth_radius = curr_radius[0];
-//        int number_of_radius = Values.number_of_radius_naive;
-
-        final double likelihood_threshold = 0;
-        final double[] curr_radius = {0.001};
+        final double likelihood_threshold = Values.lh_threshold;
+        final double[] curr_radius = {Values.lower_limit};
         final double initial_radius = curr_radius[0];
-        final double term_radius = 0.02;
-        final double shift_radius = 0.001;
-        final double growth_radius = 0.001;
-        int number_of_radius = 4;
+        final double term_radius = Values.upper_limit;
+        final double shift_radius = curr_radius[0];
+        final double growth_radius = curr_radius[0];
+        int number_of_radius = Values.number_of_radius_naive;
+
+//        final double likelihood_threshold = 0;
+//        final double[] curr_radius = {0.001};
+//        final double initial_radius = curr_radius[0];
+//        final double term_radius = 0.02;
+//        final double shift_radius = 0.001;
+//        final double growth_radius = 0.001;
+//        int number_of_radius = 20;
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         CircleOps controller = new CircleOps(initial_radius, term_radius, area, gridFile);
@@ -147,7 +147,7 @@ public class Naive {
                     }
                     curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
                 }
-                System.out.println("Radius: "+curr_local_radius[0]);
+//                System.out.println("Radius: "+curr_local_radius[0]);
             });
         });
     }
@@ -184,6 +184,7 @@ public class Naive {
                 }
                 curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
             }
+//            System.out.println("Radius: "+curr_local_radius[0]);
         }
     }
 
@@ -217,7 +218,7 @@ public class Naive {
                 }
                 curr_circle = controller.shift(curr_circle, -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
             }
-            System.out.println("Radius: " + curr_radius);
+//            System.out.println("Radius: " + curr_radius);
             curr_radius = controller.increase_radius(curr_radius, growth_radius);
             curr_circle = new Circle(minLon, minLat, curr_radius);
         }
@@ -226,7 +227,7 @@ public class Naive {
     private static void naiveWithoutIntersectingCircles(List<Circle> top_likelihood_circles, long count_naive_circles) {
         int j = 0;
         int intersecting_flg = 0;
-        int top_number_circles = 100;
+        int top_number_circles = Values.top_circles_for_visualize;
         for (int i = 0; j < top_number_circles; i++) {
             if (i >= top_likelihood_circles.size()) {
                 break;
@@ -265,20 +266,19 @@ public class Naive {
         System.out.println();
         VisualizeNaive vis = new VisualizeNaive();
         vis.drawCircles(events, core_circles);
-        int number = 10;
+        int number = Values.top_circles_for_print;
         drawtop(number, gridFile);
         Main.list1.addAll(core_circles);
         core_circles = new ArrayList<>();
     }
 
     private static void drawtop(int number, GridFile gridFile) {
-        if (number == 0)
+        if (number == -1)
             number = core_circles.size();
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
-        CircleOps controller = new CircleOps(0, 0, area, gridFile);
         for (int i = 0; i < number; i++) {
-            System.out.println("\t" + core_circles.get(i).toString() + " no. of points: " + controller.scanCircle(core_circles.get(i)).size());
+            System.out.println("\t" + core_circles.get(i).toString());
         }
         System.out.println();
     }

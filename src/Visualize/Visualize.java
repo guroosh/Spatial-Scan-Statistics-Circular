@@ -181,7 +181,6 @@ class DrawComponent extends JComponent {
     }
 
     private void drawPoints(Graphics2D g2, ArrayList<Events> new_points) {
-        System.out.println();
         double lat, lon;
         for (Events e : Visualize.points) {
 

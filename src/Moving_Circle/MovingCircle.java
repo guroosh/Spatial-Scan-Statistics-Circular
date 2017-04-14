@@ -6,6 +6,7 @@ import Algorithm_Ops.ScanGeometry;
 import Dataset.Events;
 import Dataset.GridFile;
 import TestingAlgo.Main;
+import TestingAlgo.Values;
 import Visualize.Visualize;
 import edu.rice.hj.api.SuspendableException;
 
@@ -24,11 +25,10 @@ import static edu.rice.hj.Module2.isolated;
  * Created by guroosh on 8/4/17.
  */
 public class MovingCircle {
-    static int runtime = 150;
+    static int runtime = Values.runtime;
 
     public static void runMovingCircleTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
         System.out.println("Starting Moving Circle run with JOMP");
-        int runtime = 100;
         long start = System.currentTimeMillis();
         JOMP.movingCircleJOMP movingCircleJOMP = new JOMP.movingCircleJOMP();
         Circle[] core_circles_array = movingCircleJOMP.movingCircleTesterJOMP(runtime, gridFile, minLon, minLat, maxLon, maxLat);
@@ -88,11 +88,11 @@ public class MovingCircle {
     }
 
     private static void movingCircleTesterHJ(GridFile gridFile) {
-        int circlecounter = 100;
-        double curr_radius = 0.001;
-        double term_radius = 0.2;
-        double growth = 0.003;
-        double upper_limit = 0.01;
+        int circlecounter = Values.moving_circle_counter;
+        double curr_radius = Values.lower_limit;
+        double term_radius = Values.terminating_radius;
+        double growth = Values.growth_rate;
+        double upper_limit = Values.upper_limit;
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
 
         Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
@@ -151,12 +151,12 @@ public class MovingCircle {
         }
     }
 
-    private static void movingCircleTesterjvhp(GridFile gridFile) {
-        double curr_radius = 0.001;
-        double term_radius = 0.2;
-        double growth = 0.003;
-        double upper_limit = 0.01;
-        int circlecounter = 100;
+    private static void movingCircleTesterFJP(GridFile gridFile) {
+        double curr_radius = Values.lower_limit;
+        double term_radius = Values.terminating_radius;
+        double growth = Values.growth_rate;
+        double upper_limit = Values.upper_limit;
+        int circlecounter = Values.moving_circle_counter;
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         Circle curr_circle = new Circle("Random", curr_radius, area);
@@ -216,11 +216,12 @@ public class MovingCircle {
     }
 
     private static void movingCircleTester(GridFile gridFile) {
-        int circlecounter = 50;
-        double curr_radius = 0.001;
-        double term_radius = 0.2;
-        double growth = 0.003;
-        double upper_limit = 0.02;
+        int circlecounter = Values.moving_circle_counter;
+        double curr_radius = Values.lower_limit;
+        double term_radius = Values.terminating_radius;
+        double growth = Values.growth_rate;
+        double upper_limit = Values.upper_limit;
+
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         Circle curr_circle = new Circle("Random", curr_radius, area);
         Circle next_circle;
@@ -269,28 +270,35 @@ public class MovingCircle {
     }
 
     private static void aftermovingcircal(GridFile gridFile, ArrayList<Events> events) {
-        visualizedata(events);
         Collections.sort(core_circles, Circle.sortByLHR());
+        ArrayList<Circle> moving_circles_for_visualize = new ArrayList<>();
+        int top_circles_for_visualize = Values.top_circles_for_visualize;
+        if (top_circles_for_visualize > core_circles.size()) {
+            moving_circles_for_visualize.addAll(core_circles);
+        } else {
+            moving_circles_for_visualize.addAll(core_circles.subList(0,top_circles_for_visualize));
+        }
+        visualizedata(events, moving_circles_for_visualize);
         Circle a = new Circle(core_circles.get(0));
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         CircleOps controller = new CircleOps(1, 2, area, gridFile);
-        int count = 1;
-        for (Circle c : core_circles) {
-            if (!controller.equals(a, c)) {
-                count++;
-                a = new Circle(c);
-            }
-        }
-        int number = 10;
+//        int count = 1;
+//        for (Circle c : core_circles) {
+//            if (!controller.equals(a, c)) {
+//                count++;
+//                a = new Circle(c);
+//            }
+//        }
+        int number = Values.top_circles_for_print;
         drawtop(number);
-        System.out.println("\tAmount of circles found : " + core_circles.size() + " Unique : " + count + "\n");
+//        System.out.println("\tAmount of circles found : " + core_circles.size() + " Unique : " + count + "\n");
         Main.list2.addAll(core_circles);
         core_circles = new ArrayList<>();
         CircleOps.resetPointsVisibility(gridFile);
     }
 
     private static void drawtop(int number) {
-        if (number == 0)
+        if (number == -1)
             number = core_circles.size();
         for (int i = 0; i < number; i++) {
             System.out.println("\t" + core_circles.get(i).toString());
@@ -298,18 +306,19 @@ public class MovingCircle {
 
     }
 
-    private static void visualizedata(ArrayList<Events> events) {
+    private static void visualizedata(ArrayList<Events> events, ArrayList<Circle> moving_circles_for_visualize) {
         Visualize vis = new Visualize();
         Circle c1 = new Circle(minLon, minLat, 0.0001);
         Circle c2 = new Circle(minLon, maxLat, 0.0001);
         Circle c3 = new Circle(maxLon, maxLat, 0.0001);
         Circle c4 = new Circle(maxLon, minLat, 0.0001);
 
-        core_circles.add(c1);
-        core_circles.add(c2);
-        core_circles.add(c3);
-        core_circles.add(c4);
-        vis.drawCircles(events, core_circles);
+        moving_circles_for_visualize.add(c1);
+        moving_circles_for_visualize.add(c2);
+        moving_circles_for_visualize.add(c3);
+        moving_circles_for_visualize.add(c4);
+//        int top_circles_for_visualize = Values.top_circles_for_visualize;
+        vis.drawCircles(events, moving_circles_for_visualize);
     }
 
     private static class MovingCircleRunnerFJP extends RecursiveAction {
@@ -327,7 +336,7 @@ public class MovingCircle {
 
         public void run1(int runtime) {
             for (int i = 0; i < runtime; i++) {
-                movingCircleTesterjvhp(gridFile);
+                movingCircleTesterFJP(gridFile);
             }
         }
 
