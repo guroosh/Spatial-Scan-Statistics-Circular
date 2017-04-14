@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -56,7 +57,7 @@ class DrawComponentNaive extends JComponent {
     double max_y = -1000000;
     double leftX = 0;
     double topY = 0;
-//    double width = 1300;
+    //    double width = 1300;
 //    double height = 680;
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     double width = screenSize.getWidth();
@@ -66,8 +67,8 @@ class DrawComponentNaive extends JComponent {
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         ArrayList<Events> new_points = new ArrayList<>();
-        g2.setColor(Color.BLACK);
-        drawRectangle(g2);
+//        g2.setColor(Color.PINK);
+//        drawRectangle(g2);
         drawPoints(g2, new_points);
         g2.setColor(Color.GREEN);
         drawCircles(g2);
@@ -82,11 +83,17 @@ class DrawComponentNaive extends JComponent {
         double average_x = 0;
         double average_y = 0;
 
+
         int total = VisualizeNaive.circles.size();
         total -= 4;
 //        System.out.println("Total circles drawn: " + total);
 
+//        System.out.println(VisualizeNaive.circles.size());
         for (Circle circle : VisualizeNaive.circles) {
+            if(circle.getRadius() == -7)
+            {
+                continue;
+            }
             double x = circle.getX_coord();
             double y = circle.getY_coord();
             double r = circle.getRadius();
@@ -107,6 +114,11 @@ class DrawComponentNaive extends JComponent {
 //        System.out.println("Range: " + min_x + " to " + max_x + " and " + min_y + " to " + max_y);
         int i = 0;
         for (Circle circle : VisualizeNaive.circles) {
+            if(circle.getRadius() == -7)
+            {
+                g2.setColor(Color.BLUE);
+                continue;
+            }
             i++;
             double x = circle.getX_coord();
             double y = circle.getY_coord();
@@ -149,7 +161,7 @@ class DrawComponentNaive extends JComponent {
                 g2.setColor(Color.RED);
                 point_size = 1;
             } else {
-                g2.setColor(Color.BLACK);
+                g2.setColor(Color.GRAY);
                 point_size = 3;
             }
             Random r = new Random();

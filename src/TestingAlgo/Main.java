@@ -5,13 +5,14 @@ import Dataset.Events;
 import Dataset.GridCell;
 import Dataset.GridFile;
 import Experiments.ListCheck;
+import Visualize.VisualizeNaive;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import static Dataset.GridFile.readDataFile;
-import static Moving_Circle.MovingCircle.*;
-import static Naive.Naive.*;
+import static Moving_Circle.MovingCircle.runMovingCircleTester;
+import static Naive.Naive.runNaiveTester;
 
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
@@ -35,8 +36,8 @@ public class Main {
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
 //        fileName = "d.csv";
-        fileName = "dWeapon_unlawful_discharge_of.csv";
-//        fileName = "ny_robbery.csv";
+//        fileName = "dWeapon_unlawful_discharge_of.csv";
+        fileName = "ny_robbery.csv";
         bucket_size = Values.bucketSize;
 
         //data creation start
@@ -51,14 +52,14 @@ public class Main {
         System.out.println("\n\nStarting run with dataset " + fileName + "\n");
 
         runNaiveTester(gridFile, events);
-        runNaiveTesterHJ(gridFile, events);
-        runNaiveTesterFJP(gridFile, events);
-        runNaiveTesterJOMP(gridFile, events);
+//        runNaiveTesterHJ(gridFile, events);
+//        runNaiveTesterFJP(gridFile, events);
+//        runNaiveTesterJOMP(gridFile, events);
 
         runMovingCircleTester(gridFile, events);
-        runMovingCircleTesterHJ(gridFile, events);
-        runMovingCircleTesterJvFP(gridFile, events);
-        runMovingCircleTesterJOMP(gridFile, events);
+//        runMovingCircleTesterHJ(gridFile, events);
+//        runMovingCircleTesterJvFP(gridFile, events);
+//        runMovingCircleTesterJOMP(gridFile, events);
 
         System.out.println("Complete");
         double jaccardI;
@@ -72,6 +73,19 @@ public class Main {
                 //do nothing;
             }
         }
+
+        //starting visualize_in_one
+        ArrayList<Circle> temp1 = new ArrayList<>(list1.subList(0, Values.top_circles_for_visualize));
+        ArrayList<Circle> temp2 = new ArrayList<>(list2.subList(0, (Values.top_circles_for_visualize > list2.size()) ? list2.size() : Values.top_circles_for_visualize));
+        temp1.add(new Circle(0, 0, -7));
+        temp1.addAll(temp2);
+        temp1.add(new Circle(minLon, minLat, 0.0001));
+        temp1.add(new Circle(minLon, maxLat, 0.0001));
+        temp1.add(new Circle(maxLon, maxLat, 0.0001));
+        temp1.add(new Circle(maxLon, minLat, 0.0001));
+        VisualizeNaive visualize = new VisualizeNaive();
+        visualize.drawCircles(events, temp1);
+
     }
 }
 
