@@ -67,8 +67,8 @@ class DrawComponentNaive extends JComponent {
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         ArrayList<Events> new_points = new ArrayList<>();
-//        g2.setColor(Color.PINK);
-//        drawRectangle(g2);
+        g2.setColor(Color.BLACK);
+        drawRectangle(g2);
         drawPoints(g2, new_points);
         g2.setColor(Color.GREEN);
         drawCircles(g2);
@@ -76,7 +76,7 @@ class DrawComponentNaive extends JComponent {
 
     private void drawRectangle(Graphics2D g2) {
         Rectangle2D rect = new Rectangle2D.Double(leftX, topY, width, height);
-        g2.draw(rect);
+        g2.fill(rect);
     }
 
     private void drawCircles(Graphics2D g2) {
@@ -161,7 +161,7 @@ class DrawComponentNaive extends JComponent {
                 g2.setColor(Color.RED);
                 point_size = 1;
             } else {
-                g2.setColor(Color.GRAY);
+                g2.setColor(Color.WHITE);
                 point_size = 3;
             }
             Random r = new Random();
