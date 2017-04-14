@@ -84,7 +84,7 @@ class DrawComponentNaive extends JComponent {
 
         int total = VisualizeNaive.circles.size();
         total -= 4;
-        System.out.println("Total circles drawn: " + total);
+//        System.out.println("Total circles drawn: " + total);
 
         for (Circle circle : VisualizeNaive.circles) {
             double x = circle.getX_coord();
@@ -103,8 +103,8 @@ class DrawComponentNaive extends JComponent {
         }
         average_x /= total;
         average_y /= total;
-        System.out.println("Average: " + average_x + ", " + average_y);
-        System.out.println("Range: " + min_x + " to " + max_x + " and " + min_y + " to " + max_y);
+//        System.out.println("Average: " + average_x + ", " + average_y);
+//        System.out.println("Range: " + min_x + " to " + max_x + " and " + min_y + " to " + max_y);
         int i = 0;
         for (Circle circle : VisualizeNaive.circles) {
             i++;

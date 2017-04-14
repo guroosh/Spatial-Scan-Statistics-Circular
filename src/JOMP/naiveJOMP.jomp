@@ -5,6 +5,7 @@ import Algorithm_Ops.CircleOps;
 import Algorithm_Ops.ScanGeometry;
 import Dataset.Events;
 import Dataset.GridFile;
+import TestingAlgo.Values;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,13 +20,13 @@ public class naiveJOMP {
     public int added_circles = 0;
 
     public void naiveTesterJOMP(GridFile gridFile, double minLon, double minLat, double maxLon, double maxLat) throws Exception {
-        double likelihood_threshold = 0;
-        double curr_radius = 0.001;
+        double likelihood_threshold = Values.lh_threshold;
+        double curr_radius = Values.lower_limit;
         double initial_radius = curr_radius;
-        double term_radius = 0.01;
-        double shift_radius = 0.001;
-        double growth_radius = 0.001;
-        int number_of_radius = 10;       //By formula: number  <=  ((t-c)/g) + 1
+        double term_radius = Values.upper_limit;
+        double shift_radius = curr_radius;
+        double growth_radius = curr_radius;
+        int number_of_radius = Values.number_of_radius_naive;
 
         int lat_circles = (int) ((maxLat - minLat) / shift_radius) + 1;
         int lon_circles = (int) ((maxLon - minLon) / shift_radius) + 1;
@@ -35,7 +36,6 @@ public class naiveJOMP {
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         CircleOps controller = new CircleOps(initial_radius, term_radius, area, gridFile);
-//        System.out.println(curr_circle.toString());
 
         int i;
         //omp parallel shared(i)
@@ -45,18 +45,12 @@ public class naiveJOMP {
 
                 double[] curr_local_radius = {initial_radius + (growth_radius * i)};
                 Circle[] curr_local_circle = {new Circle(minLon, minLat, curr_local_radius[0])};
-
-//                    System.out.println(curr_local_radius[0]);
-//                    System.out.println(curr_local_circle[0].toString());
-//                    System.out.println();
                 while (controller.term(curr_local_circle[0]) != -1) {
                     while (controller.term(curr_local_circle[0]) == 0) {
                         //omp critical one
                         {
                             circle_count++;
                         }
-//                            System.out.print(finalI);
-//                            System.out.print(naive_counter + " : " + curr_circle.toString());
                         Events points[] = controller.scanCircle(curr_local_circle[0]).toArray(new Events[0]);
 
                         double likelihood_ratio = controller.likelihoodRatio(curr_local_circle[0], points);
@@ -75,7 +69,7 @@ public class naiveJOMP {
                     }
                     curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);
                 }
-
+                System.out.println("Radius: " + curr_local_radius[0]);
             }
         }
         //omp barrier

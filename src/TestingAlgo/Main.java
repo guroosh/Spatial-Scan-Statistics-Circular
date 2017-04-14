@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 import static Dataset.GridFile.readDataFile;
 import static Moving_Circle.MovingCircle.runMovingCircleTester;
-import static Naive.Naive.runNaiveTester;
+import static Naive.Naive.*;
 
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
@@ -59,28 +59,28 @@ public class Main {
 
         System.out.println("\n\nStarting run with dataset " + fileName + "\n");
 
-        runNaiveTester(gridFile, events);
+//        runNaiveTester(gridFile, events);
 //        runNaiveTesterHJ(gridFile, events);
 //        runNaiveTesterFJP(gridFile, events);
-//        runNaiveTesterJOMP(gridFile, events);
+        runNaiveTesterJOMP(gridFile, events);
 
-        runMovingCircleTester(gridFile, events);
+//        runMovingCircleTester(gridFile, events);
 //        runMovingCircleTesterHJ(gridFile, events);
 //        runMovingCircleTesterJvFP(gridFile, events);
 //        runMovingCircleTesterJOMP(gridFile, events);
         System.out.println("Complete");
-        double jaccardI;
-        double threshold = .3;
-        System.out.println("Jacard index Similarity threshold: " + threshold);
-        for (int i = 5; i <= 15; i = i + 5) {
-            try {
-                jaccardI = new ListCheck().jaccardIndex(list1.subList(0, i), list2.subList(0, i), threshold);
-                System.out.println("For top: " + i + " JI: " + jaccardI * 100 + "%");
-//                System.out.println("Our calc " + jaccardI+"%");
-            } catch (IndexOutOfBoundsException e) {
-                //do nothing;
-            }
-        }
+//        double jaccardI;
+//        double threshold = .3;
+//        System.out.println("Jacard index Similarity threshold: " + threshold);
+//        for (int i = 5; i <= 15; i = i + 5) {
+//            try {
+//                jaccardI = new ListCheck().jaccardIndex(list1.subList(0, i), list2.subList(0, i), threshold);
+//                System.out.println("For top: " + i + " JI: " + jaccardI * 100 + "%");
+////                System.out.println("Our calc " + jaccardI+"%");
+//            } catch (IndexOutOfBoundsException e) {
+//                //do nothing;
+//            }
+//        }
     }
 }
 

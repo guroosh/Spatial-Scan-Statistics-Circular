@@ -6,6 +6,7 @@ import Algorithm_Ops.ScanGeometry;
 import Dataset.Events;
 import Dataset.GridFile;
 import TestingAlgo.Main;
+import TestingAlgo.Values;
 import Visualize.VisualizeNaive;
 import edu.rice.hj.api.SuspendableException;
 
@@ -106,13 +107,21 @@ public class Naive {
     }
 
     private static void naiveTesterHJ(GridFile gridFile) throws SuspendableException {
+//        final double likelihood_threshold = Values.lh_threshold;
+//        final double[] curr_radius = {Values.lower_limit};
+//        final double initial_radius = curr_radius[0];
+//        final double term_radius = Values.upper_limit;
+//        final double shift_radius = curr_radius[0];
+//        final double growth_radius = curr_radius[0];
+//        int number_of_radius = Values.number_of_radius_naive;
+
         final double likelihood_threshold = 0;
         final double[] curr_radius = {0.001};
         final double initial_radius = curr_radius[0];
-        final double term_radius = 0.01;
+        final double term_radius = 0.02;
         final double shift_radius = 0.001;
         final double growth_radius = 0.001;
-        int number_of_radius = 10;       //By formula: number  <=  ((t-c)/g) + 1
+        int number_of_radius = 4;
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         CircleOps controller = new CircleOps(initial_radius, term_radius, area, gridFile);
@@ -138,18 +147,19 @@ public class Naive {
                     }
                     curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
                 }
-
+                System.out.println("Radius: "+curr_local_radius[0]);
             });
         });
     }
 
-    private static void naiveTesterJVfp(GridFile gridFile, int start, int end) {
-        final double likelihood_threshold = 0;
-        final double[] curr_radius = {0.001};
+    private static void naiveTesterFJP(GridFile gridFile, int start, int end) {
+
+        final double likelihood_threshold = Values.lh_threshold;
+        final double[] curr_radius = {Values.lower_limit};
         final double initial_radius = curr_radius[0];
-        final double term_radius = 0.01;
-        final double shift_radius = 0.001;
-        final double growth_radius = 0.001;
+        final double term_radius = Values.upper_limit;
+        final double shift_radius = curr_radius[0];
+        final double growth_radius = curr_radius[0];
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         CircleOps controller = new CircleOps(initial_radius, term_radius, area, gridFile);
@@ -174,16 +184,15 @@ public class Naive {
                 }
                 curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
             }
-
         }
     }
 
     private static void naiveTester(GridFile gridFile) {
-        double likelihood_threshold = 0;
-        double curr_radius = 0.001;
-        double term_radius = 0.01;
-        double shift_radius = 0.001;
-        double growth_radius = 0.001;
+        double likelihood_threshold = Values.lh_threshold;
+        double curr_radius = Values.lower_limit;
+        double term_radius = Values.upper_limit;
+        double shift_radius = curr_radius;
+        double growth_radius = curr_radius;
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         Circle curr_circle = new Circle(minLon, minLat, curr_radius);
@@ -208,6 +217,7 @@ public class Naive {
                 }
                 curr_circle = controller.shift(curr_circle, -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
             }
+            System.out.println("Radius: " + curr_radius);
             curr_radius = controller.increase_radius(curr_radius, growth_radius);
             curr_circle = new Circle(minLon, minLat, curr_radius);
         }
@@ -287,7 +297,7 @@ public class Naive {
         }
 
         public void run1(int start, int end) {
-            naiveTesterJVfp(gridFile, start, end);
+            naiveTesterFJP(gridFile, start, end);
         }
 
         @Override

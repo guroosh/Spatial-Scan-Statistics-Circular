@@ -254,6 +254,10 @@ public class CircleOps {
         return new_circle;
     }
 
+    public Circle checkanglepoints(Circle curr_circle, Events curr_points[]) {
+        return checkanglepoints(curr_circle, new ArrayList<>(Arrays.asList(curr_points)));
+    }
+
     public Circle checkanglepoints(Circle curr_circle, ArrayList<Events> curr_points) {
 
         ArrayList<Events> quadpoints = new ArrayList<>();
