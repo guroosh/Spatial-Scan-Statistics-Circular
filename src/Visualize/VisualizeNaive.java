@@ -2,13 +2,14 @@ package Visualize;
 
 import Algorithm_Ops.Circle;
 import Dataset.Events;
+import TestingAlgo.Main;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -69,9 +70,45 @@ class DrawComponentNaive extends JComponent {
         ArrayList<Events> new_points = new ArrayList<>();
         g2.setColor(Color.BLACK);
         drawRectangle(g2);
+        g2.setColor(Color.GRAY);
+        drawGrids(g2);
         drawPoints(g2, new_points);
         g2.setColor(Color.GREEN);
         drawCircles(g2);
+    }
+
+    private void drawGrids(Graphics2D g2) {
+        for (Circle circle : VisualizeNaive.circles) {
+            if (circle.getRadius() == -7) {
+                continue;
+            }
+            double x = circle.getX_coord();
+            double y = circle.getY_coord();
+            double r = circle.getRadius();
+            if (x - r < min_x)
+                min_x = x - r;
+            if (x + r > max_x)
+                max_x = x + r;
+            if (y - r < min_y)
+                min_y = y - r;
+            if (y + r > max_y)
+                max_y = y + r;
+        }
+        double x1, x2, y1, y2;
+        x1 = leftX;
+        x2 = width;
+        for (double d : Main.gridFile_global.latScale) {
+            y1 = height * (d - min_y) / (max_y - min_y);
+            y2 = y1;
+            g2.draw(new Line2D.Double(x1, y1, x2, y2));
+        }
+        y1 = topY;
+        y2 = height;
+        for (double d : Main.gridFile_global.lonScale) {
+            x1 = width * (d - min_x) / (max_x - min_x);
+            x2 = x1;
+            g2.draw(new Line2D.Double(x1, y1, x2, y2));
+        }
     }
 
     private void drawRectangle(Graphics2D g2) {
@@ -90,8 +127,7 @@ class DrawComponentNaive extends JComponent {
 
 //        System.out.println(VisualizeNaive.circles.size());
         for (Circle circle : VisualizeNaive.circles) {
-            if(circle.getRadius() == -7)
-            {
+            if (circle.getRadius() == -7) {
                 continue;
             }
             double x = circle.getX_coord();
@@ -114,8 +150,7 @@ class DrawComponentNaive extends JComponent {
 //        System.out.println("Range: " + min_x + " to " + max_x + " and " + min_y + " to " + max_y);
         int i = 0;
         for (Circle circle : VisualizeNaive.circles) {
-            if(circle.getRadius() == -7)
-            {
+            if (circle.getRadius() == -7) {
                 g2.setColor(Color.BLUE);
                 continue;
             }

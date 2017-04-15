@@ -4,7 +4,7 @@ package TestingAlgo;
  * Created by guroosh on 14/4/17.
  */
 public class Values {
-    public static int bucketSize = 100;
+    public static int bucketSize = 500;
 
     public static double lh_threshold = 0;
     public static double lower_limit = 0.001;

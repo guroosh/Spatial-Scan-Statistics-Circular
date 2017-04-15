@@ -27,6 +27,7 @@ public class Main {
     public static int bucket_number = 0;
     public static int bucket_size;
     public static String splitAxis = "horizontal";
+    public static GridFile gridFile_global;
     public static ArrayList<Circle> core_circles = new ArrayList<>();
     public static ArrayList<Circle> list1 = new ArrayList<>(), list2 = new ArrayList<>();
     public static ArrayList<Circle> list1JOMP = new ArrayList<>(), list2JOMP = new ArrayList<>();
@@ -35,8 +36,8 @@ public class Main {
 
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
-//        fileName = "d.csv";
-        fileName = "dWeapon_unlawful_discharge_of.csv";
+        fileName = "d.csv";
+//        fileName = "dWeapon_unlawful_discharge_of.csv";
 //        fileName = "ny_robbery.csv";
         bucket_size = Values.bucketSize;
 
@@ -47,16 +48,17 @@ public class Main {
         GridCell gridCell = new GridCell(gridFile, minLat, maxLat, minLon, maxLon);
         gridCell = gridCell.getGridCell(gridFile);
         gridFile.make(events, gridCell);
+        gridFile_global = gridFile;
         //data creation end
 
         System.out.println("\n\nStarting run with dataset " + fileName + "\n");
 
-        runNaiveTester(gridFile, events);
+//        runNaiveTester(gridFile, events);
 //        runNaiveTesterHJ(gridFile, events);
 //        runNaiveTesterFJP(gridFile, events);
 //        runNaiveTesterJOMP(gridFile, events);
 
-        runMovingCircleTester(gridFile, events);
+//        runMovingCircleTester(gridFile, events);
 //        runMovingCircleTesterHJ(gridFile, events);
 //        runMovingCircleTesterJvFP(gridFile, events);
 //        runMovingCircleTesterJOMP(gridFile, events);
@@ -75,7 +77,7 @@ public class Main {
         }
 
         //starting visualize_in_one
-        ArrayList<Circle> temp1 = new ArrayList<>(list1.subList(0, Values.top_circles_for_visualize));
+        ArrayList<Circle> temp1 = new ArrayList<>(list1.subList(0, (Values.top_circles_for_visualize > list1.size()) ? list1.size() : Values.top_circles_for_visualize));
         ArrayList<Circle> temp2 = new ArrayList<>(list2.subList(0, (Values.top_circles_for_visualize > list2.size()) ? list2.size() : Values.top_circles_for_visualize));
         temp1.add(new Circle(0, 0, -7));
         temp1.addAll(temp2);

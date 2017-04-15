@@ -75,8 +75,6 @@ public class MovingCircle {
 
     public static void runMovingCircleTester(GridFile gridFile, ArrayList<Events> events) {
         System.out.println("Starting Moving Circle run with single thread");
-
-
         long start = System.currentTimeMillis();
 
         for (int i = 0; i < runtime; i++) {
