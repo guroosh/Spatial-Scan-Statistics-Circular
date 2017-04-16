@@ -80,6 +80,7 @@ public class MovingCircle {
         for (int i = 0; i < runtime; i++) {
             movingCircleTester(gridFile);
         }
+
         long end = System.currentTimeMillis();
         System.out.println("Time :" + ((double) (end - start)) / 1000 + "s");
         aftermovingcircal(gridFile, events);
@@ -274,22 +275,13 @@ public class MovingCircle {
         if (top_circles_for_visualize > core_circles.size()) {
             moving_circles_for_visualize.addAll(core_circles);
         } else {
-            moving_circles_for_visualize.addAll(core_circles.subList(0,top_circles_for_visualize));
+            moving_circles_for_visualize.addAll(core_circles.subList(0, top_circles_for_visualize));
         }
+
         visualizedata(events, moving_circles_for_visualize);
-        Circle a = new Circle(core_circles.get(0));
-        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
-        CircleOps controller = new CircleOps(1, 2, area, gridFile);
-//        int count = 1;
-//        for (Circle c : core_circles) {
-//            if (!controller.equals(a, c)) {
-//                count++;
-//                a = new Circle(c);
-//            }
-//        }
+
         int number = Values.top_circles_for_print;
         drawtop(number);
-//        System.out.println("\tAmount of circles found : " + core_circles.size() + " Unique : " + count + "\n");
         Main.list2.addAll(core_circles);
         core_circles = new ArrayList<>();
         CircleOps.resetPointsVisibility(gridFile);

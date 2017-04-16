@@ -41,22 +41,26 @@ public class ListCheck {
         int size1 = list1.size();
         int size2 = list2.size();
 
+        int i = 0, j;
         for (Circle c1 : list1) {
+            j = 0;
             for (Circle c2 : list2) {
                 double equality = checkOverlapping(c1, c2);
 //                System.out.print("equality: "+equality+",  ");
                 if (equality > threshold) {
+                    System.out.println(i + "---->" + j);
                     count++;
                 }
+                j++;
             }
-//            System.out.println();
+            i++;
         }
         double ans;
         int intersection, union;
         intersection = count;
         union = size1 + size2 - count;
 //        System.out.print("I: " + intersection + ", U: " + union);
-        System.out.print("Matched: "+intersection+" Calc Percentage: "+((double)intersection/(double)size1)*100+"%\t");
+        System.out.print("Matched: " + intersection + " Calc Percentage: " + ((double) intersection / (double) size1) * 100 + "%\t");
         ans = (intersection * 1.0) / union;
         return ans;
     }
