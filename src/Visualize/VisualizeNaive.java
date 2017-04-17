@@ -19,14 +19,16 @@ import java.util.Random;
 public class VisualizeNaive {
     public static ArrayList<Events> points;
     public static ArrayList<Circle> circles;
+    public static String title;
 
-    public void drawCircles(ArrayList<Events> events, ArrayList<Circle> circles1) {
+    public void drawCircles(ArrayList<Events> events, ArrayList<Circle> circles1, String title1) {
         EventQueue.invokeLater(() -> {
             DrawFrameNaive frame = new DrawFrameNaive();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
             points = events;
             circles = circles1;
+            title = title1;
         });
     }
 }
@@ -36,7 +38,7 @@ public class VisualizeNaive {
  */
 class DrawFrameNaive extends JFrame {
     public DrawFrameNaive() {
-        setTitle("Title");
+        setTitle(VisualizeNaive.title);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSize.getWidth();
         double height = screenSize.getHeight();

@@ -3,13 +3,9 @@ run ./script.sh
 
 TODO:
 
-Lower and Upper bound in Moving circle.
-
-make sure visualize is showing correct
-
 Monte Carlo simulation
 
-Multiple datasets
+one more city
 
 Make functions for: 
 	finding overlapping area of 2 circles

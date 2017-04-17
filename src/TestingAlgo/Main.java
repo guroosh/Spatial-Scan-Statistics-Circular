@@ -11,10 +11,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import static Dataset.GridFile.readDataFile;
-import static Moving_Circle.MovingCircle.runMovingCircleTester;
-import static Moving_Circle.MovingCircle.runMovingCircleTesterHJ;
-import static Naive.Naive.runNaiveTester;
-import static Naive.Naive.runNaiveTesterHJ;
+import static Moving_Circle.MovingCircle.*;
+import static Naive.Naive.*;
 
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
@@ -32,9 +30,6 @@ public class Main {
     public static GridFile gridFile_global;
     public static ArrayList<Circle> core_circles = new ArrayList<>();
     public static ArrayList<Circle> list1 = new ArrayList<>(), list2 = new ArrayList<>();
-    public static ArrayList<Circle> list1JOMP = new ArrayList<>(), list2JOMP = new ArrayList<>();
-    public static ArrayList<Circle> list1FJP = new ArrayList<>(), list2FJP = new ArrayList<>();
-    public static ArrayList<Circle> list1HJ = new ArrayList<>(), list2HJ = new ArrayList<>();
 
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
@@ -55,25 +50,32 @@ public class Main {
 
         System.out.println("\n\nStarting run with dataset " + fileName + "\n");
 
-//        runNaiveTester(gridFile, events);
+        String title;
+        runNaiveTester(gridFile, events);
+        runMovingCircleTester(gridFile, events);
+        title = "Single thread";
+        experiment_naive_vs_moving(events, list1, list2, title);
+
         runNaiveTesterHJ(gridFile, events);
-//        runNaiveTesterFJP(gridFile, events);
-//        runNaiveTesterJOMP(gridFile, events);
-
-
-//        runMovingCircleTester(gridFile, events);
         runMovingCircleTesterHJ(gridFile, events);
-//        runMovingCircleTesterJvFP(gridFile, events);
-//        runMovingCircleTesterJOMP(gridFile, events);
+        title = "Habanero java";
+        experiment_naive_vs_moving(events, list1, list2, title);
+
+        runNaiveTesterJOMP(gridFile, events);
+        runMovingCircleTesterJOMP(gridFile, events);
+        title = "Java open MP";
+        experiment_naive_vs_moving(events, list1, list2, title);
+
+        runNaiveTesterFJP(gridFile, events);
+        runMovingCircleTesterJvFP(gridFile, events);
+        title = "Fork join pool";
+        experiment_naive_vs_moving(events, list1, list2, title);
+
 
         System.out.println("Complete");
-        experiment_naive_vs_moving(events, list1, list2);
-//        experiment_naive_vs_moving(events, list1HJ, list2HJ);
-//        experiment_naive_vs_moving(events, list1FJP, list2FJP);
-//        experiment_naive_vs_moving(events, list1JOMP, list2JOMP);
     }
 
-    private static void experiment_naive_vs_moving(ArrayList<Events> events, ArrayList<Circle> list1, ArrayList<Circle> list2) {
+    private static void experiment_naive_vs_moving(ArrayList<Events> events, ArrayList<Circle> list1, ArrayList<Circle> list2, String title) {
         double jaccardI;
         double threshold = Values.ji_threshold;
         for (int i = 5; i <= 15; i = i + 5) {
@@ -96,7 +98,9 @@ public class Main {
         temp1.add(new Circle(maxLon, maxLat, 0.0001));
         temp1.add(new Circle(maxLon, minLat, 0.0001));
         VisualizeNaive visualize = new VisualizeNaive();
-        visualize.drawCircles(events, temp1);
+        visualize.drawCircles(events, temp1, title);
+        list1 = new ArrayList<>();
+        list2 = new ArrayList<>();
     }
 }
 
