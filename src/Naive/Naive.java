@@ -237,6 +237,7 @@ public class Naive {
 //                System.out.println(cl.lhr + " ,   circle: " + cl.toString());
                 core_circles.add(cl);
                 j++;
+                continue;
             }
             for (Circle core_circle : core_circles) {
                 if (checkintersection(core_circle, cl)) {

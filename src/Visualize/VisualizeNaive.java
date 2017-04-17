@@ -64,9 +64,9 @@ class DrawComponentNaive extends JComponent {
     double width = screenSize.getWidth();
     double height = screenSize.getHeight();
 
-    Color background = Color.BLACK;
-    Color grids = Color.DARK_GRAY;
-    Color points_main = Color.LIGHT_GRAY;
+    Color background = Color.WHITE;
+    Color grids = Color.WHITE;
+    Color points_main = Color.BLACK;
     Color points_scattered = Color.RED;
     Color naive_circles = Color.GREEN;
     Color moving_circles = Color.BLUE;

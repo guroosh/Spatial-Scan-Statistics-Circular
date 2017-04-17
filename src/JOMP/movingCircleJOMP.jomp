@@ -81,7 +81,7 @@ public class movingCircleJOMP {
                     fin_circle.lhr = maxlikeli;
                     //omp critical three
                     {
-                        controller.removePoints(controller.scanCircle(finalFin_circle));
+//                        controller.removePoints(controller.scanCircle(finalFin_circle));
                         core_circles[added_circles] = finalFin_circle;
                         added_circles++;
                     }

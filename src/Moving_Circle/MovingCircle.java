@@ -5,6 +5,7 @@ import Algorithm_Ops.CircleOps;
 import Algorithm_Ops.ScanGeometry;
 import Dataset.Events;
 import Dataset.GridFile;
+import Experiments.ListCheck;
 import TestingAlgo.Main;
 import TestingAlgo.Values;
 import Visualize.Visualize;
@@ -140,7 +141,7 @@ public class MovingCircle {
                     Circle finalFin_circle = fin_circle;
                     finalFin_circle.lhr = maxlikeli;
                     isolated(() -> {
-                        controller.removePoints(controller.scanCircle(finalFin_circle));
+//                        controller.removePoints(controller.scanCircle(finalFin_circle));
                         core_circles.add(finalFin_circle);
                     });
                 }
@@ -201,7 +202,7 @@ public class MovingCircle {
                     final ReentrantLock rl = new ReentrantLock();
                     rl.lock();
                     try {
-                        controller.removePoints(controller.scanCircle(finalFin_circle));
+//                        controller.removePoints(controller.scanCircle(finalFin_circle));
                         core_circles.add(finalFin_circle);
                     } finally {
                         rl.unlock();
@@ -260,7 +261,7 @@ public class MovingCircle {
                 if (fin_circle != null) {
                     fin_circle.lhr = maxlikeli;
                     core_circles.add(fin_circle);
-                    controller.removePoints(controller.scanCircle(fin_circle));
+//                    controller.removePoints(controller.scanCircle(fin_circle));
                 }
                 return;
             }
@@ -270,30 +271,53 @@ public class MovingCircle {
 
     private static void aftermovingcircal(GridFile gridFile, ArrayList<Events> events) {
         Collections.sort(core_circles, Circle.sortByLHR());
+        ArrayList<Circle> non_intersecting_core_circles = new ArrayList<>();
+        boolean intersecting_flag = false;
+        int i = 0;
+        for (Circle c : core_circles) {
+            if (i == 0) {
+                non_intersecting_core_circles.add(c);
+                i = 1;
+                continue;
+            }
+            for (Circle d : non_intersecting_core_circles) {
+                if (new ListCheck().checkOverlapping(c, d) > 0) {
+                    intersecting_flag = true;
+                }
+            }
+            if(intersecting_flag)
+            {
+                intersecting_flag = false;
+            }
+            else
+            {
+                non_intersecting_core_circles.add(c);
+            }
+        }
         ArrayList<Circle> moving_circles_for_visualize = new ArrayList<>();
         int top_circles_for_visualize = Values.top_circles_for_visualize;
-        if (top_circles_for_visualize > core_circles.size()) {
-            moving_circles_for_visualize.addAll(core_circles);
+
+        if (top_circles_for_visualize > non_intersecting_core_circles.size()) {
+            moving_circles_for_visualize.addAll(non_intersecting_core_circles);
         } else {
-            moving_circles_for_visualize.addAll(core_circles.subList(0, top_circles_for_visualize));
+            moving_circles_for_visualize.addAll(non_intersecting_core_circles.subList(0, top_circles_for_visualize));
         }
 
         visualizedata(events, moving_circles_for_visualize);
 
         int number = Values.top_circles_for_print;
-        drawtop(number);
-        Main.list2.addAll(core_circles);
+        drawtop(number, non_intersecting_core_circles);
+        Main.list2.addAll(non_intersecting_core_circles);
         core_circles = new ArrayList<>();
-        CircleOps.resetPointsVisibility(gridFile);
+//        CircleOps.resetPointsVisibility(gridFile);
     }
 
-    private static void drawtop(int number) {
+    private static void drawtop(int number, ArrayList<Circle> non_intersecting_core_circles) {
         if (number == -1)
-            number = core_circles.size();
+            number = non_intersecting_core_circles.size();
         for (int i = 0; i < number; i++) {
-            System.out.println("\t" + core_circles.get(i).toString());
+            System.out.println("\t" + non_intersecting_core_circles.get(i).toString());
         }
-
     }
 
     private static void visualizedata(ArrayList<Events> events, ArrayList<Circle> moving_circles_for_visualize) {
