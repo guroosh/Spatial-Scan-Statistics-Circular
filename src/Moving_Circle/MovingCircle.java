@@ -48,7 +48,6 @@ public class MovingCircle {
 
     public static void runMovingCircleTesterJvFP(GridFile gridFile, ArrayList<Events> events) {
         System.out.println("Starting Moving Circle run with Java-Fork join pool");
-        int runtime = 100;
         long start = System.currentTimeMillis();
         int threshold = runtime / Runtime.getRuntime().availableProcessors();
         MovingCircleRunnerFJP rootTask = new MovingCircleRunnerFJP(0, runtime, gridFile, threshold);
@@ -62,7 +61,6 @@ public class MovingCircle {
 
     public static void runMovingCircleTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
         System.out.println("Starting Moving Circle run with Habanero-Java");
-        int runtime = 100;
         long start = System.currentTimeMillis();
         finish(() -> {
             forasync(0, runtime, (i) -> {
