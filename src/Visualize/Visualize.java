@@ -3,13 +3,12 @@ package Visualize;
 import Algorithm_Ops.Circle;
 import Dataset.Events;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.Random;
-
-import javax.swing.*;
 
 /**
  * @author Cay Horstmann
@@ -181,7 +180,7 @@ class DrawComponent extends JComponent {
     }
 
     private void drawPoints(Graphics2D g2, ArrayList<Events> new_points) {
-        System.out.println();
+//        System.out.println();
         double lat, lon;
         for (Events e : Visualize.points) {
 

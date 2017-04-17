@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import static Dataset.GridFile.readDataFile;
-import static Moving_Circle.MovingCircle.runMovingCircleTester;
 import static Naive.Naive.runNaiveTester;
 
 /**
@@ -34,8 +33,8 @@ public class Main {
 
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
-//        String fileName = "d.csv";  //in.nextLine();
-        String fileName = "dWeapon_unlawful_discharge_of.csv";
+        String fileName = "d.csv";  //in.nextLine();
+//        String fileName = "dWeapon_unlawful_discharge_of.csv";
 //        String fileName = "ny_robbery.csv";
         bucket_size = 100;
 //        System.out.println("Enter file name: ");
@@ -64,7 +63,7 @@ public class Main {
 //        runNaiveTesterFJP(gridFile, events);
 //        runNaiveTesterJOMP(gridFile, events);
 
-        runMovingCircleTester(gridFile, events);
+//        runMovingCircleTester(gridFile, events);
 //        runMovingCircleTesterHJ(gridFile, events);
 //        runMovingCircleTesterJvFP(gridFile, events);
 //        runMovingCircleTesterJOMP(gridFile, events);

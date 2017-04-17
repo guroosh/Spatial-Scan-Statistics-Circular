@@ -208,7 +208,7 @@ public class Naive {
                 }
                 curr_circle = controller.shift(curr_circle, -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
             }
-
+            System.out.println("Done for current radius");
             curr_radius = controller.increase_radius(curr_radius, growth_radius);
             curr_circle = new Circle(minLon, minLat, curr_radius);
         }
