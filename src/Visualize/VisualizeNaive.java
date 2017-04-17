@@ -2,10 +2,12 @@ package Visualize;
 
 import Algorithm_Ops.Circle;
 import Dataset.Events;
+import TestingAlgo.Main;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.Random;
@@ -56,42 +58,40 @@ class DrawComponentNaive extends JComponent {
     double max_y = -1000000;
     double leftX = 0;
     double topY = 0;
-//    double width = 1300;
+    //    double width = 1300;
 //    double height = 680;
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     double width = screenSize.getWidth();
     double height = screenSize.getHeight();
 
+    Color background = Color.WHITE;
+    Color grids = Color.WHITE;
+    Color points_main = Color.BLACK;
+    Color points_scattered = Color.RED;
+    Color naive_circles = Color.GREEN;
+    Color moving_circles = Color.BLUE;
 
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         ArrayList<Events> new_points = new ArrayList<>();
-        g2.setColor(Color.BLACK);
-        drawRectangle(g2);
+        g2.setColor(background);
+        drawBackground(g2);
+        g2.setColor(grids);
+        drawGrids(g2);
         drawPoints(g2, new_points);
-        g2.setColor(Color.GREEN);
+        g2.setColor(naive_circles);
+        g2.setStroke(new BasicStroke(2));
         drawCircles(g2);
     }
 
-    private void drawRectangle(Graphics2D g2) {
-        Rectangle2D rect = new Rectangle2D.Double(leftX, topY, width, height);
-        g2.draw(rect);
-    }
-
-    private void drawCircles(Graphics2D g2) {
-        double average_x = 0;
-        double average_y = 0;
-
-        int total = VisualizeNaive.circles.size();
-        total -= 4;
-//        System.out.println("Total circles drawn: " + total);
-
+    private void drawGrids(Graphics2D g2) {
         for (Circle circle : VisualizeNaive.circles) {
+            if (circle.getRadius() == -7) {
+                continue;
+            }
             double x = circle.getX_coord();
             double y = circle.getY_coord();
             double r = circle.getRadius();
-            average_x += x;
-            average_y += y;
             if (x - r < min_x)
                 min_x = x - r;
             if (x + r > max_x)
@@ -101,12 +101,69 @@ class DrawComponentNaive extends JComponent {
             if (y + r > max_y)
                 max_y = y + r;
         }
+        double x1, x2, y1, y2;
+        x1 = leftX;
+        x2 = width;
+        for (double d : Main.gridFile_global.latScale) {
+            y1 = height * (d - min_y) / (max_y - min_y);
+            y2 = y1;
+            g2.draw(new Line2D.Double(x1, y1, x2, y2));
+        }
+        y1 = topY;
+        y2 = height;
+        for (double d : Main.gridFile_global.lonScale) {
+            x1 = width * (d - min_x) / (max_x - min_x);
+            x2 = x1;
+            g2.draw(new Line2D.Double(x1, y1, x2, y2));
+        }
+    }
+
+    private void drawBackground(Graphics2D g2) {
+        Rectangle2D rect = new Rectangle2D.Double(leftX, topY, width, height);
+        g2.fill(rect);
+    }
+
+    private void drawCircles(Graphics2D g2) {
+        double average_x = 0;
+        double average_y = 0;
+
+
+        int total = VisualizeNaive.circles.size();
+        total -= 4;
+//        System.out.println("Total circles drawn: " + total);
+
+//        System.out.println(VisualizeNaive.circles.size());
+
+        //uncomment if problem
+//        for (Circle circle : VisualizeNaive.circles) {
+//            if (circle.getRadius() == -7) {
+//                continue;
+//            }
+//            double x = circle.getX_coord();
+//            double y = circle.getY_coord();
+//            double r = circle.getRadius();
+//            average_x += x;
+//            average_y += y;
+//            if (x - r < min_x)
+//                min_x = x - r;
+//            if (x + r > max_x)
+//                max_x = x + r;
+//            if (y - r < min_y)
+//                min_y = y - r;
+//            if (y + r > max_y)
+//                max_y = y + r;
+//        }
+
         average_x /= total;
         average_y /= total;
 //        System.out.println("Average: " + average_x + ", " + average_y);
 //        System.out.println("Range: " + min_x + " to " + max_x + " and " + min_y + " to " + max_y);
         int i = 0;
         for (Circle circle : VisualizeNaive.circles) {
+            if (circle.getRadius() == -7) {
+                g2.setColor(moving_circles);
+                continue;
+            }
             i++;
             double x = circle.getX_coord();
             double y = circle.getY_coord();
@@ -146,10 +203,10 @@ class DrawComponentNaive extends JComponent {
             double alp = checkpos(e, i, new_points);
             double alp2 = checkpos(e, i, new_points);
             if (alp != 0) {
-                g2.setColor(Color.RED);
+                g2.setColor(points_scattered);
                 point_size = 1;
             } else {
-                g2.setColor(Color.BLACK);
+                g2.setColor(points_main);
                 point_size = 3;
             }
             Random r = new Random();

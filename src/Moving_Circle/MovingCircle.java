@@ -5,7 +5,9 @@ import Algorithm_Ops.CircleOps;
 import Algorithm_Ops.ScanGeometry;
 import Dataset.Events;
 import Dataset.GridFile;
+import Experiments.ListCheck;
 import TestingAlgo.Main;
+import TestingAlgo.Values;
 import Visualize.Visualize;
 import edu.rice.hj.api.SuspendableException;
 
@@ -24,11 +26,10 @@ import static edu.rice.hj.Module2.isolated;
  * Created by guroosh on 8/4/17.
  */
 public class MovingCircle {
-    static int runtime = 150;
+    static int runtime = Values.runtime;
 
     public static void runMovingCircleTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
         System.out.println("Starting Moving Circle run with JOMP");
-        int runtime = 100;
         long start = System.currentTimeMillis();
         JOMP.movingCircleJOMP movingCircleJOMP = new JOMP.movingCircleJOMP();
         Circle[] core_circles_array = movingCircleJOMP.movingCircleTesterJOMP(runtime, gridFile, minLon, minLat, maxLon, maxLat);
@@ -75,24 +76,23 @@ public class MovingCircle {
 
     public static void runMovingCircleTester(GridFile gridFile, ArrayList<Events> events) {
         System.out.println("Starting Moving Circle run with single thread");
-
-
         long start = System.currentTimeMillis();
 
         for (int i = 0; i < runtime; i++) {
             movingCircleTester(gridFile);
         }
+
         long end = System.currentTimeMillis();
         System.out.println("Time :" + ((double) (end - start)) / 1000 + "s");
         aftermovingcircal(gridFile, events);
     }
 
     private static void movingCircleTesterHJ(GridFile gridFile) {
-        int circlecounter = 100;
-        double curr_radius = 0.001;
-        double term_radius = 0.2;
-        double growth = 0.003;
-        double upper_limit = 0.01;
+        int circlecounter = Values.moving_circle_counter;
+        double curr_radius = Values.lower_limit;
+        double term_radius = Values.terminating_radius;
+        double growth = Values.growth_rate;
+        double upper_limit = Values.upper_limit;
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
 
         Circle curr_circle = new Circle("Random", curr_radius, area);//X: -80.9865 Y: 39.6339 r: 0.001(BAD Visualize)// X: -81.3279 Y: 39.6639 r: 0.001 (Good Case)
@@ -141,7 +141,7 @@ public class MovingCircle {
                     Circle finalFin_circle = fin_circle;
                     finalFin_circle.lhr = maxlikeli;
                     isolated(() -> {
-                        controller.removePoints(controller.scanCircle(finalFin_circle));
+//                        controller.removePoints(controller.scanCircle(finalFin_circle));
                         core_circles.add(finalFin_circle);
                     });
                 }
@@ -151,12 +151,12 @@ public class MovingCircle {
         }
     }
 
-    private static void movingCircleTesterjvhp(GridFile gridFile) {
-        double curr_radius = 0.001;
-        double term_radius = 0.2;
-        double growth = 0.003;
-        double upper_limit = 0.01;
-        int circlecounter = 100;
+    private static void movingCircleTesterFJP(GridFile gridFile) {
+        double curr_radius = Values.lower_limit;
+        double term_radius = Values.terminating_radius;
+        double growth = Values.growth_rate;
+        double upper_limit = Values.upper_limit;
+        int circlecounter = Values.moving_circle_counter;
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         Circle curr_circle = new Circle("Random", curr_radius, area);
@@ -202,7 +202,7 @@ public class MovingCircle {
                     final ReentrantLock rl = new ReentrantLock();
                     rl.lock();
                     try {
-                        controller.removePoints(controller.scanCircle(finalFin_circle));
+//                        controller.removePoints(controller.scanCircle(finalFin_circle));
                         core_circles.add(finalFin_circle);
                     } finally {
                         rl.unlock();
@@ -216,11 +216,12 @@ public class MovingCircle {
     }
 
     private static void movingCircleTester(GridFile gridFile) {
-        int circlecounter = 50;
-        double curr_radius = 0.001;
-        double term_radius = 0.2;
-        double growth = 0.003;
-        double upper_limit = 0.02;
+        int circlecounter = Values.moving_circle_counter;
+        double curr_radius = Values.lower_limit;
+        double term_radius = Values.terminating_radius;
+        double growth = Values.growth_rate;
+        double upper_limit = Values.upper_limit;
+
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         Circle curr_circle = new Circle("Random", curr_radius, area);
         Circle next_circle;
@@ -260,7 +261,7 @@ public class MovingCircle {
                 if (fin_circle != null) {
                     fin_circle.lhr = maxlikeli;
                     core_circles.add(fin_circle);
-                    controller.removePoints(controller.scanCircle(fin_circle));
+//                    controller.removePoints(controller.scanCircle(fin_circle));
                 }
                 return;
             }
@@ -269,47 +270,69 @@ public class MovingCircle {
     }
 
     private static void aftermovingcircal(GridFile gridFile, ArrayList<Events> events) {
-        visualizedata(events);
         Collections.sort(core_circles, Circle.sortByLHR());
-        Circle a = new Circle(core_circles.get(0));
-        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
-        CircleOps controller = new CircleOps(1, 2, area, gridFile);
-        int count = 1;
+        ArrayList<Circle> non_intersecting_core_circles = new ArrayList<>();
+        boolean intersecting_flag = false;
+        int i = 0;
         for (Circle c : core_circles) {
-            if (!controller.equals(a, c)) {
-                count++;
-                a = new Circle(c);
+            if (i == 0) {
+                non_intersecting_core_circles.add(c);
+                i = 1;
+                continue;
+            }
+            for (Circle d : non_intersecting_core_circles) {
+                if (new ListCheck().checkOverlapping(c, d) > 0) {
+                    intersecting_flag = true;
+                }
+            }
+            if(intersecting_flag)
+            {
+                intersecting_flag = false;
+            }
+            else
+            {
+                non_intersecting_core_circles.add(c);
             }
         }
-        int number = 10;
-        drawtop(number);
-        System.out.println("\tAmount of circles found : " + core_circles.size() + " Unique : " + count + "\n");
-        Main.list2.addAll(core_circles);
-        core_circles = new ArrayList<>();
-        CircleOps.resetPointsVisibility(gridFile);
-    }
+        ArrayList<Circle> moving_circles_for_visualize = new ArrayList<>();
+        int top_circles_for_visualize = Values.top_circles_for_visualize;
 
-    private static void drawtop(int number) {
-        if (number == 0)
-            number = core_circles.size();
-        for (int i = 0; i < number; i++) {
-            System.out.println("\t" + core_circles.get(i).toString());
+        if (top_circles_for_visualize > non_intersecting_core_circles.size()) {
+            moving_circles_for_visualize.addAll(non_intersecting_core_circles);
+        } else {
+            moving_circles_for_visualize.addAll(non_intersecting_core_circles.subList(0, top_circles_for_visualize));
         }
 
+        visualizedata(events, moving_circles_for_visualize);
+
+        int number = Values.top_circles_for_print;
+        drawtop(number, non_intersecting_core_circles);
+        Main.list2.addAll(non_intersecting_core_circles);
+        core_circles = new ArrayList<>();
+//        CircleOps.resetPointsVisibility(gridFile);
     }
 
-    private static void visualizedata(ArrayList<Events> events) {
+    private static void drawtop(int number, ArrayList<Circle> non_intersecting_core_circles) {
+        if (number == -1)
+            number = non_intersecting_core_circles.size();
+        for (int i = 0; i < number; i++) {
+            System.out.println("\t" + non_intersecting_core_circles.get(i).toString());
+        }
+    }
+
+    private static void visualizedata(ArrayList<Events> events, ArrayList<Circle> moving_circles_for_visualize) {
         Visualize vis = new Visualize();
         Circle c1 = new Circle(minLon, minLat, 0.0001);
         Circle c2 = new Circle(minLon, maxLat, 0.0001);
         Circle c3 = new Circle(maxLon, maxLat, 0.0001);
         Circle c4 = new Circle(maxLon, minLat, 0.0001);
 
-        core_circles.add(c1);
-        core_circles.add(c2);
-        core_circles.add(c3);
-        core_circles.add(c4);
-        vis.drawCircles(events, core_circles);
+        moving_circles_for_visualize.add(c1);
+        moving_circles_for_visualize.add(c2);
+        moving_circles_for_visualize.add(c3);
+        moving_circles_for_visualize.add(c4);
+//        int top_circles_for_visualize = Values.top_circles_for_visualize;
+//        vis.drawCircles(events, moving_circles_for_visualize);
     }
 
     private static class MovingCircleRunnerFJP extends RecursiveAction {
@@ -327,7 +350,7 @@ public class MovingCircle {
 
         public void run1(int runtime) {
             for (int i = 0; i < runtime; i++) {
-                movingCircleTesterjvhp(gridFile);
+                movingCircleTesterFJP(gridFile);
             }
         }
 
