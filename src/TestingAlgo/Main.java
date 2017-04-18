@@ -41,8 +41,8 @@ public class Main {
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
 //        fileName = "d.csv";
-        fileName = "dWeapon_unlawful_discharge_of.csv";
-//        fileName = "ny_robbery.csv";
+//        fileName = "dWeapon_unlawful_discharge_of.csv";
+        fileName = "ny_robbery.csv";
 //        bucket_size = Values.bucketSize;
 
 
@@ -58,7 +58,6 @@ public class Main {
         gridCell = gridCell.getGridCell(gridFile);
         gridFile.make(events, gridCell);
         gridFile_global = gridFile;
-
         //data creation end
 
         System.out.println("\n\nStarting run with dataset " + fileName + "\n");

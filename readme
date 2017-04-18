@@ -3,6 +3,36 @@ run ./script.sh
 
 TODO:
 
+Lower and Upper bound in Moving circle.
+
+make sure visualize is showing correct
+
 Monte Carlo simulation
+
+Multiple datasets
+
+Make functions for: 
+	finding overlapping area of 2 circles
+	computing p-value 
+	Inverse jacards index
+	
+
+in Circle Ops: remove scanCircle from checkAnglePoints, instead store points only once guroosh
+in Circle Ops: complete implementation of points found in checkQuad points
+in Naive: change controller function names to shift in x and shift in y
+
+
+remove scanCircle from one more place: from moving circles when removing all points after adding final circle
+
+
+Runtime of a moving circle with proper visualization
+
+FUTURE SUGGESTIONS:
+
+read spread of the data to get the growht_drtate
+
+VERY IMPORTANT:
+
+remove local runtime from movincircle runner architectures.
 
 write about difference in data set
