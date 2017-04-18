@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import static Dataset.GridFile.readDataFile;
+import static Moving_Circle.MovingCircle.runMovingCircleTester;
+import static Moving_Circle.MovingCircle.runMovingCircleTesterHJ;
+import static Naive.Naive.*;
 import static Moving_Circle.MovingCircle.*;
 import static Naive.Naive.*;
 
@@ -30,16 +33,24 @@ public class Main {
     public static GridFile gridFile_global;
     public static ArrayList<Circle> core_circles = new ArrayList<>();
     public static ArrayList<Circle> list1 = new ArrayList<>(), list2 = new ArrayList<>();
+    public static ArrayList<Circle> list1JOMP = new ArrayList<>(), list2JOMP = new ArrayList<>();
+    public static ArrayList<Circle> list1FJP = new ArrayList<>(), list2FJP = new ArrayList<>();
+    public static ArrayList<Circle> list1HJ = new ArrayList<>(), list2HJ = new ArrayList<>();
 
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
-//        fileName = "d.csv";
-        fileName = "dWeapon_unlawful_discharge_of.csv";
+        fileName = "d.csv";
+//        fileName = "dWeapon_unlawful_discharge_of.csv";
 //        fileName = "ny_robbery.csv";
-        bucket_size = Values.bucketSize;
+//        bucket_size = Values.bucketSize;
+
 
         //data creation start
         ArrayList<Events> events = readDataFile(fileName);
+        if(events.size()>10000)
+            bucket_size = 500;
+        else
+            bucket_size = 50;
 
         GridFile gridFile = new GridFile();
         GridCell gridCell = new GridCell(gridFile, minLat, maxLat, minLon, maxLon);
@@ -51,25 +62,25 @@ public class Main {
         System.out.println("\n\nStarting run with dataset " + fileName + "\n");
 
         String title;
-        runNaiveTester(gridFile, events);
+//        runNaiveTester(gridFile, events);
         runMovingCircleTester(gridFile, events);
         title = "Single thread";
-        experiment_naive_vs_moving(events, list1, list2, title);
+//        experiment_naive_vs_moving(events, list1, list2, title);
 
-        runNaiveTesterHJ(gridFile, events);
-        runMovingCircleTesterHJ(gridFile, events);
-        title = "Habanero java";
-        experiment_naive_vs_moving(events, list1, list2, title);
-
-        runNaiveTesterJOMP(gridFile, events);
-        runMovingCircleTesterJOMP(gridFile, events);
-        title = "Java open MP";
-        experiment_naive_vs_moving(events, list1, list2, title);
-
-        runNaiveTesterFJP(gridFile, events);
-        runMovingCircleTesterJvFP(gridFile, events);
-        title = "Fork join pool";
-        experiment_naive_vs_moving(events, list1, list2, title);
+//        runNaiveTesterHJ(gridFile, events);
+//        runMovingCircleTesterHJ(gridFile, events);
+//        title = "Habanero java";
+//        experiment_naive_vs_moving(events, list1, list2, title);
+//
+//        runNaiveTesterJOMP(gridFile, events);
+//        runMovingCircleTesterJOMP(gridFile, events);
+//        title = "Java open MP";
+//        experiment_naive_vs_moving(events, list1, list2, title);
+//
+//        runNaiveTesterFJP(gridFile, events);
+//        runMovingCircleTesterJvFP(gridFile, events);
+//        title = "Fork join pool";
+//        experiment_naive_vs_moving(events, list1, list2, title);
 
 
         System.out.println("Complete");
@@ -78,7 +89,8 @@ public class Main {
     private static void experiment_naive_vs_moving(ArrayList<Events> events, ArrayList<Circle> list1, ArrayList<Circle> list2, String title) {
         double jaccardI;
         double threshold = Values.ji_threshold;
-        for (int i = 5; i <= 15; i = i + 5) {
+        int array[] = {3, 5, 10, 15};
+        for (int i : array) {
             try {
                 jaccardI = new ListCheck().jaccardIndex(list1.subList(0, i), list2.subList(0, i), threshold);
                 System.out.println("For top: " + i + " JI: " + jaccardI * 100 + "%");

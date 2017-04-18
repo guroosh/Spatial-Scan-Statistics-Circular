@@ -8,7 +8,7 @@ import Dataset.GridFile;
 import Experiments.ListCheck;
 import TestingAlgo.Main;
 import TestingAlgo.Values;
-import Visualize.Visualize;
+import Visualize.VisualizeNaive;
 import edu.rice.hj.api.SuspendableException;
 
 import java.util.ArrayList;
@@ -48,7 +48,6 @@ public class MovingCircle {
 
     public static void runMovingCircleTesterJvFP(GridFile gridFile, ArrayList<Events> events) {
         System.out.println("Starting Moving Circle run with Java-Fork join pool");
-        int runtime = 100;
         long start = System.currentTimeMillis();
         int threshold = runtime / Runtime.getRuntime().availableProcessors();
         MovingCircleRunnerFJP rootTask = new MovingCircleRunnerFJP(0, runtime, gridFile, threshold);
@@ -62,7 +61,6 @@ public class MovingCircle {
 
     public static void runMovingCircleTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
         System.out.println("Starting Moving Circle run with Habanero-Java");
-        int runtime = 100;
         long start = System.currentTimeMillis();
         finish(() -> {
             forasync(0, runtime, (i) -> {
@@ -84,7 +82,10 @@ public class MovingCircle {
 
         long end = System.currentTimeMillis();
         System.out.println("Time :" + ((double) (end - start)) / 1000 + "s");
-        aftermovingcircal(gridFile, events);
+//        aftermovingcircal(gridFile, events);
+        System.out.println(core_circles.size());
+        visualizedata(events,core_circles);
+
     }
 
     private static void movingCircleTesterHJ(GridFile gridFile) {
@@ -224,6 +225,7 @@ public class MovingCircle {
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         Circle curr_circle = new Circle("Random", curr_radius, area);
+        System.out.println("Starting Circle:"+curr_circle.toString());
         Circle next_circle;
         Circle temp_circle;         //used to add in core circles, if using visualize
 
@@ -232,6 +234,7 @@ public class MovingCircle {
         Circle fin_circle = null;
         ArrayList<Events> points = controller.scanCircle(curr_circle);
         while (controller.term(curr_circle) != 3) {
+            core_circles.add(curr_circle);
             next_circle = controller.checkanglepoints(curr_circle, points);
             ArrayList<Events> points1 = controller.scanCircle(next_circle);
             double curr_likeli = controller.likelihoodRatio(curr_circle, points);
@@ -242,7 +245,7 @@ public class MovingCircle {
                     fin_circle = new Circle(next_circle);
                 }
                 temp_circle = new Circle(curr_circle);
-//                core_circles.add(temp_circle);
+
                 curr_circle = new Circle(next_circle);
                 points = points1;
             } else {
@@ -254,13 +257,13 @@ public class MovingCircle {
                 }
                 curr_circle = controller.grow_radius(growth, curr_circle);
                 points = controller.scanCircle(curr_circle);
-//                temp_circle = new Circle(curr_circle);
-//                core_circles.add(temp_circle);
+                temp_circle = new Circle(curr_circle);
+
             }
             if (circlecounter == 1) {
                 if (fin_circle != null) {
                     fin_circle.lhr = maxlikeli;
-                    core_circles.add(fin_circle);
+//                    core_circles.add(fin_circle);
 //                    controller.removePoints(controller.scanCircle(fin_circle));
                 }
                 return;
@@ -294,6 +297,8 @@ public class MovingCircle {
                 non_intersecting_core_circles.add(c);
             }
         }
+        non_intersecting_core_circles = new ArrayList<>();
+        non_intersecting_core_circles.addAll(core_circles);
         ArrayList<Circle> moving_circles_for_visualize = new ArrayList<>();
         int top_circles_for_visualize = Values.top_circles_for_visualize;
 
@@ -306,7 +311,7 @@ public class MovingCircle {
         visualizedata(events, moving_circles_for_visualize);
 
         int number = Values.top_circles_for_print;
-        drawtop(number, non_intersecting_core_circles);
+//        drawtop(number, non_intersecting_core_circles);
         Main.list2.addAll(non_intersecting_core_circles);
         core_circles = new ArrayList<>();
 //        CircleOps.resetPointsVisibility(gridFile);
@@ -321,7 +326,7 @@ public class MovingCircle {
     }
 
     private static void visualizedata(ArrayList<Events> events, ArrayList<Circle> moving_circles_for_visualize) {
-        Visualize vis = new Visualize();
+        Visualize.Visualize vis = new Visualize.Visualize();
         Circle c1 = new Circle(minLon, minLat, 0.0001);
         Circle c2 = new Circle(minLon, maxLat, 0.0001);
         Circle c3 = new Circle(maxLon, maxLat, 0.0001);
@@ -332,7 +337,8 @@ public class MovingCircle {
         moving_circles_for_visualize.add(c3);
         moving_circles_for_visualize.add(c4);
 //        int top_circles_for_visualize = Values.top_circles_for_visualize;
-//        vis.drawCircles(events, moving_circles_for_visualize);
+        System.out.println(moving_circles_for_visualize.size());
+        vis.drawCircles(events, moving_circles_for_visualize, "title");
     }
 
     private static class MovingCircleRunnerFJP extends RecursiveAction {
