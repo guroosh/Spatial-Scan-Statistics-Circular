@@ -11,8 +11,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import static Dataset.GridFile.readDataFile;
-import static Moving_Circle.MovingCircle.runMovingCircleTester;
-import static Moving_Circle.MovingCircle.runMovingCircleTesterHJ;
+import static Moving_Circle.MovingCircle.*;
 import static Naive.Naive.*;
 
 /**
@@ -37,9 +36,9 @@ public class Main {
 
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
-//        fileName = "d.csv";
+        fileName = "d.csv";
 //        fileName = "dWeapon_unlawful_discharge_of.csv";
-        fileName = "ny_robbery.csv";
+//        fileName = "ny_robbery.csv";
 //        bucket_size = Values.bucketSize;
 
 
@@ -59,10 +58,10 @@ public class Main {
 
         System.out.println("\n\nStarting run with dataset " + fileName + "\n");
 
-        runNaiveTester(gridFile, events);
-        runNaiveTesterHJ(gridFile, events);
-        runNaiveTesterFJP(gridFile, events);
-        runNaiveTesterJOMP(gridFile, events);
+//        runNaiveTester(gridFile, events);
+//        runNaiveTesterHJ(gridFile, events);
+//        runNaiveTesterFJP(gridFile, events);
+//        runNaiveTesterJOMP(gridFile, events);
 
 
 //        runMovingCircleTester(gridFile, events);
@@ -71,7 +70,7 @@ public class Main {
 //        runMovingCircleTesterJOMP(gridFile, events);
 
         System.out.println("Complete");
-//        experiment_naive_vs_moving(events, list1, list2);
+        experiment_naive_vs_moving(events, list1, list2);
     }
 
     private static void experiment_naive_vs_moving(ArrayList<Events> events, ArrayList<Circle> list1, ArrayList<Circle> list2) {

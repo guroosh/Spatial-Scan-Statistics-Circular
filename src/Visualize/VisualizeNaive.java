@@ -81,7 +81,7 @@ class DrawComponentNaive extends JComponent {
         drawPoints(g2, new_points);
         g2.setColor(naive_circles);
         g2.setStroke(new BasicStroke(2));
-        drawCircles(g2);
+//        drawCircles(g2);
     }
 
     private void drawGrids(Graphics2D g2) {
