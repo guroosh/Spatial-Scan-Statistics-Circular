@@ -53,11 +53,11 @@ public class Main {
         else
             bucket_size = 50;
 
-//        GridFile gridFile = new GridFile();
-//        GridCell gridCell = new GridCell(gridFile, minLat, maxLat, minLon, maxLon);
-//        gridCell = gridCell.getGridCell(gridFile);
-//        gridFile.make(events, gridCell);
-//        gridFile_global = gridFile;
+        GridFile gridFile = new GridFile();
+        GridCell gridCell = new GridCell(gridFile, minLat, maxLat, minLon, maxLon);
+        gridCell = gridCell.getGridCell(gridFile);
+        gridFile.make(events, gridCell);
+        gridFile_global = gridFile;
 
         //data creation end
 
