@@ -1,18 +1,22 @@
 package TestingAlgo;
 
 import Algorithm_Ops.Circle;
+import Algorithm_Ops.ScanGeometry;
 import Dataset.Events;
 import Dataset.GridCell;
 import Dataset.GridFile;
 import Experiments.ListCheck;
+import Visualize.Visualize;
 import Visualize.VisualizeNaive;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static Dataset.GridFile.readDataFile;
 import static Moving_Circle.MovingCircle.*;
 import static Naive.Naive.*;
+import jsc.distributions.Poisson;
 
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
@@ -36,9 +40,9 @@ public class Main {
 
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
-        fileName = "d.csv";
+//        fileName = "d.csv";
 //        fileName = "dWeapon_unlawful_discharge_of.csv";
-//        fileName = "ny_robbery.csv";
+        fileName = "ny_robbery.csv";
 //        bucket_size = Values.bucketSize;
 
 
@@ -57,11 +61,16 @@ public class Main {
         //data creation end
 
         System.out.println("\n\nStarting run with dataset " + fileName + "\n");
-
+        ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
 //        runNaiveTester(gridFile, events);
 //        runNaiveTesterHJ(gridFile, events);
 //        runNaiveTesterFJP(gridFile, events);
 //        runNaiveTesterJOMP(gridFile, events);
+
+        runNaiveTester(gridFile, events);
+        runNaiveTesterHJ(gridFile, events);
+        runNaiveTesterFJP(gridFile, events);
+        runNaiveTesterJOMP(gridFile, events);
 
 
 //        runMovingCircleTester(gridFile, events);
@@ -70,7 +79,44 @@ public class Main {
 //        runMovingCircleTesterJOMP(gridFile, events);
 
         System.out.println("Complete");
-        experiment_naive_vs_moving(events, list1, list2);
+
+//        experiment_naive_vs_moving(events, list1, list2);
+        experiment_p_value(events.size(),area);
+    }
+
+    private static void experiment_p_value(int size, ScanGeometry scanA) {
+        System.out.println("Starting experiment of statistical significance on a poison distribution with mean : "+size);
+        double mean=size;
+        Poisson object=new Poisson(mean);
+//        for (int i = 0; i < Values.pval_nruns ; i++) {
+
+            double val=object.random();
+            Events event=new Events();
+            ArrayList<Events> poisson_data=new ArrayList<>();
+            for (int j = 0; j < val; j++) {
+                double x=ThreadLocalRandom.current().nextDouble(scanA.start_X, scanA.end_X);
+                double y=ThreadLocalRandom.current().nextDouble(scanA.start_Y, scanA.end_Y);
+                event.setLon(x);event.setLat(y);
+                poisson_data.add(event);
+            }
+        System.out.println(poisson_data.size());
+              GridFile gridFile = new GridFile();
+              minLat = 360;
+        minLon = 360;
+        maxLat = -360;
+        maxLon = -360;
+//        System.out.println(poisson_data.toString());
+            GridCell gridCell = new GridCell(gridFile, minLat, maxLat, minLon, maxLon);
+
+            gridCell = gridCell.getGridCell(gridFile);
+            gridFile.make(poisson_data, gridCell);
+        gridFile_global = gridFile;
+        System.out.println(gridFile.total_events);
+//            VisualizeNaive visualize = new VisualizeNaive();
+//            visualize.drawCircles(poisson_data,null ,"Dataset");
+
+
+//        }
     }
 
     private static void experiment_naive_vs_moving(ArrayList<Events> events, ArrayList<Circle> list1, ArrayList<Circle> list2) {
@@ -97,7 +143,8 @@ public class Main {
         temp1.add(new Circle(maxLon, maxLat, 0.0001));
         temp1.add(new Circle(maxLon, minLat, 0.0001));
         VisualizeNaive visualize = new VisualizeNaive();
-        visualize.drawCircles(events, temp1);
+        String title="Experiment";
+        visualize.drawCircles(events, temp1,title);
     }
 }
 
