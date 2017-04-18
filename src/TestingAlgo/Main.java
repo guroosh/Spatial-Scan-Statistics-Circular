@@ -59,13 +59,13 @@ public class Main {
 
         System.out.println("\n\nStarting run with dataset " + fileName + "\n");
 
-        runNaiveTester(gridFile, events);
-        runNaiveTesterHJ(gridFile, events);
-        runNaiveTesterFJP(gridFile, events);
-        runNaiveTesterJOMP(gridFile, events);
+//        runNaiveTester(gridFile, events);
+//        runNaiveTesterHJ(gridFile, events);
+//        runNaiveTesterFJP(gridFile, events);
+//        runNaiveTesterJOMP(gridFile, events);
 
 
-//        runMovingCircleTester(gridFile, events);
+        runMovingCircleTester(gridFile, events);
 //        runMovingCircleTesterHJ(gridFile, events);
 //        runMovingCircleTesterJvFP(gridFile, events);
 //        runMovingCircleTesterJOMP(gridFile, events);
@@ -98,7 +98,8 @@ public class Main {
         temp1.add(new Circle(maxLon, maxLat, 0.0001));
         temp1.add(new Circle(maxLon, minLat, 0.0001));
         VisualizeNaive visualize = new VisualizeNaive();
-        visualize.drawCircles(events, temp1);
+        String title="Experiment";
+        visualize.drawCircles(events, temp1,title);
     }
 }
 

@@ -130,7 +130,6 @@ class DrawComponent extends JComponent {
         g2.setColor(Color.GREEN);
         boolean i = true;
         for (Circle circle : Visualize.circles) {
-            System.out.println(circle.to);
 //            if(i)
 //            {
                 g2.setColor(Color.BLUE);

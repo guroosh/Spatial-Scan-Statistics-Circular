@@ -82,9 +82,9 @@ public class MovingCircle {
 
         long end = System.currentTimeMillis();
         System.out.println("Time :" + ((double) (end - start)) / 1000 + "s");
-//        aftermovingcircal(gridFile, events);
-        System.out.println(core_circles.size());
-        visualizedata(events,core_circles);
+        aftermovingcircal(gridFile, events);
+
+
 
     }
 
@@ -225,7 +225,7 @@ public class MovingCircle {
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         Circle curr_circle = new Circle("Random", curr_radius, area);
-        System.out.println("Starting Circle:"+curr_circle.toString());
+
         Circle next_circle;
         Circle temp_circle;         //used to add in core circles, if using visualize
 
@@ -234,7 +234,7 @@ public class MovingCircle {
         Circle fin_circle = null;
         ArrayList<Events> points = controller.scanCircle(curr_circle);
         while (controller.term(curr_circle) != 3) {
-            core_circles.add(curr_circle);
+
             next_circle = controller.checkanglepoints(curr_circle, points);
             ArrayList<Events> points1 = controller.scanCircle(next_circle);
             double curr_likeli = controller.likelihoodRatio(curr_circle, points);
@@ -263,7 +263,7 @@ public class MovingCircle {
             if (circlecounter == 1) {
                 if (fin_circle != null) {
                     fin_circle.lhr = maxlikeli;
-//                    core_circles.add(fin_circle);
+                    core_circles.add(fin_circle);
 //                    controller.removePoints(controller.scanCircle(fin_circle));
                 }
                 return;
@@ -297,8 +297,7 @@ public class MovingCircle {
                 non_intersecting_core_circles.add(c);
             }
         }
-        non_intersecting_core_circles = new ArrayList<>();
-        non_intersecting_core_circles.addAll(core_circles);
+
         ArrayList<Circle> moving_circles_for_visualize = new ArrayList<>();
         int top_circles_for_visualize = Values.top_circles_for_visualize;
 
@@ -337,7 +336,7 @@ public class MovingCircle {
         moving_circles_for_visualize.add(c3);
         moving_circles_for_visualize.add(c4);
 //        int top_circles_for_visualize = Values.top_circles_for_visualize;
-        System.out.println(moving_circles_for_visualize.size());
+
         vis.drawCircles(events, moving_circles_for_visualize, "title");
     }
 
