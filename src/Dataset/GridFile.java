@@ -61,7 +61,9 @@ public class GridFile implements Serializable {
     }
 
     private void insertEventOnGrid(Events event) {
+        System.out.println(event.toString());
         GridCell gridCell = getGridCell(event);
+        System.out.println(gridCell);
         Bucket bucket = this.mapper.get(gridCell);
         if(bucket== null)
             System.out.println(gridCell.getHashValue());
@@ -200,6 +202,7 @@ public class GridFile implements Serializable {
     }
 
     private GridCell getGridCell(Events event) {
+        System.out.println("inside");
         for (int i = 0; i < this.lonScale.size() - 1; i++) {
             if (this.lonScale.get(i) > this.lonScale.get(i + 1)) {
                 System.out.println("SORT LON SCALE");
@@ -212,6 +215,7 @@ public class GridFile implements Serializable {
                 return null;
             }
         }
+        System.out.println("more inside");
         double lat1, lat2, lon1, lon2;
         int latSize = this.latScale.size();
         int lonSize = this.lonScale.size();
@@ -256,6 +260,7 @@ public class GridFile implements Serializable {
         this.latScale.add(gridCell.maxLat);
         this.lonScale.add(gridCell.minLon);
         this.lonScale.add(gridCell.maxLon);
+        this.gridCellObject.put(gridCell.getHashValue(),gridCell);
     }
     private static void checkData(GridFile gridFile) {
         int counter = 0;

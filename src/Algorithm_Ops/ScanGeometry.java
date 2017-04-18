@@ -8,10 +8,10 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class ScanGeometry {
 
-    double start_X;
-    double start_Y;
-    double end_X;
-    double end_Y;
+    public double start_X;
+    public double start_Y;
+    public double end_X;
+    public double end_Y;
 
     public ScanGeometry(double x, double y, double x1, double y1) {
         this.start_X = x;

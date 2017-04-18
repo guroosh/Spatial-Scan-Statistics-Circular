@@ -307,7 +307,7 @@ public class MovingCircle {
             moving_circles_for_visualize.addAll(non_intersecting_core_circles.subList(0, top_circles_for_visualize));
         }
 
-        visualizedata(events, moving_circles_for_visualize);
+//        visualizedata(events, moving_circles_for_visualize);
 
         int number = Values.top_circles_for_print;
 //        drawtop(number, non_intersecting_core_circles);
