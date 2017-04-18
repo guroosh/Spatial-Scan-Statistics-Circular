@@ -14,6 +14,9 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static Dataset.GridFile.readDataFile;
+import static Moving_Circle.MovingCircle.*;
+import static Naive.Naive.*;
+import jsc.distributions.Poisson;
 
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
@@ -64,6 +67,7 @@ public class Main {
 //        runNaiveTesterFJP(gridFile, events);
 //        runNaiveTesterJOMP(gridFile, events);
 
+//
 //        runMovingCircleTester(gridFile, events);
 //        runMovingCircleTesterHJ(gridFile, events);
 //        runMovingCircleTesterJvFP(gridFile, events);
