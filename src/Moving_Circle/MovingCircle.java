@@ -307,7 +307,7 @@ public class MovingCircle {
             moving_circles_for_visualize.addAll(non_intersecting_core_circles.subList(0, top_circles_for_visualize));
         }
 
-//        visualizedata(events, moving_circles_for_visualize);
+        visualizedata(events, moving_circles_for_visualize);
 
         int number = Values.top_circles_for_print;
 //        drawtop(number, non_intersecting_core_circles);
@@ -325,7 +325,7 @@ public class MovingCircle {
     }
 
     private static void visualizedata(ArrayList<Events> events, ArrayList<Circle> moving_circles_for_visualize) {
-        Visualize.Visualize vis = new Visualize.Visualize();
+        Visualize.VisualizeNaive vis = new Visualize.VisualizeNaive();
         Circle c1 = new Circle(minLon, minLat, 0.0001);
         Circle c2 = new Circle(minLon, maxLat, 0.0001);
         Circle c3 = new Circle(maxLon, maxLat, 0.0001);

@@ -6,6 +6,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 import static TestingAlgo.Main.*;
 
@@ -61,9 +62,9 @@ public class GridFile implements Serializable {
     }
 
     private void insertEventOnGrid(Events event) {
-        System.out.println(event.toString());
+//        System.out.println(event.toString());
         GridCell gridCell = getGridCell(event);
-        System.out.println(gridCell);
+//        System.out.println(gridCell);
         Bucket bucket = this.mapper.get(gridCell);
         if(bucket== null)
             System.out.println(gridCell.getHashValue());
@@ -202,7 +203,7 @@ public class GridFile implements Serializable {
     }
 
     private GridCell getGridCell(Events event) {
-        System.out.println("inside");
+//        System.out.println("inside");
         for (int i = 0; i < this.lonScale.size() - 1; i++) {
             if (this.lonScale.get(i) > this.lonScale.get(i + 1)) {
                 System.out.println("SORT LON SCALE");
@@ -215,7 +216,7 @@ public class GridFile implements Serializable {
                 return null;
             }
         }
-        System.out.println("more inside");
+//        System.out.println("more inside");
         double lat1, lat2, lon1, lon2;
         int latSize = this.latScale.size();
         int lonSize = this.lonScale.size();
@@ -249,7 +250,14 @@ public class GridFile implements Serializable {
                 break;
             }
         }
-        GridCell gridCell = this.gridCellObject.get(String.valueOf(lat1) + "_" + String.valueOf(lat2) + "_" + String.valueOf(lon1) + "_" + String.valueOf(lon2));
+//        System.out.println("HERE: "+gridCellObject.size());
+//        for(Map.Entry<String,GridCell> entry : gridCellObject.entrySet())
+//        {
+//            System.out.println(entry.getKey()+"  "+event);
+//        }
+//        System.out.println(String.valueOf(lat1) + "_" + String.valueOf(lat2) + "_" + String.valueOf(lon1) + "_" + String.valueOf(lon2));
+        GridCell gridCell = gridCellObject.get(String.valueOf(lat1) + "_" + String.valueOf(lat2) + "_" + String.valueOf(lon1) + "_" + String.valueOf(lon2));
+//        System.out.println(gridCell);
         return gridCell;
     }
 
@@ -260,7 +268,7 @@ public class GridFile implements Serializable {
         this.latScale.add(gridCell.maxLat);
         this.lonScale.add(gridCell.minLon);
         this.lonScale.add(gridCell.maxLon);
-        this.gridCellObject.put(gridCell.getHashValue(),gridCell);
+//        this.gridCellObject.put(gridCell.getHashValue(),gridCell);
     }
     private static void checkData(GridFile gridFile) {
         int counter = 0;

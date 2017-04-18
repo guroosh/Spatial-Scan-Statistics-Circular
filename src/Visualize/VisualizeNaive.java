@@ -186,17 +186,23 @@ class DrawComponentNaive extends JComponent {
     private void drawPoints(Graphics2D g2, ArrayList<Events> new_points) {
         double lat, lon;
         for (Events e : VisualizeNaive.points) {
-            if (e.marked)
-                continue;
+//            if (e.marked)
+//                continue;
             Events event = new Events();
             lat = e.getLat();
             lon = e.getLon();
+//            System.out.println(e.toString());
             if (lat <= max_y && lat >= min_y && lon <= max_x && lon >= min_x) {
+//                System.out.println("inside");
                 event.setLon(width * (e.getLon() - min_x) / (max_x - min_x));
                 event.setLat(height * (e.getLat() - min_y) / (max_y - min_y));
                 new_points.add(event);
             }
         }
+//        System.out.println(max_x);
+//        System.out.println(max_y);
+//        System.out.println(min_x);
+//        System.out.println(min_y);
         Ellipse2D.Double ellipse = new Ellipse2D.Double();
         int point_size;
 
