@@ -14,7 +14,7 @@ public class Values {
     public static int moving_circle_counter = 50;
     public static int runtime = 1000;
     public static int number_of_radius_naive = (int) (((upper_limit - lower_limit) / lower_limit) + 1);
-    public static int top_circles_for_print = 15;
+    public static int top_circles_for_print = 0;
     public static int top_circles_for_visualize = top_circles_for_print;
     public static int top_circles_naive_final = runtime;           //equivalent to runtime in moving circle
     public static int  pval_nruns=1000;

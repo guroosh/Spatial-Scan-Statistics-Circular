@@ -7,8 +7,8 @@ import Dataset.Events;
 import Dataset.GridFile;
 import Experiments.ListCheck;
 import TestingAlgo.Main;
+import TestingAlgo.Result;
 import TestingAlgo.Values;
-import Visualize.VisualizeNaive;
 import edu.rice.hj.api.SuspendableException;
 
 import java.util.ArrayList;
@@ -29,12 +29,12 @@ public class MovingCircle {
     static int runtime = Values.runtime;
 
     public static void runMovingCircleTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
-        System.out.println("Starting Moving Circle run with JOMP");
+        // System.out.println("Starting Moving Circle run with JOMP");
         long start = System.currentTimeMillis();
         JOMP.movingCircleJOMP movingCircleJOMP = new JOMP.movingCircleJOMP();
         Circle[] core_circles_array = movingCircleJOMP.movingCircleTesterJOMP(runtime, gridFile, minLon, minLat, maxLon, maxLat);
         long end = System.currentTimeMillis();
-        System.out.println("Time :" + ((double) (end - start)) / 1000 + "s");
+        Result.MovingTesterJOMP_time+=((double) (end - start)) / 1000 ;
 
         for (int i = 0; i < runtime; i++) {
             Circle temp_circle = core_circles_array[i];
@@ -43,24 +43,25 @@ public class MovingCircle {
             }
             core_circles.add(temp_circle);
         }
-        aftermovingcircal(gridFile, events);
+//        aftermovingcircal(gridFile, events);
     }
 
     public static void runMovingCircleTesterJvFP(GridFile gridFile, ArrayList<Events> events) {
-        System.out.println("Starting Moving Circle run with Java-Fork join pool");
+        // System.out.println("Starting Moving Circle run with Java-Fork join pool");
         long start = System.currentTimeMillis();
         int threshold = runtime / Runtime.getRuntime().availableProcessors();
         MovingCircleRunnerFJP rootTask = new MovingCircleRunnerFJP(0, runtime, gridFile, threshold);
         ForkJoinPool pool = new ForkJoinPool();
         pool.invoke(rootTask);
         long end = System.currentTimeMillis();
-        System.out.println("Time :" + ((double) (end - start)) / 1000 + "s");
-        aftermovingcircal(gridFile, events);
+//        // System.out.println(((double) (end - start)) / 1000);
+        Result.MovingTesterFJP_time+=((double) (end - start)) / 1000;
+//        aftermovingcircal(gridFile, events);
 
     }
 
     public static void runMovingCircleTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
-        System.out.println("Starting Moving Circle run with Habanero-Java");
+        // System.out.println("Starting Moving Circle run with Habanero-Java");
         long start = System.currentTimeMillis();
         finish(() -> {
             forasync(0, runtime, (i) -> {
@@ -68,12 +69,13 @@ public class MovingCircle {
             });
         });
         long end = System.currentTimeMillis();
-        System.out.println("Time :" + ((double) (end - start)) / 1000 + "s");
-        aftermovingcircal(gridFile, events);
+        Result.MovingTesterHJ_time+= ((double) (end - start)) / 1000;
+        System.out.println("Time HJ moving "+((double) (end - start)) / 1000+"s");
+//        aftermovingcircal(gridFile, events);
     }
 
     public static void runMovingCircleTester(GridFile gridFile, ArrayList<Events> events) {
-        System.out.println("Starting Moving Circle run with single thread");
+        // System.out.println("Starting Moving Circle run with single thread");
         long start = System.currentTimeMillis();
 
         for (int i = 0; i < runtime; i++) {
@@ -81,8 +83,8 @@ public class MovingCircle {
         }
 
         long end = System.currentTimeMillis();
-        System.out.println("Time :" + ((double) (end - start)) / 1000 + "s");
-        aftermovingcircal(gridFile, events);
+        Result.MovingTesterST_time+=((double) (end - start)) / 1000;
+//        aftermovingcircal(gridFile, events);
 
 
 
@@ -337,7 +339,7 @@ public class MovingCircle {
         moving_circles_for_visualize.add(c4);
 //        int top_circles_for_visualize = Values.top_circles_for_visualize;
 
-        vis.drawCircles(events, moving_circles_for_visualize, "title");
+//        vis.drawCircles(events, moving_circles_for_visualize, "title");
     }
 
     private static class MovingCircleRunnerFJP extends RecursiveAction {
