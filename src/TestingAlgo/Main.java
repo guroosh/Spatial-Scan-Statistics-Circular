@@ -101,23 +101,23 @@ public class Main {
             gridFile.make(poisson_data, gridCell);
             gridFile_global = gridFile;
 
-            runMovingCircleTester(gridFile, poisson_data);
-            clear();
-            runMovingCircleTesterHJ(gridFile, poisson_data);
-            clear();
-            runMovingCircleTesterJvFP(gridFile, poisson_data);
-            clear();
-//            runMovingCircleTesterJOMP(gridFile, poisson_data);
+//            runMovingCircleTester(gridFile, poisson_data);
 //            clear();
+//            runMovingCircleTesterHJ(gridFile, poisson_data);
+//            clear();
+//            runMovingCircleTesterJvFP(gridFile, poisson_data);
+            clear();
+            runMovingCircleTesterJOMP(gridFile, poisson_data);
 
-            runNaiveTester(gridFile, poisson_data);
-            clear();
-            runNaiveTesterHJ(gridFile, poisson_data);
-            clear();
-            runNaiveTesterFJP(gridFile, poisson_data);
-            clear();
-//            runNaiveTesterJOMP(gridFile, poisson_data);
+
+//            runNaiveTester(gridFile, poisson_data);
 //            clear();
+//            runNaiveTesterHJ(gridFile, poisson_data);
+//            clear();
+//            runNaiveTesterFJP(gridFile, poisson_data);
+            clear();
+            runNaiveTesterJOMP(gridFile, poisson_data);
+
 
 
         }

@@ -17,7 +17,7 @@ public class movingCircleJOMP {
     int added_circles = 0;
     public Circle[] movingCircleTesterJOMP(int runtime, GridFile gridFile, double minLon, double minLat, double maxLon, double maxLat) throws Exception {
         Circle[] core_circles = new Circle[runtime];
-        int i;
+        int i;added_circles=0;
         //omp parallel shared(i)
         {
             //omp for
