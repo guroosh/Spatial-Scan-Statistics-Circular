@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f889fb64-4216-4aa7-afe3-5d0a9244e20e" name="Default" comment="fixed code for montecarlo">
+    <list default="true" id="f889fb64-4216-4aa7-afe3-5d0a9244e20e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run.sh" afterPath="$PROJECT_DIR$/run.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JOMP/movingCircleJOMP.jomp" afterPath="$PROJECT_DIR$/src/JOMP/movingCircleJOMP.jomp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JOMP/naiveJOMP.jomp" afterPath="$PROJECT_DIR$/src/JOMP/naiveJOMP.jomp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java" afterPath="$PROJECT_DIR$/src/Moving_Circle/MovingCircle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Naive/Naive.java" afterPath="$PROJECT_DIR$/src/Naive/Naive.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/Main.java" afterPath="$PROJECT_DIR$/src/TestingAlgo/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingAlgo/Values.java" afterPath="$PROJECT_DIR$/src/TestingAlgo/Values.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="630">
-              <caret line="93" column="8" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
+              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1298,7 +1292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492521948321</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="added experiments for multi cores">
+      <created>1495164103370</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1495164103370</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1386,7 +1387,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed isolation in moving circle&#10;" />
     <MESSAGE value="Committing before merge" />
     <MESSAGE value="Merge branch 'master' of https://bitbucket.org/guroosh/btp_merged&#10;&#10;# Conflicts:&#10;#&#9;out/production/btp_merged/Algorithm_Ops/Circle.class&#10;#&#9;out/production/btp_merged/TestingAlgo/DrawComponent.class&#10;#&#9;out/production/btp_merged/TestingAlgo/DrawComponentNaive.class&#10;#&#9;out/production/btp_merged/TestingAlgo/Main.class&#10;#&#9;out/production/btp_merged/TestingAlgo/Visualize.class&#10;#&#9;out/production/btp_merged/TestingAlgo/VisualizeNaive.class&#10;#&#9;src/TestingAlgo/Main.java" />
     <MESSAGE value="updated readme and console outputs" />
@@ -1411,7 +1411,8 @@
     <MESSAGE value="Updated sync point" />
     <MESSAGE value="commit before merge" />
     <MESSAGE value="fixed code for montecarlo" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed code for montecarlo" />
+    <MESSAGE value="added experiments for multi cores" />
+    <option name="LAST_COMMIT_MESSAGE" value="added experiments for multi cores" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1727,7 +1728,7 @@
     <entry file="file://$PROJECT_DIR$/src/TestingAlgo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
-          <caret line="93" column="8" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding />
         </state>
       </provider>
