@@ -19,4 +19,5 @@ public class Values {
     public static int top_circles_naive_final = runtime;           //equivalent to runtime in moving circle
     public static int  pval_nruns=1000;
     public static double ji_threshold = 0.3;
+    public static int average_for_multi_core = 1;
 }

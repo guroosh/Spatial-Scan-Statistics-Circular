@@ -8,7 +8,7 @@ javac -cp .:src/jomp1.0b.jar:src/ src/JOMP/movingCircleJOMP.java
 
 
 cd src/
-java -cp .:jomp1.0b.jar:habanero-java-lib-0.1.2.jar:jsc.jar -Djomp.threads=4 TestingAlgo/Main
+java -cp .:jomp1.0b.jar:habanero-java-lib-0.1.2.jar:jsc.jar -Dhj.numWorkers=$1 -Djomp.threads=4 TestingAlgo/Main
 cd ..
 
 find . -type f -name '*.class' -delete

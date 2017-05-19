@@ -5,7 +5,9 @@ import Algorithm_Ops.CircleOps;
 import Algorithm_Ops.ScanGeometry;
 import Dataset.Events;
 import Dataset.GridFile;
+import TestingAlgo.Main;
 import TestingAlgo.Values;
+import jomp.runtime.OMP;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,6 +42,7 @@ public class naiveJOMP {
         CircleOps controller = new CircleOps(initial_radius, term_radius, area, gridFile);
 
         int i;
+        OMP.setNumThreads(Main.curr_number_of_threads);
         //omp parallel shared(i)
         {
             //omp for
