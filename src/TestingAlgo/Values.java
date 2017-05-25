@@ -17,6 +17,6 @@ public class Values {
     public static int top_circles_for_print = 0;
     public static int top_circles_for_visualize = top_circles_for_print;
     public static int top_circles_naive_final = runtime;           //equivalent to runtime in moving circle
-    public static int  pval_nruns=1000;
+    public static int  pval_nruns=1;
     public static double ji_threshold = 0.3;
 }

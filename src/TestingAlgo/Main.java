@@ -106,15 +106,15 @@ public class Main {
 //            runMovingCircleTesterHJ(gridFile, poisson_data);
 //            clear();
 //            runMovingCircleTesterJvFP(gridFile, poisson_data);
+//            clear();
+//            runMovingCircleTesterJOMP(gridFile, poisson_data);
+
+
+            runNaiveTester(gridFile, poisson_data);
             clear();
-            runMovingCircleTesterJOMP(gridFile, poisson_data);
-
-
-//            runNaiveTester(gridFile, poisson_data);
-//            clear();
-//            runNaiveTesterHJ(gridFile, poisson_data);
-//            clear();
-//            runNaiveTesterFJP(gridFile, poisson_data);
+            runNaiveTesterHJ(gridFile, poisson_data);
+            clear();
+            runNaiveTesterFJP(gridFile, poisson_data);
             clear();
             runNaiveTesterJOMP(gridFile, poisson_data);
 

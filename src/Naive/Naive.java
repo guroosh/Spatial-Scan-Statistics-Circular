@@ -144,7 +144,7 @@ public class Naive {
                         }
                         curr_local_circle[0] = controller.grow_x(shift_radius, curr_local_circle[0]);           // TODO: 21-03-2017 change grow_x to shift_x (just the name)
                     }
-                    curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
+                    curr_local_circle[0] = controller.shifty_startx(curr_local_circle[0], shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
                 }
             });
         });
@@ -180,7 +180,7 @@ public class Naive {
                     }
                     curr_local_circle[0] = controller.grow_x(shift_radius, curr_local_circle[0]);           // TODO: 21-03-2017 change grow_x to shift_x (just the name)
                 }
-                curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
+                curr_local_circle[0] = controller.shifty_startx(curr_local_circle[0], shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
             }
 //            // System.out.println("Radius: "+curr_local_radius[0]);
         }
@@ -214,7 +214,7 @@ public class Naive {
                     }
                     curr_circle = controller.grow_x(shift_radius, curr_circle);           // TODO: 21-03-2017 change grow_x to shift_x (just the name)
                 }
-                curr_circle = controller.shift(curr_circle, -1, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
+                curr_circle = controller.shifty_startx(curr_circle, shift_radius);               // TODO: 21-03-2017 change shift to shift_y and change returning null to something else
             }
 //            // System.out.println("Radius: " + curr_radius);
             curr_radius = controller.increase_radius(curr_radius, growth_radius);

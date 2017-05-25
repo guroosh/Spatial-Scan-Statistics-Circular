@@ -69,7 +69,7 @@ public class naiveJOMP {
                         }
                         curr_local_circle[0] = controller.grow_x(shift_radius, curr_local_circle[0]);
                     }
-                    curr_local_circle[0] = controller.shift(curr_local_circle[0], -1, shift_radius);
+                    curr_local_circle[0] = controller.shifty_startx(curr_local_circle[0], shift_radius);
                 }
 //                System.out.println("Radius: " + curr_local_radius[0]);
             }

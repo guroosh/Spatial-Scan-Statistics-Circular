@@ -11,12 +11,13 @@ import java.util.HashSet;
 /**
  * Created by LakshayD on 2/8/2017.
  */
+//Has functions related to the Circles used by algorithm
 public class CircleOps {
     private double term_radius;
     private double start_radius;
     private ScanGeometry area;
     private GridFile gridFile;
-
+//Sets the operator to an initial and final radius and a bound area.Also passes a gridfile built from the dataset to the operator
     public CircleOps(double c_radius, double e_radius, ScanGeometry arr, GridFile gridFile) {
         this.term_radius = e_radius;
         this.start_radius = c_radius;
@@ -24,7 +25,7 @@ public class CircleOps {
         this.gridFile = gridFile;
 
     }
-
+//Initialize a circle with a given x,y coordinate and start radius
     public Circle init(double x, double y) {
         Circle circle = new Circle();
         circle.setX_coord(x);
@@ -32,26 +33,31 @@ public class CircleOps {
         circle.setRadius(start_radius);
         return circle;
     }
-
+//Grows the radius of the given circle by a given amount
     public Circle grow_radius(double shift, Circle circle) {
         circle.setRadius(circle.getRadius() + shift);
         return circle;
 
     }
-
+//Shifts the x coordinate of the given circle by a given amount
     public Circle grow_x(double shift, Circle circle) {
         circle.setX_coord(circle.getX_coord() + shift);
         return circle;
 
     }
-
+//Shifts the y coordinate of the given circle by a given amount
     public Circle grow_y(double shift, Circle circle) {
         circle.setY_coord(circle.getY_coord() + shift);
         return circle;
 
     }
-
-    public int term(Circle circle) {
+/*Check whether the circle provided is a valid circle. -1 is returned when the circle isn't valid(null),
+2 when the circle is out of y
+1 when the circle is out of x bound
+3 when radius of the circle is more than the terminating radius
+0 when all is fine
+*/
+public int term(Circle circle) {
         if (circle == null)
             return -1;
         else if (circle.getY_coord() > area.end_Y || circle.getY_coord() < area.start_Y)
@@ -62,27 +68,22 @@ public class CircleOps {
             return 3;
         else
             return 0;
-//        return -1 if circle doesnt exist;
-//        return 1 if x is out of bounds;
-//        return 2 if y is out of bounds;
-//        return 3 if radius is out of bounds;
-//        return 0 if all ok;
+
     }
 
-
+//Shift the given circle's x and y by given amount
     public Circle grow_xy(double growth, Circle circle) {
         circle = grow_x(growth, circle);
         circle = grow_y(growth, circle);
         return circle;
     }
+/*Shifts y coordinate by given value and x coordinate to start of the area if x co-ordinate crosses given area.
+ Sends termination command if circle crosses y bound too*/
+    public Circle shifty_startx(Circle circle,  double shift_y) {
 
-    public Circle shift(Circle circle, double shift_x, double shift_y) {
-//        circle.setRadius(curr_radius);
-//        circle.setX_coord(circle.getX_coord() + shift_x);
         int chk_bound = term(circle);
         if (chk_bound == 1) {
             circle.setY_coord(circle.getY_coord() + shift_y);
-//            put in scan geometry
             circle.setX_coord(area.start_X);
         }
         chk_bound = term(circle);
@@ -92,7 +93,7 @@ public class CircleOps {
 
         return circle;
     }
-
+//
     public double likelihoodRatio(Circle circle, Events[] points) {
         return this.likelihoodRatio(circle, new ArrayList<>(Arrays.asList(points)));
     }
@@ -103,8 +104,7 @@ public class CircleOps {
         int total_points = gridFile.total_events;
         int circle_points = points.size();
         if (circle_points == 0) {
-//            System.out.println("Indicator: " + indicator);
-//            System.out.println("Answer: 0 (0 points)");
+
             return 0;
         }
         double baseline = (total_points * circle_area) / total_area;
@@ -342,10 +342,7 @@ public class CircleOps {
         if (c1.getRadius() < c2.getRadius() && dist < c2.getRadius() - c1.getRadius()) {     // / 2) {
             return true;           //returns if c2 overlaps c1
         }
-        if (dist > (c1.getRadius() + c2.getRadius())) {
-            return false;           //return if c1 and c2 are separate
-        }
-        return true;                //returns if intersecting circles
+        return !(dist > (c1.getRadius() + c2.getRadius()));
     }
 
     public boolean equals(Circle c1, Circle c2) {
