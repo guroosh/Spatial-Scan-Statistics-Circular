@@ -6,7 +6,9 @@ import Algorithm_Ops.ScanGeometry;
 import Dataset.Events;
 import Dataset.GridFile;
 import Moving_Circle.MovingCircle;
+import TestingAlgo.Main;
 import TestingAlgo.Values;
+import jomp.runtime.OMP;
 
 import java.util.Arrays;
 
@@ -18,6 +20,7 @@ public class movingCircleJOMP {
     public Circle[] movingCircleTesterJOMP(int runtime, GridFile gridFile, double minLon, double minLat, double maxLon, double maxLat) throws Exception {
         Circle[] core_circles = new Circle[runtime];
         int i;added_circles=0;
+        OMP.setNumThreads(Main.curr_number_of_threads);
         //omp parallel shared(i)
         {
             //omp for

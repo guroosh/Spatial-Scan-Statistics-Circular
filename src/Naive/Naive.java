@@ -23,6 +23,7 @@ import static edu.rice.hj.Module0.finish;
 import static edu.rice.hj.Module0.launchHabaneroApp;
 import static edu.rice.hj.Module1.forasync;
 import static edu.rice.hj.Module2.isolated;
+import static edu.rice.hj.runtime.config.HjSystemProperty.numWorkers;
 
 /**
  * Created by guroosh on 8/4/17.
@@ -54,7 +55,7 @@ public class Naive {
 //        afterNaive(events, gridFile);
     }
 
-    public static void runNaiveTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
+    public static double runNaiveTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
         // System.out.println("Starting Naive run with HABANERO");
         long startTime1 = System.currentTimeMillis();
         launchHabaneroApp(() -> {
@@ -63,32 +64,34 @@ public class Naive {
         long endTime1 = System.currentTimeMillis();
         long totalTime = endTime1 - startTime1;
         Result.NaiveTesterHJ_time+=totalTime;
-        System.out.println("Total time for naive with HABANERO: " + ((double) totalTime / (double) 1000) + "s");
+//        System.out.println("Total time for naive with HABANERO: " + ((double) totalTime / (double) 1000) + "s");
 
 //        Collections.sort(top_likelihood_circles_for_HJ, Circle.sortByLHR());
 //        naiveWithoutIntersectingCircles(top_likelihood_circles_for_HJ, count_naive_circles_for_HJ);
 //        afterNaive(events, gridFile);
+        return ((double) totalTime / (double) 1000);
     }
 
-    public static void runNaiveTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
+    public static double runNaiveTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
         // System.out.println("Starting Naive run with JOMP");
         long startTime = System.currentTimeMillis();
         naiveTesterJOMP(gridFile);
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
         Result.NaiveTesterJOMP_time+=totalTime;
-        System.out.println("Total time for naive with JOMP: " + ((double) totalTime / (double) 1000) + "s");
+//        System.out.println("Total time for naive with JOMP: " + ((double) totalTime / (double) 1000) + "s");
 
 //        Collections.sort(top_likelihood_circles_for_JOMP, Circle.sortByLHR());
 //        naiveWithoutIntersectingCircles(top_likelihood_circles_for_JOMP, count_naive_circles_for_FJP);
 //        afterNaive(events, gridFile);
+        return ((double) totalTime / (double) 1000);
     }
 
-    public static void runNaiveTesterFJP(GridFile gridFile, ArrayList<Events> events) {
+    public static double runNaiveTesterFJP(GridFile gridFile, ArrayList<Events> events) {
         // System.out.println("Starting Naive run with Fork Join Pool");
         long startTime = System.currentTimeMillis();
         int runtime = Values.number_of_radius_naive;
-        int threshold = runtime / Runtime.getRuntime().availableProcessors();
+        int threshold = runtime / curr_number_of_threads;
         NaiveRunnerFJP rootTask = new NaiveRunnerFJP(0, runtime, gridFile, threshold);
         ForkJoinPool pool = new ForkJoinPool();
         pool.invoke(rootTask);
@@ -100,6 +103,7 @@ public class Naive {
 //        Collections.sort(top_likelihood_circles_for_FJP, Circle.sortByLHR());
 //        naiveWithoutIntersectingCircles(top_likelihood_circles_for_FJP, count_naive_circles_for_FJP);
 //        afterNaive(events, gridFile);
+        return ((double) totalTime / (double) 1000);
     }
 
     private static void naiveTesterJOMP(GridFile gridFile) throws Exception {

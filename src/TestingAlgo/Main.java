@@ -19,6 +19,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import static Dataset.GridFile.readDataFile;
 import static Moving_Circle.MovingCircle.*;
 import static Naive.Naive.*;
+import static edu.rice.hj.runtime.config.HjSystemProperty.numWorkers;
 
 import jsc.distributions.Poisson;
 
@@ -40,6 +41,9 @@ public class Main {
     public static ArrayList<Circle> list1 = new ArrayList<>(), list2 = new ArrayList<>();
 
     public static ArrayList<Events> event1 = new ArrayList<>();
+
+    public static int number_of_threads;
+    public static int curr_number_of_threads;
 
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
@@ -65,15 +69,84 @@ public class Main {
         //data creation end
 
         System.out.println("\nStarting run with dataset " + fileName + "\n");
+        number_of_threads = Runtime.getRuntime().availableProcessors();
+        curr_number_of_threads = number_of_threads;
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
 
+//        runNaiveTester(gridFile, events);
+//        runNaiveTesterHJ(gridFile, events);
+//        runNaiveTesterFJP(gridFile, events);
+//        runNaiveTesterJOMP(gridFile, events);
 
-        experiment_montecarlo_value(events.size(), area);
-        System.out.println("Complete");
+//        runMovingCircleTester(gridFile, events);
+//        runMovingCircleTesterHJ(gridFile, events);
+//        runMovingCircleTesterJvFP(gridFile, events);
+//        runMovingCircleTesterJOMP(gridFile, events);
 
+//        multiCoreExpHJ(gridFile, events);
+//        multiCoreExpJOMP(gridFile, events);
+//        multiCoreExpFJP(gridFile, events);
+
+
+//        experiment_montecarlo_value(events.size(), area);
 //        experiment_naive_vs_moving(events, list1, list2);
 //        experiment_p_value(events.size(), area);
+
+        System.out.println("Complete");
     }
+
+    private static void multiCoreExpFJP(GridFile gridFile, ArrayList<Events> events) {
+        int average_runtime = Values.average_for_multi_core;
+        System.out.println("RUNNING FOR FJP");
+        while (curr_number_of_threads >= 1) {
+            System.out.println("\nNUMBER OF THREADS: " + curr_number_of_threads);
+            double temp1 = 0, temp2 = 0;
+            for (int i = 0; i < average_runtime; i++) {
+                temp1 += runNaiveTesterFJP(gridFile, events);
+                temp2 += runMovingCircleTesterJvFP(gridFile, events);
+            }
+            temp1 /= average_runtime;
+            temp2 /= average_runtime;
+            System.out.println("Average for Naive: " + temp1 + "s");
+            System.out.println("Average for Moving Circle: " + temp2 + "s");
+            curr_number_of_threads--;
+        }
+    }
+
+    private static void multiCoreExpJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
+        int average_runtime = Values.average_for_multi_core;
+        System.out.println("RUNNING FOR JOMP");
+        while (curr_number_of_threads >= 1) {
+            System.out.println("\nNUMBER OF THREADS: " + curr_number_of_threads);
+            double temp1 = 0, temp2 = 0;
+            for (int i = 0; i < average_runtime; i++) {
+                temp1 += runNaiveTesterJOMP(gridFile, events);
+                temp2 += runMovingCircleTesterJOMP(gridFile, events);
+            }
+            temp1 /= average_runtime;
+            temp2 /= average_runtime;
+            System.out.println("Average for Naive: " + temp1 + "s");
+            System.out.println("Average for Moving Circle: " + temp2 + "s");
+            curr_number_of_threads--;
+        }
+    }
+
+    private static void multiCoreExpHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
+        int average_runtime = Values.average_for_multi_core;
+        System.out.println("RUNNING FOR HJ");
+        System.out.println("\nNUMBER OF THREADS: " + numWorkers.getPropertyValue());
+        double temp1 = 0, temp2 = 0;
+        for (int i = 0; i < average_runtime; i++) {
+            temp1 += runNaiveTesterHJ(gridFile, events);
+            temp2 += runMovingCircleTesterHJ(gridFile, events);
+        }
+        temp1 /= average_runtime;
+        temp2 /= average_runtime;
+        System.out.println("Average for Naive: " + temp1 + "s");
+        System.out.println("Average for Moving Circle: " + temp2 + "s");
+        curr_number_of_threads--;
+    }
+
 
     private static void experiment_montecarlo_value(int size, ScanGeometry area) throws Exception {
         System.out.println("Starting runtime test of " + Values.pval_nruns + " Monte Carlo simulations showing  a poison distribution with mean : " + size);

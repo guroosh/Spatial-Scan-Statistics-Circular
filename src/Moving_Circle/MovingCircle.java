@@ -21,6 +21,7 @@ import static TestingAlgo.Main.*;
 import static edu.rice.hj.Module0.finish;
 import static edu.rice.hj.Module1.forasync;
 import static edu.rice.hj.Module2.isolated;
+import static edu.rice.hj.runtime.config.HjSystemProperty.numWorkers;
 
 /**
  * Created by guroosh on 8/4/17.
@@ -28,7 +29,7 @@ import static edu.rice.hj.Module2.isolated;
 public class MovingCircle {
     static int runtime = Values.runtime;
 
-    public static void runMovingCircleTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
+    public static double runMovingCircleTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
         // System.out.println("Starting Moving Circle run with JOMP");
         long start = System.currentTimeMillis();
         JOMP.movingCircleJOMP movingCircleJOMP = new JOMP.movingCircleJOMP();
@@ -44,12 +45,13 @@ public class MovingCircle {
             core_circles.add(temp_circle);
         }
 //        aftermovingcircal(gridFile, events);
+        return ((double) (end - start)) / 1000;
     }
 
-    public static void runMovingCircleTesterJvFP(GridFile gridFile, ArrayList<Events> events) {
+    public static double runMovingCircleTesterJvFP(GridFile gridFile, ArrayList<Events> events) {
         // System.out.println("Starting Moving Circle run with Java-Fork join pool");
         long start = System.currentTimeMillis();
-        int threshold = runtime / Runtime.getRuntime().availableProcessors();
+        int threshold = runtime / curr_number_of_threads;
         MovingCircleRunnerFJP rootTask = new MovingCircleRunnerFJP(0, runtime, gridFile, threshold);
         ForkJoinPool pool = new ForkJoinPool();
         pool.invoke(rootTask);
@@ -57,10 +59,10 @@ public class MovingCircle {
 //        // System.out.println(((double) (end - start)) / 1000);
         Result.MovingTesterFJP_time+=((double) (end - start)) / 1000;
 //        aftermovingcircal(gridFile, events);
-
+        return ((double) (end - start)) / 1000;
     }
 
-    public static void runMovingCircleTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
+    public static double runMovingCircleTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
         // System.out.println("Starting Moving Circle run with Habanero-Java");
         long start = System.currentTimeMillis();
         finish(() -> {
@@ -72,6 +74,7 @@ public class MovingCircle {
         Result.MovingTesterHJ_time+= ((double) (end - start)) / 1000;
         System.out.println("Time HJ moving "+((double) (end - start)) / 1000+"s");
 //        aftermovingcircal(gridFile, events);
+        return ((double) (end - start)) / 1000;
     }
 
     public static void runMovingCircleTester(GridFile gridFile, ArrayList<Events> events) {
