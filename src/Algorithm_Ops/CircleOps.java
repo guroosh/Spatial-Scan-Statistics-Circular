@@ -93,11 +93,11 @@ public int term(Circle circle) {
 
         return circle;
     }
-//
+// Returns likelihood ratio of given circle given points in the circle
     public double likelihoodRatio(Circle circle, Events[] points) {
         return this.likelihoodRatio(circle, new ArrayList<>(Arrays.asList(points)));
     }
-
+// Auxiliary function for calculating likelihood ratio
     public double likelihoodRatio(Circle circle, ArrayList<Events> points) {
         double circle_area = Math.PI * circle.getRadius() * circle.getRadius() * 1000;
         double total_area = (this.area.end_X - this.area.start_X) * (this.area.end_Y - this.area.start_Y) * 1000;
@@ -110,13 +110,6 @@ public int term(Circle circle) {
         double baseline = (total_points * circle_area) / total_area;
         int indicator = circle_points > baseline ? 1 : 0;
         if (indicator == 0) {
-//            System.out.println("Circle_area: " + circle_area);
-//            System.out.println("Total_area: " + total_area);
-//            System.out.println("Circle_points: " + circle_points);
-//            System.out.println("Total_points: " + total_points);
-//            System.out.println("Baseline: " + baseline);
-//            System.out.println("Indicator: " + indicator);
-//            System.out.println("Answer: 0 (less than baseline)");
             return 0;
         }
         double k1 = circle_points / baseline;
@@ -126,80 +119,13 @@ public int term(Circle circle) {
 
         double p1 = Math.pow((circle_points / baseline), circle_points);
         double p2 = Math.pow(((total_points - circle_points) / (total_points - baseline)), total_points - circle_points);
-//        System.out.println("Circle_area: " + circle_area);
-//        System.out.println("Total_area: " + total_area);
-//        System.out.println("Circle_points: " + circle_points);
-//        System.out.println("Total_points: " + total_points);
-//        System.out.println("Baseline: " + baseline);
-//        System.out.println("Indicator: " + indicator);
         double numerator = (k2 * Math.log(k1)) + (k4 * Math.log(k3));
-//        System.out.println("Answer: " + answer + "   " +k2+ " log(" + k1 + ") + " + k4+ " log(" + k3 + ")");
         return numerator;
     }
-//    public double likelihoodRatio(ScanGeometry.Circle circle, ArrayList<Events> points) {
-//        double L0, L1, lambda;
-//        double ug, uz, ng, nz;
-//        double total_area, circle_area;
-//        circle_area = Math.PI * circle.getRadius() * circle.getRadius();
-//        total_area = (this.area.end_X - this.area.start_X) * (this.area.end_Y - this.area.start_Y);
-//
-//        ng = gridFile.total_events;
-//        nz = points.size();
-//        if (nz == 0)
-//            return 0;
-//        ug = ng;
-//        uz = (ug * circle_area) / total_area;
-//        System.out.println(circle_area);
-//        System.out.println(total_area);
-//        System.out.println();
-//        System.out.println(ng);
-//        System.out.println(nz);
-//        System.out.println(ug);
-//        System.out.println(uz);
-//        double a, b, c, d, e, f, g;
-//        d = uz - nz;
-//        e = ug - ng;
-//        f = ng - nz;
-//        a = nz / uz;
-//        b = f / (ug-uz);
-//        c = ng / ug;
-//        g = e - d;
-//        System.out.println();
-//        System.out.println(a);
-//        System.out.println(b);
-//        System.out.println(c);
-//        System.out.println(d);
-//        System.out.println(e);
-//        System.out.println(f);
-//        System.out.println(g);
-//        double p1, p2, p3, p4, p5, p6;
-//        p1 = Math.pow(a, nz);
-//        p2 = Math.pow((1 - a), (d));
-//        p3 = Math.pow(b, f);
-//        p4 = Math.pow(1 - b, g);
-//        p5 = Math.pow(c, ng);
-//        p6 = Math.pow((1 - c), e);
-//        System.out.println();
-//        System.out.println(p1);
-//        System.out.println(p2);
-//        System.out.println(p3);
-//        System.out.println(p4);
-//        System.out.println(p5);
-//        System.out.println(p6);
-//        L1 = p1 * p2 * p3 * p4;
-//        L0 = p5 * p6;
-//        System.out.println();
-//        System.out.println(L1);
-//        System.out.println(L0);
-//        lambda = L1 / L0;
-//        return lambda;
-//    }
-
-    // TODO: 2/9/2017 Complete implementation
-    //this needs to return a circle encompassing the circle surrounding new points
-    //For now returns center of quad where points are found
 
 
+// Auxiliary function that given a circle, scans the point in it and returns a circle centered in the quadrant with the highest density of points
+// and starting radius
     public Circle checkquadpoints(Circle curr_circle) {
         ArrayList<Events> points = scanCircle(curr_circle);
         int quadreg = 0, posi_lat = 0, posi_lon = 0;
@@ -253,11 +179,11 @@ public int term(Circle circle) {
         new_circle.setRadius(r);
         return new_circle;
     }
-
+// Auxiliary function to check mean of points
     public Circle checkanglepoints(Circle curr_circle, Events curr_points[]) {
         return checkanglepoints(curr_circle, new ArrayList<>(Arrays.asList(curr_points)));
     }
-
+// Function finds out density in each given quad and returns a circle at the mean of the most dense quad with radius equal to start radius
     public Circle checkanglepoints(Circle curr_circle, ArrayList<Events> curr_points) {
 
         ArrayList<Events> quadpoints = new ArrayList<>();
@@ -318,7 +244,7 @@ public int term(Circle circle) {
         return new_circle;
 
     }
-
+//    Reset the points that are marked
     public static void resetPointsVisibility(GridFile gridFile) {
         HashSet<Bucket> bucketSet = new HashSet<>();
         HashSet<Events> eventSet = new HashSet<>();
@@ -331,24 +257,24 @@ public int term(Circle circle) {
             events.marked = false;
         }
     }
-
+// Function checks whether two circles are intersecting (note not touching each other)
     public static boolean checkintersection(Circle c1, Circle c2) {
-        //circles just touching are considered as not intersecting
+
         double x1 = c1.getX_coord(), x2 = c2.getX_coord(), y1 = c1.getY_coord(), y2 = c2.getY_coord();
         double dist = Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
         if (c1.getRadius() > c2.getRadius() && dist < c1.getRadius() - c2.getRadius()) {     // / 2) {
-            return true;           //returns if c1 overlaps c2
+            return true;
         }
         if (c1.getRadius() < c2.getRadius() && dist < c2.getRadius() - c1.getRadius()) {     // / 2) {
-            return true;           //returns if c2 overlaps c1
+            return true;
         }
         return !(dist > (c1.getRadius() + c2.getRadius()));
     }
-
+//    Function to check whether two circles are equal or not
     public boolean equals(Circle c1, Circle c2) {
         return ((c1.getX_coord() == c2.getX_coord()) && (c1.getY_coord() == c2.getY_coord()) && (c1.getRadius() == c2.getRadius()));
     }
-
+// Auxiliary function to return most dense quad of the circle
     private int getquad(ArrayList<Events> points, double x, double y) {
         int quadreg = 0;
         int[] quad = new int[5];
@@ -376,7 +302,7 @@ public int term(Circle circle) {
         }
         return quadreg;
     }
-
+// Gives points new in the circle when grown by growth amount
     public ArrayList<Events> difference(Circle c_inner, double growth) {
         Circle c_outer = new Circle(c_inner.getX_coord(), c_inner.getY_coord(), c_inner.getRadius() + growth);
         ArrayList<Events> answer = scanCircle(c_outer);
@@ -388,108 +314,22 @@ public int term(Circle circle) {
             if (dist > c_inner.getRadius())
                 answer1.add(e);
         }
-//        System.out.println("INNER: " + scanCircle(c_inner).size() + ", OUTER: " + answer.size() + ", DIFFERENCE: " + answer1.size());
         return answer1;
     }
-
+// Marks a list of points i.e points that shouldn't be considered again
     public void removePoints(ArrayList<Events> points) {
         for (Events e : points) {
             e.marked = true;
         }
     }
-
-    public ArrayList<Events> getDifferencePoint(Circle c_inner, double growth) {
-        Circle c_outer = new Circle(c_inner.getX_coord(), c_inner.getY_coord(), c_inner.getRadius() + growth);
-        double lat, lon, r1, r2;
-        lat = c_inner.getY_coord();
-        lon = c_inner.getX_coord();
-        r1 = c_inner.getRadius();
-        r2 = c_outer.getRadius();
-
-        double lat1 = c_outer.getY_coord() - c_outer.getRadius();
-        double lat2 = c_inner.getY_coord() - (c_inner.getRadius() / Math.sqrt(2));
-        double lat3 = c_inner.getY_coord() + (c_inner.getRadius() / Math.sqrt(2));
-        double lat4 = c_outer.getY_coord() + c_outer.getRadius();
-
-        double lon1 = c_outer.getX_coord() - c_outer.getRadius();
-        double lon2 = c_inner.getX_coord() - (c_inner.getRadius() / Math.sqrt(2));
-        double lon3 = c_inner.getX_coord() + (c_inner.getRadius() / Math.sqrt(2));
-        double lon4 = c_outer.getX_coord() + c_outer.getRadius();
-
-        ArrayList<Events> answer = new ArrayList<>();
-        System.out.print(answer.size() + "   ");
-        answer.addAll(getDifferencePointPart(lat1, lat3 - 1, lon1, lon2 + 1, "OIOI"));
-        System.out.print(answer.size() + "   ");
-        answer.addAll(getDifferencePointPart(lat3 - 1, lat4, lon1, lon3 - 1, "IOOI"));
-        System.out.print(answer.size() + "   ");
-        answer.addAll(getDifferencePointPart(lat1, lat2 + 1, lon2 + 1, lon4, "OIIO"));
-        System.out.print(answer.size() + "   ");
-        answer.addAll(getDifferencePointPart(lat2 + 1, lat4, lon3 - 1, lon4, "IOIO"));
-        System.out.print(answer.size() + "   ");
-
-
-        ArrayList<Events> answer1 = new ArrayList<>();
-        for (Events e : answer) {
-            double x1 = e.getLon() - lon;
-            double y1 = e.getLat() - lat;
-            double dist = Math.sqrt((x1 * x1) + (y1 * y1));
-            if (dist > r1 && dist <= r2)
-                answer1.add(e);
-        }
-//        System.out.println("\t\tPoints in buckets: " + answer.size());
-//        System.out.println("\t\tPoints in circle: " + answer1.size());
-        System.out.println("INNER: " + scanCircle(c_inner).size() + ", OUTER: " + scanCircle(c_outer).size() + ", DIFFERENCE: " + answer1.size());
-        return answer1;
-    }
-
-    private ArrayList<Events> getDifferencePointPart(double lat_min, double lat_max, double lon_min, double lon_max, String code) {
-        int lat_min_id, lat_max_id, lon_min_id, lon_max_id;
-        Range r_lat;
-        Range r_lon;
-        r_lat = search(lat_min, lat_max, gridFile.latScale);
-        r_lon = search(lon_min, lon_max, gridFile.lonScale);
-        lat_min_id = r_lat.min;
-        lat_max_id = r_lat.max;
-        lon_min_id = r_lon.min;
-        lon_max_id = r_lon.max;
-        if (lat_min_id == -1)
-            lat_min_id = 0;
-        if (lon_min_id == -1)
-            lon_min_id = 0;
-        if (lat_max_id == -2)
-            lat_max_id = gridFile.latScale.size() - 1;
-        if (lon_max_id == -2)
-            lon_max_id = gridFile.lonScale.size() - 1;
-        ArrayList<Events> answer = new ArrayList<>();
-        int total_buckets_loaded = 0;
-        for (int i = lat_min_id; i < lat_max_id; i++) {
-            for (int j = lon_min_id; j < lon_max_id; j++) {
-                total_buckets_loaded++;
-                String hashValue = gridFile.latScale.get(i) + "_"
-                        + gridFile.latScale.get(i + 1) + "_"
-                        + gridFile.lonScale.get(j) + "_"
-                        + gridFile.lonScale.get(j + 1);
-                GridCell gridCell = gridFile.gridCellObject.get(hashValue);
-                Bucket bucket = gridFile.mapper.get(gridCell);
-                for (Events e : bucket.eventsInBucket) {
-                    answer.add(e);
-                }
-            }
-        }
-        return answer;
-    }
-
+// Returns points found in the given circle
     public ArrayList<Events> scanCircle(Circle circle) {
         double lon = circle.getX_coord();
         double lat = circle.getY_coord();
         double radius = circle.getRadius();
-//        System.out.println("Lat, Lon, Radius: " + lat + " " + lon + " " + radius);
         ArrayList<Events> answer = new ArrayList<>();
         double lat_min = lat - radius, lat_max = lat + radius, lon_min = lon - radius, lon_max = lon + radius;
-//        System.out.println("Lat circle, Lon circle: " + lat_min + " " + lat_max + " " + lon_min + " " + lon_max);
-//        System.out.println("Lat scale: "+gridFile.latScale.toString());
-//        System.out.println("Lon scale: "+gridFile.lonScale.toString());
-        int lat_min_id, lat_max_id, lon_min_id, lon_max_id;
+      int lat_min_id, lat_max_id, lon_min_id, lon_max_id;
         Range r_lat;
         Range r_lon;
         r_lat = search(lat_min, lat_max, gridFile.latScale);
@@ -498,7 +338,6 @@ public int term(Circle circle) {
         lat_max_id = r_lat.max;
         lon_min_id = r_lon.min;
         lon_max_id = r_lon.max;
-//        System.out.println(lat_min_id+" "+lat_max_id+" "+lon_min_id+" "+lon_max_id);
         if (lat_min_id == -1)
             lat_min_id = 0;
         if (lon_min_id == -1)
@@ -507,9 +346,7 @@ public int term(Circle circle) {
             lat_max_id = gridFile.latScale.size() - 1;
         if (lon_max_id == -2)
             lon_max_id = gridFile.lonScale.size() - 1;
-//        System.out.println(lat_min_id+" "+lat_max_id+" "+lon_min_id+" "+lon_max_id);
         int total_buckets_loaded = 0;
-//        System.out.println(lat_min_id + " " + lat_max_id + " " + lon_min_id + " " + lon_max_id);
         for (int i = lat_min_id; i < lat_max_id; i++) {
             for (int j = lon_min_id; j < lon_max_id; j++) {
                 total_buckets_loaded++;
@@ -522,14 +359,12 @@ public int term(Circle circle) {
                 for (Events e : bucket.eventsInBucket) {
                     if (!e.marked) {
                         answer.add(e);
-//                        e.marked = true;
+
                     }
                 }
             }
         }
-//        System.out.println("lat range: " + lat_min_id + " " + lat_max_id);
-//        System.out.println("lon range: " + lon_min_id + " " + lon_max_id);
-//        System.out.println("\t\tTotal buckets loaded: " + total_buckets_loaded);
+
         ArrayList<Events> answer1 = new ArrayList<>();
         for (Events e : answer) {
             double x1 = e.getLon() - lon;
@@ -538,11 +373,10 @@ public int term(Circle circle) {
             if (dist <= radius)
                 answer1.add(e);
         }
-//        System.out.println("\t\tPoints in buckets: " + answer.size());
-//        System.out.println("\t\tPoints in circle: " + answer1.size());
+
         return answer1;
     }
-
+// Returns a min and max for scaling
     private static Range search(double min, double max, SortedLinkedList<Double> scale) {
         Range range = new Range();
         range.max = scale.size() - 1;
@@ -563,7 +397,7 @@ public int term(Circle circle) {
         }
         return range;
     }
-
+//Increases radius of a circle by given amount
     public double increase_radius(double radius, double growth) {
         return radius + growth;
     }

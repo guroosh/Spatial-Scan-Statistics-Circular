@@ -47,7 +47,7 @@ public class Naive {
         naiveTester(gridFile);
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        Result.NaiveTesterST_time +=totalTime;
+        Result.NaiveTesterST_time +=totalTime/(double)1000;
 //        System.out.println("Total time for naive with single thread: " + ((double) totalTime / (double) 1000) + "s");
 
 //        Collections.sort(top_likelihood_circles_for_single_thread, Circle.sortByLHR());
@@ -63,9 +63,9 @@ public class Naive {
         });
         long endTime1 = System.currentTimeMillis();
         long totalTime = endTime1 - startTime1;
-        Result.NaiveTesterHJ_time+=totalTime;
+        Result.NaiveTesterHJ_time+=totalTime/(double)1000;
 //        System.out.println("Total time for naive with HABANERO: " + ((double) totalTime / (double) 1000) + "s");
-
+//
 //        Collections.sort(top_likelihood_circles_for_HJ, Circle.sortByLHR());
 //        naiveWithoutIntersectingCircles(top_likelihood_circles_for_HJ, count_naive_circles_for_HJ);
 //        afterNaive(events, gridFile);
@@ -78,7 +78,7 @@ public class Naive {
         naiveTesterJOMP(gridFile);
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        Result.NaiveTesterJOMP_time+=totalTime;
+        Result.NaiveTesterJOMP_time+=totalTime/(double)1000;
 //        System.out.println("Total time for naive with JOMP: " + ((double) totalTime / (double) 1000) + "s");
 
 //        Collections.sort(top_likelihood_circles_for_JOMP, Circle.sortByLHR());
@@ -97,9 +97,9 @@ public class Naive {
         pool.invoke(rootTask);
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        Result.NaiveTesterFJP_time+=totalTime;
+        Result.NaiveTesterFJP_time+=totalTime/(double)1000;
 //         System.out.println("Total time for naive with Fork Join Pool: " + ((double) totalTime / (double) 1000) + "s");
-
+//
 //        Collections.sort(top_likelihood_circles_for_FJP, Circle.sortByLHR());
 //        naiveWithoutIntersectingCircles(top_likelihood_circles_for_FJP, count_naive_circles_for_FJP);
 //        afterNaive(events, gridFile);
@@ -268,7 +268,7 @@ public class Naive {
         core_circles.add(c4);
         // System.out.println();
         VisualizeNaive vis = new VisualizeNaive();
-//        vis.drawCircles(events, core_circles);
+        vis.drawCircles(events, core_circles,"Naive HJ");
         int number = Values.top_circles_for_print;
         drawtop(number, gridFile);
         Main.list1.addAll(core_circles);

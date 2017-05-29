@@ -72,7 +72,7 @@ public class MovingCircle {
         });
         long end = System.currentTimeMillis();
         Result.MovingTesterHJ_time+= ((double) (end - start)) / 1000;
-        System.out.println("Time HJ moving "+((double) (end - start)) / 1000+"s");
+//        System.out.println("Time HJ moving "+((double) (end - start)) / 1000+"s");
 //        aftermovingcircal(gridFile, events);
         return ((double) (end - start)) / 1000;
     }
@@ -315,7 +315,7 @@ public class MovingCircle {
         visualizedata(events, moving_circles_for_visualize);
 
         int number = Values.top_circles_for_print;
-//        drawtop(number, non_intersecting_core_circles);
+        drawtop(number, non_intersecting_core_circles);
         Main.list2.addAll(non_intersecting_core_circles);
         core_circles = new ArrayList<>();
 //        CircleOps.resetPointsVisibility(gridFile);
@@ -342,7 +342,7 @@ public class MovingCircle {
         moving_circles_for_visualize.add(c4);
 //        int top_circles_for_visualize = Values.top_circles_for_visualize;
 
-//        vis.drawCircles(events, moving_circles_for_visualize, "title");
+        vis.drawCircles(events, moving_circles_for_visualize, "title");
     }
 
     private static class MovingCircleRunnerFJP extends RecursiveAction {

@@ -12,16 +12,15 @@ import jsc.distributions.Poisson;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static Dataset.GridFile.readDataFile;
+
+import static Experiments.Experiments.*;
 import static Moving_Circle.MovingCircle.*;
 import static Naive.Naive.*;
 import static edu.rice.hj.runtime.config.HjSystemProperty.numWorkers;
-
-import jsc.distributions.Poisson;
 
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
@@ -39,7 +38,6 @@ public class Main {
     public static GridFile gridFile_global;
     public static ArrayList<Circle> core_circles = new ArrayList<>();
     public static ArrayList<Circle> list1 = new ArrayList<>(), list2 = new ArrayList<>();
-
     public static ArrayList<Events> event1 = new ArrayList<>();
 
     public static int number_of_threads;
@@ -50,7 +48,6 @@ public class Main {
 //        fileName = "d.csv";
         fileName = "dWeapon_unlawful_discharge_of.csv";
 //        fileName = "ny_robbery.csv";
-//        bucket_size = Values.bucketSize;
 
 
         //data creation start
@@ -73,6 +70,11 @@ public class Main {
         curr_number_of_threads = number_of_threads;
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
 
+//        exp1_phase1(gridFile, events);
+        exp1_phase2(events.size(), area);
+//        exp2_phase1(gridFile, events);
+        exp2_phase2(events.size(), area);
+
 //        runNaiveTester(gridFile, events);
 //        runNaiveTesterHJ(gridFile, events);
 //        runNaiveTesterFJP(gridFile, events);
@@ -94,6 +96,7 @@ public class Main {
 
         System.out.println("Complete");
     }
+
 
     private static void multiCoreExpFJP(GridFile gridFile, ArrayList<Events> events) {
         int average_runtime = Values.average_for_multi_core;
@@ -149,37 +152,37 @@ public class Main {
 
 
     private static void experiment_montecarlo_value(int size, ScanGeometry area) throws Exception {
-        System.out.println("Starting runtime test of " + Values.pval_nruns + " Monte Carlo simulations showing  a poison distribution with mean : " + size);
+        System.out.println("Starting runtime test of " + Values.nruns + " Monte Carlo simulations showing  a poison distribution with mean : " + size);
         double mean = size;
         Poisson object = new Poisson(mean);
-        for (int i = 0; i < Values.pval_nruns; i++) {
+        for (int i = 0; i < Values.nruns; i++) {
             if (i % 50 == 0)
                 System.out.println("Run :" + i);
 
             double val = object.random();
-//        ArrayList<Events> poisson_data = new ArrayList<>();
-            ArrayList<Events> poisson_data = event1;
-//        for (int j = 0; j < val; j++) {
-//            Events event = new Events();
-//            double x = ThreadLocalRandom.current().nextDouble(area.start_X, area.end_X);
-//            double y = ThreadLocalRandom.current().nextDouble(area.start_Y, area.end_Y);
-//            event.setLon(x);
-//            event.setLat(y);
-//            poisson_data.add(event);
-//        }
+            ArrayList<Events> poisson_data = new ArrayList<>();
+//            ArrayList<Events> poisson_data = event1;
+            for (int j = 0; j < val; j++) {
+                Events event = new Events();
+                double x = ThreadLocalRandom.current().nextDouble(area.start_X, area.end_X);
+                double y = ThreadLocalRandom.current().nextDouble(area.start_Y, area.end_Y);
+                event.setLon(x);
+                event.setLat(y);
+                poisson_data.add(event);
+            }
 
             GridFile gridFile = new GridFile();
             GridCell gridCell = new GridCell(gridFile, minLat, maxLat, minLon, maxLon);
             gridCell = gridCell.getGridCell(gridFile);
             gridFile.make(poisson_data, gridCell);
-            gridFile_global = gridFile;
 
-//            runMovingCircleTester(gridFile, poisson_data);
-//            clear();
-//            runMovingCircleTesterHJ(gridFile, poisson_data);
-//            clear();
-//            runMovingCircleTesterJvFP(gridFile, poisson_data);
-//            clear();
+
+            runMovingCircleTester(gridFile, poisson_data);
+            clear();
+            runMovingCircleTesterHJ(gridFile, poisson_data);
+            clear();
+            runMovingCircleTesterJvFP(gridFile, poisson_data);
+            clear();
 //            runMovingCircleTesterJOMP(gridFile, poisson_data);
 
 
@@ -192,12 +195,11 @@ public class Main {
             runNaiveTesterJOMP(gridFile, poisson_data);
 
 
-
         }
-        result();
+//        result(res_text);
     }
 
-    private static void clear() {
+    public static void clear() {
         core_circles = new ArrayList<>();
         list1 = new ArrayList<>();
         list2 = new ArrayList<>();
@@ -212,19 +214,29 @@ public class Main {
 
     }
 
-    private static void result() {
-        System.out.println("Result is as follows:" +
-                "\n\tNaive" +
-                "\n\t\tST " + (Result.NaiveTesterST_time / 1000) +
-                "s\n\t\tHJ " + (Result.NaiveTesterHJ_time / 1000) +
-                "s\n\t\tFJP " + (Result.NaiveTesterFJP_time / 1000) +
-                "s\n\t\tJOMP " + (Result.NaiveTesterJOMP_time / 1000) +
-                "s\n\tMoving " +
-                "\n\t\tST " + (Result.MovingTesterST_time) +
-                "s\n\t\tHJ " + (Result.MovingTesterHJ_time) +
-                "s\n\t\tFJP " + (Result.MovingTesterFJP_time) +
-                "s\n\t\tJOMP " + (Result.MovingTesterJOMP_time)
-                + "s");
+    public static void result(String res_text, int runs) {
+        System.out.println("Result of " + res_text + " as follows:");
+        if(Result.NaiveTesterST_time+Result.NaiveTesterHJ_time+Result.NaiveTesterFJP_time+Result.NaiveTesterJOMP_time!=0)
+        System.out.println("\tNaive");
+        if (Result.NaiveTesterST_time!=0)
+        System.out.println("\t\tST " + (Result.NaiveTesterST_time / ( runs))+"s");
+        if (Result.NaiveTesterHJ_time!=0)
+        System.out.println("\t\tHJ " + (Result.NaiveTesterHJ_time / ( runs))+"s");
+        if (Result.NaiveTesterFJP_time!=0)
+        System.out.println("\t\tFJP " + (Result.NaiveTesterFJP_time / ( runs))+"s");
+        if (Result.NaiveTesterJOMP_time!=0)
+        System.out.println("\t\tJOMP " + (Result.NaiveTesterJOMP_time / ( runs))+"s");
+        if(Result.MovingTesterST_time+Result.MovingTesterHJ_time+Result.MovingTesterFJP_time+Result.MovingTesterJOMP_time!=0)
+            System.out.println("\tMoving ");
+        if (Result.MovingTesterST_time!=0)
+        System.out.println("\t\tST " + (Result.MovingTesterST_time / runs)+"s");
+        if (Result.MovingTesterHJ_time!=0)
+        System.out.println("\t\tHJ " + (Result.MovingTesterHJ_time / runs)+"s");
+        if (Result.MovingTesterFJP_time!=0)
+        System.out.println("\t\tFJP " + (Result.MovingTesterFJP_time / runs)+"s");
+        if (Result.MovingTesterJOMP_time!=0)
+        System.out.println("\t\tJOMP " + (Result.MovingTesterJOMP_time / runs)+"s");
+        Result.clear();
     }
 
     private static void experiment_p_value(int size, ScanGeometry scanA) {

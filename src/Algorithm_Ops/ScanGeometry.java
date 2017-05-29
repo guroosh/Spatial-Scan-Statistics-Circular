@@ -6,6 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * Created by LakshayD on 2/8/2017.
  */
+// Class contains geometry of input dataset
 public class ScanGeometry {
 
     public double start_X;

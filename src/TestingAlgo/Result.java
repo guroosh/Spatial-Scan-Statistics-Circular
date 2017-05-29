@@ -4,17 +4,18 @@ package TestingAlgo;
  * Created by ld on 15/5/17.
  */
 public class Result {
-    public Result(){
-     NaiveTesterST_time=0;
-     NaiveTesterFJP_time=0;
-     NaiveTesterHJ_time=0;
-     NaiveTesterJOMP_time=0;
+    public Result() {
+        NaiveTesterST_time = 0;
+        NaiveTesterFJP_time = 0;
+        NaiveTesterHJ_time = 0;
+        NaiveTesterJOMP_time = 0;
 
-     MovingTesterFJP_time=0;
-     MovingTesterJOMP_time=0;
-     MovingTesterHJ_time=0;
-     MovingTesterST_time=0;
+        MovingTesterFJP_time = 0;
+        MovingTesterJOMP_time = 0;
+        MovingTesterHJ_time = 0;
+        MovingTesterST_time = 0;
     }
+
     public static double NaiveTesterST_time;
     public static double NaiveTesterHJ_time;
     public static double NaiveTesterFJP_time;
@@ -26,5 +27,16 @@ public class Result {
     public static double MovingTesterJOMP_time;
 
 
+    public static void clear() {
+        NaiveTesterST_time =
+                NaiveTesterHJ_time =
+                        NaiveTesterFJP_time =
+                                NaiveTesterJOMP_time =
 
+                                        MovingTesterST_time =
+                                                MovingTesterHJ_time =
+                                                        MovingTesterFJP_time =
+                                                                MovingTesterJOMP_time = 0;
+
+    }
 }
