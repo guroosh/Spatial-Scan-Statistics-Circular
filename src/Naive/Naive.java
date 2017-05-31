@@ -195,7 +195,7 @@ public class Naive {
         double curr_radius = Values.lower_limit;
         double term_radius = Values.upper_limit;
         double shift_radius = curr_radius;
-        double growth_radius = curr_radius;
+        double growth_radius =Values.growth_rate;
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         Circle curr_circle = new Circle(minLon, minLat, curr_radius);

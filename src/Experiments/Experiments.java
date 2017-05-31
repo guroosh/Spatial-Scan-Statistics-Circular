@@ -6,6 +6,7 @@ import Dataset.GridCell;
 import Dataset.GridFile;
 
 import TestingAlgo.Values;
+import edu.rice.hj.api.SuspendableException;
 import jsc.distributions.Poisson;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ import static TestingAlgo.Main.*;
 public class Experiments {
 
     public static void exp1_phase1(GridFile gridFile, ArrayList<Events> events) throws Exception {
-        String res_text="Running Experiment 1 on Phase 1";
+        String res_text = "Running Experiment 1 on Phase 1";
         for (int i = 1; i <= Values.nruns; i++) {
             if (i % 5 == 0)
                 System.out.println("Run :" + i);
@@ -34,11 +35,12 @@ public class Experiments {
 //            runNaiveTesterJOMP(gridFile, events);
 //            Main.clear();
         }
-        result(res_text,Values.nruns);
+        result(res_text, Values.nruns);
 
     }
+
     public static void exp2_phase1(GridFile gridFile, ArrayList<Events> events) throws Exception {
-        String res_text="Running Experiment 2 on Phase 1";
+        String res_text = "Running Experiment 2 on Phase 1";
         for (int i = 1; i <= Values.nruns; i++) {
             if (i % 5 == 0)
                 System.out.println("Run :" + i);
@@ -51,51 +53,12 @@ public class Experiments {
 //            runMovingCircleTesterJOMP(gridFile, events);
 //            Main.clear();
         }
-        result(res_text,Values.nruns);
+        result(res_text, Values.nruns);
 
     }
 
     public static void exp1_phase2(int size, ScanGeometry area) throws Exception {
-        String res_text="Starting phase 2 of exp 1 using a poison distribution with mean : " + size+" Runs :"+Values.p2runs;
-        double mean = size;
-        Poisson object = new Poisson(mean);
-        for (int i = 0; i < Values.p2runs; i++) {
-            if (i % 50 == 0)
-                System.out.println("Run :" + i);
-
-            double val = object.random();
-        ArrayList<Events> poisson_data = new ArrayList<>();
-
-        for (int j = 0; j < val; j++) {
-            Events event = new Events();
-            double x = ThreadLocalRandom.current().nextDouble(area.start_X, area.end_X);
-            double y = ThreadLocalRandom.current().nextDouble(area.start_Y, area.end_Y);
-            event.setLon(x);
-            event.setLat(y);
-            poisson_data.add(event);
-        }
-       
-            GridFile gridFile = new GridFile();
-            GridCell gridCell = new GridCell(gridFile, area.start_Y,area.end_Y,area.start_X, area.end_X);
-            gridCell = gridCell.getGridCell(gridFile);
-            gridFile.make(poisson_data, gridCell);
-
-
-            runNaiveTester(gridFile, poisson_data);
-            clear();
-            runNaiveTesterHJ(gridFile, poisson_data);
-            clear();
-            runNaiveTesterFJP(gridFile, poisson_data);
-            clear();
-//            runNaiveTesterJOMP(gridFile, poisson_data);
-//            clear();
-
-        }
-        result(res_text,Values.p2runs);
-    }
-
-    public static void exp2_phase2(int size, ScanGeometry area) throws Exception {
-        String res_text="Starting phase 2 of exp 1 using a poison distribution with mean : " + size+" Runs :"+Values.p2runs;
+        String res_text = "Starting phase 2 of exp 1 using a poison distribution with mean : " + size + " Runs :" + Values.p2runs;
         double mean = size;
         Poisson object = new Poisson(mean);
         for (int i = 0; i < Values.p2runs; i++) {
@@ -115,12 +78,51 @@ public class Experiments {
             }
 
             GridFile gridFile = new GridFile();
-            GridCell gridCell = new GridCell(gridFile, area.start_Y,area.end_Y,area.start_X, area.end_X);
+            GridCell gridCell = new GridCell(gridFile, area.start_Y, area.end_Y, area.start_X, area.end_X);
             gridCell = gridCell.getGridCell(gridFile);
             gridFile.make(poisson_data, gridCell);
-//            gridFile_global = gridFile;
 
-            runMovingCircleTester(gridFile,poisson_data);
+
+            runNaiveTester(gridFile, poisson_data);
+            clear();
+            runNaiveTesterHJ(gridFile, poisson_data);
+            clear();
+            runNaiveTesterFJP(gridFile, poisson_data);
+            clear();
+//            runNaiveTesterJOMP(gridFile, poisson_data);
+//            clear();
+
+        }
+        result(res_text, Values.p2runs);
+    }
+
+    public static void exp2_phase2(int size, ScanGeometry area) throws Exception {
+        String res_text = "Starting phase 2 of exp 1 using a poison distribution with mean : " + size + " Runs :" + Values.p2runs;
+        double mean = size;
+        Poisson object = new Poisson(mean);
+        for (int i = 0; i < Values.p2runs; i++) {
+            if (i % 50 == 0)
+                System.out.println("Run :" + i);
+
+            double val = object.random();
+            ArrayList<Events> poisson_data = new ArrayList<>();
+
+            for (int j = 0; j < val; j++) {
+                Events event = new Events();
+                double x = ThreadLocalRandom.current().nextDouble(area.start_X, area.end_X);
+                double y = ThreadLocalRandom.current().nextDouble(area.start_Y, area.end_Y);
+                event.setLon(x);
+                event.setLat(y);
+                poisson_data.add(event);
+            }
+
+            GridFile gridFile = new GridFile();
+            GridCell gridCell = new GridCell(gridFile, area.start_Y, area.end_Y, area.start_X, area.end_X);
+            gridCell = gridCell.getGridCell(gridFile);
+            gridFile.make(poisson_data, gridCell);
+
+
+            runMovingCircleTester(gridFile, poisson_data);
             clear();
             runMovingCircleTesterHJ(gridFile, poisson_data);
             clear();
@@ -130,7 +132,28 @@ public class Experiments {
 //            clear();
 
         }
-        result(res_text,Values.p2runs);
+        result(res_text, Values.p2runs);
+    }
+
+    public static void exp3(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
+        double growth=Values.growth_rate/2;
+        for (double j = growth; j < growth*20; j += (growth)) {
+
+            String res_text = "Running Experiment 3" + " on growth rate " + j;
+            Values.setGrowth_rate(j);
+            for (int i = 1; i <= Values.nruns; i++) {
+                if (i % 5 == 0)
+                    System.out.println("Run :" + i);
+
+                runNaiveTester(gridFile, events);
+                clear();
+                runMovingCircleTester(gridFile, events);
+                clear();
+
+            }
+            result(res_text, Values.nruns);
+        }
+
     }
 
 

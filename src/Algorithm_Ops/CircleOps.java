@@ -35,6 +35,7 @@ public class CircleOps {
     }
 //Grows the radius of the given circle by a given amount
     public Circle grow_radius(double shift, Circle circle) {
+//        System.out.println(shift);
         circle.setRadius(circle.getRadius() + shift);
         return circle;
 

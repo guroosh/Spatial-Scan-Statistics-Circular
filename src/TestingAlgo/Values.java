@@ -17,8 +17,12 @@ public class Values {
     public static int top_circles_for_print = 0;
     public static int top_circles_for_visualize = top_circles_for_print;
     public static int top_circles_naive_final = runtime;           //equivalent to runtime in moving circle
-    public static int  nruns=10;
-    public static int  p2runs=1;
+    public static int  nruns=1;
+    public static int  p2runs=1000;
     public static double ji_threshold = 0.3;
     public static int average_for_multi_core = 1;
+
+    public static void setGrowth_rate(double growth_rate) {
+        Values.growth_rate = growth_rate;
+    }
 }

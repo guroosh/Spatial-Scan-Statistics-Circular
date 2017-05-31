@@ -228,6 +228,7 @@ public class MovingCircle {
         double growth = Values.growth_rate;
         double upper_limit = Values.upper_limit;
 
+
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         Circle curr_circle = new Circle("Random", curr_radius, area);
 
