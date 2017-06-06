@@ -46,7 +46,7 @@ public class MovingCircle {
             }
             core_circles.add(temp_circle);
         }
-//        aftermovingcircal(gridFile, events);
+        aftermovingcircal(gridFile, events);
         return ((double) (end - start)) / 1000;
     }
 
@@ -61,7 +61,7 @@ public class MovingCircle {
         long end = System.currentTimeMillis();
 //        // System.out.println(((double) (end - start)) / 1000);
         Result.MovingTesterFJP_time += ((double) (end - start)) / 1000;
-//        aftermovingcircal(gridFile, events);
+        aftermovingcircal(gridFile, events);
         return ((double) (end - start)) / 1000;
     }
 
@@ -77,7 +77,7 @@ public class MovingCircle {
         long end = System.currentTimeMillis();
         Result.MovingTesterHJ_time += ((double) (end - start)) / 1000;
 //        System.out.println("Time HJ moving "+((double) (end - start)) / 1000+"s");
-//        aftermovingcircal(gridFile, events);
+        aftermovingcircal(gridFile, events);
         return ((double) (end - start)) / 1000;
     }
 
@@ -92,9 +92,7 @@ public class MovingCircle {
 
         long end = System.currentTimeMillis();
         Result.MovingTesterST_time += ((double) (end - start)) / 1000;
-//        aftermovingcircal(gridFile, events);
-
-
+        aftermovingcircal(gridFile, events);
     }
 
     //Implementation of Habenero Java for Moving Circle

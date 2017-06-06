@@ -43,12 +43,16 @@ public class Main {
     public static ArrayList<Events> event1 = new ArrayList<>();
     public static int number_of_threads;
     public static int curr_number_of_threads;
+    public static int x_column, y_column;
 
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
-//        fileName = "d.csv";
-        fileName = "dWeapon_unlawful_discharge_of.csv";
-//        fileName = "ny_robbery.csv";
+        System.out.println("Enter dataset filename");
+        fileName = in.next();
+        System.out.println("Enter column number for X axis");
+        x_column = in.nextInt();
+        System.out.println("Enter column number for Y axis");
+        y_column = in.nextInt();
 
 
         //data creation start
@@ -75,7 +79,7 @@ public class Main {
 //        exp1_phase2(events.size(), area);
 //        exp2_phase1(gridFile, events);
 //        exp2_phase2(events.size(), area);
-        exp3(gridFile, events);
+//        exp3(gridFile, events);
 
 
 //        multiCoreExpHJ(gridFile, events);
@@ -192,8 +196,8 @@ public class Main {
             Events event = new Events();
             double x = ThreadLocalRandom.current().nextDouble(scanA.start_X, scanA.end_X);
             double y = ThreadLocalRandom.current().nextDouble(scanA.start_Y, scanA.end_Y);
-            event.setLon(x);
-            event.setLat(y);
+            event.setX(x);
+            event.setY(y);
             poisson_data.add(event);
         }
 

@@ -207,7 +207,7 @@ public class CircleOps {
         if (quadreg == 1) {
             for (Events e : curr_points
                     ) {
-                if (e.getLat() > y && e.getLon() > x) {
+                if (e.getY() > y && e.getX() > x) {
                     quadpoints.add(e);
                 }
 
@@ -216,7 +216,7 @@ public class CircleOps {
         if (quadreg == 2) {
             for (Events e : curr_points
                     ) {
-                if (e.getLat() > y && e.getLon() < x) {
+                if (e.getY() > y && e.getX() < x) {
                     quadpoints.add(e);
                 }
 
@@ -225,7 +225,7 @@ public class CircleOps {
         if (quadreg == 3) {
             for (Events e : curr_points
                     ) {
-                if (e.getLat() < y && e.getLon() < x) {
+                if (e.getY() < y && e.getX() < x) {
                     quadpoints.add(e);
                 }
 
@@ -234,7 +234,7 @@ public class CircleOps {
         if (quadreg == 4) {
             for (Events e : curr_points
                     ) {
-                if (e.getLat() < y && e.getLon() > x) {
+                if (e.getY() < y && e.getX() > x) {
                     quadpoints.add(e);
                 }
 
@@ -243,8 +243,8 @@ public class CircleOps {
         double x1 = 0, y1 = 0;
         for (Events point : quadpoints
                 ) {
-            x1 += point.getLon();
-            y1 += point.getLat();
+            x1 += point.getX();
+            y1 += point.getY();
         }
         x1 = x1 / quadpoints.size();
         y1 = y1 / quadpoints.size();
@@ -299,13 +299,13 @@ public class CircleOps {
         }
         for (Events e : points
                 ) {
-            if (e.getLon() > x && e.getLat() > y)
+            if (e.getX() > x && e.getY() > y)
                 quad[1]++;
-            if (e.getLon() > x && e.getLat() < y)
+            if (e.getX() > x && e.getY() < y)
                 quad[4]++;
-            if (e.getLon() < x && e.getLat() > y)
+            if (e.getX() < x && e.getY() > y)
                 quad[2]++;
-            if (e.getLon() < x && e.getLat() < y)
+            if (e.getX() < x && e.getY() < y)
                 quad[3]++;
         }
         int max = 0;
@@ -325,8 +325,8 @@ public class CircleOps {
         ArrayList<Events> answer = scanCircle(c_outer);
         ArrayList<Events> answer1 = new ArrayList<>();
         for (Events e : answer) {
-            double x1 = e.getLon() - c_inner.getX_coord();
-            double y1 = e.getLat() - c_inner.getY_coord();
+            double x1 = e.getX() - c_inner.getX_coord();
+            double y1 = e.getY() - c_inner.getY_coord();
             double dist = Math.sqrt((x1 * x1) + (y1 * y1));
             if (dist > c_inner.getRadius())
                 answer1.add(e);
@@ -351,8 +351,8 @@ public class CircleOps {
         int lat_min_id, lat_max_id, lon_min_id, lon_max_id;
         Range r_lat;
         Range r_lon;
-        r_lat = search(lat_min, lat_max, gridFile.latScale);
-        r_lon = search(lon_min, lon_max, gridFile.lonScale);
+        r_lat = search(lat_min, lat_max, gridFile.yScale);
+        r_lon = search(lon_min, lon_max, gridFile.xScale);
         lat_min_id = r_lat.min;
         lat_max_id = r_lat.max;
         lon_min_id = r_lon.min;
@@ -362,17 +362,17 @@ public class CircleOps {
         if (lon_min_id == -1)
             lon_min_id = 0;
         if (lat_max_id == -2)
-            lat_max_id = gridFile.latScale.size() - 1;
+            lat_max_id = gridFile.yScale.size() - 1;
         if (lon_max_id == -2)
-            lon_max_id = gridFile.lonScale.size() - 1;
+            lon_max_id = gridFile.xScale.size() - 1;
         int total_buckets_loaded = 0;
         for (int i = lat_min_id; i < lat_max_id; i++) {
             for (int j = lon_min_id; j < lon_max_id; j++) {
                 total_buckets_loaded++;
-                String hashValue = gridFile.latScale.get(i) + "_"
-                        + gridFile.latScale.get(i + 1) + "_"
-                        + gridFile.lonScale.get(j) + "_"
-                        + gridFile.lonScale.get(j + 1);
+                String hashValue = gridFile.yScale.get(i) + "_"
+                        + gridFile.yScale.get(i + 1) + "_"
+                        + gridFile.xScale.get(j) + "_"
+                        + gridFile.xScale.get(j + 1);
                 GridCell gridCell = gridFile.gridCellObject.get(hashValue);
                 Bucket bucket = gridFile.mapper.get(gridCell);
                 for (Events e : bucket.eventsInBucket) {
@@ -386,8 +386,8 @@ public class CircleOps {
 
         ArrayList<Events> answer1 = new ArrayList<>();
         for (Events e : answer) {
-            double x1 = e.getLon() - lon;
-            double y1 = e.getLat() - lat;
+            double x1 = e.getX() - lon;
+            double y1 = e.getY() - lat;
             double dist = Math.sqrt((x1 * x1) + (y1 * y1));
             if (dist <= radius)
                 answer1.add(e);

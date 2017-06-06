@@ -83,7 +83,7 @@ class DrawComponentNaive extends JComponent {
         drawPoints(g2, new_points);
         g2.setColor(naive_circles);
         g2.setStroke(new BasicStroke(2));
-//        drawCircles(g2);
+        drawCircles(g2);
     }
 
     private void drawGrids(Graphics2D g2) {
@@ -106,14 +106,14 @@ class DrawComponentNaive extends JComponent {
         double x1, x2, y1, y2;
         x1 = leftX;
         x2 = width;
-        for (double d : Main.gridFile_global.latScale) {
+        for (double d : Main.gridFile_global.yScale) {
             y1 = height * (d - min_y) / (max_y - min_y);
             y2 = y1;
             g2.draw(new Line2D.Double(x1, y1, x2, y2));
         }
         y1 = topY;
         y2 = height;
-        for (double d : Main.gridFile_global.lonScale) {
+        for (double d : Main.gridFile_global.xScale) {
             x1 = width * (d - min_x) / (max_x - min_x);
             x2 = x1;
             g2.draw(new Line2D.Double(x1, y1, x2, y2));
@@ -189,13 +189,13 @@ class DrawComponentNaive extends JComponent {
 //            if (e.marked)
 //                continue;
             Events event = new Events();
-            lat = e.getLat();
-            lon = e.getLon();
+            lat = e.getY();
+            lon = e.getX();
 //            System.out.println(e.toString());
             if (lat <= max_y && lat >= min_y && lon <= max_x && lon >= min_x) {
 //                System.out.println("inside");
-                event.setLon(width * (e.getLon() - min_x) / (max_x - min_x));
-                event.setLat(height * (e.getLat() - min_y) / (max_y - min_y));
+                event.setX(width * (e.getX() - min_x) / (max_x - min_x));
+                event.setY(height * (e.getY() - min_y) / (max_y - min_y));
                 new_points.add(event);
             }
         }
@@ -220,16 +220,16 @@ class DrawComponentNaive extends JComponent {
             Random r = new Random();
             int sign = r.nextInt(4);
             if (sign == 0) {
-                ellipse = new Ellipse2D.Double(e.getLon() - (point_size / 2) + alp, e.getLat() - (point_size / 2) + alp2, point_size, point_size);
+                ellipse = new Ellipse2D.Double(e.getX() - (point_size / 2) + alp, e.getY() - (point_size / 2) + alp2, point_size, point_size);
             }
             if (sign == 1) {
-                ellipse = new Ellipse2D.Double(e.getLon() - (point_size / 2) + alp, e.getLat() - (point_size / 2) - alp2, point_size, point_size);
+                ellipse = new Ellipse2D.Double(e.getX() - (point_size / 2) + alp, e.getY() - (point_size / 2) - alp2, point_size, point_size);
             }
             if (sign == 2) {
-                ellipse = new Ellipse2D.Double(e.getLon() - (point_size / 2) - alp, e.getLat() - (point_size / 2) + alp2, point_size, point_size);
+                ellipse = new Ellipse2D.Double(e.getX() - (point_size / 2) - alp, e.getY() - (point_size / 2) + alp2, point_size, point_size);
             }
             if (sign == 3) {
-                ellipse = new Ellipse2D.Double(e.getLon() - (point_size / 2) - alp, e.getLat() - (point_size / 2) - alp2, point_size, point_size);
+                ellipse = new Ellipse2D.Double(e.getX() - (point_size / 2) - alp, e.getY() - (point_size / 2) - alp2, point_size, point_size);
             }
             g2.fill(ellipse);
         }
@@ -237,7 +237,7 @@ class DrawComponentNaive extends JComponent {
 
     private double checkpos(Events e, int i, ArrayList<Events> new_points) {
         for (int j = 0; j < i; j++) {
-            if (e.getLat() == new_points.get(j).getLat() && e.getLon() == new_points.get(j).getLon()) {
+            if (e.getY() == new_points.get(j).getY() && e.getX() == new_points.get(j).getX()) {
 
                 Random r = new Random();
                 double a = r.nextDouble();

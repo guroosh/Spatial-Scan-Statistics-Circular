@@ -1,25 +1,23 @@
 package Dataset;
 
-import java.util.ArrayList;
-
 /**
  * Created by Guroosh Chaudhary on 29-01-2017.
  */
 public class GridCell {
-    double minLat;
-    double maxLat;
-    double minLon;
-    double maxLon;
+    double minY;
+    double maxY;
+    double minX;
+    double maxX;
 
     String hashValue;
 
 //    ArrayList<Events> eventsInGridCell = new ArrayList<>();
 
     public GridCell(GridFile gridFile, double minLat, double maxLat, double minLon, double maxLon) {
-        this.minLat = minLat;
-        this.maxLat = maxLat;
-        this.minLon = minLon;
-        this.maxLon = maxLon;
+        this.minY = minLat;
+        this.maxY = maxLat;
+        this.minX = minLon;
+        this.maxX = maxLon;
 
         String hashValue = String.valueOf(minLat) + "_" +
                 String.valueOf(maxLat) + "_" +
@@ -56,18 +54,18 @@ public class GridCell {
     }
 
     public boolean hasOnBoundary(Events event) {
-        if (event.getLat() == this.minLat || event.getLat() == this.maxLat)
+        if (event.getY() == this.minY || event.getY() == this.maxY)
             return true;
-        else if (event.getLon() == this.minLon || event.getLon() == this.maxLon)
+        else if (event.getX() == this.minX || event.getX() == this.maxX)
             return true;
         return false;
     }
 
     public String getAxis(Events event) {
         String axis = "";
-        if (event.getLat() == this.minLat || event.getLat() == this.maxLat)
+        if (event.getY() == this.minY || event.getY() == this.maxY)
             axis += "h";
-        if (event.getLon() == this.minLon || event.getLon() == this.maxLon)
+        if (event.getX() == this.minX || event.getX() == this.maxX)
             axis += "v";
         return axis;
     }

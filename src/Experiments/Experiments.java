@@ -75,8 +75,8 @@ public class Experiments {
                 Events event = new Events();
                 double x = ThreadLocalRandom.current().nextDouble(area.start_X, area.end_X);
                 double y = ThreadLocalRandom.current().nextDouble(area.start_Y, area.end_Y);
-                event.setLon(x);
-                event.setLat(y);
+                event.setX(x);
+                event.setY(y);
                 poisson_data.add(event);
             }
 
@@ -115,8 +115,8 @@ public class Experiments {
                 Events event = new Events();
                 double x = ThreadLocalRandom.current().nextDouble(area.start_X, area.end_X);
                 double y = ThreadLocalRandom.current().nextDouble(area.start_Y, area.end_Y);
-                event.setLon(x);
-                event.setLat(y);
+                event.setX(x);
+                event.setY(y);
                 poisson_data.add(event);
             }
 

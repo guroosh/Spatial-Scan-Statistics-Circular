@@ -53,9 +53,9 @@ public class Naive {
         Result.NaiveTesterST_time += totalTime / (double) 1000;
 //        System.out.println("Total time for naive with single thread: " + ((double) totalTime / (double) 1000) + "s");
 
-//        Collections.sort(top_likelihood_circles_for_single_thread, Circle.sortByLHR());
-//        naiveWithoutIntersectingCircles(top_likelihood_circles_for_single_thread, count_naive_circles_for_single_thread);
-//        afterNaive(events, gridFile);
+        Collections.sort(top_likelihood_circles_for_single_thread, Circle.sortByLHR());
+        naiveWithoutIntersectingCircles(top_likelihood_circles_for_single_thread, count_naive_circles_for_single_thread);
+        afterNaive(events, gridFile);
     }
 
     //Contains runner for Habenero Java Moving circle
@@ -70,9 +70,9 @@ public class Naive {
         Result.NaiveTesterHJ_time += totalTime / (double) 1000;
 //        System.out.println("Total time for naive with HABANERO: " + ((double) totalTime / (double) 1000) + "s");
 //
-//        Collections.sort(top_likelihood_circles_for_HJ, Circle.sortByLHR());
-//        naiveWithoutIntersectingCircles(top_likelihood_circles_for_HJ, count_naive_circles_for_HJ);
-//        afterNaive(events, gridFile);
+        Collections.sort(top_likelihood_circles_for_HJ, Circle.sortByLHR());
+        naiveWithoutIntersectingCircles(top_likelihood_circles_for_HJ, count_naive_circles_for_HJ);
+        afterNaive(events, gridFile);
         return ((double) totalTime / (double) 1000);
     }
 
@@ -86,9 +86,9 @@ public class Naive {
         Result.NaiveTesterJOMP_time += totalTime / (double) 1000;
 //        System.out.println("Total time for naive with JOMP: " + ((double) totalTime / (double) 1000) + "s");
 
-//        Collections.sort(top_likelihood_circles_for_JOMP, Circle.sortByLHR());
-//        naiveWithoutIntersectingCircles(top_likelihood_circles_for_JOMP, count_naive_circles_for_FJP);
-//        afterNaive(events, gridFile);
+        Collections.sort(top_likelihood_circles_for_JOMP, Circle.sortByLHR());
+        naiveWithoutIntersectingCircles(top_likelihood_circles_for_JOMP, count_naive_circles_for_FJP);
+        afterNaive(events, gridFile);
         return ((double) totalTime / (double) 1000);
     }
 
@@ -105,10 +105,9 @@ public class Naive {
         long totalTime = endTime - startTime;
         Result.NaiveTesterFJP_time += totalTime / (double) 1000;
 //         System.out.println("Total time for naive with Fork Join Pool: " + ((double) totalTime / (double) 1000) + "s");
-//
-//        Collections.sort(top_likelihood_circles_for_FJP, Circle.sortByLHR());
-//        naiveWithoutIntersectingCircles(top_likelihood_circles_for_FJP, count_naive_circles_for_FJP);
-//        afterNaive(events, gridFile);
+        Collections.sort(top_likelihood_circles_for_FJP, Circle.sortByLHR());
+        naiveWithoutIntersectingCircles(top_likelihood_circles_for_FJP, count_naive_circles_for_FJP);
+        afterNaive(events, gridFile);
         return ((double) totalTime / (double) 1000);
     }
 

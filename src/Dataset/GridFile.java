@@ -6,7 +6,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 
 import static TestingAlgo.Main.*;
 
@@ -17,15 +16,15 @@ public class GridFile implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public SortedLinkedList<Double> latScale = new SortedLinkedList<>();
-    public SortedLinkedList<Double> lonScale = new SortedLinkedList<>();
+    public SortedLinkedList<Double> yScale = new SortedLinkedList<>();
+    public SortedLinkedList<Double> xScale = new SortedLinkedList<>();
     public HashMap<String, GridCell> gridCellObject = new HashMap<>();
     public HashMap<GridCell, Bucket> mapper = new HashMap<>();
     public int total_events;
 
     public GridFile() {
-        this.latScale = new SortedLinkedList<>();
-        this.lonScale = new SortedLinkedList<>();
+        this.yScale = new SortedLinkedList<>();
+        this.xScale = new SortedLinkedList<>();
         this.gridCellObject = new HashMap<>();
         this.mapper = new HashMap<>();
     }
@@ -111,10 +110,10 @@ public class GridFile implements Serializable {
         if (Main.splitAxis.equals("horizontal")) {
             for (HashMap.Entry<GridCell, Bucket> mapPointer : this.mapper.entrySet()) {
                 GridCell thisGridCell = mapPointer.getKey();
-                if (thisGridCell.minLat == gridCell.minLat && thisGridCell.maxLat == gridCell.maxLat) {
+                if (thisGridCell.minY == gridCell.minY && thisGridCell.maxY == gridCell.maxY) {
 
-                    GridCell gc1 = new GridCell(this, thisGridCell.minLat, median.getLat(), thisGridCell.minLon, thisGridCell.maxLon);
-                    GridCell gc2 = new GridCell(this, median.getLat(), thisGridCell.maxLat, thisGridCell.minLon, thisGridCell.maxLon);
+                    GridCell gc1 = new GridCell(this, thisGridCell.minY, median.getY(), thisGridCell.minX, thisGridCell.maxX);
+                    GridCell gc2 = new GridCell(this, median.getY(), thisGridCell.maxY, thisGridCell.minX, thisGridCell.maxX);
                     gc1 = gc1.getGridCell(this);
                     gc2 = gc2.getGridCell(this);
 
@@ -128,10 +127,10 @@ public class GridFile implements Serializable {
         } else {
             for (HashMap.Entry<GridCell, Bucket> mapPointer : this.mapper.entrySet()) {
                 GridCell thisGridCell = mapPointer.getKey();
-                if (thisGridCell.minLon == gridCell.minLon && thisGridCell.maxLon == gridCell.maxLon) {
+                if (thisGridCell.minX == gridCell.minX && thisGridCell.maxX == gridCell.maxX) {
 
-                    GridCell gc1 = new GridCell(this, thisGridCell.minLat, thisGridCell.maxLat, thisGridCell.minLon, median.getLon());
-                    GridCell gc2 = new GridCell(this, thisGridCell.minLat, thisGridCell.maxLat, median.getLon(), thisGridCell.maxLon);
+                    GridCell gc1 = new GridCell(this, thisGridCell.minY, thisGridCell.maxY, thisGridCell.minX, median.getX());
+                    GridCell gc2 = new GridCell(this, thisGridCell.minY, thisGridCell.maxY, median.getX(), thisGridCell.maxX);
 
                     gc1 = gc1.getGridCell(this);
                     gc2 = gc2.getGridCell(this);
@@ -163,15 +162,15 @@ public class GridFile implements Serializable {
             Bucket newBucket2 = new Bucket();
             for (Events event : oldBucket.eventsInBucket) {
                 if (Main.splitAxis.equals("horizontal")) {
-                    if (event.getLat() <= median.getLat()) {
+                    if (event.getY() <= median.getY()) {
                         newBucket1.forceAddEvent(event, r.new1);
-                    } else if (event.getLat() > median.getLat()) {
+                    } else if (event.getY() > median.getY()) {
                         newBucket2.forceAddEvent(event, r.new2);
                     }
                 } else {
-                    if (event.getLon() <= median.getLon()) {
+                    if (event.getX() <= median.getX()) {
                         newBucket1.forceAddEvent(event, r.new1);
-                    } else if (event.getLon() > median.getLon()) {
+                    } else if (event.getX() > median.getX()) {
                         newBucket2.forceAddEvent(event, r.new2);
                     }
                 }
@@ -185,9 +184,9 @@ public class GridFile implements Serializable {
 
     private void addToScales(Events median) {
         if (Main.splitAxis.equals("horizontal"))
-            this.latScale.add(median.getLat());
+            this.yScale.add(median.getY());
         else
-            this.lonScale.add(median.getLon());
+            this.xScale.add(median.getX());
     }
 
     private Events findMedianInGridCell(GridCell gridCell) {
@@ -202,49 +201,49 @@ public class GridFile implements Serializable {
 
     private GridCell getGridCell(Events event) {
 //        System.out.println("inside");
-        for (int i = 0; i < this.lonScale.size() - 1; i++) {
-            if (this.lonScale.get(i) > this.lonScale.get(i + 1)) {
-                System.out.println("SORT LON SCALE");
+        for (int i = 0; i < this.xScale.size() - 1; i++) {
+            if (this.xScale.get(i) > this.xScale.get(i + 1)) {
+                System.out.println("SORT X SCALE");
                 return null;
             }
         }
-        for (int i = 0; i < this.latScale.size() - 1; i++) {
-            if (this.latScale.get(i) > this.latScale.get(i + 1)) {
-                System.out.println("SORT LAT SCALE");
+        for (int i = 0; i < this.yScale.size() - 1; i++) {
+            if (this.yScale.get(i) > this.yScale.get(i + 1)) {
+                System.out.println("SORT Y SCALE");
                 return null;
             }
         }
 //        System.out.println("more inside");
         double lat1, lat2, lon1, lon2;
-        int latSize = this.latScale.size();
-        int lonSize = this.lonScale.size();
+        int latSize = this.yScale.size();
+        int lonSize = this.xScale.size();
 
-        lat1 = this.latScale.get(latSize - 2);
-        lat2 = this.latScale.get(latSize - 1);
-        lon1 = this.lonScale.get(lonSize - 2);
-        lon2 = this.lonScale.get(lonSize - 1);
+        lat1 = this.yScale.get(latSize - 2);
+        lat2 = this.yScale.get(latSize - 1);
+        lon1 = this.xScale.get(lonSize - 2);
+        lon2 = this.xScale.get(lonSize - 1);
 
         for (int i = 0; i < lonSize; i++) {
-            if (event.lon <= this.lonScale.get(i)) {
+            if (event.x <= this.xScale.get(i)) {
                 if (i == 0) {
-                    lon1 = this.lonScale.get(i);
-                    lon2 = this.lonScale.get(i + 1);
+                    lon1 = this.xScale.get(i);
+                    lon2 = this.xScale.get(i + 1);
                     break;
                 }
-                lon1 = this.lonScale.get(i - 1);
-                lon2 = this.lonScale.get(i);
+                lon1 = this.xScale.get(i - 1);
+                lon2 = this.xScale.get(i);
                 break;
             }
         }
         for (int i = 0; i < latSize; i++) {
-            if (event.lat <= this.latScale.get(i)) {
+            if (event.y <= this.yScale.get(i)) {
                 if (i == 0) {
-                    lat1 = this.latScale.get(i);
-                    lat2 = this.latScale.get(i + 1);
+                    lat1 = this.yScale.get(i);
+                    lat2 = this.yScale.get(i + 1);
                     break;
                 }
-                lat1 = this.latScale.get(i - 1);
-                lat2 = this.latScale.get(i);
+                lat1 = this.yScale.get(i - 1);
+                lat2 = this.yScale.get(i);
                 break;
             }
         }
@@ -262,10 +261,10 @@ public class GridFile implements Serializable {
     private void init(GridCell gridCell) {
         Bucket bucket = new Bucket();
         this.mapper.put(gridCell, bucket);
-        this.latScale.add(gridCell.minLat);
-        this.latScale.add(gridCell.maxLat);
-        this.lonScale.add(gridCell.minLon);
-        this.lonScale.add(gridCell.maxLon);
+        this.yScale.add(gridCell.minY);
+        this.yScale.add(gridCell.maxY);
+        this.xScale.add(gridCell.minX);
+        this.xScale.add(gridCell.maxX);
 //        this.gridCellObject.put(gridCell.getHashValue(),gridCell);
     }
 
@@ -273,8 +272,8 @@ public class GridFile implements Serializable {
         int counter = 0;
         System.out.println("Number of grids: " + gridFile.gridCellObject.size());
         System.out.println("Number of mappings:" + gridFile.mapper.size());
-        System.out.println("Number of lat:" + gridFile.latScale.size());
-        System.out.println("Number of lon:" + gridFile.lonScale.size());
+        System.out.println("Number of y:" + gridFile.yScale.size());
+        System.out.println("Number of x:" + gridFile.xScale.size());
         HashSet<Bucket> bucketSet = new HashSet<>();
         HashSet<Events> eventSet = new HashSet<>();
         for (HashMap.Entry<String, GridCell> gcO : gridFile.gridCellObject.entrySet()) {
@@ -291,14 +290,8 @@ public class GridFile implements Serializable {
 
     public static ArrayList<Events> readDataFile(String fileName) throws IOException {
         int latInCSV, lonInCSV;
-        if (Main.fileName.equals("ny_robbery.csv")) {
-            latInCSV = 21;
-            lonInCSV = 22;
-        } else {
-            latInCSV = 13;
-            lonInCSV = 12;
-        }
-
+        latInCSV = y_column;
+        lonInCSV = x_column;
         double lat, lon;
         String line;
         String lines[];
@@ -320,10 +313,10 @@ public class GridFile implements Serializable {
                 longitude = Double.parseDouble(lines[lonInCSV]);
                 latitude = Double.parseDouble(lines[latInCSV]);
                 Events position = new Events();
-                position.setLat(latitude);
-                position.setLon(longitude);
-                lat = position.getLat();
-                lon = position.getLon();// * (111.320 / 110.574) * Math.cos(Math.toRadians(position.getLat()));
+                position.setY(latitude);
+                position.setX(longitude);
+                lat = position.getY();
+                lon = position.getX();// * (111.320 / 110.574) * Math.cos(Math.toRadians(position.getY()));
                 if (lon > maxLon) {
                     maxLon = lon;
                 } else if (lon < minLon) {
@@ -334,8 +327,8 @@ public class GridFile implements Serializable {
                 } else if (lat < minLat) {
                     minLat = lat;
                 }
-                position.setLat(lat);
-                position.setLon(lon);
+                position.setY(lat);
+                position.setX(lon);
                 events.add(position);
             } catch (ArrayIndexOutOfBoundsException e) {
                 counter1++;                     //to check amount of corrupted data: if lat lon is empty after geo locating

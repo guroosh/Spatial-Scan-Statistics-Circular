@@ -23,8 +23,8 @@
 //        int counter = 0;
 //        System.out.println("Number of grids: " + gridFile.gridCellObject.size());
 //        System.out.println("Number of mappings:" + gridFile.mapper.size());
-//        System.out.println("Number of lat:" + gridFile.latScale.size());
-//        System.out.println("Number of lon:" + gridFile.lonScale.size());
+//        System.out.println("Number of lat:" + gridFile.yScale.size());
+//        System.out.println("Number of lon:" + gridFile.xScale.size());
 //        HashSet<Bucket> bucketSet = new HashSet<>();
 //        HashSet<Events> eventSet = new HashSet<>();
 //        for (HashMap.Entry<String, GridCell> gcO : gridFile.gridCellObject.entrySet()) {

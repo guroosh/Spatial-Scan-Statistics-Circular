@@ -6,52 +6,52 @@ import java.util.Comparator;
  * Created by Guroosh Chaudhary on 29-01-2017.
  */
 public class Events {
-    double lat;
-    double lon;
+    double y;
+    double x;
     public boolean marked = false;
 
-    public void setLat(double lat) {
-        this.lat = lat;
+    public void setY(double y) {
+        this.y = y;
     }
 
-    public void setLon(double lon) {
-        this.lon = lon;
+    public void setX(double x) {
+        this.x = x;
     }
 
-    public double getLat() {
-        return this.lat;
+    public double getY() {
+        return this.y;
     }
 
-    public double getLon() {
-        return this.lon;
+    public double getX() {
+        return this.x;
     }
 
     @Override
     public String toString() {
-        return "Lat: " + getLat() + ", Lon: " + getLon();
+        return "Lat: " + getY() + ", Lon: " + getX();
     }
 
     public static Comparator<Events> sortByX() {
         return (o1, o2) -> {
-            if (o1.lon - o2.lon > 0) {
+            if (o1.x - o2.x > 0) {
                 return 1;
-            } else if (o1.lon - o2.lon < 0)
+            } else if (o1.x - o2.x < 0)
                 return -1;
             else
                 return 0;
-//            return o1.lon - o2.lon;
+//            return o1.x - o2.x;
         };
     }
 
     public static Comparator<Events> sortByY() {
         return (o1, o2) -> {
-            if (o1.lat - o2.lat > 0) {
+            if (o1.y - o2.y > 0) {
                 return 1;
-            } else if (o1.lat - o2.lat < 0)
+            } else if (o1.y - o2.y < 0)
                 return -1;
             else
                 return 0;
-//            return o1.lat - o2.lat;
+//            return o1.y - o2.y;
         };
     }
 }
