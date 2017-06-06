@@ -28,7 +28,7 @@ public class Events {
 
     @Override
     public String toString() {
-        return "Lat: "+getLat()+", Lon: "+getLon();
+        return "Lat: " + getLat() + ", Lon: " + getLon();
     }
 
     public static Comparator<Events> sortByX() {

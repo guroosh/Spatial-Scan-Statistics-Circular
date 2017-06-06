@@ -17,7 +17,8 @@ public class CircleOps {
     private double start_radius;
     private ScanGeometry area;
     private GridFile gridFile;
-//Sets the operator to an initial and final radius and a bound area.Also passes a gridfile built from the dataset to the operator
+
+    //Sets the operator to an initial and final radius and a bound area.Also passes a gridfile built from the dataset to the operator
     public CircleOps(double c_radius, double e_radius, ScanGeometry arr, GridFile gridFile) {
         this.term_radius = e_radius;
         this.start_radius = c_radius;
@@ -25,7 +26,8 @@ public class CircleOps {
         this.gridFile = gridFile;
 
     }
-//Initialize a circle with a given x,y coordinate and start radius
+
+    //Initialize a circle with a given x,y coordinate and start radius
     public Circle init(double x, double y) {
         Circle circle = new Circle();
         circle.setX_coord(x);
@@ -33,32 +35,36 @@ public class CircleOps {
         circle.setRadius(start_radius);
         return circle;
     }
-//Grows the radius of the given circle by a given amount
+
+    //Grows the radius of the given circle by a given amount
     public Circle grow_radius(double shift, Circle circle) {
 //        System.out.println(shift);
         circle.setRadius(circle.getRadius() + shift);
         return circle;
 
     }
-//Shifts the x coordinate of the given circle by a given amount
+
+    //Shifts the x coordinate of the given circle by a given amount
     public Circle grow_x(double shift, Circle circle) {
         circle.setX_coord(circle.getX_coord() + shift);
         return circle;
 
     }
-//Shifts the y coordinate of the given circle by a given amount
+
+    //Shifts the y coordinate of the given circle by a given amount
     public Circle grow_y(double shift, Circle circle) {
         circle.setY_coord(circle.getY_coord() + shift);
         return circle;
 
     }
-/*Check whether the circle provided is a valid circle. -1 is returned when the circle isn't valid(null),
-2 when the circle is out of y
-1 when the circle is out of x bound
-3 when radius of the circle is more than the terminating radius
-0 when all is fine
-*/
-public int term(Circle circle) {
+
+    /*Check whether the circle provided is a valid circle. -1 is returned when the circle isn't valid(null),
+    2 when the circle is out of y
+    1 when the circle is out of x bound
+    3 when radius of the circle is more than the terminating radius
+    0 when all is fine
+    */
+    public int term(Circle circle) {
         if (circle == null)
             return -1;
         else if (circle.getY_coord() > area.end_Y || circle.getY_coord() < area.start_Y)
@@ -72,15 +78,16 @@ public int term(Circle circle) {
 
     }
 
-//Shift the given circle's x and y by given amount
+    //Shift the given circle's x and y by given amount
     public Circle grow_xy(double growth, Circle circle) {
         circle = grow_x(growth, circle);
         circle = grow_y(growth, circle);
         return circle;
     }
-/*Shifts y coordinate by given value and x coordinate to start of the area if x co-ordinate crosses given area.
- Sends termination command if circle crosses y bound too*/
-    public Circle shifty_startx(Circle circle,  double shift_y) {
+
+    /*Shifts y coordinate by given value and x coordinate to start of the area if x co-ordinate crosses given area.
+     Sends termination command if circle crosses y bound too*/
+    public Circle shifty_startx(Circle circle, double shift_y) {
 
         int chk_bound = term(circle);
         if (chk_bound == 1) {
@@ -94,11 +101,13 @@ public int term(Circle circle) {
 
         return circle;
     }
-// Returns likelihood ratio of given circle given points in the circle
+
+    // Returns likelihood ratio of given circle given points in the circle
     public double likelihoodRatio(Circle circle, Events[] points) {
         return this.likelihoodRatio(circle, new ArrayList<>(Arrays.asList(points)));
     }
-// Auxiliary function for calculating likelihood ratio
+
+    // Auxiliary function for calculating likelihood ratio
     public double likelihoodRatio(Circle circle, ArrayList<Events> points) {
         double circle_area = Math.PI * circle.getRadius() * circle.getRadius() * 1000;
         double total_area = (this.area.end_X - this.area.start_X) * (this.area.end_Y - this.area.start_Y) * 1000;
@@ -125,7 +134,7 @@ public int term(Circle circle) {
     }
 
 
-// Auxiliary function that given a circle, scans the point in it and returns a circle centered in the quadrant with the highest density of points
+    // Auxiliary function that given a circle, scans the point in it and returns a circle centered in the quadrant with the highest density of points
 // and starting radius
     public Circle checkquadpoints(Circle curr_circle) {
         ArrayList<Events> points = scanCircle(curr_circle);
@@ -180,11 +189,13 @@ public int term(Circle circle) {
         new_circle.setRadius(r);
         return new_circle;
     }
-// Auxiliary function to check mean of points
+
+    // Auxiliary function to check mean of points
     public Circle checkanglepoints(Circle curr_circle, Events curr_points[]) {
         return checkanglepoints(curr_circle, new ArrayList<>(Arrays.asList(curr_points)));
     }
-// Function finds out density in each given quad and returns a circle at the mean of the most dense quad with radius equal to start radius
+
+    // Function finds out density in each given quad and returns a circle at the mean of the most dense quad with radius equal to start radius
     public Circle checkanglepoints(Circle curr_circle, ArrayList<Events> curr_points) {
 
         ArrayList<Events> quadpoints = new ArrayList<>();
@@ -245,7 +256,8 @@ public int term(Circle circle) {
         return new_circle;
 
     }
-//    Reset the points that are marked
+
+    //    Reset the points that are marked
     public static void resetPointsVisibility(GridFile gridFile) {
         HashSet<Bucket> bucketSet = new HashSet<>();
         HashSet<Events> eventSet = new HashSet<>();
@@ -258,7 +270,8 @@ public int term(Circle circle) {
             events.marked = false;
         }
     }
-// Function checks whether two circles are intersecting (note not touching each other)
+
+    // Function checks whether two circles are intersecting (note not touching each other)
     public static boolean checkintersection(Circle c1, Circle c2) {
 
         double x1 = c1.getX_coord(), x2 = c2.getX_coord(), y1 = c1.getY_coord(), y2 = c2.getY_coord();
@@ -271,11 +284,13 @@ public int term(Circle circle) {
         }
         return !(dist > (c1.getRadius() + c2.getRadius()));
     }
-//    Function to check whether two circles are equal or not
+
+    //    Function to check whether two circles are equal or not
     public boolean equals(Circle c1, Circle c2) {
         return ((c1.getX_coord() == c2.getX_coord()) && (c1.getY_coord() == c2.getY_coord()) && (c1.getRadius() == c2.getRadius()));
     }
-// Auxiliary function to return most dense quad of the circle
+
+    // Auxiliary function to return most dense quad of the circle
     private int getquad(ArrayList<Events> points, double x, double y) {
         int quadreg = 0;
         int[] quad = new int[5];
@@ -303,7 +318,8 @@ public int term(Circle circle) {
         }
         return quadreg;
     }
-// Gives points new in the circle when grown by growth amount
+
+    // Gives points new in the circle when grown by growth amount
     public ArrayList<Events> difference(Circle c_inner, double growth) {
         Circle c_outer = new Circle(c_inner.getX_coord(), c_inner.getY_coord(), c_inner.getRadius() + growth);
         ArrayList<Events> answer = scanCircle(c_outer);
@@ -317,20 +333,22 @@ public int term(Circle circle) {
         }
         return answer1;
     }
-// Marks a list of points i.e points that shouldn't be considered again
+
+    // Marks a list of points i.e points that shouldn't be considered again
     public void removePoints(ArrayList<Events> points) {
         for (Events e : points) {
             e.marked = true;
         }
     }
-// Returns points found in the given circle
+
+    // Returns points found in the given circle
     public ArrayList<Events> scanCircle(Circle circle) {
         double lon = circle.getX_coord();
         double lat = circle.getY_coord();
         double radius = circle.getRadius();
         ArrayList<Events> answer = new ArrayList<>();
         double lat_min = lat - radius, lat_max = lat + radius, lon_min = lon - radius, lon_max = lon + radius;
-      int lat_min_id, lat_max_id, lon_min_id, lon_max_id;
+        int lat_min_id, lat_max_id, lon_min_id, lon_max_id;
         Range r_lat;
         Range r_lon;
         r_lat = search(lat_min, lat_max, gridFile.latScale);
@@ -377,7 +395,8 @@ public int term(Circle circle) {
 
         return answer1;
     }
-// Returns a min and max for scaling
+
+    // Returns a min and max for scaling
     private static Range search(double min, double max, SortedLinkedList<Double> scale) {
         Range range = new Range();
         range.max = scale.size() - 1;
@@ -398,7 +417,8 @@ public int term(Circle circle) {
         }
         return range;
     }
-//Increases radius of a circle by given amount
+
+    //Increases radius of a circle by given amount
     public double increase_radius(double radius, double growth) {
         return radius + growth;
     }

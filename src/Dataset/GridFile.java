@@ -52,10 +52,8 @@ public class GridFile implements Serializable {
         for (Bucket b : bucketSet) {
             counter += b.eventsInBucket.size();
         }
-        if(counter == eventSet.size())
-        {
-            if(counter!=0)
-            {
+        if (counter == eventSet.size()) {
+            if (counter != 0) {
                 this.total_events = counter;
             }
         }
@@ -66,7 +64,7 @@ public class GridFile implements Serializable {
         GridCell gridCell = getGridCell(event);
 //        System.out.println(gridCell);
         Bucket bucket = this.mapper.get(gridCell);
-        if(bucket== null)
+        if (bucket == null)
             System.out.println(gridCell.getHashValue());
         boolean added = bucket.addEvent(event, gridCell);
         if (!added) {
@@ -270,6 +268,7 @@ public class GridFile implements Serializable {
         this.lonScale.add(gridCell.maxLon);
 //        this.gridCellObject.put(gridCell.getHashValue(),gridCell);
     }
+
     private static void checkData(GridFile gridFile) {
         int counter = 0;
         System.out.println("Number of grids: " + gridFile.gridCellObject.size());
@@ -289,15 +288,13 @@ public class GridFile implements Serializable {
         System.out.println("Total points (check 1): " + counter);
         System.out.println("Total points (check 2): " + eventSet.size());
     }
+
     public static ArrayList<Events> readDataFile(String fileName) throws IOException {
         int latInCSV, lonInCSV;
-        if(Main.fileName.equals("ny_robbery.csv"))
-        {
+        if (Main.fileName.equals("ny_robbery.csv")) {
             latInCSV = 21;
-            lonInCSV = 22;            
-        }
-        else
-        {
+            lonInCSV = 22;
+        } else {
             latInCSV = 13;
             lonInCSV = 12;
         }
@@ -346,6 +343,7 @@ public class GridFile implements Serializable {
         }
         return events;
     }
+
     private static String modifyLine(String line) {
         int counter = 0;
         StringBuilder newString = new StringBuilder(line);

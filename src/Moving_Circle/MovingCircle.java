@@ -26,16 +26,18 @@ import static edu.rice.hj.runtime.config.HjSystemProperty.numWorkers;
 /**
  * Created by guroosh on 8/4/17.
  */
+//Contains all implementation of Moving Circle
 public class MovingCircle {
     static int runtime = Values.runtime;
 
+    //Contains runner for JOMP Moving circle
     public static double runMovingCircleTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
         // System.out.println("Starting Moving Circle run with JOMP");
         long start = System.currentTimeMillis();
         JOMP.movingCircleJOMP movingCircleJOMP = new JOMP.movingCircleJOMP();
         Circle[] core_circles_array = movingCircleJOMP.movingCircleTesterJOMP(runtime, gridFile, minLon, minLat, maxLon, maxLat);
         long end = System.currentTimeMillis();
-        Result.MovingTesterJOMP_time+=((double) (end - start)) / 1000 ;
+        Result.MovingTesterJOMP_time += ((double) (end - start)) / 1000;
 
         for (int i = 0; i < runtime; i++) {
             Circle temp_circle = core_circles_array[i];
@@ -48,6 +50,7 @@ public class MovingCircle {
         return ((double) (end - start)) / 1000;
     }
 
+    //Contains runner for Java FJP Moving circle
     public static double runMovingCircleTesterJvFP(GridFile gridFile, ArrayList<Events> events) {
         // System.out.println("Starting Moving Circle run with Java-Fork join pool");
         long start = System.currentTimeMillis();
@@ -57,11 +60,12 @@ public class MovingCircle {
         pool.invoke(rootTask);
         long end = System.currentTimeMillis();
 //        // System.out.println(((double) (end - start)) / 1000);
-        Result.MovingTesterFJP_time+=((double) (end - start)) / 1000;
+        Result.MovingTesterFJP_time += ((double) (end - start)) / 1000;
 //        aftermovingcircal(gridFile, events);
         return ((double) (end - start)) / 1000;
     }
 
+    //Contains runner for Habenero Java Moving circle
     public static double runMovingCircleTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
         // System.out.println("Starting Moving Circle run with Habanero-Java");
         long start = System.currentTimeMillis();
@@ -71,12 +75,13 @@ public class MovingCircle {
             });
         });
         long end = System.currentTimeMillis();
-        Result.MovingTesterHJ_time+= ((double) (end - start)) / 1000;
+        Result.MovingTesterHJ_time += ((double) (end - start)) / 1000;
 //        System.out.println("Time HJ moving "+((double) (end - start)) / 1000+"s");
 //        aftermovingcircal(gridFile, events);
         return ((double) (end - start)) / 1000;
     }
 
+    //Contains runner for Serial Moving circle
     public static void runMovingCircleTester(GridFile gridFile, ArrayList<Events> events) {
         // System.out.println("Starting Moving Circle run with single thread");
         long start = System.currentTimeMillis();
@@ -86,13 +91,13 @@ public class MovingCircle {
         }
 
         long end = System.currentTimeMillis();
-        Result.MovingTesterST_time+=((double) (end - start)) / 1000;
+        Result.MovingTesterST_time += ((double) (end - start)) / 1000;
 //        aftermovingcircal(gridFile, events);
-
 
 
     }
 
+    //Implementation of Habenero Java for Moving Circle
     private static void movingCircleTesterHJ(GridFile gridFile) {
         int circlecounter = Values.moving_circle_counter;
         double curr_radius = Values.lower_limit;
@@ -157,6 +162,7 @@ public class MovingCircle {
         }
     }
 
+    //Implementation of  Java Fork Join Pool for Moving Circle
     private static void movingCircleTesterFJP(GridFile gridFile) {
         double curr_radius = Values.lower_limit;
         double term_radius = Values.terminating_radius;
@@ -221,6 +227,7 @@ public class MovingCircle {
         }
     }
 
+    //Implementation of Serial version for Moving Circle
     private static void movingCircleTester(GridFile gridFile) {
         int circlecounter = Values.moving_circle_counter;
         double curr_radius = Values.lower_limit;
@@ -278,6 +285,7 @@ public class MovingCircle {
         }
     }
 
+    //Sorts and refines the output for logical sense
     private static void aftermovingcircal(GridFile gridFile, ArrayList<Events> events) {
         Collections.sort(core_circles, Circle.sortByLHR());
         ArrayList<Circle> non_intersecting_core_circles = new ArrayList<>();
@@ -294,12 +302,9 @@ public class MovingCircle {
                     intersecting_flag = true;
                 }
             }
-            if(intersecting_flag)
-            {
+            if (intersecting_flag) {
                 intersecting_flag = false;
-            }
-            else
-            {
+            } else {
                 non_intersecting_core_circles.add(c);
             }
         }
@@ -322,6 +327,7 @@ public class MovingCircle {
 //        CircleOps.resetPointsVisibility(gridFile);
     }
 
+    //Controller for printing circles
     private static void drawtop(int number, ArrayList<Circle> non_intersecting_core_circles) {
         if (number == -1)
             number = non_intersecting_core_circles.size();
@@ -330,6 +336,7 @@ public class MovingCircle {
         }
     }
 
+    //Controller for printing circles
     private static void visualizedata(ArrayList<Events> events, ArrayList<Circle> moving_circles_for_visualize) {
         Visualize.VisualizeNaive vis = new Visualize.VisualizeNaive();
         Circle c1 = new Circle(minLon, minLat, 0.0001);
@@ -346,6 +353,7 @@ public class MovingCircle {
         vis.drawCircles(events, moving_circles_for_visualize, "title");
     }
 
+    //Implementation of splitting and making tasks in FJP
     private static class MovingCircleRunnerFJP extends RecursiveAction {
         private GridFile gridFile;
         private int runtime;

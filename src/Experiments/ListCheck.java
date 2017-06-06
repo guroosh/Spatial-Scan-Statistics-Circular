@@ -8,7 +8,9 @@ import java.util.List;
 /**
  * Created by guroosh on 13/4/17.
  */
+//Contains functions to refine the answer output from the algorithms
 public class ListCheck {
+    //Checks whether two circle overlap
     public double checkOverlapping(Circle c1, Circle c2) {
 
         double R1 = c1.getRadius();
@@ -35,6 +37,7 @@ public class ListCheck {
         return num / (den - num);
     }
 
+    // Function for calculating jaccard index in between two lists
     public double jaccardIndex(List<Circle> list1, List<Circle> list2, double threshold) {
         int count = 0;
 

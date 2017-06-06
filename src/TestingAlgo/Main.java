@@ -25,7 +25,9 @@ import static edu.rice.hj.runtime.config.HjSystemProperty.numWorkers;
 /**
  * Created by Guroosh Chaudhary on 05-02-2017.
  */
+//Driver for code
 public class Main {
+    //Set values,do not modify
     public static String fileName;
     public static double minLat = 360;
     public static double minLon = 360;
@@ -39,7 +41,6 @@ public class Main {
     public static ArrayList<Circle> core_circles = new ArrayList<>();
     public static ArrayList<Circle> list1 = new ArrayList<>(), list2 = new ArrayList<>();
     public static ArrayList<Events> event1 = new ArrayList<>();
-
     public static int number_of_threads;
     public static int curr_number_of_threads;
 
@@ -70,7 +71,7 @@ public class Main {
         curr_number_of_threads = number_of_threads;
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
 
-//        exp1_phase1(gridFile, events);
+        exp1_phase1(gridFile, events);
 //        exp1_phase2(events.size(), area);
 //        exp2_phase1(gridFile, events);
 //        exp2_phase2(events.size(), area);
@@ -84,7 +85,46 @@ public class Main {
 
         System.out.println("Complete");
     }
+//Clears all the variables used for multiple runs
+    public static void clear() {
+        core_circles = new ArrayList<>();
+        list1 = new ArrayList<>();
+        list2 = new ArrayList<>();
+        count_naive_circles_for_single_thread = 0L;
+        top_likelihood_circles_for_single_thread = new ArrayList<>();
+        count_naive_circles_for_HJ = 0L;
+        top_likelihood_circles_for_HJ = new ArrayList<>();
+        count_naive_circles_for_JOMP = 0L;
+        top_likelihood_circles_for_JOMP = new ArrayList<>();
+        count_naive_circles_for_FJP = 0L;
+        top_likelihood_circles_for_FJP = Collections.synchronizedList(new ArrayList<Circle>());
 
+    }
+//Prints outputs of runtime
+    public static void result(String res_text, int runs) {
+        System.out.println("Result of " + res_text + " as follows:");
+        if (Result.NaiveTesterST_time + Result.NaiveTesterHJ_time + Result.NaiveTesterFJP_time + Result.NaiveTesterJOMP_time != 0)
+            System.out.println("\tNaive");
+        if (Result.NaiveTesterST_time != 0)
+            System.out.println("\t\tST " + (Result.NaiveTesterST_time / (runs)) + "s");
+        if (Result.NaiveTesterHJ_time != 0)
+            System.out.println("\t\tHJ " + (Result.NaiveTesterHJ_time / (runs)) + "s");
+        if (Result.NaiveTesterFJP_time != 0)
+            System.out.println("\t\tFJP " + (Result.NaiveTesterFJP_time / (runs)) + "s");
+        if (Result.NaiveTesterJOMP_time != 0)
+            System.out.println("\t\tJOMP " + (Result.NaiveTesterJOMP_time / (runs)) + "s");
+        if (Result.MovingTesterST_time + Result.MovingTesterHJ_time + Result.MovingTesterFJP_time + Result.MovingTesterJOMP_time != 0)
+            System.out.println("\tMoving ");
+        if (Result.MovingTesterST_time != 0)
+            System.out.println("\t\tST " + (Result.MovingTesterST_time / runs) + "s");
+        if (Result.MovingTesterHJ_time != 0)
+            System.out.println("\t\tHJ " + (Result.MovingTesterHJ_time / runs) + "s");
+        if (Result.MovingTesterFJP_time != 0)
+            System.out.println("\t\tFJP " + (Result.MovingTesterFJP_time / runs) + "s");
+        if (Result.MovingTesterJOMP_time != 0)
+            System.out.println("\t\tJOMP " + (Result.MovingTesterJOMP_time / runs) + "s");
+        Result.clear();
+    }
 
 
     private static void multiCoreExpFJP(GridFile gridFile, ArrayList<Events> events) {
@@ -139,46 +179,6 @@ public class Main {
         curr_number_of_threads--;
     }
 
-
-    public static void clear() {
-        core_circles = new ArrayList<>();
-        list1 = new ArrayList<>();
-        list2 = new ArrayList<>();
-        count_naive_circles_for_single_thread = 0L;
-        top_likelihood_circles_for_single_thread = new ArrayList<>();
-        count_naive_circles_for_HJ = 0L;
-        top_likelihood_circles_for_HJ = new ArrayList<>();
-        count_naive_circles_for_JOMP = 0L;
-        top_likelihood_circles_for_JOMP = new ArrayList<>();
-        count_naive_circles_for_FJP = 0L;
-        top_likelihood_circles_for_FJP = Collections.synchronizedList(new ArrayList<Circle>());
-
-    }
-
-    public static void result(String res_text, int runs) {
-        System.out.println("Result of " + res_text + " as follows:");
-        if(Result.NaiveTesterST_time+Result.NaiveTesterHJ_time+Result.NaiveTesterFJP_time+Result.NaiveTesterJOMP_time!=0)
-        System.out.println("\tNaive");
-        if (Result.NaiveTesterST_time!=0)
-        System.out.println("\t\tST " + (Result.NaiveTesterST_time / ( runs))+"s");
-        if (Result.NaiveTesterHJ_time!=0)
-        System.out.println("\t\tHJ " + (Result.NaiveTesterHJ_time / ( runs))+"s");
-        if (Result.NaiveTesterFJP_time!=0)
-        System.out.println("\t\tFJP " + (Result.NaiveTesterFJP_time / ( runs))+"s");
-        if (Result.NaiveTesterJOMP_time!=0)
-        System.out.println("\t\tJOMP " + (Result.NaiveTesterJOMP_time / ( runs))+"s");
-        if(Result.MovingTesterST_time+Result.MovingTesterHJ_time+Result.MovingTesterFJP_time+Result.MovingTesterJOMP_time!=0)
-            System.out.println("\tMoving ");
-        if (Result.MovingTesterST_time!=0)
-        System.out.println("\t\tST " + (Result.MovingTesterST_time / runs)+"s");
-        if (Result.MovingTesterHJ_time!=0)
-        System.out.println("\t\tHJ " + (Result.MovingTesterHJ_time / runs)+"s");
-        if (Result.MovingTesterFJP_time!=0)
-        System.out.println("\t\tFJP " + (Result.MovingTesterFJP_time / runs)+"s");
-        if (Result.MovingTesterJOMP_time!=0)
-        System.out.println("\t\tJOMP " + (Result.MovingTesterJOMP_time / runs)+"s");
-        Result.clear();
-    }
 
     private static void experiment_p_value(int size, ScanGeometry scanA) {
         System.out.println("Starting experiment of statistical significance on a poison distribution with mean : " + size);

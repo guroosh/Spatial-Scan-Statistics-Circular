@@ -6,6 +6,6 @@ package Dataset;
 public class DataSet {
     double terminating_radius;
     double radius_growth;
-    double min_lat,max_lat,min_lon,max_lon;
+    double min_lat, max_lat, min_lon, max_lon;
 
 }

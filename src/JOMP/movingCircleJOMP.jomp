@@ -15,11 +15,14 @@ import java.util.Arrays;
 /**
  * Created by guroosh on 8/4/17.
  */
+//Contains all JOMP implementation of Moving Circle Algorithm
 public class movingCircleJOMP {
     int added_circles = 0;
+
     public Circle[] movingCircleTesterJOMP(int runtime, GridFile gridFile, double minLon, double minLat, double maxLon, double maxLat) throws Exception {
         Circle[] core_circles = new Circle[runtime];
-        int i;added_circles=0;
+        int i;
+        added_circles = 0;
         OMP.setNumThreads(Main.curr_number_of_threads);
         //omp parallel shared(i)
         {

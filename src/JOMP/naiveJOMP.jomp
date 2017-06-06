@@ -16,6 +16,7 @@ import java.util.Collections;
 /**
  * Created by guroosh on 8/4/17.
  */
+//Contains all JOMP implementation of Naive Algorithm
 public class naiveJOMP {
     public Circle circles[];
     public long circle_count;
@@ -35,7 +36,7 @@ public class naiveJOMP {
         int assumed_number_of_circles = lat_circles * lon_circles * number_of_radius;
 
         circles = new Circle[assumed_number_of_circles];
-        circle_count=0;
+        circle_count = 0;
         added_circles = 0;
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);

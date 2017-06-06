@@ -19,19 +19,22 @@ public class Circle {
     private double radius;
     public ArrayList<Events> points = new ArrayList<>();
     public double area;
-//Constructor sets all values to zero
+
+    //Constructor sets all values to zero
     public Circle() {
         x_coord = 0;
         y_coord = 0;
         radius = 0;
     }
-//Constructor to set value to specified x,y,r
+
+    //Constructor to set value to specified x,y,r
     public Circle(double x, double y, double r) {
         this.x_coord = x;
         this.y_coord = y;
         this.radius = r;
     }
-//Constructor to set value to specified circle
+
+    //Constructor to set value to specified circle
     public Circle(Circle c2) {
         this.x_coord = c2.getX_coord();
         this.y_coord = c2.getY_coord();
@@ -39,7 +42,7 @@ public class Circle {
         this.lhr = c2.lhr;
     }
 
-//Constructor to spawn a random circle of given radius and in given area
+    //Constructor to spawn a random circle of given radius and in given area
     public Circle(String r, double curr_radius, ScanGeometry scanA) {
         if (r.equals("Random")) {
             this.setX_coord(ThreadLocalRandom.current().nextDouble(scanA.start_X, scanA.end_X));
@@ -47,7 +50,8 @@ public class Circle {
             this.setRadius(curr_radius);
         }
     }
-//Sort a Collection of Circles by its likelihood ratio
+
+    //Sort a Collection of Circles by its likelihood ratio
     public static Comparator<Circle> sortByLHR() {
         return (o1, o2) -> {
             if (o1.lhr - o2.lhr > 0) {
@@ -59,12 +63,14 @@ public class Circle {
 //            return o1.lat - o2.lat;
         };
     }
-//Returns details of the Circle in a readable format
+
+    //Returns details of the Circle in a readable format
     @Override
     public String toString() {
         return "X: " + String.format("%.4f", this.x_coord) + " Y: " + String.format("%.4f", this.y_coord) + " r: " + this.radius + " LR: " + this.lhr;
     }
-//Auxillary functions below
+
+    //Auxillary functions below
     public double getX_coord() {
         return x_coord;
     }

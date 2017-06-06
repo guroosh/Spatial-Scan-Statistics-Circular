@@ -19,8 +19,9 @@ import static TestingAlgo.Main.*;
 /**
  * Created by ld on 29/5/17.
  */
+//Contains experiments on various parameters
 public class Experiments {
-
+    //Serial version of Naive algorithm versues Parallel versions
     public static void exp1_phase1(GridFile gridFile, ArrayList<Events> events) throws Exception {
         String res_text = "Running Experiment 1 on Phase 1";
         for (int i = 1; i <= Values.nruns; i++) {
@@ -39,6 +40,7 @@ public class Experiments {
 
     }
 
+    //Serial version of Moving Circle algorithm versues Parallel versions
     public static void exp2_phase1(GridFile gridFile, ArrayList<Events> events) throws Exception {
         String res_text = "Running Experiment 2 on Phase 1";
         for (int i = 1; i <= Values.nruns; i++) {
@@ -51,12 +53,13 @@ public class Experiments {
             runMovingCircleTesterJvFP(gridFile, events);
             clear();
 //            runMovingCircleTesterJOMP(gridFile, events);
-//            Main.clear();
+//            clear();
         }
         result(res_text, Values.nruns);
 
     }
 
+    //Monte Carlo experiment on Naive all frameworks
     public static void exp1_phase2(int size, ScanGeometry area) throws Exception {
         String res_text = "Starting phase 2 of exp 1 using a poison distribution with mean : " + size + " Runs :" + Values.p2runs;
         double mean = size;
@@ -95,6 +98,7 @@ public class Experiments {
         }
         result(res_text, Values.p2runs);
     }
+//Monte Carlo experiment on Moving Circle all frameworks
 
     public static void exp2_phase2(int size, ScanGeometry area) throws Exception {
         String res_text = "Starting phase 2 of exp 1 using a poison distribution with mean : " + size + " Runs :" + Values.p2runs;
@@ -135,9 +139,10 @@ public class Experiments {
         result(res_text, Values.p2runs);
     }
 
+    //Experiment on time taken by varying the growth rate
     public static void exp3(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
-        double growth=Values.growth_rate/2;
-        for (double j = growth; j < growth*20; j += (growth)) {
+        double growth = Values.growth_rate / 2;
+        for (double j = growth; j < growth * 20; j += (growth)) {
 
             String res_text = "Running Experiment 3" + " on growth rate " + j;
             Values.setGrowth_rate(j);

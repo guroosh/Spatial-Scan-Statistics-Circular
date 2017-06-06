@@ -28,6 +28,8 @@ import static edu.rice.hj.runtime.config.HjSystemProperty.numWorkers;
 /**
  * Created by guroosh on 8/4/17.
  */
+
+//Contains all implementation of Moving Circle
 public class Naive {
 
 
@@ -38,16 +40,17 @@ public class Naive {
     public static Long count_naive_circles_for_JOMP = 0L;
     public static ArrayList<Circle> top_likelihood_circles_for_JOMP = new ArrayList<>();
     public static Long count_naive_circles_for_FJP = 0L;
-    public static  List<Circle> top_likelihood_circles_for_FJP = Collections.synchronizedList(new ArrayList<Circle>());
+    public static List<Circle> top_likelihood_circles_for_FJP = Collections.synchronizedList(new ArrayList<Circle>());
 
 
+    //Contains runner for Serial Naive
     public static void runNaiveTester(GridFile gridFile, ArrayList<Events> events) {
         // System.out.println("\nStarting Naive run");
         long startTime = System.currentTimeMillis();
         naiveTester(gridFile);
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        Result.NaiveTesterST_time +=totalTime/(double)1000;
+        Result.NaiveTesterST_time += totalTime / (double) 1000;
 //        System.out.println("Total time for naive with single thread: " + ((double) totalTime / (double) 1000) + "s");
 
 //        Collections.sort(top_likelihood_circles_for_single_thread, Circle.sortByLHR());
@@ -55,6 +58,7 @@ public class Naive {
 //        afterNaive(events, gridFile);
     }
 
+    //Contains runner for Habenero Java Moving circle
     public static double runNaiveTesterHJ(GridFile gridFile, ArrayList<Events> events) throws SuspendableException {
         // System.out.println("Starting Naive run with HABANERO");
         long startTime1 = System.currentTimeMillis();
@@ -63,7 +67,7 @@ public class Naive {
         });
         long endTime1 = System.currentTimeMillis();
         long totalTime = endTime1 - startTime1;
-        Result.NaiveTesterHJ_time+=totalTime/(double)1000;
+        Result.NaiveTesterHJ_time += totalTime / (double) 1000;
 //        System.out.println("Total time for naive with HABANERO: " + ((double) totalTime / (double) 1000) + "s");
 //
 //        Collections.sort(top_likelihood_circles_for_HJ, Circle.sortByLHR());
@@ -72,13 +76,14 @@ public class Naive {
         return ((double) totalTime / (double) 1000);
     }
 
+    //Contains runner for JOMP Naive
     public static double runNaiveTesterJOMP(GridFile gridFile, ArrayList<Events> events) throws Exception {
         // System.out.println("Starting Naive run with JOMP");
         long startTime = System.currentTimeMillis();
         naiveTesterJOMP(gridFile);
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        Result.NaiveTesterJOMP_time+=totalTime/(double)1000;
+        Result.NaiveTesterJOMP_time += totalTime / (double) 1000;
 //        System.out.println("Total time for naive with JOMP: " + ((double) totalTime / (double) 1000) + "s");
 
 //        Collections.sort(top_likelihood_circles_for_JOMP, Circle.sortByLHR());
@@ -87,6 +92,7 @@ public class Naive {
         return ((double) totalTime / (double) 1000);
     }
 
+    //Contains runner for Java FJP Naive
     public static double runNaiveTesterFJP(GridFile gridFile, ArrayList<Events> events) {
         // System.out.println("Starting Naive run with Fork Join Pool");
         long startTime = System.currentTimeMillis();
@@ -97,7 +103,7 @@ public class Naive {
         pool.invoke(rootTask);
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        Result.NaiveTesterFJP_time+=totalTime/(double)1000;
+        Result.NaiveTesterFJP_time += totalTime / (double) 1000;
 //         System.out.println("Total time for naive with Fork Join Pool: " + ((double) totalTime / (double) 1000) + "s");
 //
 //        Collections.sort(top_likelihood_circles_for_FJP, Circle.sortByLHR());
@@ -106,6 +112,7 @@ public class Naive {
         return ((double) totalTime / (double) 1000);
     }
 
+    //Implementation of JOMP version for Naive Algorithm
     private static void naiveTesterJOMP(GridFile gridFile) throws Exception {
         JOMP.naiveJOMP naiveJOMP = new JOMP.naiveJOMP();
         naiveJOMP.naiveTesterJOMP(gridFile, minLon, minLat, maxLon, maxLat);
@@ -117,6 +124,7 @@ public class Naive {
         }
     }
 
+    //Implementation of Habenero Jave version for Naive Algorithm
     private static void naiveTesterHJ(GridFile gridFile) throws SuspendableException {
         final double likelihood_threshold = Values.lh_threshold;
         final double[] curr_radius = {Values.lower_limit};
@@ -154,6 +162,7 @@ public class Naive {
         });
     }
 
+    //Implementation of FJP version for Naive Algorithm
     private static void naiveTesterFJP(GridFile gridFile, int start, int end) {
 
         final double likelihood_threshold = Values.lh_threshold;
@@ -190,12 +199,13 @@ public class Naive {
         }
     }
 
+    //Implementation of Serial version for Naive Algorithm
     private static void naiveTester(GridFile gridFile) {
         double likelihood_threshold = Values.lh_threshold;
         double curr_radius = Values.lower_limit;
         double term_radius = Values.upper_limit;
         double shift_radius = curr_radius;
-        double growth_radius =Values.growth_rate;
+        double growth_radius = Values.growth_rate;
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         Circle curr_circle = new Circle(minLon, minLat, curr_radius);
@@ -226,6 +236,7 @@ public class Naive {
         }
     }
 
+    //Removes intersecting circles from output for logical output
     private static void naiveWithoutIntersectingCircles(List<Circle> top_likelihood_circles, long count_naive_circles) {
         int j = 0;
         int intersecting_flg = 0;
@@ -257,6 +268,7 @@ public class Naive {
 
     }
 
+    //Processes output
     private static void afterNaive(ArrayList<Events> events, GridFile gridFile) {
         Circle c1 = new Circle(minLon, minLat, 0.0001);
         Circle c2 = new Circle(minLon, maxLat, 0.0001);
@@ -268,24 +280,26 @@ public class Naive {
         core_circles.add(c4);
         // System.out.println();
         VisualizeNaive vis = new VisualizeNaive();
-        vis.drawCircles(events, core_circles,"Naive HJ");
+        vis.drawCircles(events, core_circles, "Naive HJ");
         int number = Values.top_circles_for_print;
         drawtop(number, gridFile);
         Main.list1.addAll(core_circles);
         core_circles = new ArrayList<>();
     }
 
+    //Controller for printing circles
     private static void drawtop(int number, GridFile gridFile) {
         if (number == -1)
             number = core_circles.size();
 
         ScanGeometry area = new ScanGeometry(minLon, minLat, maxLon, maxLat);
         for (int i = 0; i < number; i++) {
-            // System.out.println("\t" + core_circles.get(i).toString());
+             System.out.println("\t" + core_circles.get(i).toString());
         }
         // System.out.println();
     }
 
+    //Implementation of splitting and making tasks in FJP
     private static class NaiveRunnerFJP extends RecursiveAction {
         private GridFile gridFile;
         private int runtime;

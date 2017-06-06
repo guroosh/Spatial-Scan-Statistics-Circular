@@ -1,38 +1,51 @@
-run ./script.sh
+How to run:
+Run ./script.sh for the code
+You can modify the Values in TestingAlgo.Values to see its effect on code.
+
+Code logic:
+Code starts from main,initially a dataset is taken as string input,the dataset has to be in the project folder.Note that the dataset has to be of format (x,y) in degree
+or input columns in TestingAlgo.Values
+
+A Gridfile is constructed from the dataset and is used as an parameter,you get 8 options to run on the dataset, 4 frameworks of 2 algorithms
+To run whichever framework individually,check below :
+
+Naive Serial Version : runNaiveTester(gridFile, events);
+Naive Habenero Java Version : runNaiveTesterHJ(gridFile, events);
+Naive Fork Join Pool Version : runNaiveTesterFJP(gridFile, events);
+Naive Java Open-MP Version : runNaiveTesterJOMP(gridFile, events);
+Moving Circle Serial Version : runMovingCircleTester(gridFile, events);
+Moving Circle Habenero Java Version : runMovingCircleTesterHJ(gridFile, events);
+Moving Circle Java Fork Join Pool Version : runMovingCircleTesterJvFP(gridFile, events);
+Moving Circle Java Open-MP Version : runMovingCircleTesterJOMP(gridFile, events);
+
+To run the above you need to provide a gridfile of the dataset and events from the dataset,to construct the two,look below
+
+Events:
+filename is a string
+ArrayList<Events> events = readDataFile(fileName);
+
+Values of minlat maxlat minlon and maxlon can be 360,-360,360,-360
+Gridfile
+GridFile gridFile = new GridFile();
+GridCell gridCell = new GridCell(gridFile, minLat, maxLat, minLon, maxLon);
+gridCell = gridCell.getGridCell(gridFile);
+gridFile.make(events, gridCell);
 
 
-TODO:
+Apart from the standalone functions,there are several experiments designed which can also be of use for analysis,details are given below
+Comparing all frameworks of Naive : exp1_phase1(gridFile, events)
+Comparing all frameworks of Naive(Monte Carlo) : exp1_phase2(events.size(), area)
+Comparing all frameworks of Moving Circle : exp2_phase1(gridFile, events)
+Comparing all frameworks of Moving Circle : exp2_phase1(gridFile, events)
+Comparing all frameworks of Moving Circle(Monte Carlo) : exp2_phase2(events.size(), area)
+Comparing run-times with varying growth rates : exp3(gridFile, events)
 
-Lower and Upper bound in Moving circle.
-
-make sure visualize is showing correct
-
-Monte Carlo simulation
-
-Multiple datasets
-
-Make functions for: 
-	finding overlapping area of 2 circles
-	computing p-value 
-	Inverse jacards index
-	
-
-in Circle Ops: remove scanCircle from checkAnglePoints, instead store points only once guroosh
-in Circle Ops: complete implementation of points found in checkQuad points
-in Naive: change controller function names to shift in x and shift in y
+For printing ouput of circles or the visual representation you need to follow these steps:
 
 
-remove scanCircle from one more place: from moving circles when removing all points after adding final circle
+Apart from the above,if you have any doubt, drop a mail to lakshay14057@iiitd.ac.in, with an appropriate subject line, you would hear a response within 12 hrs
 
+todo
+change datasets to x,y and allow for user input columns in values
 
-Runtime of a moving circle with proper visualization
-
-FUTURE SUGGESTIONS:
-
-read spread of the data to get the growht_drtate
-
-VERY IMPORTANT:
-
-remove local runtime from movincircle runner architectures.
-
-write about difference in data set
+fix printing of circles and reduce it to commenting and de- commenting afternaive and aftermoving circle
