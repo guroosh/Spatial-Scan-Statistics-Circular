@@ -40,12 +40,13 @@ Comparing all frameworks of Moving Circle : exp2_phase1(gridFile, events)
 Comparing all frameworks of Moving Circle(Monte Carlo) : exp2_phase2(events.size(), area)
 Comparing run-times with varying growth rates : exp3(gridFile, events)
 
-For printing ouput of circles or the visual representation you need to follow these steps:
+
+For printing top circles or the visual representation you need to follow these steps:
+In both algorithm top n circles are printed and visualized.
+The values can be changed in TestingAlgo/Values.java, where the parameters are 'top_circles_for_visualize' and 'top_circles_for_print'
+To avoid the window popup for visualize (in case the value is zero) comment the following lines:
+line number 282 in Naive/Naive.java 'vis.drawCircles(events, core_circles, "Naive");' inside the function afterNaive()
+line number 350 in Moving_Circle/MovingCircle.java 'vis.drawCircles(events, moving_circles_for_visualize, "Moving circle");' inside the function visualizedata()
 
 
 Apart from the above,if you have any doubt, drop a mail to lakshay14057@iiitd.ac.in, with an appropriate subject line, you would hear a response within 12 hrs
-
-todo
-change datasets to x,y and allow for user input columns in values
-
-fix printing of circles and reduce it to commenting and de- commenting afternaive and aftermoving circle

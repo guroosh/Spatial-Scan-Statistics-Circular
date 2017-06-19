@@ -346,9 +346,8 @@ public class MovingCircle {
         moving_circles_for_visualize.add(c2);
         moving_circles_for_visualize.add(c3);
         moving_circles_for_visualize.add(c4);
-//        int top_circles_for_visualize = Values.top_circles_for_visualize;
 
-        vis.drawCircles(events, moving_circles_for_visualize, "title");
+        vis.drawCircles(events, moving_circles_for_visualize, "Moving circle");
     }
 
     //Implementation of splitting and making tasks in FJP

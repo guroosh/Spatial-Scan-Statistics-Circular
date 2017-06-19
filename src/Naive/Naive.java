@@ -279,7 +279,7 @@ public class Naive {
         core_circles.add(c4);
         // System.out.println();
         VisualizeNaive vis = new VisualizeNaive();
-        vis.drawCircles(events, core_circles, "Naive HJ");
+        vis.drawCircles(events, core_circles, "Naive");
         int number = Values.top_circles_for_print;
         drawtop(number, gridFile);
         Main.list1.addAll(core_circles);
