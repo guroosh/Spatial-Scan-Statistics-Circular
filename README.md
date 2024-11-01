@@ -67,6 +67,10 @@ To avoid the window popup for visualization (in case the value is zero), comment
   ```
   (inside the function `visualizedata()`)
 
+## Part 2 - Spatial-Scan-Statistics-Linear
+
+Click [here](https://github.com/guroosh/Spatial-Scan-Statistics-Linear) to see the 2nd part of the project.
+
 ## Contact
 
 If you have any doubts, drop a mail to [chaudhary14032@iiitd.ac.in](mailto:chaudhary14032@iiitd.ac.in) with an appropriate subject line.
