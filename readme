@@ -1,52 +1,72 @@
-How to run:
-Run ./script.sh for the code
-You can modify the Values in TestingAlgo.Values to see its effect on code.
+# How to Run
 
-Code logic:
-Code starts from main,initially a dataset is taken as string input,the dataset has to be in the project folder.Note that the dataset has to be of format (x,y) in degree
-or input columns in TestingAlgo.Values
+Run `./script.sh` for the code. You can modify the values in `TestingAlgo.Values` to see their effect on the code.
 
-A Gridfile is constructed from the dataset and is used as an parameter,you get 8 options to run on the dataset, 4 frameworks of 2 algorithms
-To run whichever framework individually,check below :
+## Code Logic
 
-Naive Serial Version : runNaiveTester(gridFile, events);
-Naive Habenero Java Version : runNaiveTesterHJ(gridFile, events);
-Naive Fork Join Pool Version : runNaiveTesterFJP(gridFile, events);
-Naive Java Open-MP Version : runNaiveTesterJOMP(gridFile, events);
-Moving Circle Serial Version : runMovingCircleTester(gridFile, events);
-Moving Circle Habenero Java Version : runMovingCircleTesterHJ(gridFile, events);
-Moving Circle Java Fork Join Pool Version : runMovingCircleTesterJvFP(gridFile, events);
-Moving Circle Java Open-MP Version : runMovingCircleTesterJOMP(gridFile, events);
+The code starts from `main`, where a dataset is taken as string input. The dataset must be in the project folder and should be formatted as `(x,y)` in degrees or as input columns in `TestingAlgo.Values`.
 
-To run the above you need to provide a gridfile of the dataset and events from the dataset,to construct the two,look below
+A Gridfile is constructed from the dataset and is used as a parameter. You have 8 options to run on the dataset, which consist of 4 frameworks of 2 algorithms. To run each framework individually, use the commands below:
 
-Events:
-filename is a string
+- **Naive Serial Version**: `runNaiveTester(gridFile, events);`
+- **Naive Habenero Java Version**: `runNaiveTesterHJ(gridFile, events);`
+- **Naive Fork Join Pool Version**: `runNaiveTesterFJP(gridFile, events);`
+- **Naive Java Open-MP Version**: `runNaiveTesterJOMP(gridFile, events);`
+- **Moving Circle Serial Version**: `runMovingCircleTester(gridFile, events);`
+- **Moving Circle Habenero Java Version**: `runMovingCircleTesterHJ(gridFile, events);`
+- **Moving Circle Java Fork Join Pool Version**: `runMovingCircleTesterJvFP(gridFile, events);`
+- **Moving Circle Java Open-MP Version**: `runMovingCircleTesterJOMP(gridFile, events);`
+
+### Requirements for Running
+
+To run the above, you need to provide a gridfile of the dataset and events from the dataset. To construct these, see below:
+
+#### Events
+```java
+String filename = "your_file_name";
 ArrayList<Events> events = readDataFile(fileName);
+```
 
-Values of minlat maxlat minlon and maxlon can be 360,-360,360,-360
-Gridfile
+#### Gridfile
+```java
 GridFile gridFile = new GridFile();
 GridCell gridCell = new GridCell(gridFile, minLat, maxLat, minLon, maxLon);
 gridCell = gridCell.getGridCell(gridFile);
 gridFile.make(events, gridCell);
+```
 
+*Values of `minLat`, `maxLat`, `minLon`, and `maxLon` can be `360`, `-360`, `360`, `-360`.*
 
-Apart from the standalone functions,there are several experiments designed which can also be of use for analysis,details are given below
-Comparing all frameworks of Naive : exp1_phase1(gridFile, events)
-Comparing all frameworks of Naive(Monte Carlo) : exp1_phase2(events.size(), area)
-Comparing all frameworks of Moving Circle : exp2_phase1(gridFile, events)
-Comparing all frameworks of Moving Circle : exp2_phase1(gridFile, events)
-Comparing all frameworks of Moving Circle(Monte Carlo) : exp2_phase2(events.size(), area)
-Comparing run-times with varying growth rates : exp3(gridFile, events)
+## Experiments for Analysis
 
+Apart from the standalone functions, there are several experiments designed for analysis. Details are given below:
 
-For printing top circles or the visual representation you need to follow these steps:
-In both algorithm top n circles are printed and visualized.
-The values can be changed in TestingAlgo/Values.java, where the parameters are 'top_circles_for_visualize' and 'top_circles_for_print'
-To avoid the window popup for visualize (in case the value is zero) comment the following lines:
-line number 282 in Naive/Naive.java 'vis.drawCircles(events, core_circles, "Naive");' inside the function afterNaive()
-line number 350 in Moving_Circle/MovingCircle.java 'vis.drawCircles(events, moving_circles_for_visualize, "Moving circle");' inside the function visualizedata()
+- **Comparing all frameworks of Naive**: `exp1_phase1(gridFile, events)`
+- **Comparing all frameworks of Naive (Monte Carlo)**: `exp1_phase2(events.size(), area)`
+- **Comparing all frameworks of Moving Circle**: `exp2_phase1(gridFile, events)`
+- **Comparing all frameworks of Moving Circle (Monte Carlo)**: `exp2_phase2(events.size(), area)`
+- **Comparing run-times with varying growth rates**: `exp3(gridFile, events)`
 
+## Visual Representation of Top Circles
 
-Apart from the above,if you have any doubt, drop a mail to lakshay14057@iiitd.ac.in, chaudhary14032@iiitd.ac.in, with an appropriate subject line, you would hear a response within 12 hrs
+To print the top circles or visualize them, follow these steps:
+
+In both algorithms, the top `n` circles are printed and visualized. The values can be changed in `TestingAlgo/Values.java`, where the parameters are `top_circles_for_visualize` and `top_circles_for_print`.
+
+To avoid the window popup for visualization (in case the value is zero), comment the following lines:
+
+- In `Naive/Naive.java`, line number 282: 
+  ```java
+  vis.drawCircles(events, core_circles, "Naive");
+  ```
+  (inside the function `afterNaive()`)
+
+- In `Moving_Circle/MovingCircle.java`, line number 350:
+  ```java
+  vis.drawCircles(events, moving_circles_for_visualize, "Moving circle");
+  ```
+  (inside the function `visualizedata()`)
+
+## Contact
+
+If you have any doubts, drop a mail to [chaudhary14032@iiitd.ac.in](mailto:chaudhary14032@iiitd.ac.in) with an appropriate subject line.
